@@ -17,7 +17,7 @@ ProfileAndName.defaultProps = {
 const ProfileAndNameLayout = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 5px;
   justify-content: center;
   align-items: center;
   img {
@@ -26,6 +26,6 @@ const ProfileAndNameLayout = styled.div`
     border-radius: 50%;
   }
   div {
-    font-size: 14px;
+    font-size: 11px;
   }
 `;
