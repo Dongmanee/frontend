@@ -4,9 +4,6 @@ const colors = {
     md: '#27272a',
     lg: '#18181b',
   },
-  red: {
-    sm: 'red',
-  },
 };
 
 const weights = {
