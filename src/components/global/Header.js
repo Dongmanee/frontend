@@ -4,21 +4,21 @@ import logo from "../../images/logo.png";
 
 export default function Header({ left, center, right }) {
   return (
-    <Wrapper>
-      <Item>{left == "logo" && <img src={logo} />}</Item>
-      <div>{center ? <div>{center}</div> : ""}</div>
-      <div>{right == "setting" && <FiSettings size={28} />}</div>
-    </Wrapper>
+    <HeaderLayout>
+      <HeaderItem>{left == "logo" && <img src={logo} />}</HeaderItem>
+      <HeaderItem>{center ? <div>{center}</div> : ""}</HeaderItem>
+      <HeaderItem>{right == "setting" && <FiSettings size={28} />}</HeaderItem>
+    </HeaderLayout>
   );
 }
 
-const Wrapper = styled.div`
+const HeaderLayout = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 13px 20px;
 `;
 
-const Item = styled.div`
+const HeaderItem = styled.div`
   img {
     height: 30px;
   }
