@@ -1,9 +1,10 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Outlet />
+      <div>안녕</div>
     </>
   );
 }
