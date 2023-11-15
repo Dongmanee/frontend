@@ -1,11 +1,11 @@
 import Header from "../components/global/Header";
 import Navbar from "../components/global/Navbar";
+import HomeLayout from "../layouts/HomeLayout";
 
 export default function Home() {
   return (
-    <div>
-      <Header left="logo" right="setting" />
-      <Navbar />
-    </div>
+    <HomeLayout headerLeft="logo" headerRight="setting" currentPage="home">
+      <div>홈 내용</div>
+    </HomeLayout>
   );
 }
