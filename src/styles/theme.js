@@ -25,10 +25,17 @@ const sizes = {
   xxxl: '1.5rem',
 };
 
+const global = {
+  header: {
+    height: '5.8vh',
+  },
+};
+
 const theme = {
   colors,
   weights,
   sizes,
+  global,
 };
 
 export default theme;
