@@ -25,6 +25,7 @@ const PostClubInfoBox = styled.div`
 
 const ClubNameBox = styled.div`
   font-weight: 700;
+  font-size: 15px;
 `;
 
 const PostDateBox = styled.div`

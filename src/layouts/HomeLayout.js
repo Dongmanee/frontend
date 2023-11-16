@@ -28,5 +28,5 @@ const HomeLayoutLayout = styled.div`
 `;
 
 const Body = styled.div`
-  padding: 0 20px;
+  padding: 0 23px;
 `;

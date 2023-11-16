@@ -10,7 +10,7 @@ export default function PostBody({ postTitle, postDetail }) {
 }
 
 const PostBodyLayout = styled.div`
-  padding: 15px 0;
+  padding: 18px 0;
 `;
 
 const PostTitleBox = styled.div`
@@ -20,7 +20,6 @@ const PostTitleBox = styled.div`
 `;
 
 const PostDetailBox = styled.div`
-  max-height: 100px;
-  overflow: hidden;
-  margin-bottom: 15px;
+  line-height: 150%;
+  margin-bottom: 5px;
 `;
