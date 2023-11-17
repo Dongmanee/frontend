@@ -16,6 +16,7 @@ const HeaderLayout = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 13px 20px;
+  background-color: white;
 `;
 
 const HeaderItem = styled.div`

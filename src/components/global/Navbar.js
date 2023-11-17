@@ -37,4 +37,5 @@ const NavbarLayout = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 13px 25px;
+  background-color: white;
 `;

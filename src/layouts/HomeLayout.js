@@ -19,6 +19,12 @@ export default function HomeLayout({
 }
 
 const HomeLayoutLayout = styled.div`
+  & > div:first-child {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   & > div:last-child {
     position: fixed;
     bottom: 0;
@@ -29,4 +35,5 @@ const HomeLayoutLayout = styled.div`
 
 const Body = styled.div`
   padding: 0 23px;
+  margin: 60px 0;
 `;

@@ -19,8 +19,7 @@ export default function HomeClubList() {
 const HomeClubListLayout = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px 10px;
-  margin-bottom: 10px;
+  padding: 10px 5px;
 `;
 
 const AddClubButton = styled.div`
