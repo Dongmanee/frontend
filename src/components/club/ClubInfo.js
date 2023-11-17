@@ -5,7 +5,7 @@ import SmallTagBox from '../global/SmallTagBox';
 
 const ClubInfo = () => {
   return (
-    <ClubMainLayout>
+    <ClubInfoLayout>
       <img src={img} height={'50%'} />
 
       <Category>
@@ -20,13 +20,13 @@ const ClubInfo = () => {
         <p>교내 유일 코딩동아리입니다!</p>
         <p>매주 화요일에 정기모임을 하고 있습니다.</p>
       </Info>
-    </ClubMainLayout>
+    </ClubInfoLayout>
   );
 };
 
 export default ClubInfo;
 
-const ClubMainLayout = styled.div`
+const ClubInfoLayout = styled.div`
   max-height: 40vh;
   margin: 0 -23px;
   ${flexColumn};

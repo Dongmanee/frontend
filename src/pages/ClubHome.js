@@ -1,4 +1,6 @@
 import ClubInfo from '../components/club/ClubInfo';
+import ClubPost from '../components/club/ClubPost';
+import Clubpage from '../components/club/Clubpage';
 import PageSelector from '../components/global/PageSelector';
 import Layout from '../layouts/Layout';
 
@@ -7,11 +9,33 @@ const ClubHome = () => {
     <Layout headerLeft="prev" headerCenter="Import" headerRight="edit">
       <PageSelector pages={pages} />
       <ClubInfo />
+
+      {clubpages.map((item, idx) => (
+        <Clubpage key={idx} title={item.title}>
+          {item.item}
+        </Clubpage>
+      ))}
     </Layout>
   );
 };
 
 export default ClubHome;
+
+const clubpages = [
+  {
+    title: '공지사항',
+    item: <ClubPost />,
+  },
+  {
+    title: '일정',
+  },
+  {
+    title: '사진첩',
+  },
+  {
+    title: '모임 멤버',
+  },
+];
 
 const pages = [
   {
