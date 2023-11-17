@@ -6,7 +6,7 @@ import SmallTagBox from '../global/SmallTagBox';
 const ClubInfo = () => {
   return (
     <ClubInfoLayout>
-      <img src={img} height={'50%'} />
+      <BackgroundImage />
 
       <Category>
         <img src={img} width={50} height={50} />
@@ -32,6 +32,15 @@ const ClubInfoLayout = styled.div`
   ${flexColumn};
 `;
 
+const BackgroundImage = styled.div`
+  width: 100%;
+  height: 40vh;
+
+  background-image: url(${img});
+  background-size: cover;
+  background-position: center center;
+`;
+
 const Category = styled.div`
   display: flex;
   position: relative;
@@ -40,8 +49,12 @@ const Category = styled.div`
   & > img {
     border-radius: 50%;
     position: absolute;
-    left: 5%;
+    left: 5vw;
     top: -2.8vh;
+
+    @media screen and (min-width: 1000px) {
+      left: 1vw;
+    }
   }
 `;
 
