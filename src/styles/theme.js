@@ -4,6 +4,10 @@ const colors = {
     md: '#27272a',
     lg: '#18181b',
   },
+  gray: {
+    sm: '#feffff',
+    md: '#919eab',
+  },
 };
 
 const weights = {

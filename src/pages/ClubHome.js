@@ -1,4 +1,5 @@
 import ClubInfo from '../components/club/ClubInfo';
+import ClubJoinButton from '../components/club/ClubJoinButton';
 import ClubPost from '../components/club/ClubPost';
 import Clubpage from '../components/club/Clubpage';
 import PageSelector from '../components/global/PageSelector';
@@ -15,6 +16,8 @@ const ClubHome = () => {
           {item.item}
         </Clubpage>
       ))}
+
+      <ClubJoinButton deadline="11 / 3 오후 3:00" />
     </Layout>
   );
 };
@@ -28,6 +31,7 @@ const clubpages = [
   },
   {
     title: '일정',
+    item: <ClubPost />,
   },
   {
     title: '사진첩',

@@ -8,12 +8,14 @@ export default function Layout({
   headerRight,
   headerCenter,
   isNavbar,
+  bottomButton,
 }) {
   return (
     <>
       <Header left={headerLeft} center={headerCenter} right={headerRight} />
       <Body>{children}</Body>
       {isNavbar && <Navbar />}
+      {bottomButton}
     </>
   );
 }
