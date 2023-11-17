@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import ClubInfo from '../components/club/ClubInfo';
 import ClubJoinButton from '../components/club/ClubJoinButton';
 import ClubPost from '../components/club/ClubPost';
@@ -9,7 +10,10 @@ const ClubHome = () => {
   return (
     <Layout headerLeft="prev" headerCenter="Import" headerRight="edit">
       <PageSelector pages={pages} />
-      <ClubInfo />
+
+      <ClubInfoBox>
+        <ClubInfo />
+      </ClubInfoBox>
 
       {clubpages.map((item, idx) => (
         <Clubpage key={idx} title={item.title}>
@@ -23,6 +27,10 @@ const ClubHome = () => {
 };
 
 export default ClubHome;
+
+const ClubInfoBox = styled.div`
+  margin-top: ${(props) => props.theme.global.pageselector.height};
+`;
 
 const clubpages = [
   {

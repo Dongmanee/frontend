@@ -36,6 +36,7 @@ PageSelector.defaultProps = {
 
 const PageSelectorLayout = styled.div`
   width: 100%;
+  min-height: ${(props) => props.theme.global.pageselector.height};
   ${flexJBetween};
   align-items: center;
   background-color: white;

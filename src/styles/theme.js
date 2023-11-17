@@ -6,8 +6,10 @@ const colors = {
   },
   gray: {
     xs: '#C3C1C1',
-    sm: '#feffff',
     md: '#919eab',
+  },
+  white: {
+    xs: '#feffff',
   },
 };
 
@@ -36,6 +38,9 @@ const global = {
   },
   navbar: {
     height: '5.8vh',
+  },
+  pageselector: {
+    height: '4vh',
   },
 };
 
