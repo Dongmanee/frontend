@@ -31,7 +31,6 @@ const clubpages = [
   },
   {
     title: '일정',
-    item: <ClubPost />,
   },
   {
     title: '사진첩',

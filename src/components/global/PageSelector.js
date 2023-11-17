@@ -58,8 +58,10 @@ const InActive = styled.span`
 
   white-space: nowrap;
   text-align: center;
+  color: ${(props) => props.theme.colors.gray.xs};
 `;
 
 const Active = styled(InActive)`
   border-bottom: 1.5px solid black;
+  color: black;
 `;
