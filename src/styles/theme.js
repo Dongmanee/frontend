@@ -1,8 +1,15 @@
 const colors = {
   dark: {
-    sm: '#3F3E3E',
-    md: '#27272a',
-    lg: '#18181b',
+    sm: "#3F3E3E",
+    md: "#27272a",
+    lg: "#18181b",
+  },
+  gray: {
+    xs: "#C3C1C1",
+    md: "#919eab",
+  },
+  white: {
+    xs: "#feffff",
   },
 };
 
@@ -15,14 +22,14 @@ const weights = {
 };
 
 const sizes = {
-  xxs: '0.625rem',
-  xs: '0.75rem',
-  sm: '0.875rem',
-  md: '1rem',
-  lg: '1.125rem',
-  xl: '1.25rem',
-  xxl: '1.375rem',
-  xxxl: '1.5rem',
+  xxs: "0.625rem",
+  xs: "0.75rem",
+  sm: "0.875rem",
+  md: "1rem",
+  lg: "1.125rem",
+  xl: "1.25rem",
+  xxl: "1.375rem",
+  xxxl: "1.5rem",
 };
 
 const theme = {
