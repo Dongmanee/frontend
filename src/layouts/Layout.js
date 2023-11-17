@@ -14,7 +14,7 @@ export default function Layout({
     <>
       <Header left={headerLeft} center={headerCenter} right={headerRight} />
       <Body>{children}</Body>
-      <NavbarBox>{isNavbar && <Navbar currentPage={currentPage} />}</NavbarBox>
+      <NavbarBox>{isNavbar && <Navbar />}</NavbarBox>
     </>
   );
 }
