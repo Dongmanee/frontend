@@ -22,6 +22,18 @@ const router = createBrowserRouter([
         path: '/club',
         element: <ClubHome />,
       },
+      {
+        path: '/club/posts',
+        element: <ClubHome />,
+      },
+      {
+        path: '/club/schedule',
+        element: <ClubHome />,
+      },
+      {
+        path: '/club/album',
+        element: <ClubHome />,
+      },
     ],
   },
 ]);
