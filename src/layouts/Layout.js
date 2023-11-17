@@ -7,26 +7,19 @@ export default function Layout({
   headerLeft,
   headerRight,
   headerCenter,
-  currentPage,
   isNavbar,
 }) {
   return (
     <>
       <Header left={headerLeft} center={headerCenter} right={headerRight} />
       <Body>{children}</Body>
-      <NavbarBox>{isNavbar && <Navbar />}</NavbarBox>
+      {isNavbar && <Navbar />}
     </>
   );
 }
 
 const Body = styled.div`
   box-sizing: border-box;
-  padding: ${(props) => props.theme.global.header.height} 23px 0 23px;
-`;
-
-const NavbarBox = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  padding: ${(props) => props.theme.global.header.height} 23px
+    ${(props) => props.theme.global.navbar.height} 23px;
 `;

@@ -29,6 +29,9 @@ const global = {
   header: {
     height: '5.8vh',
   },
+  navbar: {
+    height: '5.8vh',
+  },
 };
 
 const theme = {

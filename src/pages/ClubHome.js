@@ -1,5 +1,7 @@
+import Layout from '../layouts/Layout';
+
 const ClubHome = () => {
-  return <div>ClubHome</div>;
+  return <Layout headerLeft="prev" headerCenter="Import" headerRight="edit"></Layout>;
 };
 
 export default ClubHome;
