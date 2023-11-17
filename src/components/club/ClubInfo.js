@@ -37,7 +37,7 @@ const BackgroundImage = styled.div`
   height: 40vh;
 
   background-image: url(${img});
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center center;
 `;
 
