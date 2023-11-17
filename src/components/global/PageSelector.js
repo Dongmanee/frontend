@@ -3,7 +3,7 @@ import { flexCenter, flexJBetween } from '../../styles/global.style';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const PageSelector = ({ pages }) => {
+const PageSelector = ({ pages, top }) => {
   const [active, setActive] = useState(pages[0].src);
   const navigate = useNavigate();
   const pageLength = pages?.length;
@@ -14,7 +14,7 @@ const PageSelector = ({ pages }) => {
   };
 
   return (
-    <PageSelectorLayout>
+    <PageSelectorLayout $top={top}>
       {pages.map((page, idx) => (
         <Page onClick={() => handlePage(page.src)} $length={pageLength} key={idx}>
           {active == page.src ? (
@@ -35,8 +35,16 @@ PageSelector.defaultProps = {
 };
 
 const PageSelectorLayout = styled.div`
+  width: 100%;
   ${flexJBetween};
   align-items: center;
+  background-color: white;
+
+  position: fixed;
+  top: ${(props) => (props.$top ? props.$top : props.theme.global.header.height)};
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 `;
 
 const Page = styled.div`
@@ -46,7 +54,6 @@ const Page = styled.div`
 `;
 
 const InActive = styled.span`
-  display: inline-block;
   padding-bottom: 2px;
 
   white-space: nowrap;

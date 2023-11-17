@@ -44,6 +44,7 @@ export default function Header({ left, center, right }) {
 const HeaderLayout = styled.div`
   height: ${(props) => props.theme.global.header.height};
   ${flexJBetween};
+  background-color: white;
   box-sizing: border-box;
   padding: 13px 20px;
 
