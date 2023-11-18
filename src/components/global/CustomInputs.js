@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export default function CustomInput({
+  id,
   width,
   height,
   bgColor,
@@ -23,7 +24,7 @@ export default function CustomInput({
     fontSize,
     borderColor,
   };
-  return <CustomInputLayout {...styles} placeholder={placeholder} />;
+  return <CustomInputLayout id={id} {...styles} placeholder={placeholder} />;
 }
 
 CustomInput.defaultProps = {

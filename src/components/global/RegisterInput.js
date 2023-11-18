@@ -8,15 +8,17 @@ export default function RegisterInput({
   isRequired,
   errorMsg,
   inputHeight,
+  id,
 }) {
   return (
     <RegisterInputLayout>
       <RegisterLabelBox>
-        {label}
+        <label htmlFor={id}>{label}</label>
         {isRequired && <FaStarOfLife size={8} color="red" />}
       </RegisterLabelBox>
       <RegisterInputBox>
         <CustomInput
+          id={id}
           height={inputHeight ? inputHeight : "2.5rem"}
           radius="0.7rem"
         />
