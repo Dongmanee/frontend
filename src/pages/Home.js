@@ -1,12 +1,12 @@
-import Post from "../components/global/post/Post";
-import HomeClubList from "../components/home/HomeClubList";
-import HomeLayout from "../layouts/HomeLayout";
+import Post from '../components/global/post/Post';
+import HomeClubList from '../components/home/HomeClubList';
+import Layout from '../layouts/Layout';
 
 export default function Home() {
   return (
-    <HomeLayout headerLeft="logo" headerRight="setting" currentPage="home">
+    <Layout headerLeft="logo" headerRight="setting" isNavbar={true}>
       <HomeClubList />
       <Post />
-    </HomeLayout>
+    </Layout>
   );
 }
