@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import HomeLayout from "../layouts/HomeLayout";
+import Layout from "../layouts/Layout";
 import ClubCategory from "../components/home/ClubCategoryList";
 import CustomInput from "../components/global/CustomInputs";
-import { flexCenter } from "../styles/global.style";
 
 export default function HomeTotalClubs() {
   return (
-    <HomeLayout headerLeft="logo">
+    <Layout headerLeft="prev">
       <HomeTotalClubsLayout>
         <ClubCategory />
         <CustomInput
@@ -15,7 +14,7 @@ export default function HomeTotalClubs() {
           border="0.05rem solid"
         />
       </HomeTotalClubsLayout>
-    </HomeLayout>
+    </Layout>
   );
 }
 

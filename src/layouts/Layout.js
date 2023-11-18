@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import Header from '../components/global/Header';
-import Navbar from '../components/global/Navbar';
+import styled from "styled-components";
+import Header from "../components/global/Header";
+import Navbar from "../components/global/Navbar";
 
 export default function Layout({
   children,
@@ -22,6 +22,5 @@ export default function Layout({
 
 const Body = styled.div`
   box-sizing: border-box;
-  padding: ${(props) => props.theme.global.header.height} 23px
-    ${(props) => props.theme.global.navbar.height} 23px;
+  padding: ${(props) => props.theme.global.body.height} 5vw;
 `;

@@ -12,11 +12,11 @@ const colors = {
     xs: "#feffff",
   },
   gray: {
-    xs: '#C3C1C1',
-    md: '#919eab',
+    xs: "#C3C1C1",
+    md: "#919eab",
   },
   white: {
-    xs: '#feffff',
+    xs: "#feffff",
   },
 };
 
@@ -41,13 +41,16 @@ const sizes = {
 
 const global = {
   header: {
-    height: '5.8vh',
+    height: "5.8vh",
   },
   navbar: {
-    height: '5.8vh',
+    height: "5.8vh",
   },
   pageselector: {
-    height: '4vh',
+    height: "4vh",
+  },
+  body: {
+    height: "6.8vh",
   },
 };
 

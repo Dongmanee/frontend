@@ -55,6 +55,7 @@ export default function Navbar() {
 
 const NavbarLayout = styled.div`
   ${flexJBetween};
+  background-color: white;
   padding: 13px 25px;
 
   position: fixed;
