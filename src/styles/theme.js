@@ -11,13 +11,6 @@ const colors = {
   white: {
     xs: "#feffff",
   },
-  gray: {
-    xs: "#C3C1C1",
-    md: "#919eab",
-  },
-  white: {
-    xs: "#feffff",
-  },
 };
 
 const weights = {

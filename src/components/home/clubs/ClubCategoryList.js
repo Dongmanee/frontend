@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import total from "../../images/club-category/total.png";
-import computer from "../../images/club-category/computer.png";
-import ProfileAndName from "../global/ProfileAndName";
+import total from "../../../images/club-category/total.png";
+import computer from "../../../images/club-category/computer.png";
+import ProfileAndName from "../../global/ProfileAndName";
 
 const temp_catgory = [
   { name: "전체", img: total },
@@ -57,4 +57,5 @@ const CategoryGridBox = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-row-gap: 10px;
+  margin-bottom: 1rem;
 `;
