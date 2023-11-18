@@ -56,6 +56,10 @@ const HeaderLayout = styled.div`
   top: 0;
   left: 0;
   right: 0;
+
+  & > div:nth-child(2) {
+    font-weight: ${(props) => props.theme.weights.xl};
+  }
 `;
 
 const HeaderItem = styled.div`

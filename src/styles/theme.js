@@ -5,6 +5,7 @@ const colors = {
     lg: "#18181b",
   },
   gray: {
+    xxs: "#efefef",
     xs: "#C3C1C1",
     md: "#919eab",
   },

@@ -36,11 +36,12 @@ CustomInput.defaultProps = {
 const CustomInputLayout = styled.input`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  background-color: ${(props) => props.theme.colors.white.xs};
+  background-color: ${(props) =>
+    props.border ? "white" : props.theme.colors.gray.xxs};
   border-radius: ${(props) => props.radius};
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};
-  border: ${(props) => (props.border ? props.border : "")};
+  border: ${(props) => (props.border ? props.border : "none")};
   border-color: ${(props) => (props.border ? props.theme.colors.gray.xs : "")};
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.bold};
