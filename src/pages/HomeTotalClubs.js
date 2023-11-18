@@ -4,76 +4,7 @@ import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import CustomInput from "../components/global/CustomInputs";
 import ClubCard from "../components/home/clubs/ClubCard";
 import ClubList from "../components/home/clubs/ClubList";
-import CustomButton from "../components/global/CustomButton";
-
-const temp_clubs = [
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-];
+import { temp_clubs } from "../consts/tempData";
 
 export default function HomeTotalClubs() {
   return (
@@ -109,4 +40,6 @@ const RegisterClubButton = styled.button`
   background-color: ${(props) => props.theme.colors.dark.sm};
   color: white;
   font-size: ${(props) => props.theme.sizes.lg};
+  font-family: "Noto Sans KR", sans-serif;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 `;

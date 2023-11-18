@@ -1,25 +1,13 @@
 import styled from "styled-components";
-import total from "../../../images/club-category/total.png";
-import computer from "../../../images/club-category/computer.png";
 import ProfileAndName from "../../global/ProfileAndName";
-
-const temp_catgory = [
-  { name: "전체", img: total },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-];
+import { temp_clubs_catgory } from "../../../consts/tempData";
 
 export default function ClubCategory({ isSlider }) {
   return (
     <ClubCategoryLayout>
       {isSlider ? (
         <CategorySliderBox>
-          {temp_catgory.map((item, idx) => (
+          {temp_clubs_catgory.map((item, idx) => (
             <ProfileAndName
               key={idx}
               img={item.img}
@@ -30,7 +18,7 @@ export default function ClubCategory({ isSlider }) {
         </CategorySliderBox>
       ) : (
         <CategoryGridBox>
-          {temp_catgory.map((item, idx) => (
+          {temp_clubs_catgory.map((item, idx) => (
             <ProfileAndName
               key={idx}
               img={item.img}
