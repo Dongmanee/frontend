@@ -2,11 +2,10 @@ import styled from "styled-components";
 import Layout from "../layouts/Layout";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import CustomInput from "../components/global/CustomInputs";
-import ClubCard from "../components/home/clubs/ClubCard";
 import ClubList from "../components/home/clubs/ClubList";
 import { temp_clubs } from "../consts/tempData";
 
-export default function HomeTotalClubs() {
+export default function Clubs() {
   return (
     <Layout headerLeft="prev">
       <HomeTotalClubsLayout>

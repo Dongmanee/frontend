@@ -15,4 +15,5 @@ const ClubListLayout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
+  padding: 0 1rem;
 `;

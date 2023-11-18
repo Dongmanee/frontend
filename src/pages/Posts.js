@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout";
 import { temp_total_posts } from "../consts/tempData";
 import Post from "../components/global/postList/Post";
 
-export default function Home() {
+export default function Posts() {
   return (
     <Layout headerLeft="logo" headerRight="setting" isNavbar={true}>
       <HomeClubList />
