@@ -1,37 +1,47 @@
-import { createBrowserRouter } from 'react-router-dom';
-import App from '../App';
-import Login from '../pages/Login';
-import Home from '../pages/Home';
-import ClubHome from '../pages/ClubHome';
+import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
+import Login from "../pages/Login";
+import Home from "../pages/Home";
+import HomeTotalClubs from "../pages/HomeTotalClubs";
+import ClubHome from "../pages/ClubHome";
+import RegisterClub from "../pages/RegisterClub";
 
 const router = createBrowserRouter([
   {
-    path: '',
+    path: "",
     element: <App />,
     // errorElement: <App />,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Login />,
       },
       {
-        path: '/home',
+        path: "/home",
         element: <Home />,
       },
       {
-        path: '/club',
+        path: "/clubs",
+        element: <HomeTotalClubs />,
+      },
+      {
+        path: "/clubs/register",
+        element: <RegisterClub />,
+      },
+      {
+        path: "/club",
         element: <ClubHome />,
       },
       {
-        path: '/club/posts',
+        path: "/club/posts",
         element: <ClubHome />,
       },
       {
-        path: '/club/schedule',
+        path: "/club/schedule",
         element: <ClubHome />,
       },
       {
-        path: '/club/album',
+        path: "/club/album",
         element: <ClubHome />,
       },
     ],

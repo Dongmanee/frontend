@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FaCalendar,
   FaCommentDots,
@@ -6,11 +6,11 @@ import {
   FaRegCommentDots,
   FaRegUser,
   FaUser,
-} from 'react-icons/fa6';
-import { PiHouseBold, PiHouseFill } from 'react-icons/pi';
-import { useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-import { flexJBetween } from '../../styles/global.style';
+} from "react-icons/fa6";
+import { PiHouseBold, PiHouseFill } from "react-icons/pi";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
+import { flexJBetween } from "../../styles/global.style";
 
 export default function Navbar() {
   const location = useLocation();
@@ -18,21 +18,25 @@ export default function Navbar() {
 
   const navbarItems = [
     {
-      page: '/home',
+      page: "/home",
       active: <PiHouseFill size={26} />,
       inActive: <PiHouseBold size={26} />,
     },
     {
-      page: '/chat',
+      page: "/chat",
       active: <FaCommentDots size={24} />,
       inActive: <FaRegCommentDots size={24} />,
     },
     {
-      page: '/calendar',
+      page: "/calendar",
       active: <FaCalendar size={24} />,
       inActive: <FaRegCalendar size={24} />,
     },
-    { page: '/user', active: <FaUser size={24} />, inActive: <FaRegUser size={24} /> },
+    {
+      page: "/user",
+      active: <FaUser size={24} />,
+      inActive: <FaRegUser size={24} />,
+    },
   ];
 
   return (
@@ -51,6 +55,7 @@ export default function Navbar() {
 
 const NavbarLayout = styled.div`
   ${flexJBetween};
+  background-color: white;
   padding: 13px 25px;
 
   position: fixed;
