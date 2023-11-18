@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import CustomInput from "../CustomInputs";
-import { BiErrorAlt } from "react-icons/bi";
+
 import RegisterLabel from "./RegisterLabel";
+import RegisterErrorMsg from "./RegisterErrorMsg";
 
 export default function RegisterInput({
   label,
@@ -19,12 +20,7 @@ export default function RegisterInput({
           height={inputHeight ? inputHeight : "2.5rem"}
           radius="0.7rem"
         />
-        {errorMsg && (
-          <span>
-            <BiErrorAlt />
-            {errorMsg}
-          </span>
-        )}
+        {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
       </RegisterInputBox>
     </RegisterInputLayout>
   );
@@ -35,12 +31,4 @@ const RegisterInputLayout = styled.div``;
 const RegisterInputBox = styled.div`
   display: flex;
   flex-direction: column;
-  & > span {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-top: 0.5rem;
-    font-weight: ${(props) => props.theme.weights.xl};
-    color: red;
-  }
 `;

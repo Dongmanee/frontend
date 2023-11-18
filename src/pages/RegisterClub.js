@@ -12,19 +12,18 @@ export default function RegisterClub() {
         <RegisterInput
           label="이름을 입력해주세요"
           isRequired={true}
-          errorMsg="다시입력해주세요"
+          errorMsg="다시 입력해주세요"
         />
-        <RegisterClubCategory />
+        <RegisterClubCategory errorMsg="다시 입력해주세요" />
         <RegisterInput label={"태그를 입력해주세요"} />
         <RegisterInput
           label="소개를 입력해주세요"
           isRequired={true}
-          errorMsg="다시입력해주세요"
+          errorMsg="다시 입력해주세요"
           inputHeight="5rem"
         />
-        <RegisterImage />
+        <RegisterImage errorMsg="다시 등록해주세요" />
         <RegisterButton buttonText="등록" />
-        {/* <RegisterClubButton>등록</RegisterClubButton> */}
       </RegisterInputList>
     </Layout>
   );
@@ -34,13 +33,4 @@ const RegisterInputList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-`;
-
-const RegisterClubButton = styled.div`
-  height: 7vh;
-  width: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${(props) => props.theme.colors.dark.sm};
 `;
