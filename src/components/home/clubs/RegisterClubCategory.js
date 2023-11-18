@@ -3,8 +3,9 @@ import ClubCategory from "./ClubCategoryList";
 import RegisterLabel from "../../global/register/RegisterLabel";
 import { temp_clubs_catgory } from "../../../consts/tempData";
 import ProfileAndName from "../../global/ProfileAndName";
+import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 
-export default function RegisterClubCategory() {
+export default function RegisterClubCategory({ errorMsg }) {
   return (
     <RegisterClubCategoryLayout>
       <RegisterLabel label="카테고리를 선택해주세요" isRequired={true} />
@@ -18,6 +19,7 @@ export default function RegisterClubCategory() {
           />
         ))}
       </CategorySliderBox>
+      {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
     </RegisterClubCategoryLayout>
   );
 }
@@ -25,5 +27,6 @@ const RegisterClubCategoryLayout = styled.div``;
 
 const CategorySliderBox = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  padding: 0.5rem 0;
 `;

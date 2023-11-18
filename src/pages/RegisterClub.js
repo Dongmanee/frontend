@@ -14,7 +14,7 @@ export default function RegisterClub() {
           isRequired={true}
           errorMsg="다시 입력해주세요"
         />
-        <RegisterClubCategory errorMsg="다시 입력해주세요" />
+        <RegisterClubCategory errorMsg="다시 선택해주세요" />
         <RegisterInput label={"태그를 입력해주세요"} />
         <RegisterInput
           label="소개를 입력해주세요"
