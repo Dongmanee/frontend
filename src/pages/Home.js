@@ -1,12 +1,26 @@
-import Post from "../components/global/post/Post";
+import styled from "styled-components";
 import HomeClubList from "../components/home/HomeClubList";
-import HomeLayout from "../layouts/HomeLayout";
+import Layout from "../layouts/Layout";
+import { temp_total_posts } from "../consts/tempData";
+import Post from "../components/global/postList/Post";
 
 export default function Home() {
   return (
-    <HomeLayout headerLeft="logo" headerRight="setting" currentPage="home">
+    <Layout headerLeft="logo" headerRight="setting" isNavbar={true}>
       <HomeClubList />
-      <Post />
-    </HomeLayout>
+      <HomePostListBox>
+        {temp_total_posts.map((post, idx) => (
+          <Post post={post} key={idx} />
+        ))}
+      </HomePostListBox>
+    </Layout>
   );
 }
+
+const HomePostListBox = styled.div`
+  height: 100%;
+  overflow: scroll;
+  & > div {
+    margin-top: 30px;
+  }
+`;

@@ -2,31 +2,25 @@ import styled from "styled-components";
 import Header from "../components/global/Header";
 import Navbar from "../components/global/Navbar";
 
-export default function HomeLayout({
+export default function Layout({
   children,
   headerLeft,
   headerRight,
   headerCenter,
-  currentPage,
+  isNavbar,
+  bottomButton,
 }) {
   return (
-    <HomeLayoutLayout>
+    <>
       <Header left={headerLeft} center={headerCenter} right={headerRight} />
       <Body>{children}</Body>
-      <Navbar currentPage={currentPage} />
-    </HomeLayoutLayout>
+      {isNavbar && <Navbar />}
+      {bottomButton}
+    </>
   );
 }
 
-const HomeLayoutLayout = styled.div`
-  & > div:last-child {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-`;
-
 const Body = styled.div`
-  padding: 0 23px;
+  box-sizing: border-box;
+  padding: ${(props) => props.theme.global.body.height} 5vw;
 `;

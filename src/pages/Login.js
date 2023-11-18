@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Styledbutton from '../components/global/Styledbutton';
 import bglogo from '../images/bglogo.png';
 import kakaoimage from '../images/kakao_login.png';
 import { flexCenter, flexColumn } from '../styles/global.style';
+import CustomButton from '../components/global/CustomButton';
 
 const LoginLayout = styled.div`
   ${flexColumn};
@@ -45,9 +45,9 @@ const Login = () => {
       </LogoBox>
 
       <ButtonsCol>
-        <Styledbutton width="45%" height="3.5rem" bgColor={'#3f3e3e'} color={'white'}>
+        <CustomButton width="45%" height="3.5rem" bgColor={'#3f3e3e'} color={'white'}>
           둘러보기
-        </Styledbutton>
+        </CustomButton>
         <KakaoBtn>
           <img src={kakaoimage} />
         </KakaoBtn>
