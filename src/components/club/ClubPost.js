@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import example from '../../images/sample.png';
-import { PostBottomInfoRow } from '../global/post/Post';
-import PostBody from '../global/post/PostBody';
-import PostHead from '../global/post/PostHead';
-import PostReactionNum from '../global/post/PostReactionNum';
-import PostWriter from '../global/post/PostWriter';
+import styled from "styled-components";
+import example from "../../images/sample.png";
+import { PostBottomInfoRow } from "../global/postList/Post";
+import PostBody from "../global/postList/PostBody";
+import PostHead from "../global/postList/PostHead";
+import PostReactionNum from "../global/postList/PostReactionNum";
+import PostWriter from "../global/postList/PostWriter";
 const ClubPost = () => {
   return (
     <ClubPostLayout>
@@ -18,8 +18,8 @@ const ClubPost = () => {
         }
       />
       <PostBottomInfoRow>
-        <PostWriter writerimg={example} writerName={'alphago'} />
-        <PostReactionNum likesNum={'35'} commentNum={'10'} />
+        <PostWriter writerimg={example} writerName={"alphago"} />
+        <PostReactionNum likesNum={"35"} commentNum={"10"} />
       </PostBottomInfoRow>
     </ClubPostLayout>
   );

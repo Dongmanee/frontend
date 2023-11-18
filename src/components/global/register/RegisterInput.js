@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import CustomInput from "./CustomInputs";
+import CustomInput from "../CustomInputs";
 import { BiErrorAlt } from "react-icons/bi";
-import RegisterLabel from "../home/RegisterLabel";
+import RegisterLabel from "./RegisterLabel";
 
 export default function RegisterInput({
   label,

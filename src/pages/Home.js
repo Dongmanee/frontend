@@ -2,7 +2,7 @@ import styled from "styled-components";
 import HomeClubList from "../components/home/HomeClubList";
 import Layout from "../layouts/Layout";
 import { temp_total_posts } from "../consts/tempData";
-import Post from "../components/global/post/Post";
+import Post from "../components/global/postList/Post";
 
 export default function Home() {
   return (

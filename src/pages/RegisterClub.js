@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import RegisterInput from "../components/global/RegisterInput";
+import RegisterInput from "../components/global/register/RegisterInput";
 import Layout from "../layouts/Layout";
-import RegisterClubCategory from "../components/home/RegisterClubCategory";
+import RegisterClubCategory from "../components/home/clubs/RegisterClubCategory";
 
 export default function RegisterClub() {
   return (
