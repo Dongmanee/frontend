@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import CustomInput from "../components/global/CustomInputs";
 import ClubCard from "../components/home/clubs/ClubCard";
+import ClubList from "../components/home/clubs/ClubList";
 
 const temp_clubs = [
   {
@@ -44,12 +45,10 @@ export default function HomeTotalClubs() {
         <ClubCategory />
         <CustomInput
           placeholder="동아리를 검색하세요"
-          margin="1rem"
+          margin="1.8rem 1rem"
           border="0.05rem solid"
         />
-        {temp_clubs.map((club, idx) => (
-          <ClubCard club={club} />
-        ))}
+        <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
     </Layout>
   );

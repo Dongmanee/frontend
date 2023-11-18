@@ -57,5 +57,4 @@ const CategoryGridBox = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-row-gap: 10px;
-  margin-bottom: 1rem;
 `;

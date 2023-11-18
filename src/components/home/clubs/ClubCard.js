@@ -22,7 +22,6 @@ const ClubCardLayout = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1.5rem;
 `;
 
 const ClubCardImgBox = styled.img`
