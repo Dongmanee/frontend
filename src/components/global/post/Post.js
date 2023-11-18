@@ -4,6 +4,7 @@ import PostWriter from "./PostWriter";
 import PostHead from "./PostHead";
 import PostReactionNum from "./PostReactionNum";
 import example from "../../../images/example.png";
+import { flexJBetween } from "../../../styles/global.style";
 
 export default function Post() {
   return (
@@ -23,7 +24,6 @@ export default function Post() {
 
 const PostLayout = styled.div``;
 
-const PostBottomInfoRow = styled.div`
-  display: flex;
-  justify-content: space-between;
+export const PostBottomInfoRow = styled.div`
+  ${flexJBetween};
 `;

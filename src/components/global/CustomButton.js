@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { flexCenter } from '../../styles/global.style';
 
-const Styledbutton = ({
+const CustomButton = ({
   width,
   height,
   bgColor,
@@ -15,9 +15,9 @@ const Styledbutton = ({
   return <StyledbuttonLayout {...styles}>{children}</StyledbuttonLayout>;
 };
 
-export default Styledbutton;
+export default CustomButton;
 
-Styledbutton.defaultProps = {
+CustomButton.defaultProps = {
   width: '5rem',
   height: '5rem',
   radius: '0.75rem',

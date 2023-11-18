@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Post from "../components/global/post/Post";
 import HomeClubList from "../components/home/HomeClubList";
-import HomeLayout from "../layouts/HomeLayout";
+import Layout from "../layouts/Layout";
 
 export default function Home() {
   return (
-    <HomeLayout headerLeft="logo" headerRight="setting" currentPage="home">
+    <Layout headerLeft="logo" headerRight="setting" isNavbar={true}>
       <HomeClubList />
       <HomePostBox>
         <Post />
@@ -18,7 +18,7 @@ export default function Home() {
         <Post />
         <Post />
       </HomePostBox>
-    </HomeLayout>
+    </Layout>
   );
 }
 

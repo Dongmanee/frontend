@@ -11,6 +11,13 @@ const colors = {
   white: {
     xs: "#feffff",
   },
+  gray: {
+    xs: '#C3C1C1',
+    md: '#919eab',
+  },
+  white: {
+    xs: '#feffff',
+  },
 };
 
 const weights = {
@@ -32,10 +39,23 @@ const sizes = {
   xxxl: "1.5rem",
 };
 
+const global = {
+  header: {
+    height: '5.8vh',
+  },
+  navbar: {
+    height: '5.8vh',
+  },
+  pageselector: {
+    height: '4vh',
+  },
+};
+
 const theme = {
   colors,
   weights,
   sizes,
+  global,
 };
 
 export default theme;
