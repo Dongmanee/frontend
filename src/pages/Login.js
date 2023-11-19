@@ -1,8 +1,27 @@
-import styled from 'styled-components';
-import bglogo from '../images/bglogo.png';
-import kakaoimage from '../images/kakao_login.png';
-import { flexCenter, flexColumn } from '../styles/global.style';
-import CustomButton from '../components/global/CustomButton';
+import styled from "styled-components";
+import bglogo from "../images/bglogo.png";
+import kakaoimage from "../images/kakao_login.png";
+import { flexCenter, flexColumn } from "../styles/global.style";
+import CustomButton from "../components/global/CustomButton";
+
+export default function Login() {
+  return (
+    <LoginLayout>
+      <LogoBox>
+        <img src={bglogo} />
+      </LogoBox>
+
+      <ButtonsCol>
+        <CustomButton width="45%" height="3.5rem" bgColor={"#3f3e3e"} color={"white"}>
+          둘러보기
+        </CustomButton>
+        <KakaoBtn>
+          <img src={kakaoimage} />
+        </KakaoBtn>
+      </ButtonsCol>
+    </LoginLayout>
+  );
+}
 
 const LoginLayout = styled.div`
   ${flexColumn};
@@ -36,24 +55,3 @@ const KakaoBtn = styled.button`
   background-color: #fee500;
   cursor: pointer;
 `;
-
-const Login = () => {
-  return (
-    <LoginLayout>
-      <LogoBox>
-        <img src={bglogo} />
-      </LogoBox>
-
-      <ButtonsCol>
-        <CustomButton width="45%" height="3.5rem" bgColor={'#3f3e3e'} color={'white'}>
-          둘러보기
-        </CustomButton>
-        <KakaoBtn>
-          <img src={kakaoimage} />
-        </KakaoBtn>
-      </ButtonsCol>
-    </LoginLayout>
-  );
-};
-
-export default Login;

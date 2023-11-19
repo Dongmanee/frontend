@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { flexColumn } from '../../styles/global.style';
-import img from '../../images/sample.png';
-import SmallTagBox from '../global/SmallTagBox';
+import styled from "styled-components";
+import { flexColumn } from "../../styles/global.style";
+import img from "../../images/sample.png";
+import SmallTagBox from "../global/SmallTagBox";
 
-const ClubInfo = () => {
+export default function ClubInfo() {
   return (
     <ClubInfoLayout>
       <BackgroundImage />
@@ -22,14 +22,12 @@ const ClubInfo = () => {
       </Info>
     </ClubInfoLayout>
   );
-};
-
-export default ClubInfo;
+}
 
 const ClubInfoLayout = styled.div`
+  ${flexColumn};
   max-height: 40vh;
   margin: 0 -23px;
-  ${flexColumn};
 `;
 
 const BackgroundImage = styled.div`

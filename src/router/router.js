@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Login from "../pages/Login";
 import Home from "../pages/Home";
 import HomeTotalClubs from "../pages/HomeTotalClubs";
-import ClubHome from "../pages/ClubHome";
+import Login from "../pages/Login";
 import RegisterClub from "../pages/RegisterClub";
+import Club from "../pages/club/Club";
+import ClubHome from "../pages/club/ClubHome";
+import ClubSchedule from "../pages/club/ClubSchedule";
 
 const router = createBrowserRouter([
   {
@@ -30,19 +32,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/club",
-        element: <ClubHome />,
-      },
-      {
-        path: "/club/posts",
-        element: <ClubHome />,
-      },
-      {
-        path: "/club/schedule",
-        element: <ClubHome />,
-      },
-      {
-        path: "/club/album",
-        element: <ClubHome />,
+        element: <Club />,
+        children: [
+          {
+            path: "",
+            element: <ClubHome />,
+          },
+          {
+            path: "schedule",
+            element: <ClubSchedule />,
+          },
+        ],
       },
     ],
   },

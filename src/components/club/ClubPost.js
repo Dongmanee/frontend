@@ -5,7 +5,8 @@ import PostBody from "../global/postList/PostBody";
 import PostHead from "../global/postList/PostHead";
 import PostReactionNum from "../global/postList/PostReactionNum";
 import PostWriter from "../global/postList/PostWriter";
-const ClubPost = () => {
+
+export default function ClubPost() {
   return (
     <ClubPostLayout>
       <PostHead clubName="모임장 변경 공지사항" date="2023.11.10" />
@@ -23,8 +24,6 @@ const ClubPost = () => {
       </PostBottomInfoRow>
     </ClubPostLayout>
   );
-};
-
-export default ClubPost;
+}
 
 const ClubPostLayout = styled.div``;

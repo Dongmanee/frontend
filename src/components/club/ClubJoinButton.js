@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { flexJBetween } from '../../styles/global.style';
+import styled from "styled-components";
+import { flexJBetween } from "../../styles/global.style";
 
-const ClubJoinButton = ({ deadline }) => {
+export default function ClubJoinButton({ deadline }) {
   return (
     <ClubJoinButtonLayout>
       <Qna>문의하기</Qna>
@@ -11,9 +11,7 @@ const ClubJoinButton = ({ deadline }) => {
       </Join>
     </ClubJoinButtonLayout>
   );
-};
-
-export default ClubJoinButton;
+}
 
 const ClubJoinButtonLayout = styled.div`
   width: 80%;
