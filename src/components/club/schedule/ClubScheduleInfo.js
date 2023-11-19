@@ -22,7 +22,7 @@ const ClubScheduleInfoLayout = styled.div`
   }
 
   & > span:first-child {
-    color: ${(props) => props.theme.colors.gray.xs};
+    color: ${(props) => props.theme.colors.gray.md};
   }
 
   & > span:nth-child(3) {
@@ -31,7 +31,7 @@ const ClubScheduleInfoLayout = styled.div`
   }
 
   & > span:last-child {
-    color: ${(props) => props.theme.colors.gray.xs};
+    color: ${(props) => props.theme.colors.gray.md};
     margin-left: -5px;
   }
 `;

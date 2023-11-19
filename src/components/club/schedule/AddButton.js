@@ -21,4 +21,5 @@ const AddButtonLayout = styled.div`
   bottom: 20px;
   right: 20px;
   z-index: 1;
+  cursor: pointer;
 `;

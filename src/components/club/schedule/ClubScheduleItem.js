@@ -7,10 +7,11 @@ import { flexColumn } from "../../../styles/global.style";
 import ClubScheduleInfo from "./ClubScheduleInfo";
 import ClubScheduleTitle from "./ClubScheduleTitle";
 
-export default function ClubScheduleItem() {
+export default function ClubScheduleItem({ isDone }) {
+  const left = isDone ? "done" : "D-2";
   return (
-    <ClubScheduleItemLayout>
-      <ClubScheduleTitle date={"11/11 (토)"} left={"D-2"} title={"토요일 모임"} />
+    <ClubScheduleItemLayout $isDone={isDone}>
+      <ClubScheduleTitle date={"11/11 (토)"} left={left} title={"토요일 모임"} />
 
       {temp_club_schedule_item_infos.map((item, idx) => (
         <ClubScheduleInfo
@@ -37,5 +38,5 @@ const ClubScheduleItemLayout = styled.div`
   margin: 20px 0;
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: ${(props) => (props.$isDone ? "rgb(0,0,0,0.2)" : "white")};
 `;

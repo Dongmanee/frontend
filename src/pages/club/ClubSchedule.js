@@ -12,8 +12,8 @@ export default function ClubSchedule() {
     <ClubScheduleLayout $isClubHome={isClubHome}>
       <ClubScheduleItem />
       <ClubScheduleItem />
-      <ClubScheduleItem />
-      <ClubScheduleItem />
+      <ClubScheduleItem isDone={true} />
+      <ClubScheduleItem isDone={true} />
 
       {!isClubHome && <AddButton />}
     </ClubScheduleLayout>
