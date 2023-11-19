@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 
+//아직 수정 중인 컴포넌트
 export default function HorizontalSlider({ children }) {
   const [touchX, setTouchX] = useState(0);
 

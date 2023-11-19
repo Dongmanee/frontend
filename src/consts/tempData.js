@@ -132,6 +132,4 @@ export const temp_clubs_catgory = [
   { name: "코딩", img: computer },
   { name: "코딩", img: computer },
   { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
 ];

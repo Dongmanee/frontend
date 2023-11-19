@@ -24,8 +24,8 @@ export default function RegisterClub() {
           inputHeight="5rem"
         />
         <RegisterImage errorMsg="다시 등록해주세요" />
-        <RegisterButton buttonText="등록" />
       </RegisterInputList>
+      <RegisterButton buttonText="등록" />
     </Layout>
   );
 }
@@ -34,4 +34,5 @@ const RegisterInputList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 5vh;
 `;

@@ -16,8 +16,8 @@ export default function Clubs() {
           border="0.05rem solid"
         />
         <ClubList clubs={temp_clubs} />
-        <RegisterClubButton>동아리 등록하기</RegisterClubButton>
       </HomeTotalClubsLayout>
+      <RegisterClubButton>동아리 등록하기</RegisterClubButton>
     </Layout>
   );
 }
@@ -25,6 +25,7 @@ export default function Clubs() {
 const HomeTotalClubsLayout = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 6vh;
 `;
 
 const RegisterClubButton = styled.button`
