@@ -27,7 +27,6 @@ export default function RegisterTag({ label, isRequired, errorMsg }) {
         setHashArr(hashArr.filter((hashtag) => hashtag));
       });
       if (e.keyCode === 13 && e.target.value.trim() !== "") {
-        console.log("Enter Key 입력됨!", e.target.value);
         $HashWrapInner.innerHTML = "#" + e.target.value;
         $HashWrapOuter?.appendChild($HashWrapInner);
         setHashArr((hashArr) => [...hashArr, hashtag]);
@@ -49,6 +48,7 @@ export default function RegisterTag({ label, isRequired, errorMsg }) {
           value={hashtag}
           onChange={onChangeHashtag}
           onKeyUp={onkeyup}
+          placeholder="작성 후 엔터를 누르면 자동 입력됩니다."
         />
         <RegisteredTagBox className="HashWrapOuter"></RegisteredTagBox>
       </RegisterTagBox>

@@ -16,10 +16,12 @@ export default function RegisterImage({ errorMsg }) {
   );
 }
 
-const RegisterImageLayout = styled.div``;
+const RegisterImageLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const RegisterImageButton = styled.div`
-  width: 10rem;
   height: 10rem;
   ${flexCenter}
   border: 3px dotted  ${(props) => props.theme.colors.gray.xs};
