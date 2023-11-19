@@ -3,6 +3,7 @@ import computer from "../images/club-category/computer.png";
 import ClubPost from "../components/club/ClubPost";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubUserList from "../components/club/ClubUserList";
+import ClubAlbum from "../pages/club/ClubAlbum";
 
 export const temp_total_posts = [
   {
@@ -195,6 +196,7 @@ export const temp_club_pages = [
   },
   {
     title: "사진첩",
+    item: <ClubAlbum />,
   },
   {
     title: "모임 멤버",
