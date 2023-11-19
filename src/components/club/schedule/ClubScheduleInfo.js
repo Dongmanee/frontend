@@ -1,6 +1,15 @@
 import styled from "styled-components";
+import CustomButton from "../../global/CustomButton";
+import { FaCheck } from "react-icons/fa";
 
-export default function ClubScheduleInfo({ name, info, pop, totalPop, isDetail }) {
+export default function ClubScheduleInfo({
+  name,
+  info,
+  pop,
+  totalPop,
+  isDetail,
+  isLastIdx,
+}) {
   const leftPop = totalPop - pop;
   return (
     <ClubScheduleInfoLayout $isDetail={isDetail}>
@@ -10,6 +19,19 @@ export default function ClubScheduleInfo({ name, info, pop, totalPop, isDetail }
       <span>{!isNaN(pop) && pop + "/"}</span>
       <span>{totalPop}</span>
       <span>{!isNaN(leftPop) && "(" + leftPop + "자리 남음)"}</span>
+      {isLastIdx && (
+        <CustomButton
+          bgColor={(props) => props.theme.colors.dark.sm}
+          height={"100%"}
+          width={"60px"}
+          radius="0.35rem"
+          color="white"
+          size={(props) => props.theme.sizes.xs}
+        >
+          <FaCheck size={10} />
+          참석
+        </CustomButton>
+      )}
     </ClubScheduleInfoLayout>
   );
 }

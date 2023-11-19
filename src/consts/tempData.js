@@ -200,7 +200,7 @@ export const temp_club_schedule_detail_item_infos = [
     info: "커피 한잔 하면서 수다 예정",
   },
   {
-    pop: 5,
+    pop: 7,
     totalPop: 20,
   },
 ];

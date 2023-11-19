@@ -20,16 +20,20 @@ export default function ClubScheduleDetail() {
       />
 
       <ClubScheduleInfoCol>
-        {temp_club_schedule_detail_item_infos.map((item, idx) => (
-          <ClubScheduleInfo
-            key={idx}
-            name={temp_club_schedule_detail_item_names[idx].name}
-            info={item.info}
-            pop={item.pop && item.pop}
-            totalPop={item.totalPop}
-            isDetail={true}
-          />
-        ))}
+        {temp_club_schedule_detail_item_infos.map((item, idx) => {
+          const isLastIdx = idx == temp_club_schedule_detail_item_infos.length - 1;
+          return (
+            <ClubScheduleInfo
+              key={idx}
+              name={temp_club_schedule_detail_item_names[idx].name}
+              info={item.info}
+              pop={item.pop && item.pop}
+              totalPop={item.totalPop}
+              isDetail={true}
+              isLastIdx={isLastIdx}
+            />
+          );
+        })}
       </ClubScheduleInfoCol>
 
       <ClubScheduleParticipantCol>
