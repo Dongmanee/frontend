@@ -2,6 +2,7 @@ import total from "../images/club-category/total.png";
 import computer from "../images/club-category/computer.png";
 import ClubPost from "../components/club/ClubPost";
 import ClubSchedule from "../pages/club/ClubSchedule";
+import ClubUserList from "../components/club/ClubUserList";
 
 export const temp_total_posts = [
   {
@@ -153,6 +154,36 @@ export const temp_club_pageselector = [
   },
 ];
 
+export const temp_club_users = [
+  {
+    name: "정준형",
+    intro: "안녕하세요!~",
+    position: "회장",
+  },
+  {
+    name: "정준형",
+    intro: "안녕하세요!~",
+    position: "임원",
+  },
+  {
+    name: "정준형",
+    intro: "안녕하세요!~",
+    position: "임원",
+  },
+  {
+    name: "정준형",
+    intro: "안녕하세요!~",
+  },
+  {
+    name: "정준형",
+    intro: "안녕하세요!~",
+  },
+  {
+    name: "정준형",
+    intro: "안녕하세요!~",
+  },
+];
+
 export const temp_club_pages = [
   {
     title: "공지사항",
@@ -167,6 +198,7 @@ export const temp_club_pages = [
   },
   {
     title: "모임 멤버",
+    item: <ClubUserList users={temp_club_users} />,
   },
 ];
 
@@ -235,32 +267,5 @@ export const temp_club_schedule_detail_item_names = [
   },
   {
     name: "참석",
-  },
-];
-
-export const temp_club_users = [
-  {
-    name: "정준형",
-    intro: "안녕하세요!~",
-  },
-  {
-    name: "정준형",
-    intro: "안녕하세요!~",
-  },
-  {
-    name: "정준형",
-    intro: "안녕하세요!~",
-  },
-  {
-    name: "정준형",
-    intro: "안녕하세요!~",
-  },
-  {
-    name: "정준형",
-    intro: "안녕하세요!~",
-  },
-  {
-    name: "정준형",
-    intro: "안녕하세요!~",
   },
 ];

@@ -39,6 +39,7 @@ export default function ClubScheduleInfo({
 const ClubScheduleInfoLayout = styled.div`
   display: flex;
   gap: 8px;
+
   span {
     font-size: ${(props) =>
       props.$isDetail ? props.theme.sizes.md : props.theme.sizes.xs};
