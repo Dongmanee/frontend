@@ -12,19 +12,27 @@ export default function CustomInput({
   margin,
   fontSize,
   borderColor,
+  value,
+  onChange,
+  onkeyUp,
 }) {
-  const styles = {
+  const props = {
+    id,
     width,
     height,
     bgColor,
-    border,
     radius,
+    border,
+    placeholder,
     padding,
     margin,
     fontSize,
     borderColor,
+    value,
+    onChange,
+    onkeyUp,
   };
-  return <CustomInputLayout id={id} {...styles} placeholder={placeholder} />;
+  return <CustomInputLayout {...props} />;
 }
 
 CustomInput.defaultProps = {
