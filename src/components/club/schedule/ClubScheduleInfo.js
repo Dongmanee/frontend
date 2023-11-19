@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function ClubScheduleInfo({ name, info, pop, totalPop }) {
+export default function ClubScheduleInfo({ name, info, pop, totalPop, isDetail }) {
   const leftPop = totalPop - pop;
   return (
-    <ClubScheduleInfoLayout>
+    <ClubScheduleInfoLayout $isDetail={isDetail}>
       <span>{name}</span>
       <span>{info}</span>
 
@@ -18,7 +18,8 @@ const ClubScheduleInfoLayout = styled.div`
   display: flex;
   gap: 8px;
   span {
-    font-size: ${(props) => props.theme.sizes.xs};
+    font-size: ${(props) =>
+      props.$isDetail ? props.theme.sizes.md : props.theme.sizes.xs};
   }
 
   & > span:first-child {
@@ -31,7 +32,7 @@ const ClubScheduleInfoLayout = styled.div`
   }
 
   & > span:last-child {
-    color: ${(props) => props.theme.colors.gray.md};
+    color: ${(props) => (props.$isDetail ? "black" : props.theme.colors.gray.md)};
     margin-left: -5px;
   }
 `;

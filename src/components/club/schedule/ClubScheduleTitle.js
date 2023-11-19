@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function ClubScheduleTitle({ date, left, title }) {
+export default function ClubScheduleTitle({ date, left, title, isDetail }) {
   const isLeft = left == "done" ? "일정완료" : left;
   return (
-    <ClubScheduleTitleLayout>
+    <ClubScheduleTitleLayout $isDetail={isDetail}>
       <div>
         <span>{date}</span>
         <span>{isLeft}</span>
@@ -14,8 +14,10 @@ export default function ClubScheduleTitle({ date, left, title }) {
 }
 
 const ClubScheduleTitleLayout = styled.div`
-  line-height: 150%;
+  line-height: ${(props) => (props.$isDetail ? "200%" : "150%")};
+  font-size: ${(props) => props.$isDetail && "20px"};
   font-weight: ${(props) => props.theme.weights.lg};
+
   & > div > span:last-child {
     margin-left: 10px;
     color: ${(props) => props.theme.colors.red.md};
