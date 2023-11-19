@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import CustomInput from "../CustomInputs";
-
 import RegisterLabel from "./RegisterLabel";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 
