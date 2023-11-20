@@ -199,7 +199,7 @@ export const temp_club_pages = [
     item: <ClubAlbum />,
   },
   {
-    title: "모임 멤버",
+    title: "모임 멤버 (35)",
     item: <ClubUserList users={temp_club_users} />,
   },
 ];

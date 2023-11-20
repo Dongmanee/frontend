@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import Layout from "../layouts/Layout";
-import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import CustomInput from "../components/global/CustomInputs";
+import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import ClubList from "../components/home/clubs/ClubList";
 import { temp_clubs } from "../consts/tempData";
+import Layout from "../layouts/Layout";
+import { flexCenter, flexColumn } from "../styles/global.style";
 
 export default function Clubs() {
   return (
@@ -23,17 +24,14 @@ export default function Clubs() {
 }
 
 const HomeTotalClubsLayout = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
   margin-bottom: 6vh;
 `;
 
 const RegisterClubButton = styled.button`
   height: 7vh;
   width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${flexCenter};
   position: fixed;
   bottom: 1rem;
   border-radius: 1rem;

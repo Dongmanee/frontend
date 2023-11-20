@@ -58,11 +58,11 @@ const router = createBrowserRouter([
             path: "posts",
             element: <ClubPosts />,
           },
-          {
-            path: "posts/:id",
-            element: <ClubPostsDetail />,
-          },
         ],
+      },
+      {
+        path: "/club/posts/:id",
+        element: <ClubPostsDetail />,
       },
     ],
   },

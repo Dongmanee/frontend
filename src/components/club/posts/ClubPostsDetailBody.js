@@ -14,5 +14,5 @@ export default function ClubPostsDetailBody() {
 
 const ClubPostsDetailBodyLayout = styled.div`
   width: 100%;
-  height: 50vh;
+  height: 58vh;
 `;
