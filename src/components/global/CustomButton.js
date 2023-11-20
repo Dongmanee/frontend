@@ -43,6 +43,7 @@ const StyledbuttonLayout = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   ${flexCenter};
+  gap: 5px;
   background-color: ${(props) => props.bgColor};
   border: ${(props) => props.border};
   border-radius: ${(props) => props.radius};
@@ -51,4 +52,5 @@ const StyledbuttonLayout = styled.button`
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.bold};
   color: ${(props) => props.color};
+  white-space: nowrap;
 `;

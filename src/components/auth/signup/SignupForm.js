@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
-import RegisterButton from "../../global/register/RegisterButton";
 
 export default function SignupForm() {
   return (

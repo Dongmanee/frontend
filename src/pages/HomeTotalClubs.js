@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import CustomInput from "../components/global/CustomInputs";
+import Layout from "../layouts/Layout";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
+import CustomInput from "../components/global/CustomInputs";
 import ClubList from "../components/home/clubs/ClubList";
 import { temp_clubs } from "../consts/tempData";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn } from "../styles/global.style";
 
-export default function Clubs() {
+export default function HomeTotalClubs() {
   return (
     <Layout headerLeft="prev">
       <HomeTotalClubsLayout>
@@ -17,21 +16,23 @@ export default function Clubs() {
           border="0.05rem solid"
         />
         <ClubList clubs={temp_clubs} />
+        <RegisterClubButton>동아리 등록하기</RegisterClubButton>
       </HomeTotalClubsLayout>
-      <RegisterClubButton>동아리 등록하기</RegisterClubButton>
     </Layout>
   );
 }
 
 const HomeTotalClubsLayout = styled.div`
-  ${flexColumn};
-  margin-bottom: 6vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const RegisterClubButton = styled.button`
   height: 7vh;
   width: 90%;
-  ${flexCenter};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: 1rem;
   border-radius: 1rem;
