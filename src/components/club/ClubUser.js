@@ -10,8 +10,10 @@ export default function ClubUser({
   imgSize,
   dateColor,
   introColor,
+  introSize,
+  gap,
 }) {
-  const styles = { size, imgSize, dateColor, introColor };
+  const styles = { size, imgSize, dateColor, introColor, introSize, gap };
   return (
     <ClubUserLayout>
       <ClubUserImgBox {...styles} src={example} />
@@ -37,6 +39,7 @@ ClubUser.defaultProps = {
   imgSize: "2.3rem",
   dateColor: (props) => props.theme.colors.gray.xs,
   introColor: (props) => props.theme.colors.gray.md,
+  gap: "0.5rem",
 };
 
 const ClubUserLayout = styled.div`
@@ -52,7 +55,7 @@ const ClubUserImgBox = styled.img`
 
 const ClubUserDescriptionBox = styled.div`
   ${flexColumn};
-  gap: 0.5rem;
+  gap: ${(props) => props.gap};
 
   & > span {
     font-size: ${(props) => props.size};
@@ -67,6 +70,7 @@ const ClubUserDescriptionBox = styled.div`
 
   & > span:last-child {
     color: ${(props) => props.introColor};
+    font-size: ${(props) => props.introSize};
   }
 `;
 

@@ -155,6 +155,21 @@ export const temp_club_pageselector = [
   },
 ];
 
+export const temp_user_pageselector = [
+  {
+    name: "가입 동아리",
+    src: "/user",
+  },
+  {
+    name: "작성한 글",
+    src: "/user/posts",
+  },
+  {
+    name: "작성한 댓글",
+    src: "/user/comments",
+  },
+];
+
 export const temp_club_users = [
   {
     name: "정준형",
