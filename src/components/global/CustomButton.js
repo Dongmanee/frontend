@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { flexCenter } from '../../styles/global.style';
+import styled from "styled-components";
+import { flexCenter } from "../../styles/global.style";
 
 const CustomButton = ({
   width,
@@ -10,20 +10,33 @@ const CustomButton = ({
   bold,
   color,
   children,
+  padding,
+  border,
 }) => {
-  const styles = { width, height, bgColor, radius, size, bold, color };
+  const styles = {
+    width,
+    height,
+    bgColor,
+    radius,
+    size,
+    bold,
+    color,
+    padding,
+    border,
+  };
   return <StyledbuttonLayout {...styles}>{children}</StyledbuttonLayout>;
 };
 
 export default CustomButton;
 
 CustomButton.defaultProps = {
-  width: '5rem',
-  height: '5rem',
-  radius: '0.75rem',
-  size: '1rem',
+  width: "5rem",
+  height: "5rem",
+  radius: "0.75rem",
+  size: "1rem",
   bold: 600,
-  color: 'black',
+  color: "black",
+  border: "none",
 };
 
 const StyledbuttonLayout = styled.button`
@@ -31,6 +44,7 @@ const StyledbuttonLayout = styled.button`
   height: ${(props) => props.height};
   ${flexCenter};
   background-color: ${(props) => props.bgColor};
+  border: ${(props) => props.border};
   border-radius: ${(props) => props.radius};
   cursor: pointer;
 
