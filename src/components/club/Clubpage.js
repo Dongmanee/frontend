@@ -1,16 +1,14 @@
-import styled from 'styled-components';
-import { flexColumn } from '../../styles/global.style';
+import styled from "styled-components";
+import { flexColumn } from "../../styles/global.style";
 
-const Clubpage = ({ title, children }) => {
+export default function ClubPage({ title, children }) {
   return (
     <ClubPageLayout>
       <Title>{title}</Title>
       {children}
     </ClubPageLayout>
   );
-};
-
-export default Clubpage;
+}
 
 const ClubPageLayout = styled.div`
   ${flexColumn};

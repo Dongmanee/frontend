@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { flexCenter, flexJBetween } from '../../styles/global.style';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import styled from "styled-components";
+import { flexCenter, flexJBetween } from "../../styles/global.style";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const PageSelector = ({ pages, top }) => {
   const [active, setActive] = useState(pages[0].src);

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ClubCardHeadInfo from "./ClubCardHeadInfo";
 import example from "../../../images/example.png";
+import { flexColumn, flexICenter } from "../../../styles/global.style";
 
 export default function ClubCard({ club }) {
   return (
@@ -19,8 +20,7 @@ export default function ClubCard({ club }) {
 }
 
 const ClubCardLayout = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexICenter};
   gap: 1rem;
 `;
 
@@ -31,8 +31,7 @@ const ClubCardImgBox = styled.img`
 `;
 
 const ClubCardDescriptionBox = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
   gap: 0.7rem;
 `;
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ClubCard from "./ClubCard";
+import { flexColumn } from "../../../styles/global.style";
 
 export default function ClubList({ clubs }) {
   return (
@@ -12,8 +13,7 @@ export default function ClubList({ clubs }) {
 }
 
 const ClubListLayout = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
   gap: 1.8rem;
   padding: 0 1rem;
 `;
