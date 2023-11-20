@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { flexColumn, flexICenter } from "../../styles/global.style";
 import example from "../../images/example.png";
+import { flexColumn, flexICenter } from "../../styles/global.style";
 import SmallTagBox from "../global/SmallTagBox";
 
 export default function ClubUser({ user }) {

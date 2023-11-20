@@ -1,13 +1,13 @@
 import styled from "styled-components";
+import ClubUserList from "../../components/club/ClubUserList";
+import ClubScheduleInfo from "../../components/club/schedule/ClubScheduleInfo";
 import ClubScheduleTitle from "../../components/club/schedule/ClubScheduleTitle";
 import {
   temp_club_schedule_detail_item_infos,
   temp_club_schedule_detail_item_names,
   temp_club_users,
 } from "../../consts/tempData";
-import ClubScheduleInfo from "../../components/club/schedule/ClubScheduleInfo";
 import { flexColumn } from "../../styles/global.style";
-import ClubUserList from "../../components/club/ClubUserList";
 
 export default function ClubScheduleDetail() {
   return (

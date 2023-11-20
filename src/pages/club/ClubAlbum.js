@@ -33,6 +33,7 @@ const ClubAlbumLayout = styled.div`
   grid-template-columns: repeat(3, 1fr);
   margin-left: ${(props) => (props.$isClubhome ? "0" : "-21px !important")};
   margin: 0 auto;
+  margin-top: ${(props) => (props.$isClubhome ? "20px" : "0")};
   box-sizing: border-box;
   overflow: hidden;
 `;
