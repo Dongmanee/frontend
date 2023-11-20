@@ -9,6 +9,7 @@ export default function RegisterInput({
   errorMsg,
   inputHeight,
   id,
+  placeholder,
 }) {
   return (
     <RegisterInputLayout>
@@ -18,6 +19,7 @@ export default function RegisterInput({
           id={id}
           height={inputHeight ? inputHeight : "2.5rem"}
           radius="0.7rem"
+          placeholder={placeholder}
         />
         {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
       </RegisterInputBox>

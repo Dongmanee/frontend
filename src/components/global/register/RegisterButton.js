@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { flexCenter } from "../../../styles/global.style";
 
-export default function RegisterButton({ buttonText }) {
-  return <RegisterButtonLayout>{buttonText}</RegisterButtonLayout>;
+export default function RegisterButton({ children }) {
+  return <RegisterButtonLayout>{children}</RegisterButtonLayout>;
 }
 
 const RegisterButtonLayout = styled.button`

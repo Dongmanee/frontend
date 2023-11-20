@@ -5,6 +5,7 @@ import ClubHome from "../pages/ClubHome";
 import RegisterClub from "../pages/RegisterClub";
 import Clubs from "../pages/Clubs";
 import Posts from "../pages/Posts";
+import Signup from "../pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/posts",
