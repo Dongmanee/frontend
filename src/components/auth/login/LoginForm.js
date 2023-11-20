@@ -33,5 +33,5 @@ export default function LoginForm() {
 
 const LoginFormBox = styled.div`
   ${flexColumn}
-  gap: 1.2rem;
+  gap: 1.5rem;
 `;

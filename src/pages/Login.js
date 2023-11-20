@@ -6,6 +6,7 @@ import CustomButton from "../components/global/CustomButton";
 import Layout from "../layouts/Layout";
 import LoginForm from "../components/auth/login/LoginForm";
 import KakaoLogin from "../components/auth/login/KakaoLogin";
+import OtherApproach from "../components/auth/login/OtherApproach";
 
 export default function Login() {
   return (
@@ -15,6 +16,7 @@ export default function Login() {
       </LogoBox>
       <LoginBox>
         <LoginForm />
+        <OtherApproach />
         <KakaoLogin />
       </LoginBox>
     </Layout>
@@ -27,5 +29,7 @@ const LogoBox = styled.div`
 
 const LoginBox = styled.div`
   ${flexColumn}
-  gap: 2rem;
+  gap: 3rem;
+  padding: 0 2rem;
+  margin-top: 3rem;
 `;

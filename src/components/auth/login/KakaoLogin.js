@@ -45,7 +45,7 @@ const KakaoLoginLayout = styled.div`
 `;
 
 const DivisionRow = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 `;
 
 const KakaoText = styled.div`
