@@ -9,6 +9,7 @@ import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubHome from "../pages/club/ClubHome";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
+import ClubPosts from "../pages/club/ClubPosts";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
           {
             path: "album",
             element: <ClubAlbum />,
+          },
+          {
+            path: "posts",
+            element: <ClubPosts />,
           },
         ],
       },

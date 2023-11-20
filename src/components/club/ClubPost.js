@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import example from "../../images/sample.png";
-import { PostBottomInfoRow } from "../global/postList/Post";
 import PostBody from "../global/postList/PostBody";
+import PostBottom from "../global/postList/PostBottom";
 import PostHead from "../global/postList/PostHead";
-import PostReactionNum from "../global/postList/PostReactionNum";
-import PostWriter from "../global/postList/PostWriter";
 
 export default function ClubPost() {
   return (
     <ClubPostLayout>
-      <PostHead clubName="모임장 변경 공지사항" date="2023.11.10" />
+      <PostHead clubName="모임장 변경 공지사항" date="2023.11.10" postCategory="공지" />
       <PostBody
         postDetail={
           <>
@@ -18,10 +16,13 @@ export default function ClubPost() {
           </>
         }
       />
-      <PostBottomInfoRow>
-        <PostWriter writerimg={example} writerName={"alphago"} />
-        <PostReactionNum likesNum={"35"} commentNum={"10"} />
-      </PostBottomInfoRow>
+
+      <PostBottom
+        writerimg={example}
+        writerName={"alphago"}
+        likesNum="35"
+        commentNum="10"
+      />
     </ClubPostLayout>
   );
 }

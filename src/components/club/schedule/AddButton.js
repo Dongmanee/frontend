@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { TiPlus } from "react-icons/ti";
+import styled from "styled-components";
 import { flexCenter } from "../../../styles/global.style";
 
 export default function AddButton() {
@@ -10,7 +10,7 @@ export default function AddButton() {
   );
 }
 
-const AddButtonLayout = styled.div`
+export const AddButtonLayout = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;

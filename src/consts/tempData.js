@@ -1,9 +1,9 @@
-import total from "../images/club-category/total.png";
-import computer from "../images/club-category/computer.png";
 import ClubPost from "../components/club/ClubPost";
-import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubUserList from "../components/club/ClubUserList";
+import computer from "../images/club-category/computer.png";
+import total from "../images/club-category/total.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
+import ClubSchedule from "../pages/club/ClubSchedule";
 
 export const temp_total_posts = [
   {
@@ -269,5 +269,30 @@ export const temp_club_schedule_detail_item_names = [
   },
   {
     name: "참석",
+  },
+];
+
+export const temp_club_posts_categories = [
+  {
+    bgColor: (props) => props.theme.colors.dark.sm,
+    size: "14px",
+    padding: "12px",
+    tagName: "전체",
+    color: "white",
+  },
+  {
+    size: "14px",
+    padding: "12px",
+    tagName: "공지사항",
+  },
+  {
+    size: "14px",
+    padding: "12px",
+    tagName: "자유",
+  },
+  {
+    size: "14px",
+    padding: "12px",
+    tagName: "문의사항",
   },
 ];
