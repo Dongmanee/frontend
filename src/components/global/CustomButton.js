@@ -10,8 +10,20 @@ const CustomButton = ({
   bold,
   color,
   children,
+  padding,
+  border,
 }) => {
-  const styles = { width, height, bgColor, radius, size, bold, color };
+  const styles = {
+    width,
+    height,
+    bgColor,
+    radius,
+    size,
+    bold,
+    color,
+    padding,
+    border,
+  };
   return <StyledbuttonLayout {...styles}>{children}</StyledbuttonLayout>;
 };
 
@@ -24,6 +36,7 @@ CustomButton.defaultProps = {
   size: "1rem",
   bold: 600,
   color: "black",
+  border: "none",
 };
 
 const StyledbuttonLayout = styled.button`
@@ -32,6 +45,7 @@ const StyledbuttonLayout = styled.button`
   ${flexCenter};
   gap: 5px;
   background-color: ${(props) => props.bgColor};
+  border: ${(props) => props.border};
   border-radius: ${(props) => props.radius};
   cursor: pointer;
 

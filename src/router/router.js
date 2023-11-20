@@ -3,6 +3,7 @@ import App from "../App";
 import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
 import Posts from "../pages/Posts";
+import Signup from "../pages/Signup";
 import RegisterClub from "../pages/RegisterClub";
 import Club from "../pages/club/Club";
 import ClubAlbum from "../pages/club/ClubAlbum";
@@ -12,7 +13,6 @@ import ClubPostsDetail from "../pages/club/ClubPostsDetail";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
 import ClubUserHome from "../pages/club/ClubUserHome";
-import User from "../pages/user/User";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
 
 const router = createBrowserRouter([
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/posts",

@@ -25,7 +25,7 @@ export default function RegisterClub() {
         />
         <RegisterImage errorMsg="다시 등록해주세요" />
       </RegisterInputList>
-      <RegisterButton buttonText="등록" />
+      <RegisterButton>등록</RegisterButton>
     </Layout>
   );
 }
