@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Home from "../pages/Home";
-import HomeTotalClubs from "../pages/HomeTotalClubs";
+import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
+import Posts from "../pages/Posts";
 import RegisterClub from "../pages/RegisterClub";
 import Club from "../pages/club/Club";
+import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubHome from "../pages/club/ClubHome";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
-import ClubAlbum from "../pages/club/ClubAlbum";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +21,12 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/home",
-        element: <Home />,
+        path: "/posts",
+        element: <Posts />,
       },
       {
         path: "/clubs",
-        element: <HomeTotalClubs />,
+        element: <Clubs />,
       },
       {
         path: "/clubs/register",
