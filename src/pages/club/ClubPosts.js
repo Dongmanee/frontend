@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import ClubPost from "../../components/club/ClubPost";
-import ClubPostsCategory from "../../components/club/ClubPostsCategory";
+import ClubPost from "../../components/club/posts/ClubPost";
+import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
 import { flexColumn } from "../../styles/global.style";
 

@@ -10,6 +10,7 @@ import ClubHome from "../pages/club/ClubHome";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
 import ClubPosts from "../pages/club/ClubPosts";
+import ClubPostsDetail from "../pages/club/ClubPostsDetail";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
           {
             path: "posts",
             element: <ClubPosts />,
+          },
+          {
+            path: "posts/:id",
+            element: <ClubPostsDetail />,
           },
         ],
       },

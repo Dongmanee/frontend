@@ -7,6 +7,7 @@ const colors = {
   gray: {
     xxs: "#efefef",
     xs: "#C3C1C1",
+    sm: "#b3b3b3",
     md: "#919eab",
   },
   white: {

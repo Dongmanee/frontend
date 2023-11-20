@@ -1,5 +1,5 @@
-import ClubPost from "../components/club/ClubPost";
 import ClubUserList from "../components/club/ClubUserList";
+import ClubPost from "../components/club/posts/ClubPost";
 import computer from "../images/club-category/computer.png";
 import total from "../images/club-category/total.png";
 import ClubAlbum from "../pages/club/ClubAlbum";

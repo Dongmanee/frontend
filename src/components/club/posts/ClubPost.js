@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import example from "../../images/sample.png";
-import PostBody from "../global/postList/PostBody";
-import PostBottom from "../global/postList/PostBottom";
-import PostHead from "../global/postList/PostHead";
-
+import example from "../../../images/sample.png";
+import PostBody from "../../global/postList/PostBody";
+import PostBottom from "../../global/postList/PostBottom";
+import PostHead from "../../global/postList/PostHead";
 export default function ClubPost() {
   return (
     <ClubPostLayout>
