@@ -6,7 +6,7 @@ import CustomButton from "../components/global/CustomButton";
 import Layout from "../layouts/Layout";
 import LoginForm from "../components/auth/login/LoginForm";
 import KakaoLogin from "../components/auth/login/KakaoLogin";
-import OtherApproach from "../components/auth/login/OtherApproach";
+import OtherApproach from "../components/auth/OtherApproach";
 
 export default function Login() {
   return (
@@ -16,7 +16,7 @@ export default function Login() {
       </LogoBox>
       <LoginBox>
         <LoginForm />
-        <OtherApproach />
+        <OtherApproach isLogin={true} />
         <KakaoLogin />
       </LoginBox>
     </Layout>

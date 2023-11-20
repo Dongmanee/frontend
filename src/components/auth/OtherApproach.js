@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { flexCenter } from "../../../styles/global.style";
+import { flexCenter } from "../../styles/global.style";
 
-export default function OtherApproach() {
+export default function OtherApproach({ isLogin }) {
   return (
     <OtherApproachLayout>
-      <ApproachBox>회원가입</ApproachBox>
+      <ApproachBox>{isLogin ? "회원가입" : "로그인"}</ApproachBox>
       <VerticalLine />
       <ApproachBox>둘러보기</ApproachBox>
     </OtherApproachLayout>
