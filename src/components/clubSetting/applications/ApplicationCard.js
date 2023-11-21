@@ -22,7 +22,7 @@ const ApplicationCardLayout = styled.div`
   justify-content: space-between;
   gap: 1rem;
   & > img {
-    width: 3.5rem;
+    width: 3rem;
     border-radius: 50%;
   }
 `;

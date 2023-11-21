@@ -372,3 +372,41 @@ export const temp_inquiries = [
     isConfirm: false,
   },
 ];
+
+export const temp_club_user = [
+  {
+    name: "김민지",
+    role: "회장",
+    studentId: "20210924",
+    department: "컴퓨터공학과",
+    registerDate: "19-1",
+  },
+  {
+    name: "장민지",
+    role: "임원",
+    studentId: "20210924",
+    department: "화학생명공학과",
+    registerDate: "19-1",
+  },
+  {
+    name: "정민지",
+    role: "임원",
+    studentId: "20210924",
+    department: "건축학과",
+    registerDate: "19-2",
+  },
+  {
+    name: "김민지",
+    role: "회장",
+    studentId: "20210924",
+    department: "수학과",
+    registerDate: "19-1",
+  },
+  {
+    name: "김민지",
+    role: "회장",
+    studentId: "20210924",
+    department: "컴퓨터공학과",
+    registerDate: "19-2",
+  },
+];
