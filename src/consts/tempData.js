@@ -311,3 +311,41 @@ export const temp_club_posts_categories = [
     tagName: "문의사항",
   },
 ];
+
+export const temp_club_setting_page = [
+  {
+    name: "신청내역",
+    src: "/club/setting/applications",
+  },
+  {
+    name: "문의내역",
+    src: "/club/setting/inquiries",
+  },
+  {
+    name: "멤버관리",
+    src: "/club/setting/members",
+  },
+];
+
+export const temp_applications_list = [
+  {
+    name: "김민지",
+    major: "전자공학과",
+    id: "20181233",
+  },
+  {
+    name: "정민지",
+    major: "컴퓨터공학과",
+    id: "20181233",
+  },
+  {
+    name: "장민지",
+    major: "화학생명공학과",
+    id: "20181233",
+  },
+  {
+    name: "고민지",
+    major: "전자공학과",
+    id: "20181233",
+  },
+];

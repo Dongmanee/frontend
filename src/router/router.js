@@ -14,6 +14,8 @@ import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
 import ClubUserHome from "../pages/club/ClubUserHome";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import ClubSetting from "../pages/clubSetting/ClubSetting";
+import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplications";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +83,16 @@ const router = createBrowserRouter([
           {
             path: "",
             element: <UserJoinClubs />,
+          },
+        ],
+      },
+      {
+        path: "/club/setting",
+        element: <ClubSetting />,
+        children: [
+          {
+            path: "applications",
+            element: <ClubSettingApplications />,
           },
         ],
       },
