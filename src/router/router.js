@@ -16,6 +16,7 @@ import ClubUserHome from "../pages/club/ClubUserHome";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
 import ClubSetting from "../pages/clubSetting/ClubSetting";
 import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplications";
+import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
           {
             path: "applications",
             element: <ClubSettingApplications />,
+          },
+          {
+            path: "inquiries",
+            element: <ClubSettingInquiries />,
           },
         ],
       },

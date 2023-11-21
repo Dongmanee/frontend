@@ -349,3 +349,26 @@ export const temp_applications_list = [
     id: "20181233",
   },
 ];
+
+export const temp_inquiries = [
+  {
+    title: "일정에 대해 궁금한 점이 있어요~~~~",
+    date: "2023.11.11",
+    isConfirm: true,
+  },
+  {
+    title: "일정에 대해 궁금한 점이 있어요",
+    date: "2023.11.11",
+    isConfirm: false,
+  },
+  {
+    title: "일정에 대해 궁금한 점이 있어요!!!",
+    date: "2023.11.11",
+    isConfirm: true,
+  },
+  {
+    title: "일정에 대해 궁금한 점이 있어요",
+    date: "2023.11.11",
+    isConfirm: false,
+  },
+];
