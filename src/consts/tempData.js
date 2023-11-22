@@ -204,6 +204,10 @@ export const temp_club_pages = [
   {
     title: "공지사항",
     item: <ClubPost />,
+    isMore: true,
+    moreright: "0",
+    moretop: "2.5vh",
+    src: "posts",
   },
   {
     title: "일정",
@@ -212,6 +216,11 @@ export const temp_club_pages = [
   {
     title: "사진첩",
     item: <ClubAlbum />,
+    isMore: true,
+    moreright: "0",
+    moreleft: "0",
+    morebottom: "-10px",
+    src: "album",
   },
   {
     title: "모임 멤버 (35)",

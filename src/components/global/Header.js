@@ -48,6 +48,7 @@ const HeaderLayout = styled.div`
   box-sizing: border-box;
   padding: 13px 20px;
 
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
