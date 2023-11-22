@@ -311,3 +311,102 @@ export const temp_club_posts_categories = [
     tagName: "문의사항",
   },
 ];
+
+export const temp_club_setting_page = [
+  {
+    name: "신청내역",
+    src: "/club/setting/applications",
+  },
+  {
+    name: "문의내역",
+    src: "/club/setting/inquiries",
+  },
+  {
+    name: "멤버관리",
+    src: "/club/setting/members",
+  },
+];
+
+export const temp_applications_list = [
+  {
+    name: "김민지",
+    major: "전자공학과",
+    id: "20181233",
+  },
+  {
+    name: "정민지",
+    major: "컴퓨터공학과",
+    id: "20181233",
+  },
+  {
+    name: "장민지",
+    major: "화학생명공학과",
+    id: "20181233",
+  },
+  {
+    name: "고민지",
+    major: "전자공학과",
+    id: "20181233",
+  },
+];
+
+export const temp_inquiries = [
+  {
+    title: "일정에 대해 궁금한 점이 있어요~~~~",
+    date: "2023.11.11",
+    isConfirm: true,
+  },
+  {
+    title: "일정에 대해 궁금한 점이 있어요",
+    date: "2023.11.11",
+    isConfirm: false,
+  },
+  {
+    title: "일정에 대해 궁금한 점이 있어요!!!",
+    date: "2023.11.11",
+    isConfirm: true,
+  },
+  {
+    title: "일정에 대해 궁금한 점이 있어요",
+    date: "2023.11.11",
+    isConfirm: false,
+  },
+];
+
+export const temp_club_user = [
+  {
+    name: "김민지",
+    role: "회장",
+    studentId: "20210924",
+    department: "컴퓨터공학과",
+    registerDate: "19-1",
+  },
+  {
+    name: "장민지",
+    role: "임원",
+    studentId: "20210924",
+    department: "화학생명공학과",
+    registerDate: "19-1",
+  },
+  {
+    name: "정민지",
+    role: "임원",
+    studentId: "20210924",
+    department: "건축학과",
+    registerDate: "19-2",
+  },
+  {
+    name: "김민지",
+    role: "회장",
+    studentId: "20210924",
+    department: "수학과",
+    registerDate: "19-1",
+  },
+  {
+    name: "김민지",
+    role: "회장",
+    studentId: "20210924",
+    department: "컴퓨터공학과",
+    registerDate: "19-2",
+  },
+];

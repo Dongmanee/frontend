@@ -14,6 +14,10 @@ import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
 import ClubUserHome from "../pages/club/ClubUserHome";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import ClubSetting from "../pages/clubSetting/ClubSetting";
+import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplications";
+import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
+import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +85,24 @@ const router = createBrowserRouter([
           {
             path: "",
             element: <UserJoinClubs />,
+          },
+        ],
+      },
+      {
+        path: "/club/setting",
+        element: <ClubSetting />,
+        children: [
+          {
+            path: "applications",
+            element: <ClubSettingApplications />,
+          },
+          {
+            path: "inquiries",
+            element: <ClubSettingInquiries />,
+          },
+          {
+            path: "members",
+            element: <ClubSettingMembers />,
           },
         ],
       },
