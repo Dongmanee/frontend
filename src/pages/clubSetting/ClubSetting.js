@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export default function ClubSetting() {
   return (
-    <Layout headerCenter={"Import"}>
+    <Layout headerCenter="Import">
       <PageSelector pages={temp_club_setting_page} />
       <OutletBox>
         <Outlet />
@@ -19,5 +19,4 @@ const OutletBox = styled.div`
   margin-top: ${(props) => props.theme.global.pageselector.height};
   padding: 1rem;
   position: relative;
-  z-index: -1;
 `;
