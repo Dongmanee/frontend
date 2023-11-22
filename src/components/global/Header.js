@@ -4,6 +4,7 @@ import {
   MdMoreHoriz,
   MdOutlineArrowBackIosNew,
   MdOutlineClear,
+  MdCheck,
 } from "react-icons/md";
 import styled from "styled-components";
 import logo from "../../images/logo.png";
@@ -15,7 +16,7 @@ export default function Header({ left, center, right }) {
       case "logo":
         return <img src={logo} />;
       case "prev":
-        return <MdOutlineArrowBackIosNew size={28} />;
+        return <MdOutlineArrowBackIosNew size={26} />;
       case "exit":
         return <MdOutlineClear size={28} />;
       default:
@@ -30,7 +31,7 @@ export default function Header({ left, center, right }) {
       case "edit":
         return <MdMoreHoriz size={28} />;
       case "check":
-        return <FaCheck size={28} />;
+        return <MdCheck size={28} />;
       default:
         return;
     }
