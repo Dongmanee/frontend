@@ -4,9 +4,14 @@ import ClubScheduleItem from "../../components/club/schedule/ClubScheduleItem";
 import { temp_club_schedule_item_infos } from "../../consts/tempData";
 import useCheckPath from "../../hooks/useCheckPath";
 import { flexColumn } from "../../styles/global.style";
+import { useNavigate } from "react-router-dom";
 
 export default function ClubSchedule() {
   const { isCheckedPath: isClubHome } = useCheckPath("/club/home");
+  const navigate = useNavigate();
+  const onAddSchedule = () => {
+    navigate(`/club/schedule/add`);
+  };
 
   return (
     <ClubScheduleLayout $isClubHome={isClubHome}>
@@ -14,7 +19,7 @@ export default function ClubSchedule() {
         <ClubScheduleItem key={idx} item={item} />
       ))}
 
-      {!isClubHome && <AddButton />}
+      {!isClubHome && <AddButton onClick={onAddSchedule} />}
     </ClubScheduleLayout>
   );
 }

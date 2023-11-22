@@ -2,11 +2,16 @@ import styled from "styled-components";
 import { flexColumn } from "../../../styles/global.style";
 import ClubScheduleTitle from "./ClubScheduleTitle";
 import ClubScheduleItemContent from "./ClubScheduleItemContent";
+import { useNavigate } from "react-router-dom";
 
 export default function ClubScheduleItem({ isDone, item }) {
   const left = isDone ? "done" : "D-2";
+  const navigate = useNavigate();
+  const openScheduleDetail = (id) => {
+    navigate(`/club/schedule/${id}`);
+  };
   return (
-    <ClubScheduleItemsLayout $isDone={isDone}>
+    <ClubScheduleItemsLayout onClick={() => openScheduleDetail(item.id)} $isDone={isDone}>
       <ClubScheduleTitle date={"11/11 (토)"} left={left} title={"토요일 모임"} />
 
       <ClubScheduleItemContent item={item} />

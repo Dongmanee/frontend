@@ -89,7 +89,7 @@ const router = createBrowserRouter([
         element: <ClubPostsDetail />,
       },
       {
-        path: "/club/posts/edit",
+        path: "/club/posts/add",
         element: <ClubPostsEdit />,
       },
       {

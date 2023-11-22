@@ -11,9 +11,6 @@ export default function ClubPage({
   moreOnClick,
   children,
 }) {
-  const test = () => {
-    console.log(1);
-  };
   const styles = { moretop, moreright, moreleft, morebottom };
   return (
     <ClubPageLayout>
@@ -37,6 +34,8 @@ const ClubPageLayout = styled.div`
 const Morebtn = styled.span`
   ${flexCenter};
   position: absolute;
+  height: 25px;
+
   top: ${(props) => props.moretop};
   bottom: ${(props) => props.morebottom};
   right: ${(props) => props.moreright};

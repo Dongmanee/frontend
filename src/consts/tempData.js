@@ -156,6 +156,7 @@ export const temp_club_pageselector = [
 ];
 
 export const temp_user_pageselector = [
+  // user정보를 redux로 상태관리 해야할 듯!
   {
     name: "가입 동아리",
     src: "/user/home",
@@ -238,6 +239,7 @@ export const temp_club_schedule_item_infos = [
     cost: "개인",
     pop: 7,
     totalPop: 20,
+    id: 123,
   },
   {
     date: "11/11일 (토) 오후 5:00",
@@ -245,6 +247,7 @@ export const temp_club_schedule_item_infos = [
     cost: "개인",
     pop: 7,
     totalPop: 20,
+    id: 456,
   },
   {
     date: "11/11일 (토) 오후 5:00",
@@ -252,6 +255,7 @@ export const temp_club_schedule_item_infos = [
     cost: "개인",
     pop: 7,
     totalPop: 20,
+    id: 789,
   },
 ];
 
@@ -299,11 +303,9 @@ export const temp_club_schedule_detail_item_names = [
 
 export const temp_club_posts_categories = [
   {
-    bgColor: (props) => props.theme.colors.dark.sm,
     size: "14px",
     padding: "12px",
     tagName: "전체",
-    color: "white",
   },
   {
     size: "14px",

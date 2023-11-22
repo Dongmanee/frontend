@@ -2,19 +2,32 @@ import styled from "styled-components";
 import ClubPost from "../../components/club/posts/ClubPost";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
-import { flexCenter, flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../styles/global.style";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ClubPosts() {
+  const [postsCategory, setPostsCategory] = useState("전체");
+  const navigate = useNavigate();
+
+  const handleCategory = (tag) => {
+    setPostsCategory(tag);
+  };
+
+  const onAddPosts = () => {
+    navigate(`/club/posts/add`);
+  };
+
   return (
     <ClubPostsLayout>
-      <ClubPostsCategory />
+      <ClubPostsCategory currentTag={postsCategory} onHandle={handleCategory} />
 
       <ClubPostsCol>
         <ClubPost />
         <ClubPost />
       </ClubPostsCol>
 
-      <PenIcon />
+      <PenIcon onClick={onAddPosts} />
     </ClubPostsLayout>
   );
 }
