@@ -1,11 +1,28 @@
 import styled from "styled-components";
 import { flexCenter } from "../../../styles/global.style";
+import { useState } from "react";
+import ResignModal from "./ResignModal";
 
-export default function ResignButton() {
-  return <ResignButtonLayout>추방</ResignButtonLayout>;
+export default function ResignButton({ name }) {
+  const [isResignModal, setIsResignModal] = useState(false);
+
+  const clickResignButton = () => {
+    setIsResignModal(true);
+  };
+
+  return (
+    <ResignButtonLayout>
+      <ResignButtonBox onClick={clickResignButton}>추방</ResignButtonBox>
+      {isResignModal && (
+        <ResignModal name={name} setIsResignModal={setIsResignModal} />
+      )}
+    </ResignButtonLayout>
+  );
 }
 
-const ResignButtonLayout = styled.div`
+const ResignButtonLayout = styled.div``;
+
+const ResignButtonBox = styled.div`
   ${flexCenter}
   min-width: 2rem;
   border-radius: 1rem;

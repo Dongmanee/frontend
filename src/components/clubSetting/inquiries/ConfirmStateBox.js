@@ -11,7 +11,7 @@ export default function ConfirmStateBox({ isConfirm }) {
 
 const ConfirmStateBoxLayout = styled.div`
   ${flexCenter}
-  min-width: 2.5rem;
+  width: 2.5rem;
   border-radius: 1rem;
   background-color: ${(props) => props.theme.colors.gray.xxs};
   padding: 0.5rem;

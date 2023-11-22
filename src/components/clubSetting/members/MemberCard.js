@@ -17,7 +17,7 @@ export default function MemberCard({ userInfo, isSetting }) {
         isSetting={isSetting}
         registerDate={userInfo.registerDate}
       />
-      {isSetting && <ResignButton />}
+      {isSetting && <ResignButton name={userInfo.name} />}
     </MemberCardLayout>
   );
 }

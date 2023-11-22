@@ -3,12 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { flexICenter } from "../../../styles/global.style";
 
 export default function ClubRoleState({ role, isSetting }) {
-  return (
-    <ClubRoleStateLayout>
-      {role}
-      {isSetting && <IoIosArrowDown />}
-    </ClubRoleStateLayout>
-  );
+  return <ClubRoleStateLayout>{role}</ClubRoleStateLayout>;
 }
 
 const ClubRoleStateLayout = styled.div`

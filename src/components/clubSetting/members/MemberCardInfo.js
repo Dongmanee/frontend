@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { flexColumn, flexICenter } from "../../../styles/global.style";
 import ClubRoleState from "./ClubRoleState";
+import ClubRoleDropDown from "./ClubRoleDropDown";
 
 export default function MemberCardInfo({
   name,
@@ -13,8 +14,8 @@ export default function MemberCardInfo({
   return (
     <MemberCardInfoLayout>
       <NameRow>
-        <ClubRoleState role={role} isSetting={isSetting} />
         <div>{name}</div>
+        <ClubRoleDropDown role={role} />
       </NameRow>
       <OtheInfoRow>
         <div>{studentId}</div>
@@ -33,7 +34,7 @@ const MemberCardInfoLayout = styled.div`
 const NameRow = styled.div`
   ${flexICenter}
   gap: 0.5rem;
-  & > div:last-child {
+  & > div:first-child {
     font-weight: ${(props) => props.theme.weights.lg};
   }
 `;
