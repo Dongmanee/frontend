@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         element: <Club />,
         children: [
           {
-            path: "",
+            path: "home",
             element: <ClubHome />,
           },
           {

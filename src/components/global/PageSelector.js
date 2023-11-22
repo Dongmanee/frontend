@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { flexCenter, flexJBetween } from "../../styles/global.style";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const PageSelector = ({ pages, top }) => {
+  const location = useLocation();
+  const currentPage = location.pathname;
   const [active, setActive] = useState(pages[0].src);
   const navigate = useNavigate();
   const pageLength = pages?.length;
@@ -13,17 +15,28 @@ const PageSelector = ({ pages, top }) => {
     setActive(src);
   };
 
+  useEffect(() => {
+    const isRightPage = currentPage.startsWith(active);
+    if (!isRightPage) {
+      const rightpage = pages.find((page) => currentPage.startsWith(page.src));
+      const nowpage = rightpage.src;
+      setActive(nowpage);
+    }
+  }, [currentPage]);
+
   return (
     <PageSelectorLayout $top={top}>
-      {pages.map((page, idx) => (
-        <Page onClick={() => handlePage(page.src)} $length={pageLength} key={idx}>
-          {active == page.src ? (
-            <Active>{page.name}</Active>
-          ) : (
-            <InActive>{page.name}</InActive>
-          )}
-        </Page>
-      ))}
+      {pages.map((page, idx) => {
+        return (
+          <Page onClick={() => handlePage(page.src)} $length={pageLength} key={idx}>
+            {active == page.src ? (
+              <Active>{page.name}</Active>
+            ) : (
+              <InActive>{page.name}</InActive>
+            )}
+          </Page>
+        );
+      })}
     </PageSelectorLayout>
   );
 };
@@ -41,8 +54,8 @@ const PageSelectorLayout = styled.div`
   align-items: center;
   background-color: white;
 
-  position: fixed;
   z-index: 2;
+  position: fixed;
   top: ${(props) => (props.$top ? props.$top : props.theme.global.header.height)};
   left: 0;
   right: 0;

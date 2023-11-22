@@ -139,7 +139,7 @@ export const temp_clubs_catgory = [
 export const temp_club_pageselector = [
   {
     name: "홈",
-    src: "/club",
+    src: "/club/home",
   },
   {
     name: "게시판",
