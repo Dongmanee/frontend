@@ -410,3 +410,24 @@ export const temp_club_user = [
     registerDate: "19-2",
   },
 ];
+
+export const temp_club_schedule_add = [
+  {
+    name: "날짜와 시간을 입력해주세요",
+  },
+  {
+    name: "일정 제목을 입력해주세요",
+  },
+  {
+    name: "일정 위치를 입력해주세요",
+  },
+  {
+    name: "일정 내용을 입력해주세요",
+  },
+  {
+    name: "비용을 입력해주세요",
+  },
+  {
+    name: "인원을 입력해주세요",
+  },
+];

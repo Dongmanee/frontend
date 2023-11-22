@@ -1,10 +1,6 @@
 import { FaCheck } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
-import {
-  MdMoreHoriz,
-  MdOutlineArrowBackIosNew,
-  MdOutlineClear,
-} from "react-icons/md";
+import { MdMoreHoriz, MdOutlineArrowBackIosNew, MdOutlineClear } from "react-icons/md";
 import styled from "styled-components";
 import logo from "../../images/logo.png";
 import { flexJBetween } from "../../styles/global.style";
@@ -17,7 +13,7 @@ export default function Header({ left, center, right }) {
       case "prev":
         return <MdOutlineArrowBackIosNew size={28} />;
       case "exit":
-        return <MdOutlineClear size={28} />;
+        return <MdOutlineClear size={30} />;
       default:
         return;
     }

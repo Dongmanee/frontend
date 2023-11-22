@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ClubPost from "../../components/club/posts/ClubPost";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
-import { flexColumn } from "../../styles/global.style";
+import { flexCenter, flexColumn } from "../../styles/global.style";
 
 export default function ClubPosts() {
   return (
@@ -21,6 +21,10 @@ export default function ClubPosts() {
 
 const ClubPostsLayout = styled.div`
   ${flexColumn};
+`;
+
+const ClubPostsCategoryBox = styled.div`
+  ${flexCenter};
 `;
 
 const ClubPostsCol = styled.div`
