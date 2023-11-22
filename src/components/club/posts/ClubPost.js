@@ -3,9 +3,14 @@ import example from "../../../images/sample.png";
 import PostBody from "../../global/postList/PostBody";
 import PostBottom from "../../global/postList/PostBottom";
 import PostHead from "../../global/postList/PostHead";
+import { useNavigate } from "react-router-dom";
 export default function ClubPost() {
+  const navigate = useNavigate();
+  const goDetail = (id) => {
+    navigate(`/club/posts/${id}`);
+  };
   return (
-    <ClubPostLayout>
+    <ClubPostLayout onClick={() => goDetail("123")}>
       <PostHead clubName="모임장 변경 공지사항" date="2023.11.10" postCategory="공지" />
       <PostBody
         postDetail={

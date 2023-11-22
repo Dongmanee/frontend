@@ -1,15 +1,24 @@
 import styled from "styled-components";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
+import PenIcon from "../../components/global/PenIcon";
 import RegisterErrorMsg from "../../components/global/register/RegisterErrorMsg";
 import RegisterImage from "../../components/global/register/RegisterImage";
 import RegisterInput from "../../components/global/register/RegisterInput";
 import RegisterLabel from "../../components/global/register/RegisterLabel";
 import Layout from "../../layouts/Layout";
-import PenIcon from "../../components/global/PenIcon";
+import { useLocation } from "react-router-dom";
 
 export default function ClubPostsEdit() {
+  const location = useLocation();
+  const url = location.pathname.split("posts/")[1];
+  const isAdd = url == "add";
+
   return (
-    <Layout headerLeft={"exit"} headerCenter={"글쓰기"} headerRight={"check"}>
+    <Layout
+      headerLeft={"exit"}
+      headerCenter={isAdd ? "글쓰기" : "수정"}
+      headerRight={"check"}
+    >
       <TagCol>
         <RegisterLabel label={"해당되는 태그를 선택해주세요"} />
         <ClubPostsCategory margin={"0"} />

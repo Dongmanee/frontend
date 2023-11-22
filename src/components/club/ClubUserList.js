@@ -1,16 +1,15 @@
-import styled from "styled-components";
-import ClubUser from "./ClubUser";
-import { flexColumn, flexICenter } from "../../styles/global.style";
-import { useLocation } from "react-router-dom";
 import { IoMdRefresh } from "react-icons/io";
+import styled from "styled-components";
+import useCheckPath from "../../hooks/useCheckPath";
+import { flexColumn, flexICenter } from "../../styles/global.style";
+import ClubUser from "./ClubUser";
 
 export default function ClubUserList({ users }) {
-  const location = useLocation();
-  const isClubhome = location.pathname == "/club";
+  const { isCheckedPath } = useCheckPath("/club/home");
 
   return (
-    <ClubUserListLayout $isClubhome={isClubhome}>
-      {isClubhome && (
+    <ClubUserListLayout $isClubhome={isCheckedPath}>
+      {isCheckedPath && (
         <div>
           갱신
           <IoMdRefresh size={20} />

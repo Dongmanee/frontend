@@ -2,9 +2,9 @@ import { TiPlus } from "react-icons/ti";
 import styled from "styled-components";
 import { flexCenter } from "../../../styles/global.style";
 
-export default function AddButton() {
+export default function AddButton({ onClick }) {
   return (
-    <AddButtonLayout>
+    <AddButtonLayout onClick={onClick}>
       <TiPlus size={30} />
     </AddButtonLayout>
   );
