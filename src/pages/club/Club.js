@@ -18,6 +18,4 @@ export default function Club() {
 
 const OutletBox = styled.div`
   margin-top: ${(props) => props.theme.global.pageselector.height};
-  position: relative;
-  z-index: -1;
 `;

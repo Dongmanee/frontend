@@ -1,19 +1,18 @@
 import { BiSolidCopy } from "react-icons/bi";
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import sample from "../../images/example.png";
 import { flexCenter, fullSize, positionCenter } from "../../styles/global.style";
+import useCheckPath from "../../hooks/useCheckPath";
 
 export default function ClubAlbum() {
-  const location = useLocation();
-  const isClubhome = location.pathname == "/club";
+  const { isCheckedPath } = useCheckPath("/club/home");
 
   return (
-    <ClubAlbumLayout $isClubhome={isClubhome}>
+    <ClubAlbumLayout $isClubhome={isCheckedPath}>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, idx) => {
-        if (isClubhome && idx > 8) return;
+        if (isCheckedPath && idx > 8) return;
         return (
-          <ImageBox key={idx} $isClubhome={isClubhome}>
+          <ImageBox key={idx} $isClubhome={isCheckedPath}>
             <img src={sample} />
             <div>
               <BiSolidCopy />

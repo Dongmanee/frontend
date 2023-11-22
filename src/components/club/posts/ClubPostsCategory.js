@@ -3,20 +3,24 @@ import { temp_club_posts_categories } from "../../../consts/tempData";
 import { flexCenter } from "../../../styles/global.style";
 import SmallTagBox from "../../global/SmallTagBox";
 
-export default function ClubPostsCategory({ margin }) {
+export default function ClubPostsCategory({ margin, currentTag, onHandle }) {
   const styles = { margin };
   return (
     <ClubPostsCategoryLayout {...styles}>
-      {temp_club_posts_categories.map((item, idx) => (
-        <SmallTagBox
-          key={idx}
-          bgColor={item.bgColor}
-          size={item.size}
-          padding={item.padding}
-          tagName={item.tagName}
-          color={item.color}
-        />
-      ))}
+      {temp_club_posts_categories.map((item, idx) => {
+        const isCurrentTag = currentTag == item.tagName;
+        return (
+          <SmallTagBox
+            key={idx}
+            onClick={() => onHandle(item.tagName)}
+            bgColor={isCurrentTag ? (props) => props.theme.colors.dark.sm : null}
+            size={item.size}
+            padding={item.padding}
+            tagName={item.tagName}
+            color={isCurrentTag && "white"}
+          />
+        );
+      })}
     </ClubPostsCategoryLayout>
   );
 }

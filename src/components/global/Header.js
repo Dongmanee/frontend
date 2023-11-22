@@ -18,7 +18,7 @@ export default function Header({ left, center, right }) {
       case "prev":
         return <MdOutlineArrowBackIosNew size={26} />;
       case "exit":
-        return <MdOutlineClear size={28} />;
+        return <MdOutlineClear size={30} />;
       default:
         return;
     }
@@ -53,6 +53,7 @@ const HeaderLayout = styled.div`
   box-sizing: border-box;
   padding: 13px 20px;
 
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;

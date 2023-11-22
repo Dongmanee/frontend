@@ -2,6 +2,7 @@ import styled from "styled-components";
 import CustomInput from "../CustomInputs";
 import RegisterLabel from "./RegisterLabel";
 import RegisterErrorMsg from "./RegisterErrorMsg";
+import { flexColumn } from "../../../styles/global.style";
 
 export default function RegisterInput({
   label,
@@ -30,6 +31,6 @@ export default function RegisterInput({
 const RegisterInputLayout = styled.div``;
 
 const RegisterInputBox = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
+  margin-top: -10px;
 `;
