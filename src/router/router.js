@@ -12,6 +12,7 @@ import ClubPosts from "../pages/club/ClubPosts";
 import ClubPostsDetail from "../pages/club/ClubPostsDetail";
 import ClubPostsEdit from "../pages/club/ClubPostsEdit";
 import ClubSchedule from "../pages/club/ClubSchedule";
+import ClubScheduleAdd from "../pages/club/ClubScheduleAdd";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
 import ClubUserHome from "../pages/club/ClubUserHome";
 import ClubSetting from "../pages/clubSetting/ClubSetting";
@@ -19,7 +20,6 @@ import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplication
 import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
 import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
-import ClubScheduleAdd from "../pages/club/ClubScheduleAdd";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +52,10 @@ const router = createBrowserRouter([
         path: "/club",
         element: <Club />,
         children: [
+          {
+            path: "/club/",
+            element: <Navigate to={"home"} />,
+          },
           {
             path: "home",
             element: <ClubHome />,
@@ -94,7 +98,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/club/user",
+        path: "/user/:id",
         element: <ClubUserHome />,
         children: [
           {

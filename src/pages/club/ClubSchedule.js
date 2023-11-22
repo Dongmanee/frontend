@@ -1,19 +1,18 @@
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
-import ClubScheduleItem from "../../components/club/schedule/ClubScheduleItem";
-import { useLocation } from "react-router-dom";
 import AddButton from "../../components/club/schedule/AddButton";
+import ClubScheduleItem from "../../components/club/schedule/ClubScheduleItem";
+import { temp_club_schedule_item_infos } from "../../consts/tempData";
+import useCheckPath from "../../hooks/useCheckPath";
+import { flexColumn } from "../../styles/global.style";
 
 export default function ClubSchedule() {
-  const location = useLocation();
-  const isClubHome = location.pathname == "/club";
+  const { isCheckedPath: isClubHome } = useCheckPath("/club/home");
 
   return (
     <ClubScheduleLayout $isClubHome={isClubHome}>
-      <ClubScheduleItem />
-      <ClubScheduleItem />
-      <ClubScheduleItem isDone={true} />
-      <ClubScheduleItem isDone={true} />
+      {temp_club_schedule_item_infos.map((item, idx) => (
+        <ClubScheduleItem key={idx} item={item} />
+      ))}
 
       {!isClubHome && <AddButton />}
     </ClubScheduleLayout>

@@ -23,10 +23,6 @@ const ClubPostsLayout = styled.div`
   ${flexColumn};
 `;
 
-const ClubPostsCategoryBox = styled.div`
-  ${flexCenter};
-`;
-
 const ClubPostsCol = styled.div`
   ${flexColumn};
   margin-top: 20px;

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import example from "../../images/example.png";
 import { flexColumn, flexICenter } from "../../styles/global.style";
@@ -14,8 +15,13 @@ export default function ClubUser({
   gap,
 }) {
   const styles = { size, imgSize, dateColor, introColor, introSize, gap };
+  const navigate = useNavigate();
+  const openUser = (userId) => {
+    navigate(`/user/${userId}`);
+  };
+
   return (
-    <ClubUserLayout>
+    <ClubUserLayout onClick={() => openUser(user.id)}>
       <ClubUserImgBox {...styles} src={example} />
       <ClubUserDescriptionBox {...styles}>
         <span>

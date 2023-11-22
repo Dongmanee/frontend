@@ -19,7 +19,7 @@ const PageSelector = ({ pages, top }) => {
     const isRightPage = currentPage.startsWith(active);
     if (!isRightPage) {
       const rightpage = pages.find((page) => currentPage.startsWith(page.src));
-      const nowpage = rightpage.src;
+      const nowpage = rightpage?.src;
       setActive(nowpage);
     }
   }, [currentPage]);

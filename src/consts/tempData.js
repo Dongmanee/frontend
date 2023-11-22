@@ -158,7 +158,7 @@ export const temp_club_pageselector = [
 export const temp_user_pageselector = [
   {
     name: "가입 동아리",
-    src: "/user",
+    src: "/user/home",
   },
   {
     name: "작성한 글",
@@ -175,16 +175,19 @@ export const temp_club_users = [
     name: "정준형",
     intro: "안녕하세요!~",
     position: "회장",
+    id: 3434,
   },
   {
     name: "정준형",
     intro: "안녕하세요!~",
     position: "임원",
+    id: 5555,
   },
   {
     name: "정준형",
     intro: "안녕하세요!~",
     position: "임원",
+    id: 1111,
   },
   {
     name: "정준형",
@@ -207,7 +210,7 @@ export const temp_club_pages = [
     isMore: true,
     moreright: "0",
     moretop: "2.5vh",
-    src: "posts",
+    src: "/club/posts",
   },
   {
     title: "일정",
@@ -220,7 +223,7 @@ export const temp_club_pages = [
     moreright: "0",
     moreleft: "0",
     morebottom: "-10px",
-    src: "album",
+    src: "/club/album",
   },
   {
     title: "모임 멤버 (35)",
@@ -230,38 +233,36 @@ export const temp_club_pages = [
 
 export const temp_club_schedule_item_infos = [
   {
-    info: "11/11일 (토) 오후 5:00",
-  },
-  {
-    info: "[네이버 지도] 포쉬민 커피 대전 서구",
-  },
-  {
-    info: "개인",
-  },
-  {
-    pop: 5,
+    date: "11/11일 (토) 오후 5:00",
+    location: "[네이버 지도] 포쉬민 커피 대전 서구",
+    cost: "개인",
+    pop: 7,
     totalPop: 20,
   },
-];
-
-export const temp_club_schedule_detail_item_infos = [
   {
-    info: "11/11일 (토) 오후 5:00",
+    date: "11/11일 (토) 오후 5:00",
+    location: "[네이버 지도] 포쉬민 커피 대전 서구",
+    cost: "개인",
+    pop: 7,
+    totalPop: 20,
   },
   {
-    info: "[네이버 지도] 포쉬민 커피 대전 서구",
-  },
-  {
-    info: "개인",
-  },
-  {
-    info: "커피 한잔 하면서 수다 예정",
-  },
-  {
+    date: "11/11일 (토) 오후 5:00",
+    location: "[네이버 지도] 포쉬민 커피 대전 서구",
+    cost: "개인",
     pop: 7,
     totalPop: 20,
   },
 ];
+
+export const temp_club_schedule_detail_item_infos = {
+  date: "11/11일 (토) 오후 5:00",
+  location: "[네이버 지도] 포쉬민 커피 대전 서구",
+  cost: "개인",
+  detail: "커피 한잔 하면서 수다 예정",
+  pop: 7,
+  totalPop: 20,
+};
 
 export const temp_club_schedule_item_names = [
   {
