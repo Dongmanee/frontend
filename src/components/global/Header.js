@@ -1,4 +1,3 @@
-import { FaCheck } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import {
   MdMoreHoriz,
@@ -10,7 +9,7 @@ import styled from "styled-components";
 import logo from "../../images/logo.png";
 import { flexJBetween } from "../../styles/global.style";
 
-export default function Header({ left, center, right }) {
+export default function Header({ left, center, right, onClickLeft, onClickRight }) {
   const renderLeft = () => {
     switch (left) {
       case "logo":
@@ -39,9 +38,9 @@ export default function Header({ left, center, right }) {
 
   return (
     <HeaderLayout>
-      <HeaderItem>{renderLeft()}</HeaderItem>
+      <HeaderItem onClick={onClickLeft}>{renderLeft()}</HeaderItem>
       <HeaderItem>{center ? center : ""}</HeaderItem>
-      <HeaderItem>{renderRight()}</HeaderItem>
+      <HeaderItem onClick={onClickRight}>{renderRight()}</HeaderItem>
     </HeaderLayout>
   );
 }
