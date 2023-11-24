@@ -11,6 +11,7 @@ export default function KakaoLogin() {
           <span>간편 로그인</span>
         </DivisionLine>
       </DivisionRow>
+
       <CustomButton
         height="6vh"
         width="100%"
