@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ClubCategory from "./ClubCategoryList";
+import ClubCategory from "../clubs/ClubCategoryList";
 import RegisterLabel from "../../global/register/RegisterLabel";
 import { temp_clubs_catgory } from "../../../consts/tempData";
 import ProfileAndName from "../../global/ProfileAndName";

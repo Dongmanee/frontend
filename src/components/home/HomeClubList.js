@@ -1,15 +1,22 @@
 import styled from "styled-components";
 import ProfileAndName from "../global/ProfileAndName";
 import { FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeClubList() {
+  const navigate = useNavigate();
+
+  const onClickAddButton = () => {
+    navigate("/clubs");
+  };
+
   return (
     <HomeClubListLayout>
       <ClubListBox>
         <ProfileAndName name="동아리1" />
         <ProfileAndName name="동아리2" />
       </ClubListBox>
-      <AddClubButton>
+      <AddClubButton onClick={onClickAddButton}>
         <FaPlus />
       </AddClubButton>
     </HomeClubListLayout>

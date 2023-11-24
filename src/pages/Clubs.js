@@ -5,6 +5,8 @@ import ClubList from "../components/home/clubs/ClubList";
 import { temp_clubs } from "../consts/tempData";
 import Layout from "../layouts/Layout";
 import { flexCenter, flexColumn } from "../styles/global.style";
+import RegisterButton from "../components/global/register/RegisterButton";
+import RegisterClubButton from "../components/home/clubs/RegisterClubButton";
 
 export default function Clubs() {
   return (
@@ -18,7 +20,7 @@ export default function Clubs() {
         />
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
-      <RegisterClubButton>동아리 등록하기</RegisterClubButton>
+      <RegisterClubButton />
     </Layout>
   );
 }
@@ -26,18 +28,4 @@ export default function Clubs() {
 const HomeTotalClubsLayout = styled.div`
   ${flexColumn};
   margin-bottom: 6vh;
-`;
-
-const RegisterClubButton = styled.button`
-  height: 7vh;
-  width: 90%;
-  ${flexCenter};
-  position: fixed;
-  bottom: 1rem;
-  border-radius: 1rem;
-  background-color: ${(props) => props.theme.colors.dark.sm};
-  color: white;
-  font-size: ${(props) => props.theme.sizes.lg};
-  font-family: "Noto Sans KR", sans-serif;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 `;
