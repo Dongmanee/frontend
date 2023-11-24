@@ -6,41 +6,25 @@ import {
   flexICenter,
 } from "../../../styles/global.style";
 import { useRef } from "react";
+import ModalLayout from "../../../layouts/ModalLayout";
 
 export default function ResignModal({ name, setIsResignModal }) {
-  const modalBackground = useRef();
-  const closeModal = (e) => {
-    if (e.target === modalBackground.current) {
-      setIsResignModal(false);
-    }
-  };
-
   return (
-    <ResignModalLayout ref={modalBackground} onClick={(e) => closeModal(e)}>
+    <ModalLayout setModal={setIsResignModal}>
       <ModalBox>
         <ModalHeaderBox>정말 {name}님을 추방하시겠습니까?</ModalHeaderBox>
         <ModalRow>
           <IoClose size={20} />
           닫기
         </ModalRow>
-        <ModalRow>
+        <ModalRow $isExile={true}>
           <IoTrash size={20} />
           추방
         </ModalRow>
       </ModalBox>
-    </ResignModalLayout>
+    </ModalLayout>
   );
 }
-
-const ResignModalLayout = styled.div`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 5;
-`;
 
 const ModalBox = styled.div`
   ${flexColumn}
@@ -49,7 +33,6 @@ const ModalBox = styled.div`
   left: 50%;
   right: 0;
   transform: translate(-50%, 130%);
-
   border-radius: 1rem;
   background-color: white;
   z-index: 6;
