@@ -48,9 +48,10 @@ const StyledbuttonLayout = styled.button`
   border: ${(props) => props.border};
   border-radius: ${(props) => props.radius};
   cursor: pointer;
-
+  padding: ${(props) => props.padding};
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.bold};
+  font-family: "Noto Sans KR", sans-serif;
   color: ${(props) => props.color};
   white-space: nowrap;
 `;
