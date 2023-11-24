@@ -6,10 +6,17 @@ import ClubPostsDetailsCommentInput from "../../components/club/posts/ClubPostsD
 import PostBottom from "../../components/global/postList/PostBottom";
 import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
+import usePrevPage from "../../hooks/usePrevPage";
 
 export default function ClubPostsDetail() {
+  const { onPrevPage } = usePrevPage();
   return (
-    <Layout headerLeft={"prev"} headerCenter={"Import"} headerRight={"edit"}>
+    <Layout
+      headerLeft={"prev"}
+      headerCenter={"Import"}
+      headerRight={"edit"}
+      onClickLeft={onPrevPage}
+    >
       <ClubPostDetailLayout>
         <ClubPostsDetailHead />
         <ClubPostsDetailBody />

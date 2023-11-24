@@ -9,10 +9,18 @@ export default function Layout({
   headerCenter,
   isNavbar,
   bottomButton,
+  onClickLeft,
+  onClickRight,
 }) {
   return (
     <>
-      <Header left={headerLeft} center={headerCenter} right={headerRight} />
+      <Header
+        left={headerLeft}
+        center={headerCenter}
+        right={headerRight}
+        onClickLeft={onClickLeft}
+        onClickRight={onClickRight}
+      />
       <Body>{children}</Body>
       {isNavbar && <Navbar />}
       {bottomButton}
