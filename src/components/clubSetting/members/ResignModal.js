@@ -35,7 +35,7 @@ const ModalBox = styled.div`
   transform: translate(-50%, 130%);
   border-radius: 1rem;
   background-color: white;
-  z-index: 6;
+  z-index: 3;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   & > div:last-child {
     color: red;
