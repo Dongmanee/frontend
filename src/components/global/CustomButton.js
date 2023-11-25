@@ -35,8 +35,6 @@ const CustomButton = ({
 export default CustomButton;
 
 CustomButton.defaultProps = {
-  width: "5rem",
-  height: "5rem",
   radius: "0.75rem",
   size: "1rem",
   bold: 600,

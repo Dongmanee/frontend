@@ -9,6 +9,7 @@ export default function ClubUserProfile() {
   return (
     <UserProfile user={temp_user}>
       <CustomButton
+        width="5rem"
         height={"30px"}
         bgColor={(props) => props.theme.colors.dark.sm}
         color={"white"}

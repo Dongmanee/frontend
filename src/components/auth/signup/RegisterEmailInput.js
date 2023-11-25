@@ -21,14 +21,12 @@ export default function RegisterEmailInput({ id, label, errorMsg }) {
         <CustomInput id={id} width="100%" height="2.5rem" radius="0.7rem" />
         <CustomButton
           onClick={onClickAuthEmailButton}
-          height="2.5rem"
-          width="8rem"
           bgColor={(props) => props.theme.colors.dark.sm}
           color="white"
           bold="500"
           size={(props) => props.theme.sizes.xs}
           radius="3rem"
-          padding={"1rem"}
+          padding="0.7rem 1rem"
         >
           인증번호 전송
         </CustomButton>
