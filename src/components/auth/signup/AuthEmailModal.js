@@ -18,8 +18,8 @@ export default function AuthEmaillModal({ email, setAuthEmailModal }) {
           </LeftTimeBox>
         </ModalInputBox>
         <ModalButtonRow>
-          <ModalButton>코드 재전송</ModalButton>
-          <ModalButton>인증번호 확인</ModalButton>
+          <ModalButton type="button">코드 재전송</ModalButton>
+          <ModalButton type="button">인증번호 확인</ModalButton>
         </ModalButtonRow>
       </AuthEmailModalBox>
     </ModalLayout>

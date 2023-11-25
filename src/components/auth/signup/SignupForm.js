@@ -6,7 +6,9 @@ import RegisterEmailInput from "./RegisterEmailInput";
 import { useForm } from "react-hook-form";
 
 export default function SignupForm() {
-  const { register, handleSubmit, errors } = useForm({ mode: "onSubmit" });
+  const { register, handleSubmit, errors, getValues } = useForm({
+    mode: "onSubmit",
+  });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -16,7 +18,11 @@ export default function SignupForm() {
     <SignupBox>
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputCol>
-          <RegisterEmailInput name="email" register={register} />
+          <RegisterEmailInput
+            name="email"
+            register={register}
+            getValues={getValues}
+          />
           <RegisterInput
             label="비밀번호를 입력하세요"
             name="password"

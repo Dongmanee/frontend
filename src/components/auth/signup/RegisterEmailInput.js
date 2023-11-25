@@ -7,10 +7,21 @@ import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { useState } from "react";
 import AuthEmaillModal from "./AuthEmailModal";
 
-export default function RegisterEmailInput({ id, register, errorMsg, name }) {
+export default function RegisterEmailInput({
+  id,
+  register,
+  errorMsg,
+  name,
+  getValues,
+}) {
   const [isAuthEmaillModal, setIsAuthEmailModal] = useState(false);
+  const [enteredEmail, setEnteredEmail] = useState("");
 
-  const onClickAuthEmailButton = () => {};
+  const onClickAuthEmailButton = () => {
+    setIsAuthEmailModal(true);
+    setEnteredEmail(getValues(name));
+    console.log(getValues(name));
+  };
 
   return (
     <RegisterEmailInputLayout>
@@ -24,14 +35,14 @@ export default function RegisterEmailInput({ id, register, errorMsg, name }) {
           height="2.5rem"
           radius="0.7rem"
         />
-        <SendCodeButton type="button" onClick={() => onClickAuthEmailButton()}>
+        <SendCodeButton type="button" onClick={onClickAuthEmailButton}>
           인증코드 전송
         </SendCodeButton>
       </RegisterEmailBox>
       {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
       {isAuthEmaillModal && (
         <AuthEmaillModal
-          email="wjstjds@naver.com"
+          email={enteredEmail}
           setAuthEmailModal={setIsAuthEmailModal}
         />
       )}
