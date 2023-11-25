@@ -15,6 +15,8 @@ export default function CustomInput({
   value,
   onChange,
   onkeyUp,
+  register,
+  name,
 }) {
   const props = {
     id,
@@ -32,7 +34,7 @@ export default function CustomInput({
     onChange,
     onkeyUp,
   };
-  return <CustomInputLayout {...props} />;
+  return <CustomInputLayout {...register(name)} {...props} />;
 }
 
 CustomInput.defaultProps = {

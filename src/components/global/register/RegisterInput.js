@@ -11,12 +11,16 @@ export default function RegisterInput({
   inputHeight,
   id,
   placeholder,
+  register,
+  name,
 }) {
   return (
     <RegisterInputLayout>
       <RegisterLabel id={id} label={label} isRequired={isRequired} />
       <RegisterInputBox>
         <CustomInput
+          name={name}
+          register={register}
           id={id}
           height={inputHeight ? inputHeight : "2.5rem"}
           radius="0.7rem"
