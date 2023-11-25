@@ -34,7 +34,15 @@ export default function CustomInput({
     onChange,
     onkeyUp,
   };
-  return <CustomInputLayout {...register(name)} {...props} />;
+  return (
+    <>
+      {register ? (
+        <CustomInputLayout {...register(name)} {...props} />
+      ) : (
+        <CustomInputLayout {...props} />
+      )}
+    </>
+  );
 }
 
 CustomInput.defaultProps = {

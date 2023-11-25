@@ -32,6 +32,7 @@ export default function SignupForm() {
           />
         </InputCol>
         <CustomButton
+          type="submit"
           height="3.5rem"
           width="100%"
           bgColor={"#3F3E3E"}
@@ -47,7 +48,6 @@ export default function SignupForm() {
 
 const SignupBox = styled.div`
   ${flexColumn};
-  gap: 4rem;
   padding: 0 2rem;
   margin-bottom: 3rem;
 `;
@@ -55,4 +55,5 @@ const SignupBox = styled.div`
 const InputCol = styled.div`
   ${flexColumn}
   gap: 2rem;
+  margin-bottom: 3rem;
 `;
