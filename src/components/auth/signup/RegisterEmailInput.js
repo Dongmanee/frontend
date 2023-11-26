@@ -34,8 +34,13 @@ export default function RegisterEmailInput({
           width="100%"
           height="2.5rem"
           radius="0.7rem"
+          readOnly={authenticatedCode != "" ? true : false}
         />
-        <SendCodeButton type="button" onClick={onClickAuthEmailButton}>
+        <SendCodeButton
+          type="button"
+          disabled={authenticatedCode != "" ? true : false}
+          onClick={onClickAuthEmailButton}
+        >
           {authenticatedCode != "" ? "인증완료" : "인증번호전송"}
         </SendCodeButton>
       </RegisterEmailBox>

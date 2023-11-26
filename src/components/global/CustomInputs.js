@@ -17,6 +17,8 @@ export default function CustomInput({
   onkeyUp,
   register,
   name,
+  readOnly,
+  type,
 }) {
   const props = {
     id,
@@ -33,6 +35,8 @@ export default function CustomInput({
     value,
     onChange,
     onkeyUp,
+    readOnly,
+    type,
   };
   return (
     <>
@@ -66,4 +70,5 @@ const CustomInputLayout = styled.input`
   font-weight: ${(props) => props.bold};
   color: ${(props) => props.color};
   cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
 `;

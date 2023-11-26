@@ -3,7 +3,7 @@ import ModalLayout from "../../../layouts/ModalLayout";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomInput from "../../global/CustomInputs";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { confirmCode, getCode } from "../../../apis/signup";
 
 export default function AuthEmaillModal({
   email,
@@ -11,32 +11,6 @@ export default function AuthEmaillModal({
   setAuthenticatedCode,
 }) {
   const [enteredCode, setEnteredCode] = useState("");
-
-  const getCode = async (enteredEmail) => {
-    return await axios.post(
-      "http://43.202.170.12:8080/signup/code/send",
-      { email: enteredEmail },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
-  };
-
-  const confirmCode = async (enteredEmail, enteredCode) => {
-    return await axios.post(
-      "http://43.202.170.12:8080/signup/code/check",
-      { email: enteredEmail, code: enteredCode.toString() },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
-  };
 
   const onChangeEnteredCode = (e) => {
     setEnteredCode(e.currentTarget.value);
@@ -46,7 +20,8 @@ export default function AuthEmaillModal({
     const result = confirmCode(email, enteredCode).then((res) => {
       if (res.status == "200") {
         setAuthEmailModal(false);
-        setAuthenticatedCode(res.data.code);
+        setAuthenticatedCode(res.data.data.code);
+        console.log(enteredCode);
       }
     });
   };
@@ -68,9 +43,6 @@ export default function AuthEmaillModal({
             onChange={onChangeEnteredCode}
             placeholder="인증번호 입력"
           />
-          <LeftTimeBox>
-            남은시간 :<div>3:00</div>
-          </LeftTimeBox>
         </ModalInputBox>
         <ModalButtonRow>
           <ModalButton type="button">코드 재전송</ModalButton>
@@ -108,14 +80,14 @@ const ModalInputBox = styled.div`
   gap: 0.5rem;
 `;
 
-const LeftTimeBox = styled.div`
-  ${flexCenter}
-  gap: 0.2rem;
-  font-size: ${(props) => props.theme.sizes.xxs};
-  & > div {
-    color: red;
-  }
-`;
+// const LeftTimeBox = styled.div`
+//   ${flexCenter}
+//   gap: 0.2rem;
+//   font-size: ${(props) => props.theme.sizes.xxs};
+//   & > div {
+//     color: red;
+//   }
+// `;
 
 const ModalButtonRow = styled.div`
   ${flexCenter}
