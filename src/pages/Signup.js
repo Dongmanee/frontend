@@ -7,8 +7,16 @@ import { flexColumn } from "../styles/global.style";
 export default function Signup() {
   return (
     <Layout headerCenter="회원가입">
-      <SignupForm />
-      <OtherApproach isLogin={false} />
+      <SignupLayout>
+        <SignupForm />
+        <OtherApproach isLogin={false} />
+      </SignupLayout>
     </Layout>
   );
 }
+
+const SignupLayout = styled.div`
+  height: 85vh;
+  ${flexColumn}
+  justify-content: center;
+`;

@@ -12,6 +12,7 @@ const CustomButton = ({
   children,
   padding,
   border,
+  onClick,
 }) => {
   const styles = {
     width,
@@ -24,14 +25,16 @@ const CustomButton = ({
     padding,
     border,
   };
-  return <StyledbuttonLayout {...styles}>{children}</StyledbuttonLayout>;
+  return (
+    <StyledbuttonLayout onClick={onClick} {...styles}>
+      {children}
+    </StyledbuttonLayout>
+  );
 };
 
 export default CustomButton;
 
 CustomButton.defaultProps = {
-  width: "5rem",
-  height: "5rem",
   radius: "0.75rem",
   size: "1rem",
   bold: 600,
@@ -48,9 +51,10 @@ const StyledbuttonLayout = styled.button`
   border: ${(props) => props.border};
   border-radius: ${(props) => props.radius};
   cursor: pointer;
-
+  padding: ${(props) => props.padding};
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.bold};
+  font-family: "Noto Sans KR", sans-serif;
   color: ${(props) => props.color};
   white-space: nowrap;
 `;

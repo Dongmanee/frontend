@@ -2,16 +2,13 @@ import styled from "styled-components";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
+import RegisterEmailInput from "./RegisterEmailInput";
 
 export default function SignupForm() {
   return (
     <SignupBox>
       <InputCol>
-        <RegisterInput
-          label="아이디를 입력하세요"
-          isRequired={true}
-          placeholder="8자 이상 입력해주세요"
-        />
+        <RegisterEmailInput />
         <RegisterInput
           label="비밀번호를 입력하세요"
           isRequired={true}
@@ -20,12 +17,6 @@ export default function SignupForm() {
         <RegisterInput
           label="비밀번호를 다시 한 번 입력하세요"
           isRequired={true}
-          placeholder="8자 이상 입력해주세요"
-        />
-        <RegisterInput
-          label="학번을 입력하세요"
-          isRequired={true}
-          placeholder="8자 이상 입력해주세요"
         />
       </InputCol>
       <CustomButton
@@ -43,15 +34,12 @@ export default function SignupForm() {
 
 const SignupBox = styled.div`
   ${flexColumn};
-  justify-content: space-between;
-  gap: 2rem;
-  height: 81vh;
+  gap: 4rem;
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `;
 
 const InputCol = styled.div`
   ${flexColumn}
   gap: 2rem;
-  overflow-y: scroll;
 `;
