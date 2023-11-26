@@ -12,6 +12,8 @@ export default function RegisterEmailInput({
   errorMsg,
   name,
   getValues,
+  authenticatedCode,
+  setAuthenticatedCode,
 }) {
   const [isAuthEmaillModal, setIsAuthEmailModal] = useState(false);
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -19,7 +21,6 @@ export default function RegisterEmailInput({
   const onClickAuthEmailButton = () => {
     setIsAuthEmailModal(true);
     setEnteredEmail(getValues(name));
-    console.log(getValues(name));
   };
 
   return (
@@ -35,7 +36,7 @@ export default function RegisterEmailInput({
           radius="0.7rem"
         />
         <SendCodeButton type="button" onClick={onClickAuthEmailButton}>
-          인증코드 전송
+          {authenticatedCode != "" ? "인증완료" : "인증번호전송"}
         </SendCodeButton>
       </RegisterEmailBox>
       {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
@@ -43,6 +44,7 @@ export default function RegisterEmailInput({
         <AuthEmaillModal
           email={enteredEmail}
           setAuthEmailModal={setIsAuthEmailModal}
+          setAuthenticatedCode={setAuthenticatedCode}
         />
       )}
     </RegisterEmailInputLayout>

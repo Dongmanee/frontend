@@ -4,15 +4,15 @@ import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
 import RegisterEmailInput from "./RegisterEmailInput";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 export default function SignupForm() {
+  const [authenticatedCode, setAuthenticatedCode] = useState("");
   const { register, handleSubmit, errors, getValues } = useForm({
     mode: "onSubmit",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const onSubmit = (data) => {};
 
   return (
     <SignupBox>
@@ -22,6 +22,8 @@ export default function SignupForm() {
             name="email"
             register={register}
             getValues={getValues}
+            authenticatedCode={authenticatedCode}
+            setAuthenticatedCode={setAuthenticatedCode}
           />
           <RegisterInput
             label="비밀번호를 입력하세요"

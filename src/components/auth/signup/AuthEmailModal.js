@@ -2,8 +2,59 @@ import styled from "styled-components";
 import ModalLayout from "../../../layouts/ModalLayout";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomInput from "../../global/CustomInputs";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function AuthEmaillModal({ email, setAuthEmailModal }) {
+export default function AuthEmaillModal({
+  email,
+  setAuthEmailModal,
+  setAuthenticatedCode,
+}) {
+  const [enteredCode, setEnteredCode] = useState("");
+
+  const getCode = async (enteredEmail) => {
+    return await axios.post(
+      "http://43.202.170.12:8080/signup/code/send",
+      { email: enteredEmail },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+  };
+
+  const confirmCode = async (enteredEmail, enteredCode) => {
+    return await axios.post(
+      "http://43.202.170.12:8080/signup/code/check",
+      { email: enteredEmail, code: enteredCode.toString() },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+  };
+
+  const onChangeEnteredCode = (e) => {
+    setEnteredCode(e.currentTarget.value);
+  };
+
+  const onClickconfirmCode = () => {
+    const result = confirmCode(email, enteredCode).then((res) => {
+      if (res.status == "200") {
+        setAuthEmailModal(false);
+        setAuthenticatedCode(res.data.code);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const result = getCode(email).then((res) => console.log(res));
+  }, []);
+
   return (
     <ModalLayout setModal={setAuthEmailModal}>
       <AuthEmailModalBox>
@@ -12,14 +63,20 @@ export default function AuthEmaillModal({ email, setAuthEmailModal }) {
           <div>인증코드를 전송했습니다</div>
         </ModalTextBox>
         <ModalInputBox>
-          <CustomInput placeholder="인증번호 입력" />
+          <CustomInput
+            value={enteredCode}
+            onChange={onChangeEnteredCode}
+            placeholder="인증번호 입력"
+          />
           <LeftTimeBox>
             남은시간 :<div>3:00</div>
           </LeftTimeBox>
         </ModalInputBox>
         <ModalButtonRow>
           <ModalButton type="button">코드 재전송</ModalButton>
-          <ModalButton type="button">인증번호 확인</ModalButton>
+          <ModalButton type="button" onClick={onClickconfirmCode}>
+            인증번호 확인
+          </ModalButton>
         </ModalButtonRow>
       </AuthEmailModalBox>
     </ModalLayout>

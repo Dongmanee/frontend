@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import styled from "styled-components";
+import { fullScreen } from "../styles/global.style";
 
 export default function ModalLayout({ children, setModal }) {
   const modalBackground = useRef();
@@ -18,8 +19,7 @@ export default function ModalLayout({ children, setModal }) {
 
 const ModalLayoutLayout = styled.div`
   position: fixed;
-  height: 100vh;
-  width: 100vw;
+  ${fullScreen}
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
