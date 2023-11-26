@@ -2,7 +2,6 @@ import styled from "styled-components";
 import RegisterLabel from "../../global/register/RegisterLabel";
 import CustomInput from "../../global/CustomInputs";
 import { flexCenter, flexICenter } from "../../../styles/global.style";
-
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { useState } from "react";
 import AuthEmaillModal from "./AuthEmailModal";
