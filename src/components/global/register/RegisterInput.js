@@ -32,5 +32,4 @@ const RegisterInputLayout = styled.div``;
 
 const RegisterInputBox = styled.div`
   ${flexColumn};
-  margin-top: -10px;
 `;
