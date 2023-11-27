@@ -25,7 +25,7 @@ export default function RegisterEmailInput({
 
   return (
     <RegisterEmailInputLayout>
-      <RegisterLabel id={id} label="이메일을 입력해주세요" isRequired="true" />
+      <RegisterLabel id={id} label="이메일" isRequired="true" />
       <RegisterEmailBox>
         <CustomInput
           register={register}
@@ -34,6 +34,7 @@ export default function RegisterEmailInput({
           width="100%"
           height="2.5rem"
           radius="0.7rem"
+          placeholder="이메일을 입력해주세요"
           readOnly={authenticatedCode != "" ? true : false}
         />
         <SendCodeButton

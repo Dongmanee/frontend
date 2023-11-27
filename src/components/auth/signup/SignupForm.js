@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import { flexCenter, flexColumn } from "../../../styles/global.style";
+import {
+  flexCenter,
+  flexColumn,
+  flexICenter,
+} from "../../../styles/global.style";
 import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
 import RegisterEmailInput from "./RegisterEmailInput";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import axios from "axios";
 import { setSignup } from "../../../apis/signup";
 
 export default function SignupForm() {
@@ -41,51 +44,59 @@ export default function SignupForm() {
             setAuthenticatedCode={setAuthenticatedCode}
           />
           <RegisterInput
-            label="비밀번호를 입력하세요"
+            label="비밀번호"
             name="password"
             register={register}
             isRequired={true}
-            placeholder="8자 이상 입력해주세요"
+            placeholder="8~12자의 영문, 숫자, 특수문자만 사용가능합니다"
             type="password"
           />
+
           <RegisterInput
             name="passwordConfirm"
             register={register}
-            label="비밀번호를 다시 한 번 입력하세요"
+            label="비밀번호 확인"
             type="password"
             isRequired={true}
+            placeholder="비밀번호를 한 번 더 입력해주세요"
           />
-          {/* 임시 */}
-          <RegisterInput
-            name="name"
-            register={register}
-            label="이름을 입력하세요"
-            isRequired={true}
-          />
+          <InputRow>
+            <RegisterInput
+              name="name"
+              register={register}
+              label="이름"
+              isRequired={true}
+              placeholder="이름을 입력해주세요"
+            />
+            <RegisterInput
+              name="birthDate"
+              register={register}
+              label="생년월일"
+              type="date"
+              isRequired={true}
+            />
+          </InputRow>
           <RegisterInput
             name="department"
             register={register}
-            label="학과를 입력하세요"
+            label="학과"
             isRequired={true}
+            placeholder="학과를 입력해주세요"
           />
           <RegisterInput
             name="studentId"
             register={register}
-            label="학번을 입력하세요"
+            label="학번"
             isRequired={true}
+            placeholder="학번을 입력해주세요"
           />
-          <RegisterInput
-            name="birthDate"
-            register={register}
-            label="생년월일을 입력하세요"
-            type="date"
-            isRequired={true}
-          />
+
           <RegisterInput
             name="phoneNum"
             register={register}
-            label="핸드폰 번호를 입력하세요"
+            label="핸드폰 번호"
             isRequired={true}
+            placeholder=" '-' 없이 번호만 입력해주세요"
           />
         </InputCol>
         <CustomButton
@@ -106,12 +117,17 @@ export default function SignupForm() {
 const SignupBox = styled.div`
   ${flexColumn};
   padding: 0 2rem;
-  margin-bottom: 3rem;
-  overflow: scroll;
+  margin-bottom: 2rem;
 `;
 
 const InputCol = styled.div`
   ${flexColumn}
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
+`;
+
+const InputRow = styled.div`
+  display: grid;
+  grid-template-columns: 45% 50%;
+  gap: 5%;
 `;

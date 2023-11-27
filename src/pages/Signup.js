@@ -16,7 +16,8 @@ export default function Signup() {
 }
 
 const SignupLayout = styled.div`
-  height: 85vh;
-  ${flexColumn}
+  height: 86vh;
+  ${flexColumn};
+  align-items: center;
   justify-content: center;
 `;
