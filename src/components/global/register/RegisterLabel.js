@@ -15,5 +15,6 @@ const RegisterLabelLayout = styled.div`
   align-items: center;
   gap: 0.3rem;
   color: ${(props) => props.theme.colors.gray.xs};
+  font-size: ${(props) => props.theme.sizes.sm};
   margin-bottom: 0.5rem;
 `;
