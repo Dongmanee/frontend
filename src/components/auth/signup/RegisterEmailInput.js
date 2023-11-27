@@ -5,7 +5,6 @@ import { flexCenter, flexICenter } from "../../../styles/global.style";
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { useState } from "react";
 import AuthEmaillModal from "./AuthEmailModal";
-import * as yup from "yup";
 import { emailSchema } from "../../../utils/validationSchema";
 
 export default function RegisterEmailInput({
@@ -78,12 +77,13 @@ const SendCodeButton = styled.button`
   ${flexCenter}
   min-width: 6.5rem;
   height: auto;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.7rem 1rem;
   background-color: ${(props) => props.theme.colors.dark.sm};
+
   color: white;
   font-weight: 500;
   font-size: ${(props) => props.theme.sizes.xs};
-  border-radius: 3rem;
-  padding: 0.7rem 1rem;
-  border: none;
   font-family: "Noto Sans KR", sans-serif;
 `;

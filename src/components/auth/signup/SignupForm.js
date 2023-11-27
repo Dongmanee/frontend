@@ -1,18 +1,13 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import {
-  flexCenter,
-  flexColumn,
-  flexICenter,
-} from "../../../styles/global.style";
+import { signup } from "../../../apis/signup";
+import { flexColumn } from "../../../styles/global.style";
+import { signupSchema } from "../../../utils/validationSchema";
 import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
 import RegisterEmailInput from "./RegisterEmailInput";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { setSignup } from "../../../apis/signup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { signupSchema } from "../../../utils/validationSchema";
 
 export default function SignupForm() {
   const [authenticatedCode, setAuthenticatedCode] = useState("");
@@ -29,13 +24,9 @@ export default function SignupForm() {
 
   const onSubmit = (data) => {
     if (authenticatedCode == "")
-      setError(
-        "email",
-        { message: "이메일 인증을 해주세요" },
-        { shouldFocus: true }
-      );
+      setError("email", { message: "이메일 인증을 해주세요" }, { shouldFocus: true });
     else {
-      let signupData = {
+      const signupData = {
         universityId: 1,
         studentId: data.studentId,
         department: data.department,
@@ -46,7 +37,7 @@ export default function SignupForm() {
         name: data.name,
         password: data.password,
       };
-      setSignup(signupData).then((res) => console.log(res.data));
+      signup(signupData).then((res) => console.log(res.data));
     }
   };
 
@@ -63,6 +54,7 @@ export default function SignupForm() {
             setError={setError}
             errorMsg={errors.email && errors.email.message}
           />
+
           <RegisterInput
             name="password"
             register={register}
@@ -81,6 +73,7 @@ export default function SignupForm() {
             placeholder="비밀번호를 한 번 더 입력해주세요"
             errorMsg={errors.passwordConfirm && errors.passwordConfirm.message}
           />
+
           <InputRow>
             <RegisterInput
               name="name"
@@ -99,6 +92,7 @@ export default function SignupForm() {
               errorMsg={errors.birthDate && errors.birthDate.message}
             />
           </InputRow>
+
           <RegisterInput
             name="department"
             register={register}
@@ -115,7 +109,6 @@ export default function SignupForm() {
             placeholder="학번을 입력해주세요"
             errorMsg={errors.studentId && errors.studentId.message}
           />
-
           <RegisterInput
             name="phoneNum"
             register={register}
@@ -125,6 +118,7 @@ export default function SignupForm() {
             errorMsg={errors.phoneNum && errors.phoneNum.message}
           />
         </InputCol>
+
         <CustomButton
           type="submit"
           height="3.5rem"

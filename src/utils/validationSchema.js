@@ -29,6 +29,20 @@ export const signupSchema = yup.object({
     .matches(/^[0-9]{2,3}[0-9]{3,4}[0-9]{4}/, "숫자만 입력해주세요."),
 });
 
+export const loginSchema = yup.object({
+  email: yup
+    .string()
+    .required("이메일을 입력해주세요")
+    .email("옳지 않은 이메일 형식입니다"),
+  password: yup
+    .string()
+    .matches(
+      /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,12}$/,
+      "8~12자로 영문, 숫자, 특수문자를 한개 이상 포함해주세요"
+    )
+    .required("8~12자의 영문, 숫자, 특수문자로 입력해주세요"),
+});
+
 export const emailSchema = yup
   .string()
   .required("이메일을 입력해주세요")
