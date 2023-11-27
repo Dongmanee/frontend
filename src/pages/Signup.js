@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Layout from "../layouts/Layout";
 import SignupForm from "../components/auth/signup/SignupForm";
 import OtherApproach from "../components/auth/OtherApproach";
-import { flexColumn } from "../styles/global.style";
+import { flexCenter, flexColumn } from "../styles/global.style";
 
 export default function Signup() {
   return (
@@ -16,8 +16,8 @@ export default function Signup() {
 }
 
 const SignupLayout = styled.div`
-  height: 86vh;
-  ${flexColumn};
-  align-items: center;
+  ${flexColumn}
   justify-content: center;
+  height: 86vh;
+  padding: 0 1rem;
 `;
