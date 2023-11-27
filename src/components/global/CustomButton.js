@@ -13,6 +13,7 @@ const CustomButton = ({
   padding,
   border,
   onClick,
+  isDisabled,
 }) => {
   const styles = {
     width,
@@ -26,7 +27,7 @@ const CustomButton = ({
     border,
   };
   return (
-    <StyledbuttonLayout onClick={onClick} {...styles}>
+    <StyledbuttonLayout disabled={isDisabled} onClick={onClick} {...styles}>
       {children}
     </StyledbuttonLayout>
   );
