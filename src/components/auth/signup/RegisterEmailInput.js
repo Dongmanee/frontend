@@ -5,6 +5,8 @@ import { flexCenter, flexICenter } from "../../../styles/global.style";
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { useState } from "react";
 import AuthEmaillModal from "./AuthEmailModal";
+import * as yup from "yup";
+import { emailSchema } from "../../../utils/validationSchema";
 
 export default function RegisterEmailInput({
   id,
@@ -14,13 +16,21 @@ export default function RegisterEmailInput({
   getValues,
   authenticatedCode,
   setAuthenticatedCode,
+  setError,
 }) {
   const [isAuthEmaillModal, setIsAuthEmailModal] = useState(false);
   const [enteredEmail, setEnteredEmail] = useState("");
 
   const onClickAuthEmailButton = () => {
-    setIsAuthEmailModal(true);
-    setEnteredEmail(getValues(name));
+    emailSchema
+      .validate(getValues(name))
+      .then(() => {
+        setIsAuthEmailModal(true);
+        setEnteredEmail(getValues(name));
+      })
+      .catch((error) =>
+        setError("email", { message: error.message }, { shouldFocus: true })
+      );
   };
 
   return (

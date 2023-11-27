@@ -3,7 +3,7 @@ import ModalLayout from "../../../layouts/ModalLayout";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomInput from "../../global/CustomInputs";
 import { useEffect, useState } from "react";
-import { confirmCode, getCode } from "../../../apis/signup";
+import { confirmCode, sendCode } from "../../../apis/signup";
 
 export default function AuthEmaillModal({
   email,
@@ -27,7 +27,7 @@ export default function AuthEmaillModal({
   };
 
   useEffect(() => {
-    const result = getCode(email).then((res) => console.log(res));
+    const result = sendCode(email).then((res) => console.log(res));
   }, []);
 
   return (
@@ -79,15 +79,6 @@ const ModalInputBox = styled.div`
   ${flexColumn}
   gap: 0.5rem;
 `;
-
-// const LeftTimeBox = styled.div`
-//   ${flexCenter}
-//   gap: 0.2rem;
-//   font-size: ${(props) => props.theme.sizes.xxs};
-//   & > div {
-//     color: red;
-//   }
-// `;
 
 const ModalButtonRow = styled.div`
   ${flexCenter}

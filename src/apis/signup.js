@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getCode = async (enteredEmail) => {
+export const sendCode = async (enteredEmail) => {
   return await axios.post(
     "http://43.202.170.12:8080/signup/code/send",
     { email: enteredEmail },
