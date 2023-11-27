@@ -2,8 +2,34 @@ import styled from "styled-components";
 import ModalLayout from "../../../layouts/ModalLayout";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomInput from "../../global/CustomInputs";
+import { useEffect, useState } from "react";
+import { confirmCode, sendCode } from "../../../apis/signup";
 
-export default function AuthEmaillModal({ email, setAuthEmailModal }) {
+export default function AuthEmaillModal({
+  email,
+  setAuthEmailModal,
+  setAuthenticatedCode,
+}) {
+  const [enteredCode, setEnteredCode] = useState("");
+
+  const onChangeEnteredCode = (e) => {
+    setEnteredCode(e.currentTarget.value);
+  };
+
+  const onClickconfirmCode = () => {
+    const result = confirmCode(email, enteredCode).then((res) => {
+      if (res.status == "200") {
+        setAuthEmailModal(false);
+        setAuthenticatedCode(res.data.data.code);
+        console.log(enteredCode);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const result = sendCode(email).then((res) => console.log(res));
+  }, []);
+
   return (
     <ModalLayout setModal={setAuthEmailModal}>
       <AuthEmailModalBox>
@@ -12,14 +38,17 @@ export default function AuthEmaillModal({ email, setAuthEmailModal }) {
           <div>인증코드를 전송했습니다</div>
         </ModalTextBox>
         <ModalInputBox>
-          <CustomInput placeholder="인증번호 입력" />
-          <LeftTimeBox>
-            남은시간 :<div>3:00</div>
-          </LeftTimeBox>
+          <CustomInput
+            value={enteredCode}
+            onChange={onChangeEnteredCode}
+            placeholder="인증번호 입력"
+          />
         </ModalInputBox>
         <ModalButtonRow>
-          <ModalButton>코드 재전송</ModalButton>
-          <ModalButton>인증번호 확인</ModalButton>
+          <ModalButton type="button">코드 재전송</ModalButton>
+          <ModalButton type="button" onClick={onClickconfirmCode}>
+            인증번호 확인
+          </ModalButton>
         </ModalButtonRow>
       </AuthEmailModalBox>
     </ModalLayout>
@@ -49,15 +78,6 @@ const ModalTextBox = styled.div`
 const ModalInputBox = styled.div`
   ${flexColumn}
   gap: 0.5rem;
-`;
-
-const LeftTimeBox = styled.div`
-  ${flexCenter}
-  gap: 0.2rem;
-  font-size: ${(props) => props.theme.sizes.xxs};
-  & > div {
-    color: red;
-  }
 `;
 
 const ModalButtonRow = styled.div`

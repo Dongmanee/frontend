@@ -16,5 +16,6 @@ const RegisterErrorMsgLayout = styled.span`
   gap: 0.3rem;
   margin-top: 0.5rem;
   font-weight: ${(props) => props.theme.weights.xl};
+  font-size: ${(props) => props.theme.sizes.sm};
   color: red;
 `;
