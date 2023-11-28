@@ -18,7 +18,7 @@ export default function InquiryClub() {
           label="내용"
           isRequired={true}
           id="name"
-          inputHeight="20rem"
+          inputHeight="40rem"
         />
       </InquiryClubInputBox>
     </Layout>
@@ -28,5 +28,5 @@ export default function InquiryClub() {
 const InquiryClubInputBox = styled.div`
   ${flexColumn}
   gap: 1.5rem;
-  padding: 0 1rem;
+  padding: 1rem 1rem 0 1rem;
 `;
