@@ -5,7 +5,7 @@ import { flexColumn } from "../../styles/global.style";
 
 export default function JoinClub() {
   return (
-    <Layout headerLeft="prev" headerCenter="가입하기" headerRight="check">
+    <Layout headerLeft="exit" headerCenter="가입하기" headerRight="check">
       <JoinClubInputBox>
         <RegisterInput label="이름" isRequired={true} id="name" />
         <RegisterInput label="학과" isRequired={true} id="name" />

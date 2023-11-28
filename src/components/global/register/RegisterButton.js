@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import { flexCenter } from "../../../styles/global.style";
 
-export default function RegisterButton({ children }) {
-  return <RegisterButtonLayout>{children}</RegisterButtonLayout>;
+export default function RegisterButton({ children, width }) {
+  return <RegisterButtonLayout $width={width}>{children}</RegisterButtonLayout>;
 }
+
+RegisterButton.defaultProps = {
+  width: "90%",
+};
 
 const RegisterButtonLayout = styled.button`
   height: 7vh;
-  width: 90%;
+  width: ${(props) => props.$width};
   ${flexCenter}
   border-radius: 1rem;
   position: fixed;
