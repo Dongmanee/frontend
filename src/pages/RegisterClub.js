@@ -8,7 +8,7 @@ import RegisterTag from "../components/global/register/RegisterTag";
 
 export default function RegisterClub() {
   return (
-    <Layout headerLeft="prev" headerCenter="동아리 등록">
+    <Layout headerLeft="prev" headerCenter="동아리 등록" headerRight="check">
       <RegisterInputList>
         <RegisterInput
           label="이름을 입력해주세요"
