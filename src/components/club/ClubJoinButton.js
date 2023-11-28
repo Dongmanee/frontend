@@ -1,11 +1,18 @@
 import styled from "styled-components";
 import { flexJBetween } from "../../styles/global.style";
+import { useNavigate } from "react-router-dom";
 
 export default function ClubJoinButton({ deadline }) {
+  const navigate = useNavigate();
+
+  const onClickButton = (page) => {
+    navigate(`/club/:clubId/${page}`);
+  };
+
   return (
     <ClubJoinButtonLayout>
-      <Qna>문의하기</Qna>
-      <Join>
+      <Qna onClick={() => onClickButton("inquiry")}>문의하기</Qna>
+      <Join onClick={() => onClickButton("join")}>
         가입하기
         <p>{deadline}</p>
       </Join>
