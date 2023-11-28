@@ -79,11 +79,12 @@ const SendCodeButton = styled.button`
   min-width: 6.5rem;
   height: auto;
   background-color: ${(props) => props.theme.colors.dark.sm};
-  color: white;
-  font-weight: 500;
-  font-size: ${(props) => props.theme.sizes.xs};
   border-radius: 3rem;
   padding: 0.7rem 1rem;
   border: none;
+
   font-family: "Noto Sans KR", sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: ${(props) => props.theme.sizes.xs};
 `;
