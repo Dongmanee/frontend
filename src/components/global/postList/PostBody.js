@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function PostBody({ postTitle, postDetail }) {
+export default function PostBody({ postTitle, postDetail, onClick }) {
   return (
-    <PostBodyLayout>
+    <PostBodyLayout onClick={onClick}>
       <PostTitleBox>{postTitle}</PostTitleBox>
       <PostDetailBox>{postDetail}</PostDetailBox>
     </PostBodyLayout>

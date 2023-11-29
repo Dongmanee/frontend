@@ -6,7 +6,7 @@ import Post from "../components/global/postList/Post";
 
 export default function Posts() {
   return (
-    <Layout headerLeft="logo" headerRight="setting" isNavbar={true}>
+    <Layout headerLeft="logo" isNavbar={true}>
       <HomeClubList />
       <HomePostListBox>
         {temp_total_posts.map((post, idx) => (
