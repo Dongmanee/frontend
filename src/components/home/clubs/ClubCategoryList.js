@@ -19,7 +19,7 @@ export default function ClubCategory() {
 
 const ClubCategoryLayout = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-row-gap: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 1rem;
   padding: 10px 0;
 `;

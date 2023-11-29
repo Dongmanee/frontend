@@ -7,10 +7,13 @@ import Layout from "../layouts/Layout";
 import { flexCenter, flexColumn } from "../styles/global.style";
 import RegisterButton from "../components/global/register/RegisterButton";
 import RegisterClubButton from "../components/home/clubs/RegisterClubButton";
+import usePrevPage from "../hooks/usePrevPage";
 
 export default function Clubs() {
+  const { onPrevPage } = usePrevPage();
+
   return (
-    <Layout headerLeft="prev">
+    <Layout headerLeft="prev" onClickLeft={onPrevPage}>
       <HomeTotalClubsLayout>
         <ClubCategory />
         <CustomInput

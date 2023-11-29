@@ -2,6 +2,11 @@ import ClubUserList from "../components/club/ClubUserList";
 import ClubPost from "../components/club/posts/ClubPost";
 import computer from "../images/club-category/computer.png";
 import total from "../images/club-category/total.png";
+import angel from "../images/club-category/angel.png";
+import festival from "../images/club-category/festival.png";
+import heart from "../images/club-category/heart.png";
+import museum from "../images/club-category/museum.png";
+import sports from "../images/club-category/sports.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
 
@@ -111,13 +116,11 @@ export const temp_clubs = [
 
 export const temp_clubs_catgory = [
   { name: "전체", img: total },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
+  { name: "체육", img: sports },
+  { name: "공연", img: festival },
+  { name: "봉사", img: heart },
+  { name: "종교", img: angel },
+  { name: "전시교양", img: museum },
 ];
 
 export const temp_club_pageselector = [

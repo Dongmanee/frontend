@@ -5,10 +5,18 @@ import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCa
 import RegisterImage from "../components/global/register/RegisterImage";
 import RegisterButton from "../components/global/register/RegisterButton";
 import RegisterTag from "../components/global/register/RegisterTag";
+import usePrevPage from "../hooks/usePrevPage";
 
 export default function RegisterClub() {
+  const { onPrevPage } = usePrevPage();
+
   return (
-    <Layout headerLeft="prev" headerCenter="동아리 등록" headerRight="check">
+    <Layout
+      headerLeft="prev"
+      headerCenter="동아리 등록"
+      headerRight="check"
+      onClickLeft={onPrevPage}
+    >
       <RegisterInputList>
         <RegisterInput
           label="이름을 입력해주세요"
