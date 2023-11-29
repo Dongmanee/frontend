@@ -101,12 +101,12 @@ export const temp_clubs = [
 ];
 
 export const temp_clubs_catgory = [
-  { name: "전체", img: total },
-  { name: "체육", img: sports },
-  { name: "공연", img: festival },
-  { name: "봉사", img: heart },
-  { name: "종교", img: angel },
-  { name: "전시교양", img: museum },
+  { name: "전체", img: total, categoryId: "" },
+  { name: "체육", img: sports, categoryId: "afsd" },
+  { name: "공연", img: festival, categoryId: "12d312" },
+  { name: "봉사", img: heart, categoryId: "1223f312" },
+  { name: "종교", img: angel, categoryId: "wqed3" },
+  { name: "전시교양", img: museum, categoryId: "asdf3" },
 ];
 
 export const temp_club_pageselector = [
