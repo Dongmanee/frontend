@@ -443,3 +443,14 @@ export const temp_club_schedule_add = [
     name: "인원을 입력해주세요",
   },
 ];
+
+export const temp_my_club = [
+  {
+    clubId: "1231231",
+    clubName: "Import",
+  },
+  {
+    clubId: "123vdasdf",
+    clubName: "매치포인트",
+  },
+];

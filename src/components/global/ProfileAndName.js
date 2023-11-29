@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import example from "../../images/example.png";
 
-export default function ProfileAndName({ img, name, isIcon }) {
+export default function ProfileAndName({ img, name, isIcon, onClick }) {
   return (
-    <ProfileAndNameLayout $isIcon={isIcon}>
+    <ProfileAndNameLayout onClick={onClick} $isIcon={isIcon}>
       <img src={img} />
       <div>{name}</div>
     </ProfileAndNameLayout>
