@@ -16,7 +16,7 @@ export default function AuthEmaillModal({
     setEnteredCode(e.currentTarget.value);
   };
 
-  const onClickconfirmCode = () => {
+  const onClickConfirmCode = () => {
     const result = confirmCode(email, enteredCode).then((res) => {
       if (res.status == "200") {
         setAuthEmailModal(false);
@@ -46,7 +46,7 @@ export default function AuthEmaillModal({
         </ModalInputBox>
         <ModalButtonRow>
           <ModalButton type="button">코드 재전송</ModalButton>
-          <ModalButton type="button" onClick={onClickconfirmCode}>
+          <ModalButton type="button" onClick={onClickConfirmCode}>
             인증번호 확인
           </ModalButton>
         </ModalButtonRow>
@@ -72,6 +72,7 @@ const ModalTextBox = styled.div`
   ${flexColumn}
   align-items: center;
   gap: 0.5rem;
+
   font-size: ${(props) => props.theme.sizes.sm};
 `;
 

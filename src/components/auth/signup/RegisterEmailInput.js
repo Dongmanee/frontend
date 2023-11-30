@@ -84,8 +84,8 @@ const SendCodeButton = styled.button`
   padding: 0.7rem 1rem;
   background-color: ${(props) => props.theme.colors.dark.sm};
 
+  font-family: "Noto Sans KR", sans-serif;
   color: white;
   font-weight: 500;
   font-size: ${(props) => props.theme.sizes.xs};
-  font-family: "Noto Sans KR", sans-serif;
 `;
