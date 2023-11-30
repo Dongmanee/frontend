@@ -5,7 +5,6 @@ import { flexCenter, flexICenter } from "../../../styles/global.style";
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { useState } from "react";
 import AuthEmaillModal from "./AuthEmailModal";
-import * as yup from "yup";
 import { emailSchema } from "../../../utils/validationSchema";
 
 export default function RegisterEmailInput({
@@ -17,6 +16,7 @@ export default function RegisterEmailInput({
   authenticatedCode,
   setAuthenticatedCode,
   setError,
+  value,
 }) {
   const [isAuthEmaillModal, setIsAuthEmailModal] = useState(false);
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -38,6 +38,7 @@ export default function RegisterEmailInput({
       <RegisterLabel id={id} label="이메일" isRequired="true" />
       <RegisterEmailBox>
         <CustomInput
+          value={value}
           register={register}
           name={name}
           id={id}
@@ -78,10 +79,10 @@ const SendCodeButton = styled.button`
   ${flexCenter}
   min-width: 6.5rem;
   height: auto;
-  background-color: ${(props) => props.theme.colors.dark.sm};
+  border: none;
   border-radius: 3rem;
   padding: 0.7rem 1rem;
-  border: none;
+  background-color: ${(props) => props.theme.colors.dark.sm};
 
   font-family: "Noto Sans KR", sans-serif;
   color: white;

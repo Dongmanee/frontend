@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomButton from "../../global/CustomButton";
 import { RiKakaoTalkFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export default function KakaoLogin() {
   return (
@@ -12,31 +13,36 @@ export default function KakaoLogin() {
         </DivisionLine>
       </DivisionRow>
 
-      <CustomButton
-        height="6vh"
-        width="100%"
-        bgColor="#FEE500"
-        color="white"
-        radius="1.5rem"
-      >
-        <KakaoText>
-          <RiKakaoTalkFill size={24} />
-          카카오로 로그인
-        </KakaoText>
-      </CustomButton>
+      <Link to="http://43.202.170.12:8080/oauth2/authorization/kakao">
+        <CustomButton
+          height="6vh"
+          width="100%"
+          bgColor="#FEE500"
+          color="white"
+          radius="1.5rem"
+        >
+          <KakaoText>
+            <RiKakaoTalkFill size={24} />
+            카카오로 로그인
+          </KakaoText>
+        </CustomButton>
+      </Link>
     </KakaoLoginLayout>
   );
 }
 
 const DivisionLine = styled.div`
   width: 100%;
-  text-align: center;
-  border-bottom: 1px solid #aaa;
-  line-height: 0.1em;
   margin: 10px 0 20px;
+  border-bottom: 1px solid #aaa;
+
+  text-align: center;
+  line-height: 0.1em;
+
   & > span {
     background: #fff;
     padding: 0 10px;
+
     font-size: ${(props) => props.theme.sizes.xs};
   }
 `;
@@ -52,6 +58,7 @@ const DivisionRow = styled.div`
 const KakaoText = styled.div`
   ${flexCenter}
   gap: 0.5rem;
+
   color: #191919;
   font-family: "Noto Sans KR", sans-serif;
 `;

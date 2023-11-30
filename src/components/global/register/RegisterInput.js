@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import CustomInput from "../CustomInputs";
-import RegisterLabel from "./RegisterLabel";
-import RegisterErrorMsg from "./RegisterErrorMsg";
 import { flexColumn } from "../../../styles/global.style";
+import CustomInput from "../CustomInputs";
+import RegisterErrorMsg from "./RegisterErrorMsg";
+import RegisterLabel from "./RegisterLabel";
 
 export default function RegisterInput({
   label,
