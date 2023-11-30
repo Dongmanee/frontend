@@ -1,9 +1,9 @@
-import PageSelector from "../../components/global/PageSelector";
-import Layout from "../../layouts/Layout";
-import { temp_club_pageselector } from "../../consts/tempData";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import PageSelector from "../../components/global/PageSelector";
+import { temp_club_pageselector } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
+import Layout from "../../layouts/Layout";
 
 export default function Club() {
   const { onPrevPage } = usePrevPage();

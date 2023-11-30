@@ -7,17 +7,19 @@ import RegisterInput from "../../components/global/register/RegisterInput";
 import RegisterLabel from "../../components/global/register/RegisterLabel";
 import Layout from "../../layouts/Layout";
 import { useLocation } from "react-router-dom";
+import usePrevPage from "../../hooks/usePrevPage";
 
 export default function ClubPostsEdit() {
   const location = useLocation();
   const url = location.pathname.split("posts/")[1];
   const isAdd = url == "add";
-
+  const { onPrevPage } = usePrevPage();
   return (
     <Layout
       headerLeft={"exit"}
       headerCenter={isAdd ? "글쓰기" : "수정"}
       headerRight={"check"}
+      onClickLeft={onPrevPage}
     >
       <TagCol>
         <RegisterLabel label={"해당되는 태그를 선택해주세요"} />

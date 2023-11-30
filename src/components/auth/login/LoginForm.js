@@ -1,24 +1,64 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import React from "react";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import CustomInput from "../../global/CustomInputs";
-import CustomButton from "../../global/CustomButton";
+import { login } from "../../../apis/login";
 import { flexColumn } from "../../../styles/global.style";
+import { loginSchema } from "../../../utils/validationSchema";
+import CustomButton from "../../global/CustomButton";
+import CustomInput from "../../global/CustomInputs";
+import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 
 export default function LoginForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, errors },
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(loginSchema),
+  });
+
+  const onLogin = ({ email, password }) => {
+    login({ email, password }).then((res) => console.log(res));
+  };
+
+  const login_inputs = [
+    {
+      name: "email",
+      placeholder: "이메일을 입력하세요",
+    },
+    {
+      name: "password",
+      placeholder: "비밀번호를 입력하세요",
+      type: "password",
+    },
+  ];
+
   return (
-    <LoginFormBox>
-      <CustomInput
-        height="5vh"
-        radius="1rem"
-        padding="0.3rem 1.2rem"
-        placeholder="이메일을 입력하세요"
-      />
-      <CustomInput
-        height="5vh"
-        radius="1rem"
-        padding="0.3rem 1.2rem"
-        placeholder="비밀번호를 입력하세요"
-      />
+    <LoginFormBox onSubmit={handleSubmit(onLogin)}>
+      {login_inputs.map((input, idx) => (
+        <React.Fragment key={idx}>
+          <CustomInput
+            name={input.name}
+            placeholder={input.placeholder}
+            type={input.type}
+            register={register}
+            height="5vh"
+            radius="1rem"
+            padding="0.3rem 1.2rem"
+          />
+          {errors[input.name] && (
+            <RegisterErrorMsg
+              errorMsg={errors[input.name].message}
+              margin="-0.625rem 0"
+            />
+          )}
+        </React.Fragment>
+      ))}
+
       <CustomButton
+        isDisabled={isSubmitting}
         height="6vh"
         width="100%"
         bgColor={"#3F3E3E"}
@@ -31,7 +71,7 @@ export default function LoginForm() {
   );
 }
 
-const LoginFormBox = styled.div`
+const LoginFormBox = styled.form`
   ${flexColumn}
   gap: 1.5rem;
 `;
