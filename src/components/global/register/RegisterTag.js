@@ -8,6 +8,7 @@ import { flexCenter, flexICenter } from "../../../styles/global.style";
 
 export default function RegisterTag({ label, isRequired, errorMsg }) {
   const [tags, setTags] = useState([]);
+  const MAX_TAG_NUM = 2;
 
   const handleKeyDown = (e) => {
     if (e.key != "Enter") return;
@@ -33,12 +34,14 @@ export default function RegisterTag({ label, isRequired, errorMsg }) {
             </span>
           </TagItem>
         ))}
-        <TagInput
-          onKeyDown={handleKeyDown}
-          placeholder={
-            tags.length == 0 ? "엔터를 입력하여 태그를 등록해주세요" : ""
-          }
-        />
+        {tags.length <= MAX_TAG_NUM && (
+          <TagInput
+            onKeyDown={handleKeyDown}
+            placeholder={
+              tags.length == 0 ? "엔터를 입력하여 태그를 등록해주세요" : ""
+            }
+          />
+        )}
       </TagInputContainer>
       {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
     </div>
