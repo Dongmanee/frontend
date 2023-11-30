@@ -2,18 +2,25 @@ import styled from "styled-components";
 import ClubCardHeadInfo from "./ClubCardHeadInfo";
 import example from "../../../images/example.png";
 import { flexColumn, flexICenter } from "../../../styles/global.style";
+import { useNavigate } from "react-router-dom";
 
 export default function ClubCard({ club }) {
+  const navigate = useNavigate();
+
+  const onClickClubCard = (clubId) => {
+    navigate(`/club/${clubId}`);
+  };
+
   return (
-    <ClubCardLayout>
+    <ClubCardLayout onClick={() => onClickClubCard(club.clubId)}>
       <ClubCardImgBox src={example} />
       <ClubCardDescriptionBox>
         <ClubCardHeadInfo
-          name={club.name}
-          category={club.category}
+          name={club.clubName}
+          category={club.clubSubCategory}
           personnel={club.personnel}
         />
-        <ClubIntroBox>{club.intro}</ClubIntroBox>
+        <ClubIntroBox>{club.clubDescription}</ClubIntroBox>
       </ClubCardDescriptionBox>
     </ClubCardLayout>
   );

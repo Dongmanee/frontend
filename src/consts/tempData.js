@@ -2,67 +2,56 @@ import ClubUserList from "../components/club/ClubUserList";
 import ClubPost from "../components/club/posts/ClubPost";
 import computer from "../images/club-category/computer.png";
 import total from "../images/club-category/total.png";
+import angel from "../images/club-category/angel.png";
+import festival from "../images/club-category/festival.png";
+import heart from "../images/club-category/heart.png";
+import museum from "../images/club-category/museum.png";
+import sports from "../images/club-category/sports.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
 
 export const temp_total_posts = [
   {
-    name: "Import",
-    category: "공지",
+    clubId: "a213asd",
+    categoryId: "공지",
     date: "2023.03.11",
+    postId: "sdf234234",
     postTitle: "어제 우리 동아리 첫 회식!!!",
-    postDetail: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerName: "정땡땡",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerId: "847237489",
     likesNum: 20,
     commentNum: 20,
   },
   {
-    name: "Import",
-    category: "공지",
+    clubId: "b123432",
+    categoryId: "공지",
     date: "2023.03.11",
+    postId: "sdf234234",
     postTitle: "어제 우리 동아리 첫 회식!!!",
-    postDetail: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerName: "정땡땡",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerId: "847237489",
     likesNum: 20,
     commentNum: 20,
   },
   {
-    name: "Import",
-    category: "공지",
+    clubId: "a213asd",
+    categoryId: "공지",
     date: "2023.03.11",
+    postId: "sdf234234",
     postTitle: "어제 우리 동아리 첫 회식!!!",
-    postDetail: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerName: "정땡땡",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerId: "847237489",
     likesNum: 20,
     commentNum: 20,
   },
   {
-    name: "Import",
-    category: "공지",
+    clubId: "a213asd",
+    categoryId: "공지",
     date: "2023.03.11",
+    postId: "sdf234234",
     postTitle: "어제 우리 동아리 첫 회식!!!",
-    postDetail: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerName: "정땡땡",
-    likesNum: 20,
-    commentNum: 20,
-  },
-  {
-    name: "Import",
-    category: "공지",
-    date: "2023.03.11",
-    postTitle: "어제 우리 동아리 첫 회식!!!",
-    postDetail: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerName: "정땡땡",
-    likesNum: 20,
-    commentNum: 20,
-  },
-  {
-    name: "Import",
-    category: "공지",
-    date: "2023.03.11",
-    postTitle: "어제 우리 동아리 첫 회식!!!",
-    postDetail: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerName: "정땡땡",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerId: "847237489",
     likesNum: 20,
     commentNum: 20,
   },
@@ -70,70 +59,54 @@ export const temp_total_posts = [
 
 export const temp_clubs = [
   {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
+    clubId: "adfads",
+    clubName: "Import",
+    clubDescription: "카페에서 다같이 코딩해요",
+    clubMainImageURL: "",
+    clubBackgroundImageURL: "",
+    cluAddress: "",
+    clubSubCategory: "코딩",
     personnel: 35,
   },
   {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
+    clubId: "adfads",
+    clubName: "Import",
+    clubDescription: "카페에서 다같이 코딩해요",
+    clubMainImageURL: "",
+    clubBackgroundImageURL: "",
+    cluAddress: "",
+    clubSubCategory: "코딩",
     personnel: 35,
   },
   {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
+    clubId: "adfads",
+    clubName: "Import",
+    clubDescription: "카페에서 다같이 코딩해요",
+    clubMainImageURL: "",
+    clubBackgroundImageURL: "",
+    cluAddress: "",
+    clubSubCategory: "코딩",
     personnel: 35,
   },
   {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
-    personnel: 35,
-  },
-  {
-    name: "Import",
-    intro: "카페에서 다같이 코딩해요",
-    category: "코딩",
+    clubId: "adfads",
+    clubName: "Import",
+    clubDescription: "카페에서 다같이 코딩해요",
+    clubMainImageURL: "",
+    clubBackgroundImageURL: "",
+    cluAddress: "",
+    clubSubCategory: "코딩",
     personnel: 35,
   },
 ];
 
 export const temp_clubs_catgory = [
-  { name: "전체", img: total },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
-  { name: "코딩", img: computer },
+  { name: "전체", img: total, categoryId: "" },
+  { name: "체육", img: sports, categoryId: "afsd" },
+  { name: "공연", img: festival, categoryId: "12d312" },
+  { name: "봉사", img: heart, categoryId: "1223f312" },
+  { name: "종교", img: angel, categoryId: "wqed3" },
+  { name: "전시교양", img: museum, categoryId: "asdf3" },
 ];
 
 export const temp_club_pageselector = [
@@ -441,5 +414,16 @@ export const temp_club_schedule_add = [
   },
   {
     name: "인원을 입력해주세요",
+  },
+];
+
+export const temp_my_club = [
+  {
+    clubId: "1231231",
+    clubName: "Import",
+  },
+  {
+    clubId: "123vdasdf",
+    clubName: "매치포인트",
   },
 ];

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ProfileAndName from "../global/ProfileAndName";
 import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { temp_my_club } from "../../consts/tempData";
 
 export default function HomeClubList() {
   const navigate = useNavigate();
@@ -10,11 +11,19 @@ export default function HomeClubList() {
     navigate("/clubs");
   };
 
+  const onClickClub = (clubId) => {
+    navigate(`/club/${clubId}`);
+  };
+
   return (
     <HomeClubListLayout>
       <ClubListBox>
-        <ProfileAndName name="동아리1" />
-        <ProfileAndName name="동아리2" />
+        {temp_my_club.map((club) => (
+          <ProfileAndName
+            name={club.clubName}
+            onClick={() => onClickClub(club.clubId)}
+          />
+        ))}
       </ClubListBox>
       <AddClubButton onClick={onClickAddButton}>
         <FaPlus />

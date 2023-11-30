@@ -9,7 +9,7 @@ import HorizontalSlider from "../../global/HorizontalSlider";
 export default function RegisterClubCategory({ errorMsg }) {
   return (
     <RegisterClubCategoryLayout>
-      <RegisterLabel label="카테고리를 선택해주세요" isRequired={true} />
+      <RegisterLabel label="동아리 카테고리" isRequired={true} />
       <HorizontalSlider>
         {temp_clubs_catgory.map((item, idx) => (
           <ProfileAndName
