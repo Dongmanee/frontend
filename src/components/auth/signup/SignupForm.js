@@ -1,15 +1,26 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { signup } from "../../../apis/signup";
 import { flexColumn } from "../../../styles/global.style";
-import { signupSchema } from "../../../utils/validationSchema";
+import { kakaoSignupSchema, signupSchema } from "../../../utils/validationSchema";
 import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
 import RegisterEmailInput from "./RegisterEmailInput";
 
 export default function SignupForm() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const kakaoInfos = {
+    email: params.get("email"),
+    code: params.get("code"),
+    provider: params.get("provider"),
+    externalProviderId: params.get("externalProviderId"),
+  };
+  const isKaKaoLogin = kakaoInfos.provider == "kakao";
+
   const [authenticatedCode, setAuthenticatedCode] = useState("");
   const {
     register,
@@ -19,25 +30,40 @@ export default function SignupForm() {
     setError,
   } = useForm({
     mode: "onBlur",
-    resolver: yupResolver(signupSchema),
+    resolver: isKaKaoLogin ? yupResolver(kakaoSignupSchema) : yupResolver(signupSchema),
   });
 
   const onSubmit = (data) => {
-    if (authenticatedCode == "")
-      setError("email", { message: "이메일 인증을 해주세요" }, { shouldFocus: true });
-    else {
-      const signupData = {
-        universityId: 1,
-        studentId: data.studentId,
-        department: data.department,
-        phone: data.phoneNum,
-        email: data.email,
-        emailAuthCode: authenticatedCode,
-        birth: data.birthDate,
-        name: data.name,
-        password: data.password,
+    const commonBody = {
+      universityId: 1,
+      name: data.name,
+      birth: data.birthDate,
+      department: data.department,
+      studentId: data.studentId,
+      phone: data.phoneNum,
+    };
+
+    if (isKaKaoLogin) {
+      const body = {
+        email: kakaoInfos.email,
+        emailAuthCode: kakaoInfos.code,
+        provider: kakaoInfos.provider,
+        externalProviderId: kakaoInfos.externalProviderId,
+        ...commonBody,
       };
-      signup(signupData).then((res) => console.log(res.data));
+      signup(body).then((res) => console.log(res.data));
+    } else {
+      if (authenticatedCode == "")
+        setError("email", { message: "이메일 인증을 해주세요" }, { shouldFocus: true });
+      else {
+        const body = {
+          email: data.email,
+          emailAuthCode: authenticatedCode,
+          password: data.password,
+          ...commonBody,
+        };
+        signup(body).then((res) => console.log(res.data));
+      }
     }
   };
 
@@ -45,34 +71,40 @@ export default function SignupForm() {
     <SignupBox>
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputCol>
-          <RegisterEmailInput
-            name="email"
-            register={register}
-            getValues={getValues}
-            authenticatedCode={authenticatedCode}
-            setAuthenticatedCode={setAuthenticatedCode}
-            setError={setError}
-            errorMsg={errors.email && errors.email.message}
-          />
+          {isKaKaoLogin ? (
+            ""
+          ) : (
+            <>
+              <RegisterEmailInput
+                name="email"
+                register={register}
+                getValues={getValues}
+                authenticatedCode={authenticatedCode}
+                setAuthenticatedCode={setAuthenticatedCode}
+                setError={setError}
+                errorMsg={errors.email && errors.email.message}
+              />
 
-          <RegisterInput
-            name="password"
-            register={register}
-            type="password"
-            label="비밀번호"
-            isRequired={true}
-            placeholder="8~12자의 영문, 숫자, 특수문자만 사용가능합니다"
-            errorMsg={errors.password && errors.password.message}
-          />
-          <RegisterInput
-            name="passwordConfirm"
-            register={register}
-            type="password"
-            label="비밀번호 확인"
-            isRequired={true}
-            placeholder="비밀번호를 한 번 더 입력해주세요"
-            errorMsg={errors.passwordConfirm && errors.passwordConfirm.message}
-          />
+              <RegisterInput
+                name="password"
+                register={register}
+                type="password"
+                label="비밀번호"
+                isRequired={true}
+                placeholder="8~12자의 영문, 숫자, 특수문자만 사용가능합니다"
+                errorMsg={errors.password && errors.password.message}
+              />
+              <RegisterInput
+                name="passwordConfirm"
+                register={register}
+                type="password"
+                label="비밀번호 확인"
+                isRequired={true}
+                placeholder="비밀번호를 한 번 더 입력해주세요"
+                errorMsg={errors.passwordConfirm && errors.passwordConfirm.message}
+              />
+            </>
+          )}
 
           <InputRow>
             <RegisterInput

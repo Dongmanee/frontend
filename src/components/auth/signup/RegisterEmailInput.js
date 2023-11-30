@@ -16,6 +16,7 @@ export default function RegisterEmailInput({
   authenticatedCode,
   setAuthenticatedCode,
   setError,
+  value,
 }) {
   const [isAuthEmaillModal, setIsAuthEmailModal] = useState(false);
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -37,6 +38,7 @@ export default function RegisterEmailInput({
       <RegisterLabel id={id} label="이메일" isRequired="true" />
       <RegisterEmailBox>
         <CustomInput
+          value={value}
           register={register}
           name={name}
           id={id}
