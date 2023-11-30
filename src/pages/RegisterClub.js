@@ -19,19 +19,27 @@ export default function RegisterClub() {
     >
       <RegisterInputList>
         <RegisterInput
-          label="이름을 입력해주세요"
+          label="동아리 이름"
           isRequired={true}
           errorMsg="다시 입력해주세요"
         />
         <RegisterClubCategory errorMsg="다시 선택해주세요" />
-        <RegisterTag label="태그를 입력해주세요" />
+        <RegisterTag label="동아리 태그 ( 최대 3개까지 입력 가능 )" />
         <RegisterInput
-          label="소개를 입력해주세요"
+          label="동아리 소개"
           isRequired={true}
           errorMsg="다시 입력해주세요"
           inputHeight="5rem"
         />
-        <RegisterImage errorMsg="다시 등록해주세요" />
+        <RegisterInput
+          label="동아리 인스타그램 주소"
+          isRequired={true}
+          errorMsg="다시 입력해주세요"
+        />
+        <RegisterImage
+          label="동아리 대표 이미지"
+          errorMsg="다시 등록해주세요"
+        />
       </RegisterInputList>
     </Layout>
   );
@@ -41,5 +49,4 @@ const RegisterInputList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 5vh;
 `;
