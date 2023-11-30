@@ -10,6 +10,7 @@ export default function ClubCategory({ setKeywordReset }) {
   const onClickCategoryIcon = (categoryId) => {
     if (categoryId == "") {
       searchParams.delete("category");
+      searchParams.delete("keyword");
       setSearchParams(searchParams);
     } else {
       setSearchParams({ category: categoryId });
