@@ -4,7 +4,7 @@ import { temp_clubs_catgory } from "../../../consts/tempData";
 import CategoryIcon from "../../global/CategoryIcon";
 import { useSearchParams } from "react-router-dom";
 
-export default function ClubCategory() {
+export default function ClubCategory({ setKeywordReset }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onClickCategoryIcon = (categoryId) => {
@@ -14,6 +14,7 @@ export default function ClubCategory() {
     } else {
       setSearchParams({ category: categoryId });
     }
+    setKeywordReset();
   };
 
   const setIsSelected = (categoryId) => {

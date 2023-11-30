@@ -11,6 +11,6 @@ export const confirmCode = async (enteredEmail, enteredCode) => {
   });
 };
 
-export const setSignup = async (data) => {
+export const signup = async (data) => {
   return await axiosInstance.post("signup", data);
 };
