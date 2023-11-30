@@ -6,6 +6,7 @@ import RegisterImage from "../components/global/register/RegisterImage";
 import RegisterButton from "../components/global/register/RegisterButton";
 import RegisterTag from "../components/global/register/RegisterTag";
 import usePrevPage from "../hooks/usePrevPage";
+import RegisterTextArea from "../components/global/register/RegisterTextArea";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
@@ -25,11 +26,11 @@ export default function RegisterClub() {
         />
         <RegisterClubCategory errorMsg="다시 선택해주세요" />
         <RegisterTag label="동아리 태그 ( 최대 3개까지 입력 가능 )" />
-        <RegisterInput
+        <RegisterTextArea
           label="동아리 소개"
           isRequired={true}
           errorMsg="다시 입력해주세요"
-          inputHeight="5rem"
+          height="5rem"
         />
         <RegisterInput
           label="동아리 인스타그램 주소"
