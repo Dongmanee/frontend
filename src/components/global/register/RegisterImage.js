@@ -12,16 +12,19 @@ export default function RegisterImage({
   errorMsg,
   register,
   name,
-  image,
+  watch,
 }) {
   const [imagePreview, setImagePreview] = useState("");
   const photoInput = useRef();
+  const image = watch(name);
+  const { ref, ...rest } = register(name);
 
   const onClickImageInput = () => {
     photoInput.current.click();
   };
 
   useEffect(() => {
+    console.log(image);
     if (image && image.length > 0) {
       const file = image[0];
       setImagePreview(URL.createObjectURL(file));
@@ -30,23 +33,28 @@ export default function RegisterImage({
 
   return (
     <RegisterImageLayout>
-      <RegisterLabel id="picture" label={label} isRequired={true} />
+      <RegisterLabel id={name} label={label} isRequired={true} />
       <RegisterInputBox>
         <RegisteredImage src={imagePreview ? imagePreview : example} />
         <RegisterImageButton>
           <input
-            id="picture"
+            {...rest}
+            name={name}
+            ref={(e) => {
+              ref(e);
+              photoInput.current = e;
+            }}
+            id={name}
             type="file"
             accept="image/jpg, image/jpeg, image/png"
-            ref={photoInput}
             style={{ display: "none" }}
           />
-          <button onClick={onClickImageInput}>
+          <div onClick={onClickImageInput}>
             <MdEdit />
-          </button>
+          </div>
         </RegisterImageButton>
       </RegisterInputBox>
-      {/* {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />} */}
+      {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
     </RegisterImageLayout>
   );
 }
@@ -59,21 +67,23 @@ const RegisterInputBox = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 0.3rem 0;
+  margin-top: 0.3rem;
 `;
 
 const RegisteredImage = styled.img`
   width: 7rem;
+  height: 7rem;
   border-radius: 50%;
+  object-fit: cover;
 `;
 
 const RegisterImageButton = styled.div`
   position: relative;
-  button {
+  div {
     ${flexCenter}
     padding: 0.5rem;
     border-radius: 50%;
-    background-color: ${(props) => props.theme.colors.gray.xs};
+    background-color: ${(props) => props.theme.colors.gray.xxs};
     border: none;
     font-family: "Noto Sans KR", sans-serif;
     position: absolute;
