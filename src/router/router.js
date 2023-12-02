@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
@@ -15,15 +15,16 @@ import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleAdd from "../pages/club/ClubScheduleAdd";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
 import ClubUserHome from "../pages/club/ClubUserHome";
+import InquiryClub from "../pages/club/InquiryClub";
+import JoinClub from "../pages/club/JoinClub";
 import ClubSetting from "../pages/clubSetting/ClubSetting";
+import ClubSettingApplicationDetail from "../pages/clubSetting/ClubSettingApplicationDetail";
+import ClubSettingApplicationManagement from "../pages/clubSetting/ClubSettingApplicationManagement";
 import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplications";
 import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
-import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import ClubSettingInquiryDetail from "../pages/clubSetting/ClubSettingInquiryDetail";
-import ClubSettingApplicationDetail from "../pages/clubSetting/ClubSettingApplicationDetail";
+import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
-import JoinClub from "../pages/club/JoinClub";
-import InquiryClub from "../pages/club/InquiryClub";
 
 const router = createBrowserRouter([
   {
@@ -56,13 +57,13 @@ const router = createBrowserRouter([
         element: <RegisterClub />,
       },
       {
-        path: "/club",
+        path: "/club/:clubId/register/edit",
+        element: <RegisterClub />,
+      },
+      {
+        path: "/club/:clubId",
         element: <Club />,
         children: [
-          {
-            path: "/club/",
-            element: <Navigate to={"home"} />,
-          },
           {
             path: "home",
             element: <ClubHome />,
@@ -146,6 +147,10 @@ const router = createBrowserRouter([
       {
         path: "/club/setting/applications/:applicationId",
         element: <ClubSettingApplicationDetail />,
+      },
+      {
+        path: "/club/setting/applications/management",
+        element: <ClubSettingApplicationManagement />,
       },
     ],
   },

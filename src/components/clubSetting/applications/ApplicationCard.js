@@ -2,8 +2,13 @@ import styled from "styled-components";
 import example from "../../../images/example.png";
 import { flexCenter, flexICenter } from "../../../styles/global.style";
 import ApplicationCardInfo from "./ApplicationCardInfo";
+import { useNavigate } from "react-router-dom";
 
 export default function ApplicationCard({ applicationInfo }) {
+  const navigate = useNavigate();
+  const onDetails = () => {
+    navigate(`id123`);
+  };
   return (
     <ApplicationCardLayout>
       <img src={example} />
@@ -12,7 +17,9 @@ export default function ApplicationCard({ applicationInfo }) {
         major={applicationInfo.major}
         studentId={applicationInfo.id}
       />
-      <DetailApplicationButton>지원서 보러가기</DetailApplicationButton>
+      <DetailApplicationButton onClick={onDetails}>
+        지원서 보러가기
+      </DetailApplicationButton>
     </ApplicationCardLayout>
   );
 }

@@ -5,7 +5,7 @@ import { flexCenter, fullSize, positionCenter } from "../../styles/global.style"
 import useCheckPath from "../../hooks/useCheckPath";
 
 export default function ClubAlbum() {
-  const { isCheckedPath } = useCheckPath("/club/home");
+  const { isCheckedPath } = useCheckPath("/club/:id/home");
 
   return (
     <ClubAlbumLayout $isClubhome={isCheckedPath}>

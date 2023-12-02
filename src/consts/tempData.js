@@ -112,19 +112,19 @@ export const temp_clubs_catgory = [
 export const temp_club_pageselector = [
   {
     name: "홈",
-    src: "/club/home",
+    src: "/club/:id/home",
   },
   {
     name: "게시판",
-    src: "/club/posts",
+    src: "/club/:id/posts",
   },
   {
     name: "일정",
-    src: "/club/schedule",
+    src: "/club/:id/schedule",
   },
   {
     name: "사진첩",
-    src: "/club/album",
+    src: "/club/:id/album",
   },
 ];
 
@@ -184,7 +184,7 @@ export const temp_club_pages = [
     isMore: true,
     moreright: "0",
     moretop: "2.5vh",
-    src: "/club/posts",
+    src: "/club/:id/posts",
   },
   {
     title: "일정",
@@ -197,7 +197,7 @@ export const temp_club_pages = [
     moreright: "0",
     moreleft: "0",
     morebottom: "-10px",
-    src: "/club/album",
+    src: "/club/:id/album",
   },
   {
     title: "모임 멤버 (35)",
@@ -425,5 +425,32 @@ export const temp_my_club = [
   {
     clubId: "123vdasdf",
     clubName: "매치포인트",
+  },
+];
+
+export const temp_club_setting_application_details = [
+  {
+    label: "이름",
+    data: "김민지",
+  },
+  {
+    label: "학번",
+    data: "20231122",
+  },
+  {
+    label: "학과",
+    data: "컴퓨터공학과",
+  },
+  {
+    label: "핸드폰 번호",
+    data: "010-0000-2222",
+  },
+  {
+    label: "동아리 질문1",
+    data: "동아리 질문에 대한 답변1111",
+  },
+  {
+    label: "동아리 질문2",
+    data: "동아리 질문에 대한 답변2222",
   },
 ];
