@@ -1,41 +1,54 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import useThrottle from "../../hooks/useThrottle";
 
-//아직 수정 중인 컴포넌트
 export default function HorizontalSlider({ children }) {
-  const [touchX, setTouchX] = useState(0);
+  const scrollRef = useRef(null);
+  const [isDrag, setIsDrag] = useState(false);
+  const [startX, setStartX] = useState();
 
-  function onTouchStart(e) {
-    setTouchX(e.changedTouches[0].pageX);
-  }
+  const onDragStart = (e) => {
+    e.preventDefault();
+    setIsDrag(true);
+    setStartX(e.pageX + scrollRef.current.scrollLeft);
+  };
 
-  function onTouchEnd(e) {
-    const distanceX = touchX - e.changedTouches[0].pageX;
-    const targetUl = e.target.closest("ul");
-    // const targetUlWidth = targetUl.offsetWidth / 2;
-    const newLeft = Math.abs(parseFloat(targetUl.style.left)) + distanceX;
+  const onDragEnd = () => {
+    setIsDrag(false);
+  };
 
-    if (newLeft < 0) {
-      targetUl.style.left = "0px";
-    } else {
-      targetUl.style.left = `-${newLeft}px`;
+  const onDragMove = (e) => {
+    if (isDrag) {
+      const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
+
+      scrollRef.current.scrollLeft = startX - e.pageX;
+
+      if (scrollLeft === 0) {
+        setStartX(e.pageX);
+      } else if (scrollWidth <= clientWidth + scrollLeft) {
+        setStartX(e.pageX + scrollLeft);
+      }
     }
-  }
+  };
+
+  const onThrottleDragMove = useThrottle(onDragMove, 50);
 
   return (
     <HorizontalSliderLayout
-      style={{ left: "0" }}
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
+      onMouseDown={onDragStart}
+      onMouseMove={isDrag ? onThrottleDragMove : null}
+      onMouseUp={onDragEnd}
+      onMouseLeave={onDragEnd}
+      ref={scrollRef}
     >
       {children}
     </HorizontalSliderLayout>
   );
 }
 
-const HorizontalSliderLayout = styled.ul`
+const HorizontalSliderLayout = styled.div`
   width: 100%;
-  overflow: scroll;
+  overflow-x: scroll;
   display: flex;
   gap: 20px;
   padding: 0.5rem 0;

@@ -107,6 +107,9 @@ export const temp_clubs_catgory = [
   { name: "봉사", img: heart, categoryId: "1223f312" },
   { name: "종교", img: angel, categoryId: "wqed3" },
   { name: "전시교양", img: museum, categoryId: "asdf3" },
+  { name: "전시교양", img: museum, categoryId: "asdf3" },
+  { name: "전시교양", img: museum, categoryId: "asdf3" },
+  { name: "전시교양", img: museum, categoryId: "asdf3" },
 ];
 
 export const temp_club_pageselector = [
