@@ -52,7 +52,11 @@ export default function RegisterClub() {
             control={control}
             errorMsg="다시 선택해주세요"
           />
-          <RegisterTag label="동아리 태그 ( 최대 3개까지 입력 가능 )" />
+          <RegisterTag
+            name="clubTags"
+            control={control}
+            label="동아리 태그 ( 최대 3개까지 입력 가능 )"
+          />
           <RegisterTextArea
             name="clubDescription"
             register={register}

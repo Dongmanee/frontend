@@ -24,10 +24,11 @@ export default function RegisterImage({
   };
 
   useEffect(() => {
-    console.log(image);
     if (image && image.length > 0) {
       const file = image[0];
       setImagePreview(URL.createObjectURL(file));
+    } else {
+      setImagePreview(example);
     }
   }, [image]);
 
