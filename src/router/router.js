@@ -24,6 +24,7 @@ import ClubSettingApplicationDetail from "../pages/clubSetting/ClubSettingApplic
 import UserJoinClubs from "../pages/user/UserJoinClubs";
 import JoinClub from "../pages/club/JoinClub";
 import InquiryClub from "../pages/club/InquiryClub";
+import ClubSettingApplicationManagement from "../pages/clubSetting/ClubSettingApplicationManagement";
 
 const router = createBrowserRouter([
   {
@@ -56,13 +57,9 @@ const router = createBrowserRouter([
         element: <RegisterClub />,
       },
       {
-        path: "/club",
+        path: "/club/:clubId",
         element: <Club />,
         children: [
-          {
-            path: "/club/",
-            element: <Navigate to={"home"} />,
-          },
           {
             path: "home",
             element: <ClubHome />,
@@ -146,6 +143,10 @@ const router = createBrowserRouter([
       {
         path: "/club/setting/applications/:applicationId",
         element: <ClubSettingApplicationDetail />,
+      },
+      {
+        path: "/club/setting/applications/management",
+        element: <ClubSettingApplicationManagement />,
       },
     ],
   },

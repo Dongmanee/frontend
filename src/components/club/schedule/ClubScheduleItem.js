@@ -8,7 +8,7 @@ export default function ClubScheduleItem({ isDone, item }) {
   const left = isDone ? "done" : "D-2";
   const navigate = useNavigate();
   const openScheduleDetail = (id) => {
-    navigate(`/club/schedule/${id}`);
+    navigate(`/club/:id/schedule/${id}`);
   };
   return (
     <ClubScheduleItemsLayout onClick={() => openScheduleDetail(item.id)} $isDone={isDone}>
