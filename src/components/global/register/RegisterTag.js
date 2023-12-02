@@ -5,8 +5,17 @@ import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";
 import { useCallback, useState, useEffect } from "react";
 import { flexCenter, flexICenter } from "../../../styles/global.style";
+import { useController } from "react-hook-form";
 
-export default function RegisterTag({ label, isRequired, errorMsg }) {
+export default function RegisterTag({
+  name,
+  control,
+  label,
+  isRequired,
+  errorMsg,
+}) {
+  const { field } = useController({ name: name, control: control });
+
   const [tags, setTags] = useState([]);
   const MAX_TAG_NUM = 2;
 
@@ -21,6 +30,10 @@ export default function RegisterTag({ label, isRequired, errorMsg }) {
   const removeTag = (tagIdx) => {
     setTags(tags.filter((tag, idx) => idx != tagIdx));
   };
+
+  useEffect(() => {
+    field.onChange(tags);
+  }, [tags]);
 
   return (
     <div>
