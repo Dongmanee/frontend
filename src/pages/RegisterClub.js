@@ -1,16 +1,20 @@
-import styled from "styled-components";
-import RegisterInput from "../components/global/register/RegisterInput";
-import Layout from "../layouts/Layout";
-import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCategory";
-import RegisterImage from "../components/global/register/RegisterImage";
-import RegisterButton from "../components/global/register/RegisterButton";
-import RegisterTag from "../components/global/register/RegisterTag";
-import usePrevPage from "../hooks/usePrevPage";
-import RegisterTextArea from "../components/global/register/RegisterTextArea";
 import { useForm } from "react-hook-form";
+import { useLocation, useParams } from "react-router-dom";
+import styled from "styled-components";
+import RegisterImage from "../components/global/register/RegisterImage";
+import RegisterInput from "../components/global/register/RegisterInput";
+import RegisterTag from "../components/global/register/RegisterTag";
+import RegisterTextArea from "../components/global/register/RegisterTextArea";
+import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCategory";
+import usePrevPage from "../hooks/usePrevPage";
+import Layout from "../layouts/Layout";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
+  const location = useLocation();
+  const params = useParams();
+  const clubId = params.clubId;
+  const isEdit = location.pathname.includes("register/edit");
   const {
     register,
     handleSubmit,
@@ -26,7 +30,7 @@ export default function RegisterClub() {
   return (
     <Layout
       headerLeft="prev"
-      headerCenter="동아리 등록"
+      headerCenter={isEdit ? "정보 수정" : "동아리 등록"}
       headerRight="check"
       onClickLeft={onPrevPage}
       onClickRight={handleSubmit(onSubmit)}
