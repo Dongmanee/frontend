@@ -95,20 +95,20 @@ const router = createBrowserRouter([
         element: <InquiryClub />,
       },
       {
-        path: "/club/schedule/add",
+        path: "/club/:clubId/schedule/add",
         element: <ClubScheduleAdd />,
       },
 
       {
-        path: "/club/posts/:id",
+        path: "/club/:clubId/posts/:id",
         element: <ClubPostsDetail />,
       },
       {
-        path: "/club/posts/add",
+        path: "/club/:clubId/posts/add",
         element: <ClubPostsEdit />,
       },
       {
-        path: "club/posts/edit/:id",
+        path: "club/:clubId/posts/edit/:id",
         element: <ClubPostsEdit />,
       },
 
