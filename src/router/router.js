@@ -123,7 +123,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/club/setting",
+        path: "/club/:clubId/setting",
         element: <ClubSetting />,
         children: [
           {
@@ -141,15 +141,15 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/club/setting/inquiries/:inquiryId",
+        path: "/club/:clubId/setting/inquiries/:inquiryId",
         element: <ClubSettingInquiryDetail />,
       },
       {
-        path: "/club/setting/applications/:applicationId",
+        path: "/club/:clubId/setting/applications/:applicationId",
         element: <ClubSettingApplicationDetail />,
       },
       {
-        path: "/club/setting/applications/management",
+        path: "/club/:clubId/setting/applications/management",
         element: <ClubSettingApplicationManagement />,
       },
     ],
