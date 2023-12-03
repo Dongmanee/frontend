@@ -141,6 +141,10 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: "/club/:clubId/setting/edit",
+        element: <RegisterClub />,
+      },
+      {
         path: "/club/:clubId/setting/inquiries/:inquiryId",
         element: <ClubSettingInquiryDetail />,
       },
