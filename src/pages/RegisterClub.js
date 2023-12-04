@@ -8,6 +8,7 @@ import RegisterTextArea from "../components/global/register/RegisterTextArea";
 import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCategory";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
+import RegisterSnsInput from "../components/global/register/RegisterSnsInput";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
@@ -69,12 +70,10 @@ export default function RegisterClub() {
             errorMsg="다시 입력해주세요"
             height="5rem"
           />
-          <RegisterInput
-            name="clubInstagramURL"
+          <RegisterSnsInput
+            label="동아리 SNS 주소"
             register={register}
-            label="동아리 인스타그램 주소"
-            isRequired={true}
-            errorMsg="다시 입력해주세요"
+            error={errors}
           />
         </RegisterInputList>
       </form>
