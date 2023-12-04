@@ -10,6 +10,13 @@ import sports from "../images/club-category/sports.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
 
+export const university_list = [
+  { universityId: "univ1", universityName: "한밭대학교" },
+  { universityId: "univ2", universityName: "충남대학교" },
+  { universityId: "univ3", universityName: "목원대학교" },
+  { universityId: "univ4", universityName: "한남대학교" },
+];
+
 export const temp_total_posts = [
   {
     clubId: "a213asd",
