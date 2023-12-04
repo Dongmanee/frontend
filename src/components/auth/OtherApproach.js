@@ -1,12 +1,29 @@
 import styled from "styled-components";
 import { flexCenter } from "../../styles/global.style";
+import { useNavigate } from "react-router-dom";
 
 export default function OtherApproach({ isLogin }) {
+  const navigate = useNavigate();
+
+  const onClickLookingButton = () => {
+    navigate("/posts");
+  };
+
+  const onClickSignButton = () => {
+    navigate(isLogin ? "/signup" : "/");
+  };
+
   return (
     <OtherApproachLayout>
-      <ApproachBox>{isLogin ? "회원가입" : "로그인"}</ApproachBox>
+      <ApproachBox
+        onClick={() => {
+          onClickSignButton();
+        }}
+      >
+        {isLogin ? "회원가입" : "로그인"}
+      </ApproachBox>
       <VerticalLine />
-      <ApproachBox>둘러보기</ApproachBox>
+      <ApproachBox onClick={() => onClickLookingButton()}>둘러보기</ApproachBox>
     </OtherApproachLayout>
   );
 }

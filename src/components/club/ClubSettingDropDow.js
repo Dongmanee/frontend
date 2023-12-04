@@ -27,7 +27,7 @@ export default function ClubSettingDropDown() {
 }
 
 const ClubSettingDropDownLayout = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 3;
   right: 0;
   top: 3rem;
