@@ -15,7 +15,7 @@ export default function RegisterClub() {
   const location = useLocation();
   const params = useParams();
   const clubId = params.clubId;
-  const isEdit = location.pathname.includes("register/edit");
+  const isEdit = location.pathname.includes("/edit");
   const {
     register,
     handleSubmit,
@@ -52,6 +52,16 @@ export default function RegisterClub() {
             isRequired={true}
             errorMsg="다시 입력해주세요"
           />
+          {isEdit && (
+            <RegisterImage
+              name="clubBackgroundImage"
+              register={register}
+              watch={watch}
+              label="동아리 배경 이미지"
+              errorMsg="다시 등록해주세요"
+              isBackgroundImage={true}
+            />
+          )}
           <RegisterClubCategory
             name="clubCategory"
             control={control}
