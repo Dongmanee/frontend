@@ -3,10 +3,13 @@ import PageSelector from "../../components/global/PageSelector";
 import { temp_club_setting_page } from "../../consts/tempData";
 import Layout from "../../layouts/Layout";
 import styled from "styled-components";
+import usePrevPage from "../../hooks/usePrevPage";
 
 export default function ClubSetting() {
+  const { onPrevPage } = usePrevPage();
+
   return (
-    <Layout headerCenter="Import">
+    <Layout headerCenter="Import" headerLeft="prev" onClickLeft={onPrevPage}>
       <PageSelector pages={temp_club_setting_page} />
       <OutletBox>
         <Outlet />

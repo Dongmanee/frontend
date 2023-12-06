@@ -12,7 +12,7 @@ export default function HomeClubList() {
   };
 
   const onClickClub = (clubId) => {
-    navigate(`/club/${clubId}`);
+    navigate(`/club/${clubId}/home`);
   };
 
   return (

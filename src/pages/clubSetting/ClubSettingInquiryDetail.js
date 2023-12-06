@@ -5,12 +5,19 @@ import ConfirmStateBox from "../../components/clubSetting/inquiries/ConfirmState
 import { flexColumn } from "../../styles/global.style";
 import InquiryDetailItem from "../../components/clubSetting/inquiries/InquiryDetailItem";
 import RegisterInput from "../../components/global/register/RegisterInput";
+import usePrevPage from "../../hooks/usePrevPage";
 
 export default function ClubSettingInquiryDetail() {
   const { inquiryId } = useParams();
+  const { onPrevPage } = usePrevPage();
 
   return (
-    <Layout headerLeft="prev" headerCenter="문의내역" headerRight="check">
+    <Layout
+      headerLeft="prev"
+      headerCenter="문의내역"
+      headerRight="check"
+      onClickLeft={onPrevPage}
+    >
       <ClubSettingInquiryDetailLayout>
         <ConfirmStateBox isConfirm={true} />
         <InquiryFormBox>
