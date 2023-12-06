@@ -9,6 +9,7 @@ import museum from "../images/club-category/museum.png";
 import sports from "../images/club-category/sports.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
+import sample from "../images/sample.png";
 
 export const university_list = [
   { universityId: "univ1", universityName: "한밭대학교" },
@@ -464,3 +465,29 @@ export const temp_club_setting_application_details = [
     data: "동아리 질문에 대한 답변2222",
   },
 ];
+
+export const temp_club_home_info = {
+  clubName: "Import",
+  clubMainImage: sample,
+  clubBackgroundImage: sample,
+  clubTags: ["웹개발", "코딩"],
+  clubIntro: "교내 유일 코딩 동아리입니다",
+  clubSns: [
+    {
+      Snsname: "instagram",
+      SnsUrl: "http://",
+    },
+    {
+      Snsname: "naverBlog",
+      SnsUrl: "http://",
+    },
+    {
+      Snsname: "naverBand",
+      SnsUrl: "http://",
+    },
+  ],
+  isClubJoinAvailable: {
+    joinPeriod: "2021년 11월 12일",
+    isAvaliable: true,
+  },
+};

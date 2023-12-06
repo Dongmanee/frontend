@@ -2,24 +2,41 @@ import styled from "styled-components";
 import { flexColumn } from "../../styles/global.style";
 import img from "../../images/sample.png";
 import SmallTagBox from "../global/SmallTagBox";
+import { temp_club_home_info } from "../../consts/tempData";
+import instagramIcon from "../../images/sns_icons/instagramIcon.png";
+import naverBandIcon from "../../images/sns_icons/naverBandIcon.png";
+import naverBlogIcon from "../../images/sns_icons/naverBlogIcon.png";
 
 export default function ClubInfo() {
+  const club = temp_club_home_info;
+
   return (
     <ClubInfoLayout>
       <BackgroundImage />
 
       <Category>
-        <img src={img} width={50} height={50} />
+        <img src={club.clubMainImage} width={50} height={50} />
         <CategoryTagRow>
-          <SmallTagBox tagName="웹개발" />
-          <SmallTagBox tagName="코딩" />
+          {club.clubTags.map((tag, idx) => (
+            <SmallTagBox tagName={tag} />
+          ))}
         </CategoryTagRow>
       </Category>
 
-      <Info>
-        <p>교내 유일 코딩동아리입니다!</p>
-        <p>매주 화요일에 정기모임을 하고 있습니다.</p>
-      </Info>
+      <Info>{club.clubIntro}</Info>
+
+      <SnsBox>
+        {club.clubSns.map((sns, idx) => {
+          switch (sns.Snsname) {
+            case "instagram":
+              return <img src={instagramIcon} />;
+            case "naverBlog":
+              return <img src={naverBlogIcon} />;
+            case "naverBand":
+              return <img src={naverBandIcon} />;
+          }
+        })}
+      </SnsBox>
     </ClubInfoLayout>
   );
 }
@@ -65,4 +82,14 @@ const Info = styled.div`
   padding: 20px;
 
   line-height: 170%;
+`;
+
+const SnsBox = styled.div`
+  display: flex;
+  gap: 0.8rem;
+
+  padding: 10px 20px;
+  img {
+    width: 2rem;
+  }
 `;
