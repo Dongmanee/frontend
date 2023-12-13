@@ -2,10 +2,10 @@ import { AiOutlineMinusCircle } from "react-icons/ai";
 import styled from "styled-components";
 import { flexICenter } from "../../../styles/global.style";
 
-export default function ManagementQuestion({ question }) {
+export default function ManagementQuestion({ question, onClick }) {
   return (
     <ManagementQuestionLayout>
-      <AiOutlineMinusCircle size={20} />
+      <AiOutlineMinusCircle size={20} onClick={onClick} />
       <span>{question}</span>
     </ManagementQuestionLayout>
   );

@@ -491,3 +491,9 @@ export const temp_club_home_info = {
     isAvaliable: true,
   },
 };
+
+export const temp_club_application_management = [
+  { question: "코딩을 경험해본 적이 있으십니까?" },
+  { question: "어느정도의 수준으로 경험해보셨습니까?" },
+  { question: "동아리에서 어떤 경험을 하고 싶으십니까?" },
+];
