@@ -5,20 +5,29 @@ import usePrevPage from "../../hooks/usePrevPage";
 import Layout from "../../layouts/Layout";
 import { flexCenter, flexColumn, fullSize } from "../../styles/global.style";
 import { temp_club_application_management } from "../../consts/tempData";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // 추후에 가능하다면 드래깅도 가능하게 수정해보자!
 export default function ClubSettingApplicationManagement() {
   const { onPrevPage } = usePrevPage();
   const [questions, setQuestions] = useState(temp_club_application_management);
+  const lastInputRef = useRef(null);
+  const focus = useRef(false);
 
   const deleteQuestion = (removeIdx) => {
     setQuestions(questions.filter((question, idx) => idx != removeIdx));
   };
 
   const addQuestion = () => {
+    focus.current = true;
     setQuestions((prev) => [...prev, { question: "" }]);
   };
+
+  useEffect(() => {
+    if (!lastInputRef.current || !focus.current) return;
+    lastInputRef.current.focus();
+    focus.current = false;
+  }, [questions.length, focus]);
 
   return (
     <Layout
@@ -33,10 +42,10 @@ export default function ClubSettingApplicationManagement() {
           questions.map((item, idx) => (
             <ManagementQuestion
               key={idx}
-              questionIdx={idx}
               question={item.question}
               onClick={() => deleteQuestion(idx)}
               setQuestions={setQuestions}
+              inputRef={lastInputRef}
             />
           ))}
       </ClubSettingApplicationManagementCol>

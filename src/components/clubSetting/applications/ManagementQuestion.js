@@ -7,7 +7,7 @@ export default function ManagementQuestion({
   question,
   onClick,
   setQuestions,
-  questionIdx,
+  inputRef,
 }) {
   const [inputValue, setInputValue] = useState("");
 
@@ -22,13 +22,17 @@ export default function ManagementQuestion({
 
   useEffect(() => {
     setInputValue(question);
-    console.log(question);
   }, [question]);
 
   return (
     <ManagementQuestionLayout>
       <AiOutlineMinusCircle size={20} onClick={onClick} />
-      <input value={inputValue} onChange={onChange} onBlur={onBlur}></input>
+      <input
+        ref={inputRef}
+        value={inputValue}
+        onChange={onChange}
+        onBlur={onBlur}
+      ></input>
     </ManagementQuestionLayout>
   );
 }
