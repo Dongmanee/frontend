@@ -1,4 +1,5 @@
 import * as yup from "yup";
+import { university_list } from "../components/global/register/RegisterSelect";
 
 export const signupSchema = yup.object({
   email: yup
@@ -21,6 +22,7 @@ export const signupSchema = yup.object({
     .typeError("생년월일을 선택해주세요")
     .max(new Date().toISOString().slice(0, 10), "옳지 않은 날짜입니다")
     .required("생년월일을 선택해주세요"),
+  university: yup.string().required("학교를 선택해주세요"),
   department: yup.string().required("학과를 입력해주세요"),
   studentId: yup.string().required("학번을 입력해주세요"),
   phoneNum: yup
@@ -36,6 +38,7 @@ export const kakaoSignupSchema = yup.object({
     .typeError("생년월일을 선택해주세요")
     .max(new Date().toISOString().slice(0, 10), "옳지 않은 날짜입니다")
     .required("생년월일을 선택해주세요"),
+  university: yup.string().required("학교를 선택해주세요"),
   department: yup.string().required("학과를 입력해주세요"),
   studentId: yup.string().required("학번을 입력해주세요"),
   phoneNum: yup

@@ -8,25 +8,41 @@ import RegisterTextArea from "../components/global/register/RegisterTextArea";
 import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCategory";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
+import RegisterSnsInput from "../components/global/register/RegisterSnsInput";
+import { useEffect } from "react";
+import { temp_club_home_info } from "../consts/tempData";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
   const location = useLocation();
   const params = useParams();
-
   const clubId = params.clubId;
-  const isEdit = location.pathname.includes("register/edit");
+  const isEdit = location.pathname.includes("/edit");
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
     control,
+    setValue,
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  useEffect(() => {
+    const clubInfo = temp_club_home_info;
+
+    //Todo. 정보 수정 시 정보 세팅할 때 메인이미지, 배경이미지, 카테고리는 추후 데이터 형태에 따라..
+    if (isEdit) {
+      setValue("clubName", clubInfo.clubName);
+      setValue("clubCategory", clubInfo.clubCategory);
+      setValue("clubTags", clubInfo.clubTags);
+      setValue("clubDescription", clubInfo.clubIntro);
+      clubInfo.clubSns.map((sns) => setValue(sns.snsName + "URL", sns.snsUrl));
+    }
+  }, []);
 
   return (
     <Layout
@@ -52,6 +68,16 @@ export default function RegisterClub() {
             isRequired={true}
             errorMsg="다시 입력해주세요"
           />
+          {isEdit && (
+            <RegisterImage
+              name="clubBackgroundImage"
+              register={register}
+              watch={watch}
+              label="동아리 배경 이미지"
+              errorMsg="다시 등록해주세요"
+              isBackgroundImage={true}
+            />
+          )}
           <RegisterClubCategory
             name="clubCategory"
             control={control}
@@ -70,13 +96,7 @@ export default function RegisterClub() {
             errorMsg="다시 입력해주세요"
             height="5rem"
           />
-          <RegisterInput
-            name="clubInstagramURL"
-            register={register}
-            label="동아리 인스타그램 주소"
-            isRequired={true}
-            errorMsg="다시 입력해주세요"
-          />
+          <RegisterSnsInput label="동아리 SNS 주소" register={register} error={errors} />
         </RegisterInputList>
       </form>
     </Layout>

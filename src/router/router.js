@@ -95,20 +95,20 @@ const router = createBrowserRouter([
         element: <InquiryClub />,
       },
       {
-        path: "/club/schedule/add",
+        path: "/club/:clubId/schedule/add",
         element: <ClubScheduleAdd />,
       },
 
       {
-        path: "/club/posts/:id",
+        path: "/club/:clubId/posts/:id",
         element: <ClubPostsDetail />,
       },
       {
-        path: "/club/posts/add",
+        path: "/club/:clubId/posts/add",
         element: <ClubPostsEdit />,
       },
       {
-        path: "club/posts/edit/:id",
+        path: "club/:clubId/posts/edit/:id",
         element: <ClubPostsEdit />,
       },
 
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/club/setting",
+        path: "/club/:clubId/setting",
         element: <ClubSetting />,
         children: [
           {
@@ -141,15 +141,19 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/club/setting/inquiries/:inquiryId",
+        path: "/club/:clubId/setting/edit",
+        element: <RegisterClub />,
+      },
+      {
+        path: "/club/:clubId/setting/inquiries/:inquiryId",
         element: <ClubSettingInquiryDetail />,
       },
       {
-        path: "/club/setting/applications/:applicationId",
+        path: "/club/:clubId/setting/applications/:applicationId",
         element: <ClubSettingApplicationDetail />,
       },
       {
-        path: "/club/setting/applications/management",
+        path: "/club/:clubId/setting/applications/management",
         element: <ClubSettingApplicationManagement />,
       },
     ],

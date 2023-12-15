@@ -5,10 +5,14 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { signup } from "../../../apis/signup";
 import { flexColumn } from "../../../styles/global.style";
-import { kakaoSignupSchema, signupSchema } from "../../../utils/validationSchema";
+import {
+  kakaoSignupSchema,
+  signupSchema,
+} from "../../../utils/validationSchema";
 import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
 import RegisterEmailInput from "./RegisterEmailInput";
+import RegisterSelect from "../../global/register/RegisterSelect";
 
 export default function SignupForm() {
   const location = useLocation();
@@ -28,14 +32,18 @@ export default function SignupForm() {
     formState: { errors },
     getValues,
     setError,
+    control,
   } = useForm({
     mode: "onBlur",
-    resolver: isKaKaoLogin ? yupResolver(kakaoSignupSchema) : yupResolver(signupSchema),
+    resolver: isKaKaoLogin
+      ? yupResolver(kakaoSignupSchema)
+      : yupResolver(signupSchema),
   });
 
   const onSubmit = (data) => {
+    console.log(data);
     const commonBody = {
-      universityId: 1,
+      universityId: data.university,
       name: data.name,
       birth: data.birthDate,
       department: data.department,
@@ -54,7 +62,11 @@ export default function SignupForm() {
       signup(body).then((res) => console.log(res.data));
     } else {
       if (authenticatedCode == "")
-        setError("email", { message: "이메일 인증을 해주세요" }, { shouldFocus: true });
+        setError(
+          "email",
+          { message: "이메일 인증을 해주세요" },
+          { shouldFocus: true }
+        );
       else {
         const body = {
           email: data.email,
@@ -101,7 +113,9 @@ export default function SignupForm() {
                 label="비밀번호 확인"
                 isRequired={true}
                 placeholder="비밀번호를 한 번 더 입력해주세요"
-                errorMsg={errors.passwordConfirm && errors.passwordConfirm.message}
+                errorMsg={
+                  errors.passwordConfirm && errors.passwordConfirm.message
+                }
               />
             </>
           )}
@@ -125,6 +139,23 @@ export default function SignupForm() {
             />
           </InputRow>
 
+          <InputRow>
+            <RegisterSelect
+              name="university"
+              control={control}
+              label="학교"
+              isRequired={true}
+              errorMsg={errors.university && errors.university.message}
+            />
+            <RegisterInput
+              name="studentId"
+              register={register}
+              label="학번"
+              isRequired={true}
+              placeholder="학번을 입력해주세요"
+              errorMsg={errors.studentId && errors.studentId.message}
+            />
+          </InputRow>
           <RegisterInput
             name="department"
             register={register}
@@ -133,14 +164,7 @@ export default function SignupForm() {
             placeholder="학과를 입력해주세요"
             errorMsg={errors.department && errors.department.message}
           />
-          <RegisterInput
-            name="studentId"
-            register={register}
-            label="학번"
-            isRequired={true}
-            placeholder="학번을 입력해주세요"
-            errorMsg={errors.studentId && errors.studentId.message}
-          />
+
           <RegisterInput
             name="phoneNum"
             register={register}

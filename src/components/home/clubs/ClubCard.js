@@ -8,7 +8,7 @@ export default function ClubCard({ club }) {
   const navigate = useNavigate();
 
   const onClickClubCard = (clubId) => {
-    navigate(`/club/${clubId}`);
+    navigate(`/club/${clubId}/home`);
   };
 
   return (

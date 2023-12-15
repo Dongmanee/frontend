@@ -4,6 +4,7 @@ import { RiImageAddLine } from "react-icons/ri";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import { MdEdit } from "react-icons/md";
+import { FaCamera } from "react-icons/fa6";
 import { useState, useEffect, useRef } from "react";
 import example from "../../../images/example.png";
 
@@ -13,6 +14,7 @@ export default function RegisterImage({
   register,
   name,
   watch,
+  isBackgroundImage,
 }) {
   const [imagePreview, setImagePreview] = useState("");
   const photoInput = useRef();
@@ -36,8 +38,15 @@ export default function RegisterImage({
     <RegisterImageLayout>
       <RegisterLabel id={name} label={label} isRequired={true} />
       <RegisterInputBox>
-        <RegisteredImage src={imagePreview ? imagePreview : example} />
-        <RegisterImageButton>
+        <RegisteredImage
+          $isBackgroundImage={isBackgroundImage}
+          src={imagePreview ? imagePreview : example}
+        />
+        <RegisterImageButton
+          $isBackgroundImage={isBackgroundImage}
+          onClick={onClickImageInput}
+        >
+          <FaCamera />
           <input
             {...rest}
             name={name}
@@ -50,9 +59,6 @@ export default function RegisterImage({
             accept="image/jpg, image/jpeg, image/png"
             style={{ display: "none" }}
           />
-          <div onClick={onClickImageInput}>
-            <MdEdit />
-          </div>
         </RegisterImageButton>
       </RegisterInputBox>
       {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
@@ -69,26 +75,24 @@ const RegisterInputBox = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 0.3rem;
+  position: relative;
 `;
 
 const RegisteredImage = styled.img`
-  width: 7rem;
-  height: 7rem;
-  border-radius: 50%;
+  width: ${(props) => (props.$isBackgroundImage ? "100%" : "7rem")};
+  height: ${(props) => (props.$isBackgroundImage ? "8rem" : "7rem")};
+  border-radius: ${(props) => (props.$isBackgroundImage ? "1rem" : "50%")};
   object-fit: cover;
 `;
 
 const RegisterImageButton = styled.div`
-  position: relative;
-  div {
-    ${flexCenter}
-    padding: 0.5rem;
-    border-radius: 50%;
-    background-color: ${(props) => props.theme.colors.gray.xxs};
-    border: none;
-    font-family: "Noto Sans KR", sans-serif;
-    position: absolute;
-    left: -2.5rem;
-    top: 1.5rem;
-  }
+  ${flexCenter}
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.colors.gray.xxs};
+  border: none;
+  position: absolute;
+  bottom: ${(props) => (props.$isBackgroundImage ? "0.5rem" : "0")};
+  left: ${(props) => (props.$isBackgroundImage ? "auto" : "5.5rem")};
+  right: ${(props) => (props.$isBackgroundImage ? "0.5rem" : "auto")};
 `;
