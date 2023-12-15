@@ -14,17 +14,20 @@ export default function ClubSettingApplicationManagement() {
   const lastInputRef = useRef(null);
   const focus = useRef(false);
 
-  const deleteQuestion = (removeIdx) => {
+  const handleQuestionDelete = (removeIdx) => {
     setQuestions(questions.filter((question, idx) => idx != removeIdx));
   };
 
-  const addQuestion = () => {
+  const handleQuestionAdd = () => {
     focus.current = true;
     setQuestions((prev) => [...prev, { question: "" }]);
   };
 
   useEffect(() => {
-    if (!lastInputRef.current || !focus.current) return;
+    const isRemoveInput = !lastInputRef.current || !focus.current;
+
+    if (isRemoveInput) return;
+
     lastInputRef.current.focus();
     focus.current = false;
   }, [questions.length, focus]);
@@ -43,14 +46,16 @@ export default function ClubSettingApplicationManagement() {
             <ManagementQuestion
               key={idx}
               question={item.question}
-              onClick={() => deleteQuestion(idx)}
+              onClick={() => handleQuestionDelete(idx)}
               setQuestions={setQuestions}
-              inputRef={lastInputRef}
+              lastInputRef={lastInputRef}
             />
           ))}
       </ClubSettingApplicationManagementCol>
 
-      <AddQuestionButton onClick={addQuestion}>질문 추가하기</AddQuestionButton>
+      <AddQuestionButton onClick={handleQuestionAdd}>
+        질문 추가하기
+      </AddQuestionButton>
     </Layout>
   );
 }

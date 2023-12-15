@@ -7,7 +7,7 @@ export default function ManagementQuestion({
   question,
   onClick,
   setQuestions,
-  inputRef,
+  lastInputRef,
 }) {
   const [inputValue, setInputValue] = useState("");
 
@@ -28,7 +28,7 @@ export default function ManagementQuestion({
     <ManagementQuestionLayout>
       <AiOutlineMinusCircle size={20} onClick={onClick} />
       <input
-        ref={inputRef}
+        ref={lastInputRef}
         value={inputValue}
         onChange={onChange}
         onBlur={onBlur}

@@ -15,7 +15,7 @@ export default function ClubInfo({ clubHomeInfo }) {
         <img src={clubHomeInfo.clubMainImage} width={50} height={50} />
         <CategoryTagRow>
           {clubHomeInfo.clubTags.map((tag, idx) => (
-            <SmallTagBox tagName={tag} />
+            <SmallTagBox key={idx} tagName={tag} />
           ))}
         </CategoryTagRow>
       </Category>

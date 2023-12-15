@@ -16,7 +16,7 @@ export default function Clubs() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchKeyword, setSearchKeyword] = useState("");
 
-  const onChangeSearchKeyword = (e) => {
+  const handleSearchKeywordChange = (e) => {
     const currentCategory = searchParams.get("category");
     const enteredKeyword = e.currentTarget.value;
 
@@ -34,20 +34,20 @@ export default function Clubs() {
     }
   };
 
-  const setKeywordReset = () => {
+  const handleKeywordReset = () => {
     setSearchKeyword("");
   };
 
   return (
     <Layout headerLeft="prev" onClickLeft={onPrevPage}>
       <HomeTotalClubsLayout>
-        <ClubCategory setKeywordReset={setKeywordReset} />
+        <ClubCategory setKeywordReset={handleKeywordReset} />
         <CustomInput
           placeholder="동아리를 검색하세요"
           margin="1.8rem 1rem"
           border="0.05rem solid"
           value={searchKeyword}
-          onChange={onChangeSearchKeyword}
+          onChange={handleSearchKeywordChange}
         />
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
