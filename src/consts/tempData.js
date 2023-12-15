@@ -488,7 +488,7 @@ export const temp_club_home_info = {
   ],
   isClubJoinAvailable: {
     joinPeriod: "2021년 11월 12일",
-    isAvaliable: true,
+    isAvailable: true,
   },
 };
 

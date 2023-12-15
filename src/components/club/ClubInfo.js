@@ -7,26 +7,24 @@ import instagramIcon from "../../images/sns_icons/instagramIcon.png";
 import naverBandIcon from "../../images/sns_icons/naverBandIcon.png";
 import naverBlogIcon from "../../images/sns_icons/naverBlogIcon.png";
 
-export default function ClubInfo() {
-  const club = temp_club_home_info;
-
+export default function ClubInfo({ clubHomeInfo }) {
   return (
     <ClubInfoLayout>
       <BackgroundImage />
 
       <Category>
-        <img src={club.clubMainImage} width={50} height={50} />
+        <img src={clubHomeInfo.clubMainImage} width={50} height={50} />
         <CategoryTagRow>
-          {club.clubTags.map((tag, idx) => (
+          {clubHomeInfo.clubTags.map((tag, idx) => (
             <SmallTagBox tagName={tag} />
           ))}
         </CategoryTagRow>
       </Category>
 
-      <Info>{club.clubIntro}</Info>
+      <Info>{clubHomeInfo.clubIntro}</Info>
 
       <SnsBox>
-        {club.clubSns.map((sns, idx) => {
+        {clubHomeInfo.clubSns.map((sns, idx) => {
           switch (sns.Snsname) {
             case "instagram":
               return <img src={instagramIcon} />;

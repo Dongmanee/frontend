@@ -1,21 +1,25 @@
-import styled from "styled-components";
-import { flexJBetween } from "../../styles/global.style";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-export default function ClubJoinButton({ deadline }) {
+export default function ClubJoinButton({ clubJoinAvailable }) {
   const navigate = useNavigate();
+  const { isAvailable } = clubJoinAvailable;
 
   const onClickButton = (page) => {
     navigate(`/club/:clubId/${page}`);
   };
 
   return (
-    <ClubJoinButtonLayout>
-      <Qna onClick={() => onClickButton("inquiry")}>문의하기</Qna>
-      <Join onClick={() => onClickButton("join")}>
-        가입하기
-        <p>{deadline}</p>
-      </Join>
+    <ClubJoinButtonLayout $isAvailable={isAvailable}>
+      <Qna $isAvailable={isAvailable} onClick={() => onClickButton("inquiry")}>
+        문의하기
+      </Qna>
+      {isAvailable && (
+        <Join onClick={() => onClickButton("join")}>
+          가입하기
+          <p>~ {clubJoinAvailable.joinPeriod}</p>
+        </Join>
+      )}
     </ClubJoinButtonLayout>
   );
 }
@@ -23,7 +27,10 @@ export default function ClubJoinButton({ deadline }) {
 const ClubJoinButtonLayout = styled.div`
   width: 80%;
   height: 6vh;
-  ${flexJBetween};
+
+  display: grid;
+  grid-template-columns: ${(props) =>
+    props.$isAvailable ? "0.7fr 1.3fr" : "1fr"};
   border-radius: 14px;
 
   position: fixed;
@@ -33,30 +40,30 @@ const ClubJoinButtonLayout = styled.div`
   margin: 0 auto;
 
   box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.5), -1px -1px 10px rgb(0, 0, 0, 0.5);
+
+  & > button {
+    height: 100%;
+    font-weight: ${(props) => props.theme.weights.lg};
+    border: 0;
+  }
 `;
 
 const Qna = styled.button`
-  width: 30%;
-  height: 100%;
-  border: 1px solid ${(props) => props.theme.colors.white.xs};
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
+  border-radius: inherit;
+  border-top-right-radius: ${(props) => (props.$isAvailable ? "0" : "inherit")};
+  border-bottom-right-radius: ${(props) =>
+    props.$isAvailable ? "0" : "inherit"};
   background-color: ${(props) => props.theme.colors.white.xs};
 
   color: ${(props) => props.theme.colors.gray.md};
-  font-weight: ${(props) => props.theme.weights.lg};
 `;
 
 const Join = styled.button`
-  width: 70%;
-  height: 100%;
-  border: 1px solid ${(props) => props.theme.colors.dark.sm};
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
   background-color: ${(props) => props.theme.colors.dark.sm};
 
   color: white;
-  font-weight: ${(props) => props.theme.weights.lg};
   p {
     font-size: ${(props) => props.theme.sizes.xxs};
     font-weight: ${(props) => props.theme.weights.sm};
