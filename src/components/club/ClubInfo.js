@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
 import img from "../../images/sample.png";
-import SmallTagBox from "../global/SmallTagBox";
-import { temp_club_home_info } from "../../consts/tempData";
 import instagramIcon from "../../images/sns_icons/instagramIcon.png";
 import naverBandIcon from "../../images/sns_icons/naverBandIcon.png";
 import naverBlogIcon from "../../images/sns_icons/naverBlogIcon.png";
+import { flexColumn } from "../../styles/global.style";
+import SmallTagBox from "../global/SmallTagBox";
 
 export default function ClubInfo({ clubHomeInfo }) {
   return (
@@ -25,7 +24,7 @@ export default function ClubInfo({ clubHomeInfo }) {
 
       <SnsBox>
         {clubHomeInfo.clubSns.map((sns, idx) => {
-          switch (sns.Snsname) {
+          switch (sns.snsName) {
             case "instagram":
               return <img src={instagramIcon} />;
             case "naverBlog":
