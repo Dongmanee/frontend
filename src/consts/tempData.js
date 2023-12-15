@@ -468,22 +468,23 @@ export const temp_club_setting_application_details = [
 
 export const temp_club_home_info = {
   clubName: "Import",
+  clubCategory: "체육",
   clubMainImage: sample,
   clubBackgroundImage: sample,
   clubTags: ["웹개발", "코딩"],
   clubIntro: "교내 유일 코딩 동아리입니다",
   clubSns: [
     {
-      Snsname: "instagram",
-      SnsUrl: "http://",
+      snsName: "instagram",
+      snsUrl: "http://",
     },
     {
-      Snsname: "naverBlog",
-      SnsUrl: "http://",
+      snsName: "naverBlog",
+      snsUrl: "http://",
     },
     {
-      Snsname: "naverBand",
-      SnsUrl: "http://",
+      snsName: "naverBand",
+      snsUrl: "http://",
     },
   ],
   isClubJoinAvailable: {

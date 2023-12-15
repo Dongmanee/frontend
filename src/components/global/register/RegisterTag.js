@@ -1,11 +1,8 @@
+import { useController } from "react-hook-form";
 import styled from "styled-components";
-import CustomInput from "../CustomInputs";
-import SmallTagBox from "../SmallTagBox";
+import { flexICenter } from "../../../styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";
-import { useCallback, useState, useEffect } from "react";
-import { flexCenter, flexICenter } from "../../../styles/global.style";
-import { useController } from "react-hook-form";
 
 export default function RegisterTag({
   name,
@@ -14,32 +11,33 @@ export default function RegisterTag({
   isRequired,
   errorMsg,
 }) {
-  const { field } = useController({ name: name, control: control });
+  const {
+    field: { value, onChange },
+  } = useController({
+    name: name,
+    control: control,
+    defaultValue: [],
+  });
 
-  const [tags, setTags] = useState([]);
   const MAX_TAG_NUM = 2;
 
   const handleKeyDown = (e) => {
     if (e.key != "Enter") return;
-    const value = e.target.value;
-    if (!value.trim()) return;
-    setTags([...tags, value]);
+    const newTag = e.target.value;
+    if (!newTag.trim()) return;
+    onChange([...value, newTag]);
     e.target.value = "";
   };
 
   const removeTag = (tagIdx) => {
-    setTags(tags.filter((tag, idx) => idx != tagIdx));
+    onChange(value.filter((tag, idx) => idx != tagIdx));
   };
-
-  useEffect(() => {
-    field.onChange(tags);
-  }, [tags]);
 
   return (
     <div>
       <RegisterLabel id="tag" label={label} isRequired={isRequired} />
       <TagInputContainer>
-        {tags.map((tag, idx) => (
+        {value.map((tag, idx) => (
           <TagItem key={idx}>
             <span className="text">{tag}</span>
             <span className="close" onClick={() => removeTag(idx)}>
@@ -47,11 +45,11 @@ export default function RegisterTag({
             </span>
           </TagItem>
         ))}
-        {tags.length <= MAX_TAG_NUM && (
+        {value.length <= MAX_TAG_NUM && (
           <TagInput
             onKeyDown={handleKeyDown}
             placeholder={
-              tags.length == 0 ? "엔터를 입력하여 태그를 등록해주세요" : ""
+              value.length == 0 ? "엔터를 입력하여 태그를 등록해주세요" : ""
             }
           />
         )}

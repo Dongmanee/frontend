@@ -9,6 +9,8 @@ import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCa
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
 import RegisterSnsInput from "../components/global/register/RegisterSnsInput";
+import { useEffect } from "react";
+import { temp_club_home_info } from "../consts/tempData";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
@@ -22,11 +24,25 @@ export default function RegisterClub() {
     formState: { errors },
     watch,
     control,
+    setValue,
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  useEffect(() => {
+    const clubInfo = temp_club_home_info;
+
+    //Todo. 정보 수정 시 정보 세팅할 때 메인이미지, 배경이미지, 카테고리는 추후 데이터 형태에 따라..
+    if (isEdit) {
+      setValue("clubName", clubInfo.clubName);
+      setValue("clubCategory", clubInfo.clubCategory);
+      setValue("clubTags", clubInfo.clubTags);
+      setValue("clubDescription", clubInfo.clubIntro);
+      clubInfo.clubSns.map((sns) => setValue(sns.snsName + "URL", sns.snsUrl));
+    }
+  }, []);
 
   return (
     <Layout

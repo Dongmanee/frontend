@@ -9,17 +9,17 @@ import { flexColumn, flexICenter } from "../../../styles/global.style";
 const club_sns_input = [
   {
     img: instagramIcon,
-    name: "clubInstagramURL",
+    name: "instagramURL",
     placeholder: "인스타그램 주소",
   },
   {
     img: naverBandIcon,
-    name: "clubnaverBandURL",
+    name: "naverBandURL",
     placeholder: "네이버 밴드 주소",
   },
   {
     img: naverBlogIcon,
-    name: "clubnaverBlogURL",
+    name: "naverBlogURL",
     placeholder: "네이버 블로그 주소",
   },
 ];
