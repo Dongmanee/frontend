@@ -5,7 +5,7 @@ import usePrevPage from "../../hooks/usePrevPage";
 import Layout from "../../layouts/Layout";
 import { flexCenter, flexColumn, fullSize } from "../../styles/global.style";
 import { temp_club_application_management } from "../../consts/tempData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 추후에 가능하다면 드래깅도 가능하게 수정해보자!
 export default function ClubSettingApplicationManagement() {
@@ -14,6 +14,10 @@ export default function ClubSettingApplicationManagement() {
 
   const deleteQuestion = (removeIdx) => {
     setQuestions(questions.filter((question, idx) => idx != removeIdx));
+  };
+
+  const addQuestion = () => {
+    setQuestions((prev) => [...prev, { question: "" }]);
   };
 
   return (
@@ -25,15 +29,19 @@ export default function ClubSettingApplicationManagement() {
     >
       <ClubSettingApplicationManagementCol>
         <RegisterLabel label="추가로 받을 내용을 입력해주세요" />
-        {questions.map((item, idx) => (
-          <ManagementQuestion
-            question={item.question}
-            onClick={() => deleteQuestion(idx)}
-          />
-        ))}
+        {questions &&
+          questions.map((item, idx) => (
+            <ManagementQuestion
+              key={idx}
+              questionIdx={idx}
+              question={item.question}
+              onClick={() => deleteQuestion(idx)}
+              setQuestions={setQuestions}
+            />
+          ))}
       </ClubSettingApplicationManagementCol>
 
-      <AddQuestionButton>질문 추가하기</AddQuestionButton>
+      <AddQuestionButton onClick={addQuestion}>질문 추가하기</AddQuestionButton>
     </Layout>
   );
 }
