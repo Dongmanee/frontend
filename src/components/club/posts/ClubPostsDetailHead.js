@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { flexJBetween } from "../../../styles/global.style";
-import ClubUser from "../ClubUser";
+import User from "../../global/User";
 
 export default function ClubPostsDetailHead() {
   const temp_user = {
@@ -9,7 +9,7 @@ export default function ClubPostsDetailHead() {
 
   return (
     <ClubPostDetailHeadLayout>
-      <ClubUser user={temp_user} size={"18px"} imgSize={"2.5rem"} />
+      <User user={temp_user} size={"18px"} imgSize={"2.5rem"} />
       <div>8월 7일 오후 11:33</div>
     </ClubPostDetailHeadLayout>
   );

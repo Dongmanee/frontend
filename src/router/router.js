@@ -25,6 +25,8 @@ import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
 import ClubSettingInquiryDetail from "../pages/clubSetting/ClubSettingInquiryDetail";
 import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import Profile from "../pages/Profile";
+import Friends from "../components/profile/Friends";
 
 const router = createBrowserRouter([
   {
@@ -155,6 +157,16 @@ const router = createBrowserRouter([
       {
         path: "/club/:clubId/setting/applications/management",
         element: <ClubSettingApplicationManagement />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+        children: [
+          {
+            path: "",
+            element: <Friends />,
+          },
+        ],
       },
     ],
   },

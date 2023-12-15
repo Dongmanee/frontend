@@ -1,13 +1,10 @@
+import { temp_user_profile } from "../../consts/tempData";
 import CustomButton from "../global/CustomButton";
 import UserProfile from "../user/UserProfile";
 
 export default function ClubUserProfile() {
-  const temp_user = {
-    name: "정준형",
-    intro: "안녕하세요~!!",
-  };
   return (
-    <UserProfile user={temp_user}>
+    <UserProfile user={temp_user_profile}>
       <CustomButton
         width="5rem"
         height={"30px"}

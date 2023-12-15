@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import ClubUser from "../club/ClubUser";
+import User from "../global/User";
 import { flexICenter } from "../../styles/global.style";
 
-export default function UserProfile({ children, user }) {
+export default function UserProfile({ children, user, childrenBottom }) {
   return (
-    <UserProfileLayout>
-      <ClubUser
+    <UserProfileLayout $childrenBottom={childrenBottom}>
+      <User
         user={user}
         imgSize={"4rem"}
         introColor={"black"}
@@ -29,7 +29,7 @@ const UserProfileLayout = styled.div`
 
   & > div:last-child {
     position: absolute;
-    bottom: 15px;
+    bottom: ${({ $childrenBottom }) => ($childrenBottom ? $childrenBottom : "15px")};
     right: 20px;
   }
 `;
