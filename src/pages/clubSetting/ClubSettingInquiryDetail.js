@@ -6,10 +6,13 @@ import { flexColumn } from "../../styles/global.style";
 import InquiryDetailItem from "../../components/clubSetting/inquiries/InquiryDetailItem";
 import RegisterInput from "../../components/global/register/RegisterInput";
 import usePrevPage from "../../hooks/usePrevPage";
+import RegisterTextArea from "../../components/global/register/RegisterTextArea";
+import { useForm } from "react-hook-form";
 
 export default function ClubSettingInquiryDetail() {
   const { inquiryId } = useParams();
   const { onPrevPage } = usePrevPage();
+  const { register } = useForm();
 
   return (
     <Layout
@@ -24,7 +27,12 @@ export default function ClubSettingInquiryDetail() {
           <InquiryDetailItem label="제목" contents="제목입니당" />
           <InquiryDetailItem label="등록일" contents="2023.11.22" />
           <InquiryDetailItem label="문의내용" contents="문의내용입니당" />
-          <RegisterInput label="답변" inputHeight="30rem" />
+          <RegisterTextArea
+            name="clubInquiryAnswer"
+            label="답변"
+            height="32rem"
+            register={register}
+          />
         </InquiryFormBox>
       </ClubSettingInquiryDetailLayout>
     </Layout>

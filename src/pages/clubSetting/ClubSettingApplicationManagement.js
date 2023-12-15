@@ -4,10 +4,34 @@ import RegisterLabel from "../../components/global/register/RegisterLabel";
 import usePrevPage from "../../hooks/usePrevPage";
 import Layout from "../../layouts/Layout";
 import { flexCenter, flexColumn, fullSize } from "../../styles/global.style";
+import { temp_club_application_management } from "../../consts/tempData";
+import { useEffect, useRef, useState } from "react";
 
 // 추후에 가능하다면 드래깅도 가능하게 수정해보자!
 export default function ClubSettingApplicationManagement() {
   const { onPrevPage } = usePrevPage();
+  const [questions, setQuestions] = useState(temp_club_application_management);
+  const lastInputRef = useRef(null);
+  const focus = useRef(false);
+
+  const handleQuestionDelete = (removeIdx) => {
+    setQuestions(questions.filter((question, idx) => idx != removeIdx));
+  };
+
+  const handleQuestionAdd = () => {
+    focus.current = true;
+    setQuestions((prev) => [...prev, { question: "" }]);
+  };
+
+  useEffect(() => {
+    const isRemoveInput = !lastInputRef.current || !focus.current;
+
+    if (isRemoveInput) return;
+
+    lastInputRef.current.focus();
+    focus.current = false;
+  }, [questions.length, focus]);
+
   return (
     <Layout
       headerLeft="prev"
@@ -17,12 +41,21 @@ export default function ClubSettingApplicationManagement() {
     >
       <ClubSettingApplicationManagementCol>
         <RegisterLabel label="추가로 받을 내용을 입력해주세요" />
-        <ManagementQuestion question={"질문1"} />
-        <ManagementQuestion question={"질문2"} />
-        <ManagementQuestion question={"질문3"} />
+        {questions &&
+          questions.map((item, idx) => (
+            <ManagementQuestion
+              key={idx}
+              question={item.question}
+              onClick={() => handleQuestionDelete(idx)}
+              setQuestions={setQuestions}
+              lastInputRef={lastInputRef}
+            />
+          ))}
       </ClubSettingApplicationManagementCol>
 
-      <AddQuestionButton>질문 추가하기</AddQuestionButton>
+      <AddQuestionButton onClick={handleQuestionAdd}>
+        질문 추가하기
+      </AddQuestionButton>
     </Layout>
   );
 }

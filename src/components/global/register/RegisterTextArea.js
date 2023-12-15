@@ -32,7 +32,7 @@ const RegisterTextAreaBox = styled.textarea`
   background-color: ${(props) => props.theme.colors.gray.xxs};
   border-radius: 0.7rem;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   resize: none;
 
   font-family: "Noto Sans KR", sans-serif;

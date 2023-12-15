@@ -9,6 +9,7 @@ import museum from "../images/club-category/museum.png";
 import sports from "../images/club-category/sports.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
+import sample from "../images/sample.png";
 
 export const university_list = [
   { universityId: "univ1", universityName: "한밭대학교" },
@@ -463,4 +464,37 @@ export const temp_club_setting_application_details = [
     label: "동아리 질문2",
     data: "동아리 질문에 대한 답변2222",
   },
+];
+
+export const temp_club_home_info = {
+  clubName: "Import",
+  clubCategory: "체육",
+  clubMainImage: sample,
+  clubBackgroundImage: sample,
+  clubTags: ["웹개발", "코딩"],
+  clubIntro: "교내 유일 코딩 동아리입니다",
+  clubSns: [
+    {
+      snsName: "instagram",
+      snsUrl: "http://",
+    },
+    {
+      snsName: "naverBlog",
+      snsUrl: "http://",
+    },
+    {
+      snsName: "naverBand",
+      snsUrl: "http://",
+    },
+  ],
+  isClubJoinAvailable: {
+    joinPeriod: "2021년 11월 12일",
+    isAvailable: true,
+  },
+};
+
+export const temp_club_application_management = [
+  { question: "코딩을 경험해본 적이 있으십니까?" },
+  { question: "어느정도의 수준으로 경험해보셨습니까?" },
+  { question: "동아리에서 어떤 경험을 하고 싶으십니까?" },
 ];
