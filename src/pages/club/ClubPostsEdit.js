@@ -1,14 +1,12 @@
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
-import PenIcon from "../../components/global/PenIcon";
+import RegisterCkEditor from "../../components/global/register/RegisterCkEditor";
 import RegisterErrorMsg from "../../components/global/register/RegisterErrorMsg";
-import RegisterImage from "../../components/global/register/RegisterImage";
 import RegisterInput from "../../components/global/register/RegisterInput";
 import RegisterLabel from "../../components/global/register/RegisterLabel";
-import Layout from "../../layouts/Layout";
-import { useLocation } from "react-router-dom";
 import usePrevPage from "../../hooks/usePrevPage";
-import RegisterCkEditor from "../../components/global/register/RegisterCkEditor";
+import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
 
 export default function ClubPostsEdit() {
