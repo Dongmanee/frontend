@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { flexColumn } from "../../../styles/global.style";
-import ClubUser from "../ClubUser";
+import User from "../../global/User";
 
 export default function ClubPostsDetailComments() {
   const temp_comment = {
@@ -9,9 +9,9 @@ export default function ClubPostsDetailComments() {
   };
   return (
     <ClubPostsDetailCommentsLayout>
-      <ClubUser user={temp_comment} introColor={"black"} isComment={true} />
-      <ClubUser user={temp_comment} introColor={"black"} isComment={true} />
-      <ClubUser user={temp_comment} introColor={"black"} isComment={true} />
+      <User user={temp_comment} introColor={"black"} isComment={true} />
+      <User user={temp_comment} introColor={"black"} isComment={true} />
+      <User user={temp_comment} introColor={"black"} isComment={true} />
     </ClubPostsDetailCommentsLayout>
   );
 }

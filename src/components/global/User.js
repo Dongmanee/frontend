@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import example from "../../images/example.png";
 import { flexColumn, flexICenter } from "../../styles/global.style";
-import SmallTagBox from "../global/SmallTagBox";
+import SmallTagBox from "./SmallTagBox";
 
-export default function ClubUser({
+export default function User({
   user,
   isComment,
   size,
@@ -21,9 +21,9 @@ export default function ClubUser({
   };
 
   return (
-    <ClubUserLayout onClick={() => openUser(user.id)}>
-      <ClubUserImgBox {...styles} src={example} />
-      <ClubUserDescriptionBox {...styles}>
+    <UserLayout onClick={() => openUser(user.id)}>
+      <UserImgBox {...styles} src={example} />
+      <UserDescriptionBox {...styles}>
         <span>
           {user.name}
           {user.position != undefined && (
@@ -35,12 +35,12 @@ export default function ClubUser({
         </span>
 
         <span>{user.intro}</span>
-      </ClubUserDescriptionBox>
-    </ClubUserLayout>
+      </UserDescriptionBox>
+    </UserLayout>
   );
 }
 
-ClubUser.defaultProps = {
+User.defaultProps = {
   size: (props) => props.theme.sizes.xs,
   imgSize: "2.3rem",
   dateColor: (props) => props.theme.colors.gray.xs,
@@ -48,18 +48,18 @@ ClubUser.defaultProps = {
   gap: "0.5rem",
 };
 
-const ClubUserLayout = styled.div`
+const UserLayout = styled.div`
   ${flexICenter};
   gap: 20px;
 `;
 
-const ClubUserImgBox = styled.img`
+const UserImgBox = styled.img`
   width: ${(props) => props.imgSize};
   height: ${(props) => props.imgSize};
   border-radius: 50%;
 `;
 
-const ClubUserDescriptionBox = styled.div`
+const UserDescriptionBox = styled.div`
   ${flexColumn};
   gap: ${(props) => props.gap};
 

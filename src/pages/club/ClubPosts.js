@@ -15,7 +15,7 @@ export default function ClubPosts() {
   };
 
   const onAddPosts = () => {
-    navigate(`/club/posts/add`);
+    navigate(`/club/:clubId/posts/add`);
   };
 
   return (
@@ -23,8 +23,16 @@ export default function ClubPosts() {
       <ClubPostsCategory currentTag={postsCategory} onHandle={handleCategory} />
 
       <ClubPostsCol>
-        <ClubPost />
-        <ClubPost />
+        <ClubPost
+          postCategory={"공지"}
+          title={"모임장 변경 공지사항"}
+          date={"2023.12.16"}
+        />
+        <ClubPost
+          postCategory={"공지"}
+          title={"모임장 변경 공지사항"}
+          date={"2023.12.16"}
+        />
       </ClubPostsCol>
 
       <PenIcon onClick={onAddPosts} />

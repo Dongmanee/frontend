@@ -96,11 +96,7 @@ export default function RegisterClub() {
             errorMsg="다시 입력해주세요"
             height="5rem"
           />
-          <RegisterSnsInput
-            label="동아리 SNS 주소"
-            register={register}
-            error={errors}
-          />
+          <RegisterSnsInput label="동아리 SNS 주소" register={register} error={errors} />
         </RegisterInputList>
       </form>
     </Layout>

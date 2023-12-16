@@ -139,6 +139,25 @@ export const temp_club_pageselector = [
   },
 ];
 
+export const temp_profile_pageselector = [
+  {
+    name: "친구",
+    src: "/profile",
+  },
+  {
+    name: "가입 동아리",
+    src: "/profile/joinclub",
+  },
+  {
+    name: "작성한 글",
+    src: "/profile/posts",
+  },
+  {
+    name: "작성한 댓글",
+    src: "/profile/comments",
+  },
+];
+
 export const temp_user_pageselector = [
   // user정보를 redux로 상태관리 해야할 듯!
   {
@@ -185,6 +204,33 @@ export const temp_club_users = [
   {
     name: "정준형",
     intro: "안녕하세요!~",
+  },
+];
+
+export const temp_friends = [
+  {
+    name: "김민지",
+    intro: "아해어나",
+    id: 12,
+    isSended: true,
+  },
+  {
+    name: "박하준",
+    intro: "한밭대학교 여성",
+    id: 12,
+    isSended: false,
+  },
+  {
+    name: "김민지",
+    intro: "한밭대학교 여성",
+    id: 12,
+    isSended: true,
+  },
+  {
+    name: "김민지",
+    intro: "한밭대학교 여성",
+    id: 12,
+    isSended: false,
   },
 ];
 
@@ -498,3 +544,8 @@ export const temp_club_application_management = [
   { question: "어느정도의 수준으로 경험해보셨습니까?" },
   { question: "동아리에서 어떤 경험을 하고 싶으십니까?" },
 ];
+
+export const temp_user_profile = {
+  name: "정준형",
+  intro: "안녕하세요~!",
+};

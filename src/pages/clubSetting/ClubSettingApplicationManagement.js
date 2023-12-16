@@ -53,9 +53,7 @@ export default function ClubSettingApplicationManagement() {
           ))}
       </ClubSettingApplicationManagementCol>
 
-      <AddQuestionButton onClick={handleQuestionAdd}>
-        질문 추가하기
-      </AddQuestionButton>
+      <AddQuestionButton onClick={handleQuestionAdd}>질문 추가하기</AddQuestionButton>
     </Layout>
   );
 }

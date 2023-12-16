@@ -33,7 +33,7 @@ export default function Navbar() {
       inActive: <FaRegCalendar size={24} />,
     },
     {
-      page: "/user",
+      page: "/profile",
       active: <FaUser size={24} />,
       inActive: <FaRegUser size={24} />,
     },

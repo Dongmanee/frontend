@@ -2,7 +2,7 @@ import { IoMdRefresh } from "react-icons/io";
 import styled from "styled-components";
 import useCheckPath from "../../hooks/useCheckPath";
 import { flexColumn, flexICenter } from "../../styles/global.style";
-import ClubUser from "./ClubUser";
+import User from "../global/User";
 
 export default function ClubUserList({ users }) {
   const { isCheckedPath } = useCheckPath("/club/home");
@@ -17,7 +17,7 @@ export default function ClubUserList({ users }) {
       )}
 
       {users.map((user, idx) => (
-        <ClubUser user={user} key={idx} />
+        <User user={user} key={idx} />
       ))}
     </ClubUserListLayout>
   );

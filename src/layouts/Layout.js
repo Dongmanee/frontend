@@ -7,6 +7,7 @@ export default function Layout({
   headerLeft,
   headerRight,
   headerCenter,
+  headerPosition,
   isNavbar,
   bottomButton,
   onClickLeft,
@@ -18,6 +19,7 @@ export default function Layout({
         left={headerLeft}
         center={headerCenter}
         right={headerRight}
+        position={headerPosition}
         onClickLeft={onClickLeft}
         onClickRight={onClickRight}
       />
