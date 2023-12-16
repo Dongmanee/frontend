@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import Friends from "../components/profile/Friends";
 import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
 import Posts from "../pages/Posts";
+import Profile from "../pages/Profile";
 import RegisterClub from "../pages/RegisterClub";
 import Signup from "../pages/Signup";
 import Club from "../pages/club/Club";
@@ -14,7 +16,6 @@ import ClubPostsEdit from "../pages/club/ClubPostsEdit";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleAdd from "../pages/club/ClubScheduleAdd";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
-import ClubUserHome from "../pages/club/ClubUserHome";
 import InquiryClub from "../pages/club/InquiryClub";
 import JoinClub from "../pages/club/JoinClub";
 import ClubSetting from "../pages/clubSetting/ClubSetting";
@@ -24,9 +25,8 @@ import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplication
 import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
 import ClubSettingInquiryDetail from "../pages/clubSetting/ClubSettingInquiryDetail";
 import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
+import FriendProfile from "../pages/user/FriendProfile";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
-import Profile from "../pages/Profile";
-import Friends from "../components/profile/Friends";
 
 const router = createBrowserRouter([
   {
@@ -116,7 +116,7 @@ const router = createBrowserRouter([
 
       {
         path: "/user/:id",
-        element: <ClubUserHome />,
+        element: <FriendProfile />,
         children: [
           {
             path: "",

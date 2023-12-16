@@ -15,13 +15,13 @@ export default function Profile() {
 
       <PageSelector pages={temp_profile_pageselector} top={"22vh"} />
 
-      <ProfileLayout>
+      <OutletLayout>
         <Outlet />
-      </ProfileLayout>
+      </OutletLayout>
     </Layout>
   );
 }
 
-const ProfileLayout = styled.div`
+const OutletLayout = styled.div`
   margin-top: calc(${(props) => props.theme.global.pageselector.height} + 18vh);
 `;
