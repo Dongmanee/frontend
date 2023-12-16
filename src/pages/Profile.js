@@ -4,9 +4,9 @@ import styled from "styled-components";
 import Navbar from "../components/global/Navbar";
 import PageSelector from "../components/global/PageSelector";
 import UserProfile from "../components/user/Profile";
+import { profile_pageselector } from "../consts/pageData";
 import { temp_user_profile } from "../consts/tempData";
 import Layout from "../layouts/Layout";
-import { temp_profile_pageselector } from "../consts/pageData";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export default function Profile() {
         <FaPen size={20} onClick={handleEditOpen} />
       </UserProfile>
 
-      <PageSelector pages={temp_profile_pageselector} top={"22vh"} />
+      <PageSelector pages={profile_pageselector} top={"22vh"} />
 
       <OutletLayout>
         <Outlet />

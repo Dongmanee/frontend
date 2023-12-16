@@ -119,7 +119,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/user/:id",
+        path: "/user/:userId",
         element: <FriendProfile />,
         children: [
           {

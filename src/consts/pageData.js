@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import {
   FaCalendar,
   FaCommentDots,
@@ -31,26 +32,28 @@ export const navbarItems = [
   },
 ];
 
-export const temp_club_pageselector = [
-  {
-    name: "홈",
-    src: "/club/:id/home",
-  },
-  {
-    name: "게시판",
-    src: "/club/:id/posts",
-  },
-  {
-    name: "일정",
-    src: "/club/:id/schedule",
-  },
-  {
-    name: "사진첩",
-    src: "/club/:id/album",
-  },
-];
+export const modifyClubPageSelector = (clubId) => {
+  return [
+    {
+      name: "홈",
+      src: `/club/${clubId}/home`,
+    },
+    {
+      name: "게시판",
+      src: `/club/${clubId}/posts`,
+    },
+    {
+      name: "일정",
+      src: `/club/${clubId}/schedule`,
+    },
+    {
+      name: "사진첩",
+      src: `/club/${clubId}/album`,
+    },
+  ];
+};
 
-export const temp_profile_pageselector = [
+export const profile_pageselector = [
   {
     name: "친구",
     src: "/profile",
@@ -69,33 +72,37 @@ export const temp_profile_pageselector = [
   },
 ];
 
-export const temp_user_pageselector = [
-  // user정보를 redux로 상태관리 해야할 듯!
-  {
-    name: "가입 동아리",
-    src: "/user/home",
-  },
-  {
-    name: "작성한 글",
-    src: "/user/posts",
-  },
-  {
-    name: "작성한 댓글",
-    src: "/user/comments",
-  },
-];
+export const modifyUserPageSelector = (userId) => {
+  return [
+    // user정보를 redux로 상태관리 해야할 듯!
+    {
+      name: "가입 동아리",
+      src: `/user/${userId}`,
+    },
+    {
+      name: "작성한 글",
+      src: `/user/${userId}/posts`,
+    },
+    {
+      name: "작성한 댓글",
+      src: `/user/${userId}/comments`,
+    },
+  ];
+};
 
-export const temp_club_setting_page = [
-  {
-    name: "신청내역",
-    src: "/club/:clubId/setting/applications",
-  },
-  {
-    name: "문의내역",
-    src: "/club/:clubId/setting/inquiries",
-  },
-  {
-    name: "멤버관리",
-    src: "/club/:clubId/setting/members",
-  },
-];
+export const modifyClubSettingPageSelector = (clubId) => {
+  return [
+    {
+      name: "신청내역",
+      src: `/club/${clubId}/setting/applications`,
+    },
+    {
+      name: "문의내역",
+      src: `/club/${clubId}/setting/inquiries`,
+    },
+    {
+      name: "멤버관리",
+      src: `/club/${clubId}/setting/members`,
+    },
+  ];
+};
