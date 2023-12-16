@@ -31,6 +31,7 @@ import UserPosts from "../components/profile/Posts";
 import UserComments from "../components/profile/Comments";
 import UserProfileEdit from "../components/profile/Edit";
 import UserJoinClub from "../components/profile/JoinClub";
+import Setting from "../pages/Setting";
 
 const router = createBrowserRouter([
   {
@@ -187,6 +188,10 @@ const router = createBrowserRouter([
       {
         path: "profile/edit",
         element: <UserProfileEdit />,
+      },
+      {
+        path: "profile/setting",
+        element: <Setting />,
       },
     ],
   },

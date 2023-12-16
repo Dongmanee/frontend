@@ -9,12 +9,16 @@ import Layout from "../layouts/Layout";
 
 export default function Profile() {
   const navigate = useNavigate();
-  const handleEditOpen = () => navigate(`edit`);
-  const handlePrevPage = () => navigate(-1);
+
   return (
-    <Layout headerLeft={"prev"} headerRight={"setting"} onClickLeft={handlePrevPage}>
+    <Layout
+      headerLeft={"prev"}
+      headerRight={"setting"}
+      onClickLeft={() => navigate(-1)}
+      onClickRight={() => navigate("setting")}
+    >
       <UserProfile user={temp_user_profile} isMyProfile={true}>
-        <FaPen size={20} onClick={handleEditOpen} />
+        <FaPen size={20} onClick={() => navigate("edit")} />
       </UserProfile>
 
       <PageSelector pages={temp_profile_pageselector} top={"22vh"} />
