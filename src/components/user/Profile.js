@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import { flexColumn, flexICenter } from "../../styles/global.style";
 import User from "../global/User";
-import { flexICenter } from "../../styles/global.style";
 
-export default function UserProfile({ children, user, childrenBottom, isAddedFriend }) {
+export default function UserProfile({ children, user, isAddedFriend, isMyProfile }) {
   return (
-    <UserProfileLayout $childrenBottom={childrenBottom}>
+    <UserProfileLayout>
       <User
         user={user}
         imgSize={"4rem"}
@@ -13,8 +13,11 @@ export default function UserProfile({ children, user, childrenBottom, isAddedFri
         introSize={(props) => props.theme.sizes.sm}
         gap={"1rem"}
       />
-      {isAddedFriend && <DeleteFriendBtn>친구삭제</DeleteFriendBtn>}
-      <div>{children}</div>
+
+      <ButtonsCol isAddedFriend={isAddedFriend} isMyProfile={isMyProfile}>
+        {isAddedFriend && <DeleteFriendBtn>친구삭제</DeleteFriendBtn>}
+        <div>{children}</div>
+      </ButtonsCol>
     </UserProfileLayout>
   );
 }
@@ -27,21 +30,21 @@ const UserProfileLayout = styled.div`
   box-sizing: border-box;
   position: fixed;
   background-color: white;
-
-  & > div:last-child {
-    position: absolute;
-    bottom: ${({ $childrenBottom }) => ($childrenBottom ? $childrenBottom : "15px")};
-    right: 20px;
-  }
 `;
 
 const DeleteFriendBtn = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
   cursor: pointer;
 
   text-decoration: underline;
   font-size: ${(props) => props.theme.sizes.xs};
   color: ${(props) => props.theme.colors.red.md};
+`;
+
+const ButtonsCol = styled.div`
+  width: 50%;
+  height: 60%;
+  ${flexColumn};
+  justify-content: ${(props) => (props.isAddedFriend ? "space-between" : "flex-end")};
+  justify-content: ${(props) => props.isMyProfile && "center"};
+  align-items: flex-end;
 `;

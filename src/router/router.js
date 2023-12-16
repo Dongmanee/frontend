@@ -30,6 +30,7 @@ import UserJoinClubs from "../pages/user/UserJoinClubs";
 import UserPosts from "../components/profile/Posts";
 import UserComments from "../components/profile/Comments";
 import UserProfileEdit from "../components/profile/Edit";
+import UserJoinClub from "../components/profile/JoinClub";
 
 const router = createBrowserRouter([
   {
@@ -168,6 +169,10 @@ const router = createBrowserRouter([
           {
             path: "",
             element: <Friends />,
+          },
+          {
+            path: "joinclub",
+            element: <UserJoinClub />,
           },
           {
             path: "posts",

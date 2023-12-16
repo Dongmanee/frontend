@@ -146,7 +146,7 @@ export const temp_profile_pageselector = [
   },
   {
     name: "가입 동아리",
-    src: "/profile/joins",
+    src: "/profile/joinclub",
   },
   {
     name: "작성한 글",
