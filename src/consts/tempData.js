@@ -212,21 +212,25 @@ export const temp_friends = [
     name: "김민지",
     intro: "아해어나",
     id: 12,
+    isSended: true,
   },
   {
     name: "박하준",
     intro: "한밭대학교 여성",
     id: 12,
+    isSended: false,
   },
   {
     name: "김민지",
     intro: "한밭대학교 여성",
     id: 12,
+    isSended: true,
   },
   {
     name: "김민지",
     intro: "한밭대학교 여성",
     id: 12,
+    isSended: false,
   },
 ];
 

@@ -16,6 +16,7 @@ export default function CustomInput({
   onChange,
   onkeyUp,
   onKeyDown,
+  onClick,
   register,
   name,
   readOnly,
@@ -34,6 +35,7 @@ export default function CustomInput({
     fontSize,
     borderColor,
     value,
+    onClick,
     onChange,
     onkeyUp,
     readOnly,
@@ -60,8 +62,7 @@ CustomInput.defaultProps = {
 const CustomInputLayout = styled.input`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  background-color: ${(props) =>
-    props.border ? "white" : props.theme.colors.gray.xxs};
+  background-color: ${(props) => (props.border ? "white" : props.theme.colors.gray.xxs)};
   border-radius: ${(props) => props.radius};
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};

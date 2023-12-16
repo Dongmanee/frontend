@@ -4,11 +4,18 @@ import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 import CustomInput from "../global/CustomInputs";
 import { BsPersonPlus } from "react-icons/bs";
 import User from "../global/User";
+import { useState } from "react";
+import AddFriendModal from "./AddFriendModal";
 
 export default function Friends() {
+  const [AddFriendModalOpen, setAddFriendModalOpen] = useState(false);
+  const handleAddFriendModal = () => {
+    setAddFriendModalOpen((prev) => !prev);
+  };
+
   return (
     <>
-      <FriendSearchInputRow>
+      <FriendSearchInputRow onClick={handleAddFriendModal}>
         <CustomInput placeholder={"검색"} />
         <BsPersonPlus size={20} />
       </FriendSearchInputRow>
@@ -18,6 +25,8 @@ export default function Friends() {
           <User user={item} key={idx} />
         ))}
       </FriendsCol>
+
+      {AddFriendModalOpen && <AddFriendModal onClose={handleAddFriendModal} />}
     </>
   );
 }
