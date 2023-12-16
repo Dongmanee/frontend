@@ -2,9 +2,10 @@ import { FaPen } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import PageSelector from "../components/global/PageSelector";
-import UserProfile from "../components/user/UserProfile";
+import UserProfile from "../components/user/Profile";
 import { temp_profile_pageselector, temp_user_profile } from "../consts/tempData";
 import Layout from "../layouts/Layout";
+import Navbar from "../components/global/Navbar";
 
 export default function Profile() {
   return (
@@ -18,6 +19,8 @@ export default function Profile() {
       <OutletLayout>
         <Outlet />
       </OutletLayout>
+
+      <Navbar />
     </Layout>
   );
 }

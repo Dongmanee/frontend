@@ -27,6 +27,7 @@ import ClubSettingInquiryDetail from "../pages/clubSetting/ClubSettingInquiryDet
 import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import FriendProfile from "../pages/user/FriendProfile";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import UserPosts from "../components/profile/Posts";
 
 const router = createBrowserRouter([
   {
@@ -165,6 +166,10 @@ const router = createBrowserRouter([
           {
             path: "",
             element: <Friends />,
+          },
+          {
+            path: "posts",
+            element: <UserPosts />,
           },
         ],
       },

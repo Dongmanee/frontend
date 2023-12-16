@@ -12,6 +12,7 @@ export default function AddFriendModal({ onClose }) {
       <AddFriendModalLayout>
         <Header
           left={"exit"}
+          onClickLeft={onClose}
           right={"check"}
           center={"친구 추가"}
           position={"relative"}
