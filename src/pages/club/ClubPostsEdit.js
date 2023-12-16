@@ -30,16 +30,6 @@ export default function ClubPostsEdit() {
       <ContentCol>
         <RegisterInput inputHeight={"3rem"} label={"제목을 입력해주세요"} />
       </ContentCol>
-
-      <TextCol>
-        <RegisterInput inputHeight={"15rem"} label={"내용을 입력해주세요"} />
-      </TextCol>
-
-      <ContentCol>
-        <RegisterImage errorMsg={"이미지를 등록해주세요"} />
-      </ContentCol>
-
-      <PenIcon />
     </Layout>
   );
 }
