@@ -10,53 +10,6 @@ export default function RegisterCkEditor({ label }) {
       <RegisterLabel label={label} />
       <CKEditor
         editor={ClassicEditor}
-        config={{
-          toolbar: [
-            "heading",
-            "|",
-            "fontFamily",
-            "fontSize",
-            "|",
-            "bold",
-            "italic",
-            "link",
-            // "bulletedList",
-            // "numberedList",
-            "|",
-            "blockQuote",
-          ],
-          heading: {
-            options: [
-              {
-                model: "paragraph",
-                title: "Paragraph",
-                class: "ck-heading_paragraph",
-              },
-              {
-                model: "heading1",
-                view: "h1",
-                title: "Heading 1",
-                class: "ck-heading_heading1",
-              },
-              {
-                model: "heading2",
-                view: "h2",
-                title: "Heading 2",
-                class: "ck-heading_heading2",
-              },
-            ],
-          },
-          fontFamily: {
-            options: [
-              "default",
-              "Ubuntu, Arial, sans-serif",
-              "Ubuntu Mono, Courier New, Courier, monospace",
-            ],
-          },
-          fontSize: {
-            options: [9, 11, 13, "default", 17, 19, 21],
-          },
-        }}
         onChange={(event, editor) => {
           const data = editor.getData();
           console.log(data);
@@ -69,5 +22,6 @@ export default function RegisterCkEditor({ label }) {
 const RegisterCkEditorLayout = styled.div`
   .ck-editor__editable {
     min-height: 30rem;
+    padding: 0.5rem 1rem;
   }
 `;
