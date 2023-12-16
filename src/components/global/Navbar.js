@@ -1,52 +1,26 @@
 import React from "react";
-import {
-  FaCalendar,
-  FaCommentDots,
-  FaRegCalendar,
-  FaRegCommentDots,
-  FaRegUser,
-  FaUser,
-} from "react-icons/fa6";
-import { PiHouseBold, PiHouseFill } from "react-icons/pi";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { flexJBetween } from "../../styles/global.style";
+import { navbarItems } from "../../consts/data";
 
 export default function Navbar() {
   const location = useLocation();
   const nowPage = location.pathname;
+  const navigate = useNavigate();
 
-  const navbarItems = [
-    {
-      page: "/home",
-      active: <PiHouseFill size={26} />,
-      inActive: <PiHouseBold size={26} />,
-    },
-    {
-      page: "/chat",
-      active: <FaCommentDots size={24} />,
-      inActive: <FaRegCommentDots size={24} />,
-    },
-    {
-      page: "/calendar",
-      active: <FaCalendar size={24} />,
-      inActive: <FaRegCalendar size={24} />,
-    },
-    {
-      page: "/profile",
-      active: <FaUser size={24} />,
-      inActive: <FaRegUser size={24} />,
-    },
-  ];
+  const handlePageMove = (pageSrc) => {
+    navigate(pageSrc);
+  };
 
   return (
     <NavbarLayout>
       {navbarItems.map((item, idx) => {
         const isActive = nowPage.startsWith(item.page);
         return (
-          <React.Fragment key={idx}>
+          <div key={idx} onClick={() => handlePageMove(item.page)}>
             {isActive ? item.active : item.inActive}
-          </React.Fragment>
+          </div>
         );
       })}
     </NavbarLayout>
