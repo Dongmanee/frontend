@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import { temp_user_profile } from "../../consts/tempData";
 import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 import User from "../global/User";
-import { temp_user_profile } from "../../consts/tempData";
+import { useNavigate } from "react-router-dom";
 
 export default function Chat({ isNewChat }) {
+  const navigate = useNavigate();
   return (
-    <ChatLayout>
+    <ChatLayout onClick={() => navigate("detail")}>
       <User
+        isChat={true}
         user={temp_user_profile}
         imgSize={"4rem"}
         size={"1.125rem"}

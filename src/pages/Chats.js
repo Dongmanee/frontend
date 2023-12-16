@@ -1,11 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Navbar from "../components/global/Navbar";
-import User from "../components/global/User";
-import { temp_user_profile } from "../consts/tempData";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn, flexICenter } from "../styles/global.style";
 import Chat from "../components/chats/Chat";
+import Navbar from "../components/global/Navbar";
+import Layout from "../layouts/Layout";
+import { flexColumn } from "../styles/global.style";
 
 export default function Chats() {
   const navigate = useNavigate();

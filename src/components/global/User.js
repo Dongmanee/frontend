@@ -14,6 +14,7 @@ export default function User({
   introSize,
   introWeight,
   gap,
+  isChat,
 }) {
   const styles = { size, imgSize, dateColor, introColor, introSize, introWeight, gap };
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function User({
   };
 
   return (
-    <UserLayout onClick={() => openUser(user.id)}>
+    <UserLayout onClick={() => !isChat && openUser(user.id)}>
       <UserImgBox {...styles} src={example} />
       <UserDescriptionBox {...styles}>
         <span>
