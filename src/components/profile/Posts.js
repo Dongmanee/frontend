@@ -23,7 +23,7 @@ export default function UserPosts() {
   );
 }
 
-const UserPostsLayout = styled.div`
+export const UserPostsLayout = styled.div`
   ${flexColumn}
   gap: 50px;
   box-sizing: border-box;
