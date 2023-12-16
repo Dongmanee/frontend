@@ -29,6 +29,7 @@ import FriendProfile from "../pages/user/FriendProfile";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
 import UserPosts from "../components/profile/Posts";
 import UserComments from "../components/profile/Comments";
+import UserProfileEdit from "../components/profile/Edit";
 
 const router = createBrowserRouter([
   {
@@ -177,6 +178,10 @@ const router = createBrowserRouter([
             element: <UserComments />,
           },
         ],
+      },
+      {
+        path: "profile/edit",
+        element: <UserProfileEdit />,
       },
     ],
   },

@@ -15,7 +15,7 @@ export default function ClubPosts() {
   };
 
   const onAddPosts = () => {
-    navigate(`/club/posts/add`);
+    navigate(`/club/:clubId/posts/add`);
   };
 
   return (
