@@ -36,7 +36,7 @@ export const modifyClubPageSelector = (clubId) => {
   return [
     {
       name: "홈",
-      src: `/club/${clubId}/home`,
+      src: `/club/${clubId}`,
     },
     {
       name: "게시판",
