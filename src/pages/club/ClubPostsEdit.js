@@ -8,6 +8,8 @@ import RegisterLabel from "../../components/global/register/RegisterLabel";
 import Layout from "../../layouts/Layout";
 import { useLocation } from "react-router-dom";
 import usePrevPage from "../../hooks/usePrevPage";
+import RegisterCkEditor from "../../components/global/register/RegisterCkEditor";
+import { flexColumn } from "../../styles/global.style";
 
 export default function ClubPostsEdit() {
   const location = useLocation();
@@ -21,15 +23,15 @@ export default function ClubPostsEdit() {
       headerRight={"check"}
       onClickLeft={onPrevPage}
     >
-      <TagCol>
-        <RegisterLabel label={"해당되는 태그를 선택해주세요"} />
-        <ClubPostsCategory margin={"0"} />
-        <RegisterErrorMsg errorMsg={"태그는 임원만 선택할 수 있습니다"} />
-      </TagCol>
-
-      <ContentCol>
-        <RegisterInput inputHeight={"3rem"} label={"제목을 입력해주세요"} />
-      </ContentCol>
+      <PostFormBox>
+        <TagCol>
+          <RegisterLabel label="카테고리" />
+          <ClubPostsCategory margin={"0"} />
+          <RegisterErrorMsg errorMsg={"태그는 임원만 선택할 수 있습니다"} />
+        </TagCol>
+        <RegisterInput label="제목" inputHeight={"3rem"} />
+        <RegisterCkEditor label="내용" />
+      </PostFormBox>
     </Layout>
   );
 }
@@ -47,10 +49,11 @@ const TagCol = styled.div`
   }
 `;
 
-export const ContentCol = styled.div`
-  padding-top: 20px;
+const PostFormBox = styled.div`
+  ${flexColumn}
+  gap: 1.5rem;
 `;
 
-const TextCol = styled(ContentCol)`
-  height: 30vh;
+export const ContentCol = styled.div`
+  padding-top: 20px;
 `;
