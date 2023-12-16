@@ -12,9 +12,10 @@ export default function User({
   dateColor,
   introColor,
   introSize,
+  introWeight,
   gap,
 }) {
-  const styles = { size, imgSize, dateColor, introColor, introSize, gap };
+  const styles = { size, imgSize, dateColor, introColor, introSize, introWeight, gap };
   const navigate = useNavigate();
   const openUser = (userId) => {
     navigate(`/user/${userId}`);
@@ -77,6 +78,7 @@ const UserDescriptionBox = styled.div`
   & > span:last-child {
     color: ${(props) => props.introColor};
     font-size: ${(props) => props.introSize};
+    font-weight: ${(props) => props.introWeight};
   }
 `;
 

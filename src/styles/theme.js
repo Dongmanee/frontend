@@ -14,6 +14,7 @@ const colors = {
     xs: "#feffff",
   },
   red: {
+    sm: "#F71B1B",
     md: "#FF0000",
   },
 };

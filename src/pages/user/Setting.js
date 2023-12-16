@@ -1,10 +1,10 @@
+import { FcAndroidOs, FcBusinessman, FcPrivacy, FcRules } from "react-icons/fc";
 import styled from "styled-components";
-import Navbar from "../components/global/Navbar";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn, flexICenter, flexJCenter } from "../styles/global.style";
-import { FcRules, FcPrivacy, FcBusinessman, FcAndroidOs } from "react-icons/fc";
-import kakao from "../images/kakao.png";
-import usePrevPage from "../hooks/usePrevPage";
+import Navbar from "../../components/global/Navbar";
+import usePrevPage from "../../hooks/usePrevPage";
+import kakao from "../../images/kakao.png";
+import Layout from "../../layouts/Layout";
+import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 export default function Setting() {
   const { onPrevPage } = usePrevPage();
   return (

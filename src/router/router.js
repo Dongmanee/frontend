@@ -1,11 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import UserComments from "../components/profile/Comments";
+import UserProfileEdit from "../components/profile/Edit";
 import Friends from "../components/profile/Friends";
+import UserJoinClub from "../components/profile/JoinClub";
+import UserPosts from "../components/profile/Posts";
 import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
 import Posts from "../pages/Posts";
 import Profile from "../pages/Profile";
 import RegisterClub from "../pages/RegisterClub";
+import Setting from "../pages/user/Setting";
 import Signup from "../pages/Signup";
 import Club from "../pages/club/Club";
 import ClubAlbum from "../pages/club/ClubAlbum";
@@ -27,11 +32,7 @@ import ClubSettingInquiryDetail from "../pages/clubSetting/ClubSettingInquiryDet
 import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import FriendProfile from "../pages/user/FriendProfile";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
-import UserPosts from "../components/profile/Posts";
-import UserComments from "../components/profile/Comments";
-import UserProfileEdit from "../components/profile/Edit";
-import UserJoinClub from "../components/profile/JoinClub";
-import Setting from "../pages/Setting";
+import Chats from "../pages/Chats";
 
 const router = createBrowserRouter([
   {
@@ -192,6 +193,10 @@ const router = createBrowserRouter([
       {
         path: "profile/setting",
         element: <Setting />,
+      },
+      {
+        path: "/chats",
+        element: <Chats />,
       },
     ],
   },
