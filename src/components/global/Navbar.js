@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { flexJBetween } from "../../styles/global.style";
-import { navbarItems } from "../../consts/data";
+import { navbarItems } from "../../consts/pageData";
 
 export default function Navbar() {
   const location = useLocation();

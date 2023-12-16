@@ -4,9 +4,10 @@ import styled from "styled-components";
 import CustomButton from "../../components/global/CustomButton";
 import PageSelector from "../../components/global/PageSelector";
 import UserProfile from "../../components/user/Profile";
-import { temp_user_pageselector, temp_user_profile } from "../../consts/tempData";
+import { temp_user_profile } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
 import Layout from "../../layouts/Layout";
+import { temp_user_pageselector } from "../../consts/pageData";
 
 export default function FriendProfile() {
   const { onPrevPage } = usePrevPage();
