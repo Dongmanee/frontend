@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function PostWriter({ writerimg, writerName }) {
   return (
     <PostWriterLayout>
-      <img src={writerimg} />
+      {writerimg && <img src={writerimg} alt="" />}
       <div>{writerName}</div>
     </PostWriterLayout>
   );

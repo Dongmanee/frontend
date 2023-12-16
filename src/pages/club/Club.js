@@ -1,12 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import PageSelector from "../../components/global/PageSelector";
 import { temp_club_pageselector } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
 import Layout from "../../layouts/Layout";
+import { useState } from "react";
+import ClubSettingDropDown from "../../components/club/ClubSettingDropDow";
 
 export default function Club() {
   const { onPrevPage } = usePrevPage();
+  const [isSettingExpanded, setIsSettingExpanded] = useState(false);
+
+  const onClickSettingButton = () => {
+    setIsSettingExpanded((prev) => !prev);
+  };
 
   return (
     <Layout
@@ -14,7 +21,9 @@ export default function Club() {
       headerCenter="Import"
       headerRight="edit"
       onClickLeft={onPrevPage}
+      onClickRight={onClickSettingButton}
     >
+      {isSettingExpanded && <ClubSettingDropDown />}
       <PageSelector pages={temp_club_pageselector} />
 
       <OutletBox>

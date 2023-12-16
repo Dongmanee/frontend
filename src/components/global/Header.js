@@ -9,7 +9,14 @@ import styled from "styled-components";
 import logo from "../../images/logo.png";
 import { flexJBetween } from "../../styles/global.style";
 
-export default function Header({ left, center, right, onClickLeft, onClickRight }) {
+export default function Header({
+  left,
+  center,
+  right,
+  onClickLeft,
+  onClickRight,
+  position,
+}) {
   const renderLeft = () => {
     switch (left) {
       case "logo":
@@ -37,7 +44,7 @@ export default function Header({ left, center, right, onClickLeft, onClickRight 
   };
 
   return (
-    <HeaderLayout>
+    <HeaderLayout $position={position}>
       <HeaderItem onClick={onClickLeft}>{renderLeft()}</HeaderItem>
       <HeaderItem>{center ? center : ""}</HeaderItem>
       <HeaderItem onClick={onClickRight}>{renderRight()}</HeaderItem>
@@ -53,10 +60,11 @@ const HeaderLayout = styled.div`
   padding: 13px 20px;
 
   z-index: 2;
-  position: fixed;
+  position: ${(props) => (props.$position ? props.$position : "fixed")};
   top: 0;
   left: 0;
   right: 0;
+  border-radius: inherit;
 
   & > div:nth-child(2) {
     font-weight: ${(props) => props.theme.weights.xl};

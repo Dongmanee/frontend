@@ -20,8 +20,8 @@ export default function ClubSettingApplicationDetail() {
       </ClubSettingApplicationDetailCol>
 
       <ClubSettingApplicationDetailConfirmButton>
-        <span>가입 거부</span>
-        <span>가입 승인</span>
+        <button>가입 거부</button>
+        <button>가입 승인</button>
       </ClubSettingApplicationDetailConfirmButton>
     </Layout>
   );
@@ -49,15 +49,16 @@ const ClubSettingApplicationDetailConfirmButton = styled.div`
   bottom: 20px;
   border-radius: 15px;
   box-shadow: 1px 1px 10px black;
-  cursor: pointer;
 
-  span {
+  button {
     ${flexCenter};
-  }
-
-  span:first-child {
+    cursor: pointer;
+    border: 0;
     width: 50%;
     height: 100%;
+  }
+
+  button:first-child {
     background-color: white;
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
@@ -66,9 +67,7 @@ const ClubSettingApplicationDetailConfirmButton = styled.div`
     color: ${(props) => props.theme.colors.gray.md};
   }
 
-  span:last-child {
-    width: 50%;
-    height: 100%;
+  button:last-child {
     background-color: ${(props) => props.theme.colors.dark.md};
     border-top-right-radius: inherit;
     border-bottom-right-radius: inherit;

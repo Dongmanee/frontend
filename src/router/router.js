@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import Friends from "../components/profile/Friends";
 import Clubs from "../pages/Clubs";
 import Login from "../pages/Login";
 import Posts from "../pages/Posts";
+import Profile from "../pages/Profile";
 import RegisterClub from "../pages/RegisterClub";
 import Signup from "../pages/Signup";
 import Club from "../pages/club/Club";
@@ -14,7 +16,6 @@ import ClubPostsEdit from "../pages/club/ClubPostsEdit";
 import ClubSchedule from "../pages/club/ClubSchedule";
 import ClubScheduleAdd from "../pages/club/ClubScheduleAdd";
 import ClubScheduleDetail from "../pages/club/ClubScheduleDetail";
-import ClubUserHome from "../pages/club/ClubUserHome";
 import InquiryClub from "../pages/club/InquiryClub";
 import JoinClub from "../pages/club/JoinClub";
 import ClubSetting from "../pages/clubSetting/ClubSetting";
@@ -24,7 +25,12 @@ import ClubSettingApplications from "../pages/clubSetting/ClubSettingApplication
 import ClubSettingInquiries from "../pages/clubSetting/ClubSettingInquiries";
 import ClubSettingInquiryDetail from "../pages/clubSetting/ClubSettingInquiryDetail";
 import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
+import FriendProfile from "../pages/user/FriendProfile";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import UserPosts from "../components/profile/Posts";
+import UserComments from "../components/profile/Comments";
+import UserProfileEdit from "../components/profile/Edit";
+import UserJoinClub from "../components/profile/JoinClub";
 
 const router = createBrowserRouter([
   {
@@ -95,26 +101,26 @@ const router = createBrowserRouter([
         element: <InquiryClub />,
       },
       {
-        path: "/club/schedule/add",
+        path: "/club/:clubId/schedule/add",
         element: <ClubScheduleAdd />,
       },
 
       {
-        path: "/club/posts/:id",
+        path: "/club/:clubId/posts/:id",
         element: <ClubPostsDetail />,
       },
       {
-        path: "/club/posts/add",
+        path: "/club/:clubId/posts/add",
         element: <ClubPostsEdit />,
       },
       {
-        path: "club/posts/edit/:id",
+        path: "club/:clubId/posts/edit/:id",
         element: <ClubPostsEdit />,
       },
 
       {
         path: "/user/:id",
-        element: <ClubUserHome />,
+        element: <FriendProfile />,
         children: [
           {
             path: "",
@@ -123,7 +129,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/club/setting",
+        path: "/club/:clubId/setting",
         element: <ClubSetting />,
         children: [
           {
@@ -141,16 +147,46 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/club/setting/inquiries/:inquiryId",
+        path: "/club/:clubId/setting/edit",
+        element: <RegisterClub />,
+      },
+      {
+        path: "/club/:clubId/setting/inquiries/:inquiryId",
         element: <ClubSettingInquiryDetail />,
       },
       {
-        path: "/club/setting/applications/:applicationId",
+        path: "/club/:clubId/setting/applications/:applicationId",
         element: <ClubSettingApplicationDetail />,
       },
       {
-        path: "/club/setting/applications/management",
+        path: "/club/:clubId/setting/applications/management",
         element: <ClubSettingApplicationManagement />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+        children: [
+          {
+            path: "",
+            element: <Friends />,
+          },
+          {
+            path: "joinclub",
+            element: <UserJoinClub />,
+          },
+          {
+            path: "posts",
+            element: <UserPosts />,
+          },
+          {
+            path: "comments",
+            element: <UserComments />,
+          },
+        ],
+      },
+      {
+        path: "profile/edit",
+        element: <UserProfileEdit />,
       },
     ],
   },
