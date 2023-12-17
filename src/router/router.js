@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         element: <Club />,
         children: [
           {
-            path: "home",
+            path: "",
             element: <ClubHome />,
           },
           {
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             element: <ClubSchedule />,
           },
           {
-            path: "schedule/:Id",
+            path: "schedule/:scheduleId",
             element: <ClubScheduleDetail />,
           },
           {
@@ -106,7 +106,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/club/:clubId/posts/:id",
+        path: "/club/:clubId/posts/:postId",
         element: <ClubPostsDetail />,
       },
       {
@@ -114,12 +114,12 @@ const router = createBrowserRouter([
         element: <ClubPostsEdit />,
       },
       {
-        path: "club/:clubId/posts/edit/:id",
+        path: "club/:clubId/posts/edit/:postId",
         element: <ClubPostsEdit />,
       },
 
       {
-        path: "/user/:id",
+        path: "/user/:userId",
         element: <FriendProfile />,
         children: [
           {

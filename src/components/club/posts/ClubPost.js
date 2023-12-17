@@ -5,10 +5,16 @@ import PostBottom from "../../global/postList/PostBottom";
 import PostHead from "../../global/postList/PostHead";
 import { useNavigate } from "react-router-dom";
 
-export default function ClubPost({ title, subTitle, date, postCategory, isMine }) {
+export default function ClubPost({
+  title,
+  subTitle,
+  date,
+  postCategory,
+  isMine,
+}) {
   const navigate = useNavigate();
   const goDetail = (id) => {
-    navigate(`/club/posts/${id}`);
+    navigate(`/club/:clubId/posts/${id}`);
   };
   return (
     <ClubPostLayout onClick={() => goDetail("123")}>

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./index.css";
-import reportWebVitals from "./reportWebVitals";
 import router from "./router/router";
 import theme from "./styles/theme";
 import { RecoilRoot } from "recoil";
@@ -16,4 +15,3 @@ root.render(
     </RecoilRoot>
   </ThemeProvider>
 );
-reportWebVitals();
