@@ -32,7 +32,7 @@ const Morebtn = styled.span`
 `;
 
 const Title = styled.div`
-  padding: 14px 0;
+  padding: 20px 0;
 
   font-size: ${(props) => props.theme.sizes.xl};
   font-weight: ${(props) => props.theme.weights.lg};

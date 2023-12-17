@@ -8,11 +8,18 @@ export default function ClubScheduleItem({ isDone, item }) {
   const left = isDone ? "done" : "D-2";
   const navigate = useNavigate();
   const openScheduleDetail = (id) => {
-    navigate(`/club/:id/schedule/${id}`);
+    navigate(`${id}`);
   };
   return (
-    <ClubScheduleItemsLayout onClick={() => openScheduleDetail(item.id)} $isDone={isDone}>
-      <ClubScheduleTitle date={"11/11 (토)"} left={left} title={"토요일 모임"} />
+    <ClubScheduleItemsLayout
+      onClick={() => openScheduleDetail(item.id)}
+      $isDone={isDone}
+    >
+      <ClubScheduleTitle
+        date={"11/11 (토)"}
+        left={left}
+        title={"토요일 모임"}
+      />
 
       <ClubScheduleItemContent item={item} />
     </ClubScheduleItemsLayout>

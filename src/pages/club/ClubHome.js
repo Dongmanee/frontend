@@ -10,6 +10,7 @@ export default function ClubHome() {
   const handlemoreClick = (src) => {
     nav(`${src}`);
   };
+
   const clubHomeInfo = temp_club_home_info;
 
   return (
@@ -21,10 +22,6 @@ export default function ClubHome() {
           key={idx}
           title={item.title}
           isMore={item.isMore}
-          moreright={item.moreright}
-          moreleft={item.moreleft}
-          morebottom={item.morebottom}
-          moretop={item.moretop}
           moreOnClick={() => handlemoreClick(item.src)}
         >
           {item.item}
