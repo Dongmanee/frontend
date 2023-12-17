@@ -2,10 +2,10 @@ import { addMonths, subMonths } from "date-fns";
 import { useState } from "react";
 import styled from "styled-components";
 import CalendarBody from "../components/calendar/CalendarBody";
+import CalendarDetail from "../components/calendar/CalendarDetail";
 import CalendarHead from "../components/calendar/CalendarHead";
 import Navbar from "../components/global/Navbar";
 import Layout from "../layouts/Layout";
-import CalendarDetail from "../components/calendar/CalendarDetail";
 
 export default function Calendar() {
   const [thisMonth, setThisMonth] = useState(new Date());

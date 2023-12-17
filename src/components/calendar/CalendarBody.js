@@ -3,13 +3,13 @@ import {
   endOfMonth,
   endOfWeek,
   format,
-  isSameDay,
   isSameMonth,
   isToday,
   startOfMonth,
   startOfWeek,
 } from "date-fns";
 import styled from "styled-components";
+import { temp_weeks } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
 
 export default function CalendarBody({ thisMonth, handleDateClick }) {
@@ -60,13 +60,9 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
   return (
     <CalendarBodyLayout>
       <WeekRowHead>
-        <div>Sun</div>
-        <div>Mon</div>
-        <div>Tue</div>
-        <div>Wed</div>
-        <div>Thu</div>
-        <div>Fri</div>
-        <div>Sat</div>
+        {temp_weeks.map((item, idx) => (
+          <div key={idx}>{item.name}</div>
+        ))}
       </WeekRowHead>
 
       {render().map((col, colIdx) => (

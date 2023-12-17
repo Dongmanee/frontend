@@ -1,16 +1,15 @@
+import { FcAndroidOs, FcBusinessman, FcPrivacy, FcRules } from "react-icons/fc";
 import ClubUserList from "../components/club/ClubUserList";
 import ClubPost from "../components/club/posts/ClubPost";
-import computer from "../images/club-category/computer.png";
-import total from "../images/club-category/total.png";
 import angel from "../images/club-category/angel.png";
 import festival from "../images/club-category/festival.png";
 import heart from "../images/club-category/heart.png";
 import museum from "../images/club-category/museum.png";
 import sports from "../images/club-category/sports.png";
+import total from "../images/club-category/total.png";
+import sample from "../images/sample.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
-import sample from "../images/sample.png";
-
 export const university_list = [
   { universityId: "univ1", universityName: "한밭대학교" },
   { universityId: "univ2", universityName: "충남대학교" },
@@ -480,3 +479,46 @@ export const temp_user_profile = {
   name: "정준형",
   intro: "안녕하세요~!",
 };
+
+export const temp_setting_lists = [
+  {
+    icon: <FcRules size={25} />,
+    name: "개인정보처리방침",
+  },
+  {
+    icon: <FcPrivacy size={25} />,
+    name: "이용약관",
+  },
+  {
+    icon: <FcBusinessman size={25} />,
+    name: "사업자등록정보",
+  },
+  {
+    icon: <FcAndroidOs size={25} />,
+    name: "개발자정보",
+  },
+];
+
+export const temp_weeks = [
+  {
+    name: "Sun",
+  },
+  {
+    name: "Mon",
+  },
+  {
+    name: "Tue",
+  },
+  {
+    name: "Wed",
+  },
+  {
+    name: "Thu",
+  },
+  {
+    name: "Fri",
+  },
+  {
+    name: "Sat",
+  },
+];

@@ -1,10 +1,11 @@
-import { FcAndroidOs, FcBusinessman, FcPrivacy, FcRules } from "react-icons/fc";
 import styled from "styled-components";
 import Navbar from "../../components/global/Navbar";
+import { temp_setting_lists } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
 import kakao from "../../images/kakao.png";
 import Layout from "../../layouts/Layout";
 import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
+
 export default function Setting() {
   const { onPrevPage } = usePrevPage();
   return (
@@ -23,22 +24,12 @@ export default function Setting() {
         <SettingCol>
           <span>서비스 정보</span>
           <SettingBoxItemCol>
-            <SettingBoxItem>
-              <FcRules size={25} />
-              개인정보처리방침
-            </SettingBoxItem>
-            <SettingBoxItem>
-              <FcPrivacy size={25} />
-              이용약관
-            </SettingBoxItem>
-            <SettingBoxItem>
-              <FcBusinessman size={25} />
-              사업자등록정보
-            </SettingBoxItem>
-            <SettingBoxItem>
-              <FcAndroidOs size={25} />
-              개발자정보
-            </SettingBoxItem>
+            {temp_setting_lists.map((item, idx) => (
+              <SettingBoxItem key={idx}>
+                {item.icon}
+                {item.name}
+              </SettingBoxItem>
+            ))}
           </SettingBoxItemCol>
         </SettingCol>
 

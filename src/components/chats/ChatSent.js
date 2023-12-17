@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import { MessageCSS } from "./ChatFrom";
+import { MessageCSS } from "./ChatReceived";
 
-export default function ChatTo() {
+export default function ChatSent() {
   return (
-    <ChatToLayout>
+    <ChatSentLayout>
       <div>오후 3:04</div>
       <ChatMessage>김치찌개 먹을래?</ChatMessage>
-    </ChatToLayout>
+    </ChatSentLayout>
   );
 }
 
-const ChatToLayout = styled.div`
+const ChatSentLayout = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;

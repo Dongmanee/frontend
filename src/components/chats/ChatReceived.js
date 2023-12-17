@@ -1,17 +1,17 @@
 import styled, { css } from "styled-components";
 import sample from "../../images/example.png";
 
-export default function ChatFrom() {
+export default function ChatReceived() {
   return (
-    <ChatFromLayout>
+    <ChatReceivedLayout>
       <img src={sample} alt="" width={40} height={40} />
       <ChatMessage>오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래? 배고프다</ChatMessage>
       <div>오후 3:03</div>
-    </ChatFromLayout>
+    </ChatReceivedLayout>
   );
 }
 
-const ChatFromLayout = styled.div`
+const ChatReceivedLayout = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-end;

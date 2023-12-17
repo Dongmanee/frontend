@@ -1,7 +1,7 @@
 import { BsFillSendFill } from "react-icons/bs";
 import styled from "styled-components";
-import ChatFrom from "../components/chats/ChatFrom";
-import ChatTo from "../components/chats/ChatTo";
+import ChatReceived from "../components/chats/ChatReceived";
+import ChatSent from "../components/chats/ChatSent";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
 import { flexCenter, flexColumn } from "../styles/global.style";
@@ -11,10 +11,10 @@ export default function ChatDetail() {
   return (
     <Layout headerLeft={"prev"} onClickLeft={onPrevPage} headerCenter={"정준형"}>
       <ChatDetailLayout>
-        <ChatTo />
-        <ChatFrom />
-        <ChatTo />
-        <ChatFrom />
+        <ChatSent />
+        <ChatReceived />
+        <ChatSent />
+        <ChatReceived />
 
         <ChatDate>2023년 11월 10일</ChatDate>
 
