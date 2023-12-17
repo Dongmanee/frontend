@@ -5,33 +5,18 @@ import PostBottom from "../../global/postList/PostBottom";
 import PostHead from "../../global/postList/PostHead";
 import { useNavigate } from "react-router-dom";
 
-export default function ClubPost({
-  title,
-  subTitle,
-  date,
-  postCategory,
-  isMine,
-}) {
+export default function ClubPost({ post }) {
   const navigate = useNavigate();
   const goDetail = (id) => {
-    navigate(`/club/:clubId/posts/${id}`);
+    navigate(`${id}`);
   };
   return (
-    <ClubPostLayout onClick={() => goDetail("123")}>
-      <PostHead clubName={title} date={date} postCategory={postCategory} />
-      {subTitle && <SubTitle>PWA란?</SubTitle>}
-      <PostBody
-        postDetail={
-          <>
-            <p>당분간 오픈채팅방 위주로 운영하려 합니다</p>
-            <p>의견 반영이나 모임투표는 오픈채팅방에서 진행하며</p>
-          </>
-        }
-      />
-
+    <ClubPostLayout onClick={() => goDetail(post.postId)}>
+      <PostHead date={post.createdAt} postCategory={post.categoryName} />
+      <PostBody postTitle={post.postTitle} postDetail={post.postBody} />
       <PostBottom
-        writerimg={!isMine && example}
-        writerName={!isMine && "alphago"}
+        writerimg={post.writerImg}
+        writerName={post.writerName}
         likesNum="35"
         commentNum="10"
       />

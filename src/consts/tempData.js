@@ -17,6 +17,64 @@ export const university_list = [
   { universityId: "univ4", universityName: "한남대학교" },
 ];
 
+export const temp_club_posts = [
+  {
+    categoryName: "공지",
+    createdAt: "2023.03.11",
+    postId: "post1111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerName: "김민지",
+    writerImg: sample,
+    likesNum: 20,
+    commentNum: 20,
+  },
+  {
+    categoryName: "공지",
+    createdAt: "2023.03.11",
+    postId: "post1111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerName: "김민지",
+    writerImg: sample,
+    likesNum: 20,
+    commentNum: 20,
+  },
+  {
+    categoryName: "공지",
+    createdAt: "2023.03.11",
+    postId: "post1111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerName: "김민지",
+    writerImg: sample,
+    likesNum: 20,
+    commentNum: 20,
+  },
+  {
+    categoryName: "공지",
+    createdAt: "2023.03.11",
+    postId: "post1111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerName: "김민지",
+    writerImg: sample,
+    likesNum: 20,
+    commentNum: 20,
+  },
+  {
+    categoryName: "공지",
+    createdAt: "2023.03.11",
+    postId: "post1111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    writerName: "김민지",
+    writerImg: sample,
+    likesNum: 20,
+    commentNum: 20,
+  },
+];
+
 export const temp_total_posts = [
   {
     clubId: "a213asd",

@@ -5,6 +5,7 @@ import PenIcon from "../../components/global/PenIcon";
 import { flexColumn } from "../../styles/global.style";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { temp_club_posts, temp_total_posts } from "../../consts/tempData";
 
 export default function ClubPosts() {
   const [postsCategory, setPostsCategory] = useState("전체");
@@ -23,16 +24,9 @@ export default function ClubPosts() {
       <ClubPostsCategory currentTag={postsCategory} onHandle={handleCategory} />
 
       <ClubPostsCol>
-        <ClubPost
-          postCategory={"공지"}
-          title={"모임장 변경 공지사항"}
-          date={"2023.12.16"}
-        />
-        <ClubPost
-          postCategory={"공지"}
-          title={"모임장 변경 공지사항"}
-          date={"2023.12.16"}
-        />
+        {temp_club_posts.map((post, idx) => (
+          <ClubPost idx={idx} post={post} />
+        ))}
       </ClubPostsCol>
 
       <PenIcon onClick={onAddPosts} />
