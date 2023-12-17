@@ -28,10 +28,27 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
       for (let i = 0; i < 7; i++) {
         const formattedDay = format(day, "dd");
         if (isSameMonth(day, monthStartDay)) {
-          if (isToday(day)) row.push(<Today key={formattedDay}>{formattedDay}</Today>);
-          else row.push(<div key={formattedDay}>{formattedDay}</div>);
+          if (isToday(day))
+            row.push(
+              <Today onClick={() => handleDateClick(formattedDay)} key={formattedDay}>
+                {formattedDay}
+              </Today>
+            );
+          else
+            row.push(
+              <div onClick={() => handleDateClick(formattedDay)} key={formattedDay}>
+                {formattedDay}
+              </div>
+            );
         } else
-          row.push(<AnotherMonthDay key={formattedDay}>{formattedDay}</AnotherMonthDay>);
+          row.push(
+            <AnotherMonthDay
+              onClick={() => handleDateClick(formattedDay)}
+              key={formattedDay}
+            >
+              {formattedDay}
+            </AnotherMonthDay>
+          );
         day = addDays(day, 1);
       }
       col.push(row);
@@ -63,7 +80,6 @@ const CalendarBodyLayout = styled.div`
   width: 100%;
   height: 40vh;
   ${flexColumn};
-  margin-top: 80px;
 `;
 
 const WeekRow = styled.div`

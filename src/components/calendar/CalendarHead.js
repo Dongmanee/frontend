@@ -3,9 +3,14 @@ import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/
 import styled from "styled-components";
 import { flexCenter } from "../../styles/global.style";
 
-export default function CalendarHead({ thisMonth, handleMonthPrev, handleMonthNext }) {
+export default function CalendarHead({
+  thisMonth,
+  isDetailOpen,
+  handleMonthPrev,
+  handleMonthNext,
+}) {
   return (
-    <CalendarHeadLayout>
+    <CalendarHeadLayout $isDetailOpen={isDetailOpen}>
       <MdOutlineArrowBackIosNew size={24} onClick={handleMonthPrev} />
       <div>
         {format(thisMonth, "yyyy")}.{format(thisMonth, "MM")}
@@ -19,6 +24,7 @@ const CalendarHeadLayout = styled.div`
   width: 100%;
   height: 100px;
   ${flexCenter};
+  margin-bottom: ${(props) => (props.$isDetailOpen ? "0" : "80px")};
   gap: 30px;
 
   & > div {
