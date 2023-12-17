@@ -14,7 +14,11 @@ const colors = {
     xs: "#feffff",
   },
   red: {
+    sm: "#F71B1B",
     md: "#FF0000",
+  },
+  orange: {
+    md: "#FFA653",
   },
 };
 
@@ -35,6 +39,8 @@ const sizes = {
   xl: "1.25rem",
   xxl: "1.375rem",
   xxxl: "1.5rem",
+  txl: "1.75rem",
+  txxl: "2rem",
 };
 
 const global = {

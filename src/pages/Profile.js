@@ -10,16 +10,16 @@ import Layout from "../layouts/Layout";
 
 export default function Profile() {
   const navigate = useNavigate();
-  const handleEditOpen = () => navigate(`edit`);
-  const handlePrevPage = () => navigate(-1);
+
   return (
     <Layout
       headerLeft={"prev"}
       headerRight={"setting"}
-      onClickLeft={handlePrevPage}
+      onClickLeft={() => navigate(-1)}
+      onClickRight={() => navigate("setting")}
     >
       <UserProfile user={temp_user_profile} isMyProfile={true}>
-        <FaPen size={20} onClick={handleEditOpen} />
+        <FaPen size={20} onClick={() => navigate("edit")} />
       </UserProfile>
 
       <PageSelector pages={profile_pageselector} top={"22vh"} />
