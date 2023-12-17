@@ -3,6 +3,7 @@ import Clubpage from "../../components/club/Clubpage";
 import { temp_club_home_info, temp_club_pages } from "../../consts/tempData";
 import ClubJoinButton from "../../components/club/ClubJoinButton";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 export default function ClubHome() {
   const nav = useNavigate();
