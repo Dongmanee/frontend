@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function ClubHome() {
   const nav = useNavigate();
-  const onMoreClick = (src) => {
+  const handlemoreClick = (src) => {
     nav(`${src}`);
   };
   const clubHomeInfo = temp_club_home_info;
+
   return (
     <>
       <ClubInfo clubHomeInfo={clubHomeInfo} />
@@ -23,7 +24,7 @@ export default function ClubHome() {
           moreleft={item.moreleft}
           morebottom={item.morebottom}
           moretop={item.moretop}
-          moreOnClick={() => onMoreClick(item.src)}
+          moreOnClick={() => handlemoreClick(item.src)}
         >
           {item.item}
         </Clubpage>

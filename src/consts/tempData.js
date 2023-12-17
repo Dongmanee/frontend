@@ -190,6 +190,7 @@ export const temp_club_pages = [
   },
   {
     title: "일정",
+    isMore: true,
     item: <ClubSchedule />,
   },
   {

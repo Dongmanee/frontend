@@ -9,10 +9,10 @@ import SmallTagBox from "../global/SmallTagBox";
 export default function ClubInfo({ clubHomeInfo }) {
   return (
     <ClubInfoLayout>
-      <BackgroundImage />
+      <BackgroundImage src={clubHomeInfo.clubBackgroundImage} />
 
       <Category>
-        <img src={clubHomeInfo.clubMainImage} width={50} height={50} />
+        <img src={clubHomeInfo.clubMainImage} />
         <CategoryTagRow>
           {clubHomeInfo.clubTags.map((tag, idx) => (
             <SmallTagBox key={idx} tagName={tag} />
@@ -44,11 +44,10 @@ const ClubInfoLayout = styled.div`
   margin: 0 -23px;
 `;
 
-const BackgroundImage = styled.div`
+const BackgroundImage = styled.img`
   width: 100%;
   height: 40vh;
 
-  background-image: url(${img});
   background-size: 100% 100%;
   background-position: center center;
 `;
@@ -56,11 +55,14 @@ const BackgroundImage = styled.div`
 const Category = styled.div`
   display: flex;
   position: relative;
-  padding: 5px 0 0 80px;
+  padding: 10px 0 10px 90px;
 
   & > img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     position: absolute;
+    object-fit: cover;
     left: 5vw;
     top: -2.8vh;
 
