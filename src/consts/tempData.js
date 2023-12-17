@@ -240,7 +240,7 @@ export const temp_friends = [
 export const temp_club_pages = [
   {
     ClubHomeCategoryName: "공지사항",
-    item: <ClubPost />,
+    item: <ClubPost post={temp_club_posts[0]} isClubHome={true} />,
     isMore: true,
     src: "posts",
   },

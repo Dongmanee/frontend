@@ -5,15 +5,19 @@ import PostBottom from "../../global/postList/PostBottom";
 import PostHead from "../../global/postList/PostHead";
 import { useNavigate } from "react-router-dom";
 
-export default function ClubPost({ post }) {
+export default function ClubPost({ post, isClubHome }) {
   const navigate = useNavigate();
-  const goDetail = (id) => {
+  const handlePostDetailClick = (id) => {
     navigate(`${id}`);
   };
   return (
-    <ClubPostLayout onClick={() => goDetail(post.postId)}>
-      <PostHead date={post.createdAt} postCategory={post.categoryName} />
+    <ClubPostLayout onClick={() => handlePostDetailClick(post.postId)}>
+      {!isClubHome && (
+        <PostHead date={post.createdAt} postCategory={post.categoryName} />
+      )}
+
       <PostBody postTitle={post.postTitle} postDetail={post.postBody} />
+
       <PostBottom
         writerimg={post.writerImg}
         writerName={post.writerName}
@@ -25,10 +29,3 @@ export default function ClubPost({ post }) {
 }
 
 const ClubPostLayout = styled.div``;
-
-const SubTitle = styled.div`
-  margin-top: 15px;
-
-  font-size: ${(props) => props.theme.sizes.xl};
-  font-weight: ${(props) => props.theme.weights.xl};
-`;
