@@ -34,6 +34,7 @@ import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import FriendProfile from "../pages/user/FriendProfile";
 import Setting from "../pages/user/Setting";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import Calendar from "../pages/Calendar";
 
 const router = createBrowserRouter([
   {
@@ -202,6 +203,10 @@ const router = createBrowserRouter([
       {
         path: "/chats/detail",
         element: <ChatDetail />,
+      },
+      {
+        path: "/calendar",
+        element: <Calendar />,
       },
     ],
   },

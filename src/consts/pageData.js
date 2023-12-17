@@ -16,7 +16,7 @@ export const navbarItems = [
     inActive: <PiHouseBold size={26} />,
   },
   {
-    page: "/chat",
+    page: "/chats",
     active: <FaCommentDots size={24} />,
     inActive: <FaRegCommentDots size={24} />,
   },
