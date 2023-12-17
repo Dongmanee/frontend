@@ -1,11 +1,20 @@
 import styled from "styled-components";
-import { flexCenter, flexColumn } from "../../styles/global.style";
+import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 
-export default function ClubPage({ title, isMore, moreOnClick, children }) {
+export default function ClubPage({
+  title,
+  isMore,
+  isMember,
+  moreOnClick,
+  children,
+}) {
   return (
     <ClubPageLayout>
       <ClubPageHeadBox>
-        <Title>{title}</Title>
+        <Title>
+          {title}
+          {isMember && <div>({isMember})</div>}
+        </Title>
         {isMore && <Morebtn onClick={moreOnClick}>더보기</Morebtn>}
       </ClubPageHeadBox>
       {children}
@@ -33,6 +42,8 @@ const Morebtn = styled.span`
 
 const Title = styled.div`
   padding: 20px 0;
+  ${flexICenter}
+  gap: 0.3rem;
 
   font-size: ${(props) => props.theme.sizes.xl};
   font-weight: ${(props) => props.theme.weights.lg};

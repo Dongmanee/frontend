@@ -181,25 +181,26 @@ export const temp_friends = [
 
 export const temp_club_pages = [
   {
-    title: "공지사항",
+    ClubHomeCategoryName: "공지사항",
     item: <ClubPost />,
     isMore: true,
     src: "posts",
   },
   {
-    title: "일정",
+    ClubHomeCategoryName: "일정",
     isMore: true,
     item: <ClubSchedule />,
     src: "schedule",
   },
   {
-    title: "사진첩",
+    ClubHomeCategoryName: "사진첩",
     item: <ClubAlbum />,
     isMore: true,
     src: "album",
   },
   {
-    title: "모임 멤버 (35)",
+    ClubHomeCategoryName: "모임 멤버",
+    clubMemberNum: 35,
     item: <ClubUserList users={temp_club_users} />,
   },
 ];

@@ -20,8 +20,9 @@ export default function ClubHome() {
       {temp_club_pages.map((item, idx) => (
         <Clubpage
           key={idx}
-          title={item.title}
+          title={item.ClubHomeCategoryName}
           isMore={item.isMore}
+          isMember={item.clubMemberNum}
           moreOnClick={() => handlemoreClick(item.src)}
         >
           {item.item}
