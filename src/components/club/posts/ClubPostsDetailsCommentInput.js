@@ -1,12 +1,22 @@
+import { useState } from "react";
+import { BsFillCursorFill } from "react-icons/bs";
 import styled from "styled-components";
 import CustomInput from "../../global/CustomInputs";
-import { BsFillCursorFill } from "react-icons/bs";
 
 export default function ClubPostsDetailsCommentInput() {
+  const [enteredComment, setEnteredComment] = useState("");
+
+  const handleCommentRegister = () => {};
+
   return (
     <ClubPostsDetailsCommentInputLayout>
-      <CustomInput placeholder={"댓글 작성..."} width={"85%"} />
-      <div>
+      <CustomInput
+        placeholder={"댓글 작성..."}
+        width={"85%"}
+        value={enteredComment}
+        onChange={(e) => setEnteredComment(e.target.value)}
+      />
+      <div onClick={handleCommentRegister}>
         <BsFillCursorFill size={20} />
       </div>
     </ClubPostsDetailsCommentInputLayout>
