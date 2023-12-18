@@ -5,7 +5,7 @@ import { BsFillCursorFill } from "react-icons/bs";
 export default function ClubPostsDetailsCommentInput() {
   return (
     <ClubPostsDetailsCommentInputLayout>
-      <CustomInput placeholder={"댓글 작성..."} width={"90%"} />
+      <CustomInput placeholder={"댓글 작성..."} width={"85%"} />
       <div>
         <BsFillCursorFill size={20} />
       </div>
@@ -15,11 +15,14 @@ export default function ClubPostsDetailsCommentInput() {
 
 const ClubPostsDetailsCommentInputLayout = styled.div`
   width: 100%;
-  position: relative;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  left: 15px;
 
   div {
     position: absolute;
-    right: 20px;
+    right: 50px;
     top: 8px;
   }
 `;

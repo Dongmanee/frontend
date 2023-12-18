@@ -7,22 +7,24 @@ import { useNavigate } from "react-router-dom";
 
 export default function ClubPost({ post, isClubHome }) {
   const navigate = useNavigate();
+
   const handlePostDetailClick = (id) => {
-    navigate(`${id}`);
+    navigate(`${id}`, { state: { post } });
   };
+
   return (
     <ClubPostLayout onClick={() => handlePostDetailClick(post.postId)}>
       {!isClubHome && (
-        <PostHead date={post.createdAt} postCategory={post.categoryName} />
+        <PostHead date={post.postDate} postCategory={post.postCategoryName} />
       )}
 
       <PostBody postTitle={post.postTitle} postDetail={post.postBody} />
 
       <PostBottom
-        writerimg={post.writerImg}
-        writerName={post.writerName}
-        likesNum="35"
-        commentNum="10"
+        writer={post.postWriter}
+        likesNum={post.postLikesNum}
+        isLike={post.isLike}
+        commentNum={post.postCommentNum}
       />
     </ClubPostLayout>
   );

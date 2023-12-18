@@ -45,5 +45,5 @@ const ClubPostsLayout = styled.div`
 const ClubPostsCol = styled.div`
   ${flexColumn};
   margin-top: 20px;
-  gap: 40px;
+  gap: 30px;
 `;

@@ -7,21 +7,39 @@ import PostBottom from "../../components/global/postList/PostBottom";
 import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
 import usePrevPage from "../../hooks/usePrevPage";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import {
+  temp_club_post,
+  temp_club_post_comments,
+  temp_club_posts,
+} from "../../consts/tempData";
 
 export default function ClubPostsDetail() {
   const { onPrevPage } = usePrevPage();
+  const state = useLocation().state;
+  const [comments, setComments] = useState(temp_club_post_comments);
+  const [post, setPost] = useState(temp_club_post);
+
   return (
     <Layout
       headerLeft={"prev"}
       headerCenter={"Import"}
-      headerRight={"edit"}
       onClickLeft={onPrevPage}
     >
       <ClubPostDetailLayout>
-        <ClubPostsDetailHead />
-        <ClubPostsDetailBody />
-        <PostBottom likesNum={"35"} commentNum={"10"} size={"22px"} />
-        <ClubPostsDetailComments />
+        <ClubPostsDetailHead writer={post.postWriter} date={post.postDate} />
+        <ClubPostsDetailBody
+          postTitle={post.postTitle}
+          postBody={post.postBody}
+        />
+        <PostBottom
+          likesNum={post.postLikesNum}
+          isLike={post.isLike}
+          commentNum={post.postCommentNum}
+          isDetail={true}
+        />
+        <ClubPostsDetailComments comments={comments} />
 
         <ClubPostsDetailsCommentInput />
       </ClubPostDetailLayout>
@@ -31,5 +49,6 @@ export default function ClubPostsDetail() {
 
 const ClubPostDetailLayout = styled.div`
   ${flexColumn};
+  gap: 0.5rem;
   padding: 0 5px;
 `;
