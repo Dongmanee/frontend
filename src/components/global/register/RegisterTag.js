@@ -90,6 +90,7 @@ const TagItem = styled.div`
 `;
 
 const TagInput = styled.input`
+  width: 10px;
   flex-grow: 1;
   padding: 0.5em 0;
   background-color: ${(props) => props.theme.colors.gray.xxs};

@@ -3,9 +3,9 @@ import ClubPost from "../../components/club/posts/ClubPost";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
 import { flexColumn } from "../../styles/global.style";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { temp_club_posts, temp_total_posts } from "../../consts/tempData";
+import { temp_club_posts } from "../../consts/tempData";
 
 export default function ClubPosts() {
   const [postsCategory, setPostsCategory] = useState("전체");
@@ -18,6 +18,10 @@ export default function ClubPosts() {
   const onAddPosts = () => {
     navigate(`add`);
   };
+
+  useEffect(() => {
+    //Todo. 카테고리 바뀔 때마다 posts 데이터 받기
+  }, [postsCategory]);
 
   return (
     <ClubPostsLayout>
