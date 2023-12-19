@@ -1,15 +1,14 @@
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import CustomInput from "../components/global/CustomInputs";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import ClubList from "../components/home/clubs/ClubList";
-import { temp_clubs } from "../consts/tempData";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn } from "../styles/global.style";
-import RegisterButton from "../components/global/register/RegisterButton";
 import RegisterClubButton from "../components/home/clubs/RegisterClubButton";
+import { temp_clubs } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
-import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import Layout from "../layouts/Layout";
+import { flexColumn } from "../styles/global.style";
 
 export default function Clubs() {
   const { onPrevPage } = usePrevPage();

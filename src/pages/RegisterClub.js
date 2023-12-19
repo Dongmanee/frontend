@@ -29,6 +29,14 @@ export default function RegisterClub() {
 
   const onSubmit = (data) => {
     console.log(data);
+    // const body = {
+    //   categoryId:1,
+    //   name:data.clubName,
+    //   description:data.clubDescription,
+    //   clubMainImageUrl:data.clubMainImage[0],
+    //   clubBackgroundImageUrl:'',
+    //   address:
+    // }
   };
 
   useEffect(() => {
@@ -42,7 +50,7 @@ export default function RegisterClub() {
       setValue("clubDescription", clubInfo.clubIntro);
       clubInfo.clubSns.map((sns) => setValue(sns.snsName + "URL", sns.snsUrl));
     }
-  }, []);
+  }, [isEdit]);
 
   return (
     <Layout
@@ -67,6 +75,12 @@ export default function RegisterClub() {
             label="동아리 이름"
             isRequired={true}
             errorMsg="다시 입력해주세요"
+          />
+          <RegisterInput
+            name="address"
+            register={register}
+            label="동아리 주소"
+            isRequired={true}
           />
           {isEdit && (
             <RegisterImage
@@ -96,11 +110,7 @@ export default function RegisterClub() {
             errorMsg="다시 입력해주세요"
             height="5rem"
           />
-          <RegisterSnsInput
-            label="동아리 SNS 주소"
-            register={register}
-            error={errors}
-          />
+          <RegisterSnsInput label="동아리 SNS 주소" register={register} error={errors} />
         </RegisterInputList>
       </form>
     </Layout>

@@ -107,13 +107,13 @@ export const temp_clubs = [
   },
 ];
 
-export const temp_clubs_catgory = [
+export const temp_clubs_category = [
   { name: "전체", img: total, categoryId: "" },
-  { name: "체육", img: sports, categoryId: "afsd" },
-  { name: "공연", img: festival, categoryId: "12d312" },
-  { name: "봉사", img: heart, categoryId: "1223f312" },
-  { name: "종교", img: angel, categoryId: "wqed3" },
-  { name: "전시교양", img: museum, categoryId: "asdf3" },
+  { name: "체육", img: sports, categoryId: "health" },
+  { name: "공연", img: festival, categoryId: "performance" },
+  { name: "봉사", img: heart, categoryId: "service" },
+  { name: "종교", img: angel, categoryId: "religion" },
+  { name: "전시교양", img: museum, categoryId: "wartimeculture" },
   { name: "전시교양", img: museum, categoryId: "asdf3" },
   { name: "전시교양", img: museum, categoryId: "asdf3" },
   { name: "전시교양", img: museum, categoryId: "asdf3" },
