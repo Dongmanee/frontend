@@ -6,11 +6,7 @@ export default function ChatReceived() {
     <ChatReceivedLayout>
       <img src={sample} alt="" width={40} height={40} />
       <ChatMessageBox>
-        <ChatMessage>
-          오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래?
-          배고프다 오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래? 배고프다 오늘 점심
-          뭐먹을래? 배고프다
-        </ChatMessage>
+        <ChatMessage>오늘 점심 뭐먹을래? 배고프다</ChatMessage>
         <div>오후 3:03</div>
       </ChatMessageBox>
     </ChatReceivedLayout>
@@ -30,7 +26,7 @@ const ChatReceivedLayout = styled.div`
 `;
 
 const ChatMessageBox = styled.div`
-  max-width: 70%;
+  max-width: 100%;
   display: flex;
   align-items: flex-end;
   gap: 10px;
