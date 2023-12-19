@@ -5,7 +5,7 @@ import RegisterImage from "../components/global/register/RegisterImage";
 import RegisterInput from "../components/global/register/RegisterInput";
 import RegisterTag from "../components/global/register/RegisterTag";
 import RegisterTextArea from "../components/global/register/RegisterTextArea";
-import RegisterClubCategory from "../components/home/clubRegister/RegisterClubCategory";
+import RegisterClubCategory from "../components/global/register/RegisterClubCategory";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
 import RegisterSnsInput from "../components/global/register/RegisterSnsInput";
@@ -96,7 +96,11 @@ export default function RegisterClub() {
             errorMsg="다시 입력해주세요"
             height="5rem"
           />
-          <RegisterSnsInput label="동아리 SNS 주소" register={register} error={errors} />
+          <RegisterSnsInput
+            label="동아리 SNS 주소"
+            register={register}
+            error={errors}
+          />
         </RegisterInputList>
       </form>
     </Layout>
