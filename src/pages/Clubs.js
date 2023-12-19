@@ -37,17 +37,23 @@ export default function Clubs() {
     setSearchKeyword("");
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Layout headerLeft="prev" onClickLeft={onPrevPage}>
       <HomeTotalClubsLayout>
         <ClubCategory setKeywordReset={handleKeywordReset} />
-        <CustomInput
-          placeholder="동아리를 검색하세요"
-          margin="1.8rem 1rem"
-          border="0.05rem solid"
-          value={searchKeyword}
-          onChange={handleSearchKeywordChange}
-        />
+        <form onSubmit={handleSubmit}>
+          <CustomInput
+            placeholder="동아리를 검색하세요"
+            margin="1.8rem 1rem"
+            border="0.05rem solid"
+            value={searchKeyword}
+            onChange={handleSearchKeywordChange}
+          />
+        </form>
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
       <RegisterClubButton />
@@ -58,4 +64,8 @@ export default function Clubs() {
 const HomeTotalClubsLayout = styled.div`
   ${flexColumn};
   margin-bottom: 6vh;
+
+  & > form {
+    ${flexColumn};
+  }
 `;

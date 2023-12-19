@@ -7,20 +7,13 @@ export default function ClubCategory({ setKeywordReset }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onClickCategoryIcon = (categoryId) => {
-    if (categoryId == "") {
-      searchParams.delete("category");
-      searchParams.delete("keyword");
-      setSearchParams(searchParams);
-    } else {
-      setSearchParams({ category: categoryId });
-    }
+    setSearchParams({ category: categoryId });
     setKeywordReset();
   };
 
   const setIsSelected = (categoryId) => {
     const currentCategory = searchParams.get("category");
-
-    if (categoryId == "" && currentCategory == null) return true;
+    if (categoryId == "all" && currentCategory == null) return true;
     return currentCategory == categoryId;
   };
 
