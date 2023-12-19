@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import RegisterLabel from "./RegisterLabel";
 import { flexColumn } from "../../../styles/global.style";
+import RegisterErrorMsg from "./RegisterErrorMsg";
 
 export default function RegisterTextArea({
   id,
@@ -10,6 +11,7 @@ export default function RegisterTextArea({
   placeholder,
   name,
   register,
+  errorMsg,
 }) {
   return (
     <RegisterTextAreaLayout>
@@ -19,6 +21,7 @@ export default function RegisterTextArea({
         $height={height}
         placeholder={placeholder}
       />
+      {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
     </RegisterTextAreaLayout>
   );
 }

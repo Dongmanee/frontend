@@ -13,8 +13,6 @@ export default function RegisterTag({ name, control, label, isRequired, errorMsg
     defaultValue: [],
   });
 
-  console.log(value);
-
   const MAX_TAG_NUM = 2;
 
   const handleKeyDown = (e) => {

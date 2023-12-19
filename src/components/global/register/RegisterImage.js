@@ -8,13 +8,12 @@ import RegisterLabel from "./RegisterLabel";
 
 export default function RegisterImage({
   label,
-  errorMsg,
   register,
   name,
   watch,
   isBackgroundImage,
 }) {
-  const [imagePreview, setImagePreview] = useState("");
+  const [imagePreview, setImagePreview] = useState(example);
   const photoInput = useRef();
   const image = watch(name);
   const { ref, ...rest } = register(name);
@@ -59,7 +58,9 @@ export default function RegisterImage({
           />
         </RegisterImageButton>
       </RegisterInputBox>
-      {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
+      {imagePreview == example && (
+        <RegisterErrorMsg errorMsg={"대표 이미지를 등록해주세요"} />
+      )}
     </RegisterImageLayout>
   );
 }
