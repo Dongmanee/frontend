@@ -1,91 +1,93 @@
 import styled from "styled-components";
-import { flexCenter, flexColumn, flexICenter } from "../../../styles/global.style";
+import {
+  flexCenter,
+  flexColumn,
+  flexICenter,
+} from "../../../styles/global.style";
 import CustomButton from "../../global/CustomButton";
 import { FaCheck } from "react-icons/fa";
+import ClubScheduleDetailItem from "./ClubScheduleDetailItem";
 
 export default function ClubScheduleItemContent({ item, isDetail }) {
-  const leftPop = item.totalPop - item.pop;
+  const leftPop = item.scheduleMaxParticipant - item.scheduleParticipantsNum;
 
   return (
     <ClubScheduleItemContentLayout $isDetail={isDetail}>
-      <TitleCol $isDetail={isDetail}>
-        <span>일시</span>
-        <span>위치</span>
-        <span>비용</span>
-        {isDetail && <span>내용</span>}
-        <span>참석</span>
-      </TitleCol>
-
-      <TextCol $isDetail={isDetail}>
-        <span>{item.date}</span>
-        <span>{item.location}</span>
-        <span>{item.cost}</span>
-        {isDetail && <span>{item.detail}</span>}
-        <span>
-          <p>{item.pop}/</p>
-          <p>{item.totalPop}</p>
+      <ClubScheduleDetailItem
+        itemTitle={"일시"}
+        itemBody={item.scheduleDate + item.scheduleTime}
+        isDetail={isDetail}
+      />
+      <ClubScheduleDetailItem
+        itemTitle={"위치"}
+        itemBody={item.scheduleLocation}
+        isDetail={isDetail}
+      />
+      <ClubScheduleDetailItem
+        itemTitle={"비용"}
+        itemBody={item.schedulePrice}
+        isDetail={isDetail}
+      />
+      {isDetail && (
+        <ClubScheduleDetailItem
+          itemTitle={"내용"}
+          itemBody={item.scheduleDetail}
+          isDetail={isDetail}
+        />
+      )}
+      <ClubScheduleDetailItem itemTitle={"참석"} isDetail={isDetail}>
+        <ScheduleParticipantBox $isDetail={isDetail}>
+          <p>{item.scheduleParticipantsNum}</p>
+          <p>/</p>
+          <p>{item.scheduleMaxParticipant}</p>
           <p>({leftPop}자리 남음)</p>
           {isDetail && (
-            <CustomButton
-              bgColor={(props) => props.theme.colors.dark.sm}
-              height={"25px"}
-              width={"60px"}
-              radius="0.35rem"
-              color="white"
-              size={(props) => props.theme.sizes.xs}
-            >
-              <FaCheck size={10} />
-              참석
-            </CustomButton>
+            <div>
+              <CustomButton
+                bgColor={(props) => props.theme.colors.dark.sm}
+                height={"25px"}
+                width={"60px"}
+                radius="0.35rem"
+                color="white"
+                size={(props) => props.theme.sizes.xs}
+              >
+                <FaCheck size={10} />
+                참석
+              </CustomButton>
+            </div>
           )}
-        </span>
-      </TextCol>
+        </ScheduleParticipantBox>
+      </ClubScheduleDetailItem>
     </ClubScheduleItemContentLayout>
   );
 }
 
 const ClubScheduleItemContentLayout = styled.div`
-  height: ${(props) => props.$isDetail && "25vh"};
-  display: flex;
+  ${flexColumn}
+  gap:  ${(props) => (props.$isDetail ? "20px" : "8px")};
   margin-top: ${(props) => props.$isDetail && "30px"};
+  margin-bottom: ${(props) => props.$isDetail && "40px"};
 `;
 
-const TitleCol = styled.div`
-  width: ${(props) => (props.$isDetail ? "20%" : "10%")};
-  height: ${(props) => (props.$isDetail ? "100%" : "50%")};
-  ${flexColumn};
-  gap: ${(props) => (props.$isDetail ? "20px" : "8px")};
+const ScheduleParticipantBox = styled.div`
+  display: flex;
+  gap: ${(props) => props.$isDetail && "5px"};
 
-  & > span {
-    font-size: ${(props) =>
-      props.$isDetail ? props.theme.sizes.md : props.theme.sizes.xs};
+  & > p:first-child {
+    color: ${(props) => props.theme.colors.red.md};
+  }
+
+  & > p:last-child {
     color: ${(props) => props.theme.colors.gray.md};
-    white-space: nowrap;
-  }
-`;
-
-const TextCol = styled.div`
-  width: ${(props) => (props.$isDetail ? "80%" : "90%")};
-  height: ${(props) => (props.$isDetail ? "100%" : "50%")};
-  ${flexColumn};
-  gap: ${(props) => (props.$isDetail ? "20px" : "8px")};
-
-  & > span {
-    font-size: ${(props) =>
-      props.$isDetail ? props.theme.sizes.md : props.theme.sizes.xs};
+    margin-left: 3px;
   }
 
-  & > span:last-child {
-    display: flex;
-    gap: ${(props) => props.$isDetail && "5px"};
-
-    & > p:first-child {
-      color: ${(props) => props.theme.colors.red.md};
-    }
-
-    & > p:last-child {
-      color: ${(props) => props.theme.colors.gray.md};
-      margin-left: 3px;
+  & > div {
+    position: relative;
+    margin-left: 5px;
+    & > button {
+      position: absolute;
+      top: -4px;
     }
   }
 `;

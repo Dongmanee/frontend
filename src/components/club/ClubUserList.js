@@ -1,15 +1,15 @@
 import { IoMdRefresh } from "react-icons/io";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import useCheckPath from "../../hooks/useCheckPath";
 import { flexColumn, flexICenter } from "../../styles/global.style";
 import User from "../global/User";
 
 export default function ClubUserList({ users }) {
-  const { isCheckedPath } = useCheckPath("/club/home");
+  const { scheduleId } = useParams();
 
   return (
-    <ClubUserListLayout $isClubhome={isCheckedPath}>
-      {isCheckedPath && (
+    <ClubUserListLayout $isClubhome={!scheduleId}>
+      {!scheduleId && (
         <div>
           갱신
           <IoMdRefresh size={20} />

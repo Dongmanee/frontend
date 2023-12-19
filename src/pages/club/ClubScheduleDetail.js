@@ -7,23 +7,24 @@ import {
   temp_club_users,
 } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
+import { useState } from "react";
 
 export default function ClubScheduleDetail() {
+  const [item, setItem] = useState(temp_club_schedule_detail_item_infos);
+  const [participants, setParticipants] = useState(temp_club_users);
+
   return (
     <ClubScheduleDetailLayout>
       <ClubScheduleTitle
         isDetail={true}
-        date="11/11 (토)"
-        left="D-2"
-        title="토요일 모임"
+        date={item.scheduleDate}
+        left={item.scheduleLeftDays}
+        title={item.scheduleName}
       />
-      <ClubScheduleItemContent
-        isDetail={true}
-        item={temp_club_schedule_detail_item_infos}
-      />
+      <ClubScheduleItemContent isDetail={true} item={item} />
 
       <ClubScheduleParticipantCol>
-        <ClubUserList users={temp_club_users} />
+        <ClubUserList users={participants} />
       </ClubScheduleParticipantCol>
     </ClubScheduleDetailLayout>
   );
@@ -35,6 +36,5 @@ const ClubScheduleDetailLayout = styled.div`
 `;
 
 const ClubScheduleParticipantCol = styled.div`
-  ${flexColumn};
-  margin-top: -20px;
+  /* ${flexColumn}; */
 `;

@@ -4,21 +4,21 @@ import ClubScheduleTitle from "./ClubScheduleTitle";
 import ClubScheduleItemContent from "./ClubScheduleItemContent";
 import { useNavigate } from "react-router-dom";
 
-export default function ClubScheduleItem({ isDone, item }) {
-  const left = isDone ? "done" : "D-2";
+export default function ClubScheduleItem({ item }) {
+  const isDone = item.scheduleLeftDays < 0;
   const navigate = useNavigate();
   const openScheduleDetail = (id) => {
     navigate(`${id}`);
   };
   return (
     <ClubScheduleItemsLayout
-      onClick={() => openScheduleDetail(item.id)}
+      onClick={() => openScheduleDetail(item.scheduleId)}
       $isDone={isDone}
     >
       <ClubScheduleTitle
-        date={"11/11 (토)"}
-        left={left}
-        title={"토요일 모임"}
+        date={item.scheduleDate}
+        left={item.scheduleLeftDays}
+        title={item.scheduleName}
       />
 
       <ClubScheduleItemContent item={item} />
