@@ -3,13 +3,16 @@ import Clubpage from "../../components/club/Clubpage";
 import { temp_club_home_info, temp_club_pages } from "../../consts/tempData";
 import ClubJoinButton from "../../components/club/ClubJoinButton";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 export default function ClubHome() {
   const nav = useNavigate();
-  const onMoreClick = (src) => {
+  const handlemoreClick = (src) => {
     nav(`${src}`);
   };
+
   const clubHomeInfo = temp_club_home_info;
+
   return (
     <>
       <ClubInfo clubHomeInfo={clubHomeInfo} />
@@ -17,13 +20,10 @@ export default function ClubHome() {
       {temp_club_pages.map((item, idx) => (
         <Clubpage
           key={idx}
-          title={item.title}
+          title={item.ClubHomeCategoryName}
           isMore={item.isMore}
-          moreright={item.moreright}
-          moreleft={item.moreleft}
-          morebottom={item.morebottom}
-          moretop={item.moretop}
-          moreOnClick={() => onMoreClick(item.src)}
+          isMember={item.clubMemberNum}
+          moreOnClick={() => handlemoreClick(item.src)}
         >
           {item.item}
         </Clubpage>

@@ -17,50 +17,175 @@ export const university_list = [
   { universityId: "univ4", universityName: "한남대학교" },
 ];
 
+export const temp_club_post = {
+  postCategoryName: "공지",
+  postId: "post111",
+  postTitle: "어제 우리 동아리 첫 회식!!!",
+  postDate: "2023.03.11",
+  postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+  postWriter: {
+    userId: "user111",
+    userName: "김민지",
+    userImage: sample,
+  },
+  postCommentNum: 20,
+  postLikesNum: 20,
+  isLike: true,
+};
+
+export const temp_club_post_comments = [
+  {
+    commentWriter: {
+      userId: "user222",
+      userName: "이장훈",
+      userImage: sample,
+    },
+    commentDate: "2023.02.01",
+    commentBody: "참 즐겁다",
+  },
+  {
+    commentWriter: {
+      userId: "user222",
+      userName: "이장훈",
+      userImage: sample,
+    },
+    commentDate: "2023.02.01",
+    commentBody: "참 즐겁다",
+  },
+  {
+    commentWriter: {
+      userId: "user222",
+      userName: "이장훈",
+      userImage: sample,
+    },
+    commentDate: "2023.02.01",
+    commentBody: "참 즐겁다",
+  },
+  {
+    commentWriter: {
+      userId: "user222",
+      userName: "이장훈",
+      userImage: sample,
+    },
+    commentDate: "2023.02.01",
+    commentBody: "참 즐겁다",
+  },
+  {
+    commentWriter: {
+      userId: "user222",
+      userName: "이장훈",
+      userImage: sample,
+    },
+    commentDate: "2023.02.01",
+    commentBody: "참 즐겁다",
+  },
+];
+
+export const temp_club_posts = [
+  {
+    postCategoryName: "공지",
+    postId: "post111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postDate: "2023.03.11",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    postWriter: {
+      writerId: "user111",
+      writerName: "김민지",
+      writerImage: sample,
+    },
+    postCommentNum: 20,
+    postLikesNum: 20,
+    isLike: true,
+  },
+  {
+    postCategoryName: "공지",
+    postId: "post111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postDate: "2023.03.11",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    postWriter: {
+      writerId: "user111",
+      writerName: "강민지",
+      writerImage: sample,
+    },
+    postCommentNum: 20,
+    postLikesNum: 20,
+    isLike: true,
+  },
+  {
+    postCategoryName: "공지",
+    postId: "post111",
+    postTitle: "어제 우리 동아리 첫 회식!!!",
+    postDate: "2023.03.11",
+    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
+    postWriter: {
+      writerId: "user111",
+      writerName: "김민지",
+      writerImage: sample,
+    },
+    postCommentNum: 20,
+    postLikesNum: 20,
+    isLike: true,
+  },
+];
+
 export const temp_total_posts = [
   {
-    clubId: "a213asd",
-    categoryId: "공지",
-    date: "2023.03.11",
-    postId: "sdf234234",
+    club: {
+      clubId: "club111",
+      clubName: "Import",
+    },
+    postCategoryName: "공지",
+    postId: "post111",
     postTitle: "어제 우리 동아리 첫 회식!!!",
+    postDate: "2023.03.11",
     postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerId: "847237489",
-    likesNum: 20,
-    commentNum: 20,
+    postWriter: {
+      writerId: "user111",
+      writerName: "김민지",
+      writerImage: sample,
+    },
+    postCommentNum: 20,
+    postLikesNum: 20,
+    isLike: true,
   },
   {
-    clubId: "b123432",
-    categoryId: "공지",
-    date: "2023.03.11",
-    postId: "sdf234234",
+    club: {
+      clubId: "club111",
+      clubName: "Import",
+    },
+    postCategoryName: "공지",
+    postId: "post111",
     postTitle: "어제 우리 동아리 첫 회식!!!",
+    postDate: "2023.03.11",
     postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerId: "847237489",
-    likesNum: 20,
-    commentNum: 20,
+    postWriter: {
+      writerId: "user111",
+      writerName: "김민지",
+      writerImage: sample,
+    },
+    postCommentNum: 20,
+    postLikesNum: 20,
+    isLike: true,
   },
   {
-    clubId: "a213asd",
-    categoryId: "공지",
-    date: "2023.03.11",
-    postId: "sdf234234",
+    club: {
+      clubId: "club111",
+      clubName: "Import",
+    },
+    postCategoryName: "공지",
+    postId: "post111",
     postTitle: "어제 우리 동아리 첫 회식!!!",
+    postDate: "2023.03.11",
     postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerId: "847237489",
-    likesNum: 20,
-    commentNum: 20,
-  },
-  {
-    clubId: "a213asd",
-    categoryId: "공지",
-    date: "2023.03.11",
-    postId: "sdf234234",
-    postTitle: "어제 우리 동아리 첫 회식!!!",
-    postBody: "어제 회식을 했다 너무너무 맛있다최고최고 짱짱짱 맛있었다",
-    writerId: "847237489",
-    likesNum: 20,
-    commentNum: 20,
+    postWriter: {
+      writerId: "user111",
+      writerName: "김민지",
+      writerImage: sample,
+    },
+    postCommentNum: 20,
+    postLikesNum: 20,
+    isLike: true,
   },
 ];
 
@@ -181,28 +306,26 @@ export const temp_friends = [
 
 export const temp_club_pages = [
   {
-    title: "공지사항",
-    item: <ClubPost />,
+    ClubHomeCategoryName: "공지사항",
+    item: <ClubPost post={temp_club_posts[0]} isClubHome={true} />,
     isMore: true,
-    moreright: "0",
-    moretop: "2.5vh",
-    src: "/club/:id/posts",
+    src: "posts",
   },
   {
-    title: "일정",
+    ClubHomeCategoryName: "일정",
+    isMore: true,
     item: <ClubSchedule />,
+    src: "schedule",
   },
   {
-    title: "사진첩",
+    ClubHomeCategoryName: "사진첩",
     item: <ClubAlbum />,
     isMore: true,
-    moreright: "0",
-    moreleft: "0",
-    morebottom: "-10px",
-    src: "/club/:id/album",
+    src: "album",
   },
   {
-    title: "모임 멤버 (35)",
+    ClubHomeCategoryName: "모임 멤버",
+    clubMemberNum: 35,
     item: <ClubUserList users={temp_club_users} />,
   },
 ];

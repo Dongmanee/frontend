@@ -5,7 +5,7 @@ export default function PostHead({ clubName, postCategory, date }) {
   return (
     <PostHeadLayout>
       <PostClubInfoBox>
-        <ClubNameBox>{clubName}</ClubNameBox>
+        {clubName && <ClubNameBox>{clubName}</ClubNameBox>}
         {postCategory && <SmallTagBox tagName={postCategory} />}
       </PostClubInfoBox>
       <PostDateBox>{date}</PostDateBox>
