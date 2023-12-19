@@ -25,7 +25,11 @@ export default function ClubPosts() {
 
   return (
     <ClubPostsLayout>
-      <ClubPostsCategory currentTag={postsCategory} onHandle={handleCategory} />
+      <ClubPostsCategory
+        currentTag={postsCategory}
+        onHandle={handleCategory}
+        height={"8vh"}
+      />
 
       <ClubPostsCol>
         {temp_club_posts.map((post, idx) => (
