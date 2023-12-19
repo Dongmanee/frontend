@@ -522,22 +522,20 @@ export const temp_club_user = [
 
 export const temp_club_schedule_add = [
   {
-    name: "날짜와 시간을 입력해주세요",
+    label: "일정 제목",
+    name: "scheduleName",
   },
   {
-    name: "일정 제목을 입력해주세요",
+    label: "일정 위치",
+    name: "scheduleLocation",
   },
   {
-    name: "일정 위치를 입력해주세요",
+    label: "비용",
+    name: "scheduleCost",
   },
   {
-    name: "일정 내용을 입력해주세요",
-  },
-  {
-    name: "비용을 입력해주세요",
-  },
-  {
-    name: "인원을 입력해주세요",
+    label: "최대 인원 수",
+    name: "scheduleMaxParticipant",
   },
 ];
 
