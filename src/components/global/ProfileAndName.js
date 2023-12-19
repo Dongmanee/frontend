@@ -27,5 +27,6 @@ const ProfileAndNameLayout = styled.div`
   }
   div {
     font-size: 11px;
+    white-space: nowrap;
   }
 `;

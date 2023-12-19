@@ -413,6 +413,22 @@ export const temp_my_club = [
     clubId: "123vdasdf",
     clubName: "매치포인트",
   },
+  {
+    clubId: "1231231",
+    clubName: "Import",
+  },
+  {
+    clubId: "123vdasdf",
+    clubName: "매치포인트",
+  },
+  {
+    clubId: "1231231",
+    clubName: "Import",
+  },
+  {
+    clubId: "123vdasdf",
+    clubName: "매치포인트",
+  },
 ];
 
 export const temp_club_setting_application_details = [
