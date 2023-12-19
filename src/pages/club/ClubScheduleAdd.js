@@ -10,7 +10,11 @@ import { flexColumn } from "../../styles/global.style";
 
 export default function ClubScheduleAdd() {
   const { onPrevPage } = usePrevPage();
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm();
+
+  const handleScheduleAdd = (data) => {
+    console.log(data);
+  };
 
   return (
     <Layout
@@ -18,11 +22,24 @@ export default function ClubScheduleAdd() {
       headerCenter={"일정추가"}
       headerRight={"check"}
       onClickLeft={onPrevPage}
+      onClickRight={handleSubmit(handleScheduleAdd)}
     >
       <ScheduleFormBox>
         <RegisterRowBox>
-          <RegisterInput name="schedule" label="일정 날짜" type="date" />
-          <RegisterInput label="일정 시간" type="time" />
+          <RegisterInput
+            name="scheduleDate"
+            register={register}
+            label="일정 날짜"
+            type="date"
+            inputHeight={"3rem"}
+          />
+          <RegisterInput
+            name="scheduleTime"
+            register={register}
+            label="일정 시간"
+            type="time"
+            inputHeight={"3rem"}
+          />
         </RegisterRowBox>
 
         {temp_club_schedule_add.map((item, idx) => (
@@ -53,5 +70,5 @@ const RegisterRowBox = styled.div`
 const ScheduleFormBox = styled.div`
   ${flexColumn}
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 `;
