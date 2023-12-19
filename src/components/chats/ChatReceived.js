@@ -5,8 +5,14 @@ export default function ChatReceived() {
   return (
     <ChatReceivedLayout>
       <img src={sample} alt="" width={40} height={40} />
-      <ChatMessage>오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래? 배고프다</ChatMessage>
-      <div>오후 3:03</div>
+      <ChatMessageBox>
+        <ChatMessage>
+          오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래?
+          배고프다 오늘 점심 뭐먹을래? 배고프다 오늘 점심 뭐먹을래? 배고프다 오늘 점심
+          뭐먹을래? 배고프다
+        </ChatMessage>
+        <div>오후 3:03</div>
+      </ChatMessageBox>
     </ChatReceivedLayout>
   );
 }
@@ -21,6 +27,13 @@ const ChatReceivedLayout = styled.div`
   img {
     border-radius: 50%;
   }
+`;
+
+const ChatMessageBox = styled.div`
+  max-width: 70%;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
 
   & > div:last-child {
     font-size: ${(props) => props.theme.sizes.xxs};
