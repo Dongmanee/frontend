@@ -1,16 +1,18 @@
-import { Outlet } from "react-router-dom";
-import PageSelector from "../../components/global/PageSelector";
-import { temp_club_setting_page } from "../../consts/tempData";
-import Layout from "../../layouts/Layout";
+import { Outlet, useParams } from "react-router-dom";
 import styled from "styled-components";
+import PageSelector from "../../components/global/PageSelector";
+import { modifyClubSettingPageSelector } from "../../consts/pageData";
 import usePrevPage from "../../hooks/usePrevPage";
+import Layout from "../../layouts/Layout";
 
 export default function ClubSetting() {
   const { onPrevPage } = usePrevPage();
+  const { clubId } = useParams();
+  const clubSettingPageSelector = modifyClubSettingPageSelector(clubId);
 
   return (
     <Layout headerCenter="Import" headerLeft="prev" onClickLeft={onPrevPage}>
-      <PageSelector pages={temp_club_setting_page} />
+      <PageSelector pages={clubSettingPageSelector} />
       <OutletBox>
         <Outlet />
       </OutletBox>

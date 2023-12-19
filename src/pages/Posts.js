@@ -23,4 +23,7 @@ const HomePostListBox = styled.div`
   & > div {
     margin-top: 30px;
   }
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 `;

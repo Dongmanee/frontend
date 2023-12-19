@@ -68,3 +68,10 @@ export const emailSchema = yup
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i,
     "이메일 형식이 올바르지 않습니다"
   );
+
+export const registerClubSchema = yup.object({
+  clubName: yup.string().required("동아리 이름을 입력해주세요"),
+  clubAddress: yup.string().required("동아리 주소를 입력해주세요"),
+  clubDescription: yup.string().required("동아리 소개를 입력해주세요"),
+  clubCategory: yup.string().required("동아리 카테고리를 선택해주세요"),
+});

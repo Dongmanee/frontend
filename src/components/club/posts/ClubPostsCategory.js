@@ -3,8 +3,13 @@ import { temp_club_posts_categories } from "../../../consts/tempData";
 import { flexCenter } from "../../../styles/global.style";
 import SmallTagBox from "../../global/SmallTagBox";
 
-export default function ClubPostsCategory({ margin, currentTag, onHandle }) {
-  const styles = { margin };
+export default function ClubPostsCategory({
+  margin,
+  height,
+  currentTag,
+  onHandle,
+}) {
+  const styles = { margin, height };
   return (
     <ClubPostsCategoryLayout {...styles}>
       {temp_club_posts_categories.map((item, idx) => {
@@ -13,7 +18,9 @@ export default function ClubPostsCategory({ margin, currentTag, onHandle }) {
           <SmallTagBox
             key={idx}
             onClick={() => onHandle(item.tagName)}
-            bgColor={isCurrentTag ? (props) => props.theme.colors.dark.sm : null}
+            bgColor={
+              isCurrentTag ? (props) => props.theme.colors.dark.sm : null
+            }
             size={item.size}
             padding={item.padding}
             tagName={item.tagName}
@@ -27,11 +34,12 @@ export default function ClubPostsCategory({ margin, currentTag, onHandle }) {
 
 ClubPostsCategory.defaultProps = {
   margin: "0 auto",
+  height: "auto ",
 };
 
 const ClubPostsCategoryLayout = styled.div`
   width: 70%;
-  height: 8vh;
+  height: ${(props) => props.height};
   ${flexCenter};
   gap: 10px;
   margin: ${(props) => props.margin};

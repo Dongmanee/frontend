@@ -3,6 +3,7 @@ import ProfileAndName from "../global/ProfileAndName";
 import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { temp_my_club } from "../../consts/tempData";
+import HorizontalSlider from "../global/HorizontalSlider";
 
 export default function HomeClubList() {
   const navigate = useNavigate();
@@ -12,18 +13,20 @@ export default function HomeClubList() {
   };
 
   const onClickClub = (clubId) => {
-    navigate(`/club/${clubId}/home`);
+    navigate(`/club/${clubId}`);
   };
 
   return (
     <HomeClubListLayout>
       <ClubListBox>
-        {temp_my_club.map((club) => (
-          <ProfileAndName
-            name={club.clubName}
-            onClick={() => onClickClub(club.clubId)}
-          />
-        ))}
+        <HorizontalSlider>
+          {temp_my_club.map((club) => (
+            <ProfileAndName
+              name={club.clubName}
+              onClick={() => onClickClub(club.clubId)}
+            />
+          ))}
+        </HorizontalSlider>
       </ClubListBox>
       <AddClubButton onClick={onClickAddButton}>
         <FaPlus />
@@ -46,6 +49,7 @@ const AddClubButton = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-top: 10px;
   color: white;
   font-size: 20px;
 `;
@@ -53,4 +57,5 @@ const AddClubButton = styled.div`
 const ClubListBox = styled.div`
   display: flex;
   gap: 20px;
+  width: 75vw;
 `;

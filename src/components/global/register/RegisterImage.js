@@ -1,22 +1,19 @@
+import { useEffect, useRef, useState } from "react";
+import { FaCamera } from "react-icons/fa6";
 import styled from "styled-components";
-import RegisterLabel from "./RegisterLabel";
-import { RiImageAddLine } from "react-icons/ri";
+import example from "../../../images/example.png";
 import { flexCenter, flexColumn } from "../../../styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
-import { MdEdit } from "react-icons/md";
-import { FaCamera } from "react-icons/fa6";
-import { useState, useEffect, useRef } from "react";
-import example from "../../../images/example.png";
+import RegisterLabel from "./RegisterLabel";
 
 export default function RegisterImage({
   label,
-  errorMsg,
   register,
   name,
   watch,
   isBackgroundImage,
 }) {
-  const [imagePreview, setImagePreview] = useState("");
+  const [imagePreview, setImagePreview] = useState(example);
   const photoInput = useRef();
   const image = watch(name);
   const { ref, ...rest } = register(name);
@@ -61,7 +58,9 @@ export default function RegisterImage({
           />
         </RegisterImageButton>
       </RegisterInputBox>
-      {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
+      {imagePreview == example && (
+        <RegisterErrorMsg errorMsg={"대표 이미지를 등록해주세요"} />
+      )}
     </RegisterImageLayout>
   );
 }

@@ -1,45 +1,55 @@
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
-import PenIcon from "../../components/global/PenIcon";
+import RegisterCkEditor from "../../components/global/register/RegisterCkEditor";
 import RegisterErrorMsg from "../../components/global/register/RegisterErrorMsg";
-import RegisterImage from "../../components/global/register/RegisterImage";
 import RegisterInput from "../../components/global/register/RegisterInput";
 import RegisterLabel from "../../components/global/register/RegisterLabel";
-import Layout from "../../layouts/Layout";
-import { useLocation } from "react-router-dom";
 import usePrevPage from "../../hooks/usePrevPage";
+import Layout from "../../layouts/Layout";
+import { flexColumn } from "../../styles/global.style";
+import { useForm } from "react-hook-form";
+import RegisterPostCategory from "../../components/global/register/RegisterPostCategory";
 
 export default function ClubPostsEdit() {
   const location = useLocation();
   const url = location.pathname.split("posts/")[1];
   const isAdd = url == "add";
   const { onPrevPage } = usePrevPage();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm();
+
+  const handleClubPostWrite = (data) => {
+    console.log(data);
+  };
+
   return (
     <Layout
       headerLeft={"exit"}
       headerCenter={isAdd ? "글쓰기" : "수정"}
       headerRight={"check"}
       onClickLeft={onPrevPage}
+      onClickRight={handleSubmit(handleClubPostWrite)}
     >
-      <TagCol>
-        <RegisterLabel label={"해당되는 태그를 선택해주세요"} />
-        <ClubPostsCategory margin={"0"} />
-        <RegisterErrorMsg errorMsg={"태그는 임원만 선택할 수 있습니다"} />
-      </TagCol>
-
-      <ContentCol>
-        <RegisterInput inputHeight={"3rem"} label={"제목을 입력해주세요"} />
-      </ContentCol>
-
-      <TextCol>
-        <RegisterInput inputHeight={"15rem"} label={"내용을 입력해주세요"} />
-      </TextCol>
-
-      <ContentCol>
-        <RegisterImage errorMsg={"이미지를 등록해주세요"} />
-      </ContentCol>
-
-      <PenIcon />
+      <PostFormBox>
+        <RegisterPostCategory
+          name="postCategory"
+          control={control}
+          label="카테고리"
+        />
+        <RegisterInput
+          name="postTitle"
+          register={register}
+          label="제목"
+          inputHeight={"3rem"}
+        />
+        <RegisterCkEditor name="postBody" control={control} label="내용" />
+      </PostFormBox>
     </Layout>
   );
 }
@@ -57,10 +67,11 @@ const TagCol = styled.div`
   }
 `;
 
-export const ContentCol = styled.div`
-  padding-top: 20px;
+const PostFormBox = styled.div`
+  ${flexColumn}
+  gap: 1.5rem;
 `;
 
-const TextCol = styled(ContentCol)`
-  height: 30vh;
+export const ContentCol = styled.div`
+  padding-top: 20px;
 `;

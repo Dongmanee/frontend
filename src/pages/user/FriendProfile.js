@@ -1,16 +1,20 @@
 import { IoChatbubbleSharp } from "react-icons/io5";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import styled from "styled-components";
 import CustomButton from "../../components/global/CustomButton";
 import PageSelector from "../../components/global/PageSelector";
 import UserProfile from "../../components/user/Profile";
-import { temp_user_pageselector, temp_user_profile } from "../../consts/tempData";
+import { modifyUserPageSelector } from "../../consts/pageData";
+import { temp_user_profile } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
 import Layout from "../../layouts/Layout";
 
 export default function FriendProfile() {
   const { onPrevPage } = usePrevPage();
   const isAddedFriend = true;
+  const { userId } = useParams();
+  const userPageSelector = modifyUserPageSelector(userId);
+
   return (
     <Layout headerLeft={"prev"} headerRight={"edit"} onClickLeft={onPrevPage}>
       <UserProfile user={temp_user_profile} isAddedFriend={isAddedFriend}>
@@ -26,7 +30,7 @@ export default function FriendProfile() {
           {isAddedFriend ? "1:1채팅" : "친구요청"}
         </CustomButton>
       </UserProfile>
-      <PageSelector pages={temp_user_pageselector} top={"22vh"} />
+      <PageSelector pages={userPageSelector} top={"22vh"} />
 
       <OutletBox>
         <Outlet />
