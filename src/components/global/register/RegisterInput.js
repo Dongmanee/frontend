@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { flexColumn } from "../../../styles/global.style";
-import CustomInput from "../CustomInputs";
+import { CustomInputLayout } from "../CustomInputs";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";
 
@@ -8,7 +8,6 @@ export default function RegisterInput({
   label,
   isRequired,
   errorMsg,
-  inputHeight,
   id,
   placeholder,
   register,
@@ -19,15 +18,7 @@ export default function RegisterInput({
     <RegisterInputLayout>
       <RegisterLabel id={id} label={label} isRequired={isRequired} />
       <RegisterInputBox>
-        <CustomInput
-          name={name}
-          register={register}
-          id={id}
-          height={inputHeight ? inputHeight : "2.5rem"}
-          radius="0.7rem"
-          placeholder={placeholder}
-          type={type}
-        />
+        <Registerinput {...register(name)} placeholder={placeholder} type={type} />
         {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
       </RegisterInputBox>
     </RegisterInputLayout>
@@ -38,4 +29,11 @@ const RegisterInputLayout = styled.div``;
 
 const RegisterInputBox = styled.div`
   ${flexColumn};
+`;
+
+const Registerinput = styled(CustomInputLayout)`
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  padding: 0.08rem 1rem;
+  font-size: 0.8rem;
 `;

@@ -4,13 +4,7 @@ import { flexICenter } from "../../../styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";
 
-export default function RegisterTag({
-  name,
-  control,
-  label,
-  isRequired,
-  errorMsg,
-}) {
+export default function RegisterTag({ name, control, label, isRequired, errorMsg }) {
   const {
     field: { value, onChange },
   } = useController({
@@ -22,15 +16,16 @@ export default function RegisterTag({
   const MAX_TAG_NUM = 2;
 
   const handleKeyDown = (e) => {
-    if (e.key != "Enter") return;
     const newTag = e.target.value;
     if (!newTag.trim()) return;
+    if (e.key != "Enter") return;
+    if (e.nativeEvent.isComposing) return; // 한글 두번입력되는 에러 해결
     onChange([...value, newTag]);
     e.target.value = "";
   };
 
   const removeTag = (tagIdx) => {
-    onChange(value.filter((tag, idx) => idx != tagIdx));
+    onChange(value.filter((_, idx) => idx != tagIdx));
   };
 
   return (
@@ -48,9 +43,7 @@ export default function RegisterTag({
         {value.length <= MAX_TAG_NUM && (
           <TagInput
             onKeyDown={handleKeyDown}
-            placeholder={
-              value.length == 0 ? "엔터를 입력하여 태그를 등록해주세요" : ""
-            }
+            placeholder={value.length == 0 ? "엔터를 입력하여 태그를 등록해주세요" : ""}
           />
         )}
       </TagInputContainer>
