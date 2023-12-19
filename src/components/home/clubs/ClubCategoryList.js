@@ -1,33 +1,25 @@
-import styled from "styled-components";
-import ProfileAndName from "../../global/ProfileAndName";
-import { temp_clubs_catgory } from "../../../consts/tempData";
-import CategoryIcon from "../../global/CategoryIcon";
 import { useSearchParams } from "react-router-dom";
+import styled from "styled-components";
+import { temp_clubs_category } from "../../../consts/tempData";
+import CategoryIcon from "../../global/CategoryIcon";
 
 export default function ClubCategory({ setKeywordReset }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onClickCategoryIcon = (categoryId) => {
-    if (categoryId == "") {
-      searchParams.delete("category");
-      searchParams.delete("keyword");
-      setSearchParams(searchParams);
-    } else {
-      setSearchParams({ category: categoryId });
-    }
+    setSearchParams({ category: categoryId });
     setKeywordReset();
   };
 
   const setIsSelected = (categoryId) => {
     const currentCategory = searchParams.get("category");
-
-    if (categoryId == "" && currentCategory == null) return true;
+    if (categoryId == "all" && currentCategory == null) return true;
     return currentCategory == categoryId;
   };
 
   return (
     <ClubCategoryLayout>
-      {temp_clubs_catgory.map((item, idx) => (
+      {temp_clubs_category.map((item, idx) => (
         <CategoryIcon
           key={idx}
           img={item.img}

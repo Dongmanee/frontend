@@ -59,7 +59,7 @@ CustomInput.defaultProps = {
   fontSize: "0.8rem",
 };
 
-const CustomInputLayout = styled.input`
+export const CustomInputLayout = styled.input`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   background-color: ${(props) => (props.border ? "white" : props.theme.colors.gray.xxs)};

@@ -1,15 +1,14 @@
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import CustomInput from "../components/global/CustomInputs";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
 import ClubList from "../components/home/clubs/ClubList";
-import { temp_clubs } from "../consts/tempData";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn } from "../styles/global.style";
-import RegisterButton from "../components/global/register/RegisterButton";
 import RegisterClubButton from "../components/home/clubs/RegisterClubButton";
+import { temp_clubs } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
-import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import Layout from "../layouts/Layout";
+import { flexColumn } from "../styles/global.style";
 
 export default function Clubs() {
   const { onPrevPage } = usePrevPage();
@@ -38,17 +37,23 @@ export default function Clubs() {
     setSearchKeyword("");
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Layout headerLeft="prev" onClickLeft={onPrevPage}>
       <HomeTotalClubsLayout>
         <ClubCategory setKeywordReset={handleKeywordReset} />
-        <CustomInput
-          placeholder="동아리를 검색하세요"
-          margin="1.8rem 1rem"
-          border="0.05rem solid"
-          value={searchKeyword}
-          onChange={handleSearchKeywordChange}
-        />
+        <form onSubmit={handleSubmit}>
+          <CustomInput
+            placeholder="동아리를 검색하세요"
+            margin="1.8rem 1rem"
+            border="0.05rem solid"
+            value={searchKeyword}
+            onChange={handleSearchKeywordChange}
+          />
+        </form>
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
       <RegisterClubButton />
@@ -59,4 +64,8 @@ export default function Clubs() {
 const HomeTotalClubsLayout = styled.div`
   ${flexColumn};
   margin-bottom: 6vh;
+
+  & > form {
+    ${flexColumn};
+  }
 `;

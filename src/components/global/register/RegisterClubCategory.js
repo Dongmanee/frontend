@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ClubCategory from "../../home/clubs/ClubCategoryList";
 import RegisterLabel from "./RegisterLabel";
-import { temp_clubs_catgory } from "../../../consts/tempData";
+import { temp_clubs_category } from "../../../consts/tempData";
 import ProfileAndName from "../ProfileAndName";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import HorizontalSlider from "../HorizontalSlider";
@@ -20,7 +20,7 @@ export default function RegisterClubCategory({ name, control, errorMsg }) {
     <RegisterClubCategoryLayout>
       <RegisterLabel label="동아리 카테고리" isRequired={true} />
       <HorizontalSlider>
-        {temp_clubs_catgory.map((item, idx) => (
+        {temp_clubs_category.map((item, idx) => (
           <CategoryIcon
             key={idx}
             onClick={() => onClickCategoryIcon(item)}

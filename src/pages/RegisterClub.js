@@ -1,16 +1,18 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
+import RegisterClubCategory from "../components/global/register/RegisterClubCategory";
 import RegisterImage from "../components/global/register/RegisterImage";
 import RegisterInput from "../components/global/register/RegisterInput";
+import RegisterSnsInput from "../components/global/register/RegisterSnsInput";
 import RegisterTag from "../components/global/register/RegisterTag";
 import RegisterTextArea from "../components/global/register/RegisterTextArea";
-import RegisterClubCategory from "../components/global/register/RegisterClubCategory";
+import { temp_club_home_info } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
-import RegisterSnsInput from "../components/global/register/RegisterSnsInput";
-import { useEffect } from "react";
-import { temp_club_home_info } from "../consts/tempData";
+import { registerClubSchema } from "../utils/validationSchema";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
@@ -25,7 +27,10 @@ export default function RegisterClub() {
     watch,
     control,
     setValue,
-  } = useForm();
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(registerClubSchema),
+  });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -42,7 +47,7 @@ export default function RegisterClub() {
       setValue("clubDescription", clubInfo.clubIntro);
       clubInfo.clubSns.map((sns) => setValue(sns.snsName + "URL", sns.snsUrl));
     }
-  }, []);
+  }, [isEdit]);
 
   return (
     <Layout
@@ -59,14 +64,25 @@ export default function RegisterClub() {
             register={register}
             watch={watch}
             label="동아리 대표 이미지"
-            errorMsg="다시 등록해주세요"
+          />
+          <RegisterClubCategory
+            name="clubCategory"
+            control={control}
+            errorMsg={errors.clubCategory?.message}
           />
           <RegisterInput
             name="clubName"
             register={register}
             label="동아리 이름"
             isRequired={true}
-            errorMsg="다시 입력해주세요"
+            errorMsg={errors.clubName?.message}
+          />
+          <RegisterInput
+            name="clubAddress"
+            register={register}
+            label="동아리 주소"
+            isRequired={true}
+            errorMsg={errors.clubAddress?.message}
           />
           {isEdit && (
             <RegisterImage
@@ -78,29 +94,20 @@ export default function RegisterClub() {
               isBackgroundImage={true}
             />
           )}
-          <RegisterClubCategory
-            name="clubCategory"
-            control={control}
-            errorMsg="다시 선택해주세요"
+          <RegisterTextArea
+            name="clubDescription"
+            register={register}
+            label="동아리 소개"
+            isRequired={true}
+            errorMsg={errors.clubDescription?.message}
+            height="5rem"
           />
           <RegisterTag
             name="clubTags"
             control={control}
             label="동아리 태그 ( 최대 3개까지 입력 가능 )"
           />
-          <RegisterTextArea
-            name="clubDescription"
-            register={register}
-            label="동아리 소개"
-            isRequired={true}
-            errorMsg="다시 입력해주세요"
-            height="5rem"
-          />
-          <RegisterSnsInput
-            label="동아리 SNS 주소"
-            register={register}
-            error={errors}
-          />
+          <RegisterSnsInput label="동아리 SNS 주소" register={register} error={errors} />
         </RegisterInputList>
       </form>
     </Layout>
