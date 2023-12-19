@@ -1,16 +1,22 @@
 import styled from "styled-components";
-import { FaRegCommentDots, FaRegHeart } from "react-icons/fa6";
+import { FaRegCommentDots, FaRegHeart, FaHeart } from "react-icons/fa6";
 import { flexICenter } from "../../../styles/global.style";
 
-export default function PostReactionNum({ likesNum, commentNum, size }) {
+export default function PostReactionNum({
+  likesNum,
+  isLike,
+  commentNum,
+  isDetail,
+  size,
+}) {
   const styles = { size };
   return (
     <PostReactionNumLayout>
-      <ReactionNumBox {...styles}>
-        <FaRegHeart />
+      <ReactionNumBox $isDetail={isDetail}>
+        {isLike ? <FaHeart /> : <FaRegHeart />}
         <div>{likesNum}</div>
       </ReactionNumBox>
-      <ReactionNumBox {...styles}>
+      <ReactionNumBox $isDetail={isDetail}>
         <FaRegCommentDots />
         <div>{commentNum}</div>
       </ReactionNumBox>
@@ -29,7 +35,7 @@ const PostReactionNumLayout = styled.div`
 
 const ReactionNumBox = styled.div`
   ${flexICenter};
-  gap: 5px;
-  font-size: ${(props) => props.size};
+  gap: ${(props) => (props.$isDetail ? "8px" : "5px")};
+  font-size: ${(props) => (props.$isDetail ? "18px" : "13px")};
   color: #545454;
 `;

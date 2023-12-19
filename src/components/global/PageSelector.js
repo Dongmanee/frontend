@@ -17,9 +17,20 @@ const PageSelector = ({ pages, top }) => {
 
   useEffect(() => {
     const isRightPage = currentPage.startsWith(active);
+
     if (!isRightPage) {
       const rightpage = pages.find((page) => currentPage.startsWith(page.src));
       const nowpage = rightpage?.src;
+
+      setActive(nowpage);
+    }
+    if (isRightPage && currentPage != active) {
+      const reversedPages = [...pages].reverse();
+      const rightpage = reversedPages.find((page) =>
+        currentPage.startsWith(page.src)
+      );
+      const nowpage = rightpage?.src;
+
       setActive(nowpage);
     }
   }, [currentPage]);
@@ -28,7 +39,11 @@ const PageSelector = ({ pages, top }) => {
     <PageSelectorLayout $top={top}>
       {pages.map((page, idx) => {
         return (
-          <Page onClick={() => handlePage(page.src)} $length={pageLength} key={idx}>
+          <Page
+            onClick={() => handlePage(page.src)}
+            $length={pageLength}
+            key={idx}
+          >
             {active == page.src ? (
               <Active>{page.name}</Active>
             ) : (
@@ -56,7 +71,8 @@ const PageSelectorLayout = styled.div`
 
   z-index: 2;
   position: fixed;
-  top: ${(props) => (props.$top ? props.$top : props.theme.global.header.height)};
+  top: ${(props) =>
+    props.$top ? props.$top : props.theme.global.header.height};
   left: 0;
   right: 0;
   margin: 0 auto;

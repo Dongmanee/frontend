@@ -4,18 +4,26 @@ import PostWriter from "./PostWriter";
 import { flexJBetween } from "../../../styles/global.style";
 
 export default function PostBottom({
-  writerimg,
-  writerName,
+  writer,
   likesNum,
+  isLike,
   commentNum,
-  size,
+  isDetail,
 }) {
   return (
     <PostBottomLayout>
-      {writerName != undefined && (
-        <PostWriter writerimg={writerimg} writerName={writerName} />
+      {writer != undefined && (
+        <PostWriter
+          writerimg={writer.writerImage}
+          writerName={writer.writerName}
+        />
       )}
-      <PostReactionNum likesNum={likesNum} commentNum={commentNum} size={size} />
+      <PostReactionNum
+        likesNum={likesNum}
+        isLike={isLike}
+        commentNum={commentNum}
+        isDetail={isDetail}
+      />
     </PostBottomLayout>
   );
 }

@@ -26,7 +26,7 @@ export default function ClubUserList({ users }) {
 const ClubUserListLayout = styled.div`
   ${flexColumn};
   box-sizing: border-box;
-  padding: ${(props) => props.$isClubhome && "20px"};
+  padding: ${(props) => props.$isClubhome && "0 5px"};
   gap: 1rem;
 
   & > div:first-child {

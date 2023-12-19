@@ -1,39 +1,52 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import example from "../../images/example.png";
-import { flexColumn, flexICenter } from "../../styles/global.style";
+import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 import SmallTagBox from "./SmallTagBox";
 
 export default function User({
   user,
-  isComment,
+  commentDate,
   size,
   imgSize,
   dateColor,
   introColor,
   introSize,
   introWeight,
+  layoutGap,
   gap,
   isChat,
 }) {
-  const styles = { size, imgSize, dateColor, introColor, introSize, introWeight, gap };
+  const styles = {
+    size,
+    imgSize,
+    dateColor,
+    introColor,
+    introSize,
+    introWeight,
+    gap,
+  };
   const navigate = useNavigate();
+
   const openUser = (userId) => {
     navigate(`/user/${userId}`);
   };
 
   return (
-    <UserLayout onClick={() => !isChat && openUser(user.id)}>
-      <UserImgBox {...styles} src={example} />
+    <UserLayout
+      layoutGap={layoutGap}
+      onClick={() => !isChat && openUser(user.userId ? user.userId : user.id)}
+    >
+      <UserImgBox {...styles} src={user.userImage || example} />
       <UserDescriptionBox {...styles}>
         <span>
-          {user.name}
+          {user.userName ? user.userName : user.name}
           {user.position != undefined && (
             <SmallTagBoxBox>
               <SmallTagBox color="black" tagName={user.position} />
             </SmallTagBoxBox>
           )}
-          {isComment && <span> 2023.11.10</span>}
+          {commentDate && <span>{commentDate}</span>}
         </span>
 
         <span>{user.intro}</span>
@@ -48,11 +61,12 @@ User.defaultProps = {
   dateColor: (props) => props.theme.colors.gray.xs,
   introColor: (props) => props.theme.colors.gray.md,
   gap: "0.5rem",
+  layoutGap: "20px",
 };
 
 const UserLayout = styled.div`
   ${flexICenter};
-  gap: 20px;
+  gap: ${(props) => props.layoutGap};
 `;
 
 const UserImgBox = styled.img`
@@ -72,6 +86,7 @@ const UserDescriptionBox = styled.div`
   & > span:first-child {
     position: relative;
     & > span {
+      margin-left: 10px;
       color: ${(props) => props.dateColor};
     }
   }

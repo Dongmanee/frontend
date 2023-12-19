@@ -7,10 +7,10 @@ import { flexColumn } from "../../styles/global.style";
 import { useNavigate } from "react-router-dom";
 
 export default function ClubSchedule() {
-  const { isCheckedPath: isClubHome } = useCheckPath("/club/:id/home");
+  const { isCheckedPath: isClubHome } = useCheckPath("schedule");
   const navigate = useNavigate();
   const onAddSchedule = () => {
-    navigate(`/club/:id/schedule/add`);
+    navigate(`add`);
   };
 
   return (
