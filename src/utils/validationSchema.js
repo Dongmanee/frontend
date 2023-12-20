@@ -104,3 +104,8 @@ export const clubPostSchema = yup.object({
   postTitle: yup.string().required("제목을 입력해주세요"),
   postBody: yup.string().required("내용을 입력해주세요"),
 });
+
+export const clubInquirySchema = yup.object({
+  clubInquiryName: yup.string().required("문의 제목을 입력해주세요"),
+  clubInquiryBody: yup.string().required("문의 내용을 입력해주세요"),
+});

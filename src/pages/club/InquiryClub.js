@@ -3,22 +3,51 @@ import RegisterInput from "../../components/global/register/RegisterInput";
 import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
 import RegisterButton from "../../components/global/register/RegisterButton";
+import { useForm } from "react-hook-form";
+import RegisterTextArea from "../../components/global/register/RegisterTextArea";
+import usePrevPage from "../../hooks/usePrevPage";
+import { clubInquirySchema } from "../../utils/validationSchema";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function InquiryClub() {
+  const { onPrevPage } = usePrevPage();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(clubInquirySchema),
+  });
+
+  const handleInquirySubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <Layout headerLeft="exit" headerCenter="문의하기" headerRight="check">
+    <Layout
+      headerLeft="exit"
+      headerCenter="문의하기"
+      headerRight="check"
+      onClickLeft={onPrevPage}
+      onClickRight={handleSubmit(handleInquirySubmit)}
+    >
       <InquiryClubInputBox>
         <RegisterInput
+          name="clubInquiryName"
+          register={register}
           label="제목"
           isRequired={true}
-          id="name"
-          placeholder="제목은 50자 이내로 입력해주세요"
+          errorMsg={errors.clubInquiryName && errors.clubInquiryName.message}
         />
-        <RegisterInput
-          label="내용"
+        <RegisterTextArea
+          name="clubInquiryBody"
+          register={register}
+          label="문의내용"
           isRequired={true}
-          id="name"
-          inputHeight="40rem"
+          height="40rem"
+          errorMsg={errors.clubInquiryBody && errors.clubInquiryBody.message}
         />
       </InquiryClubInputBox>
     </Layout>
