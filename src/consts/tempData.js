@@ -619,6 +619,36 @@ export const temp_user_profile = {
   intro: "안녕하세요~!",
 };
 
+export const temp_chat_lists = [
+  {
+    user: {
+      userName: "정준형",
+      userId: 1,
+    },
+    userMessage: "모각코 ㄱ?",
+    chatTime: "오후 3:03",
+    isNewChat: true,
+  },
+  {
+    user: {
+      userName: "홍준형",
+      userId: 2,
+    },
+    userMessage: "오키 오키",
+    chatTime: "오후 2:03",
+    isNewChat: false,
+  },
+  {
+    user: {
+      userName: "김준형",
+      userId: 3,
+    },
+    userMessage: "배고프다~",
+    chatTime: "오후 1:03",
+    isNewChat: false,
+  },
+];
+
 export const temp_setting_lists = [
   {
     icon: <FcRules size={25} />,

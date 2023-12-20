@@ -14,6 +14,7 @@ export default function User({
   introSize,
   introWeight,
   layoutGap,
+  message,
   gap,
   isChat,
 }) {
@@ -49,7 +50,7 @@ export default function User({
           {commentDate && <span>{commentDate}</span>}
         </span>
 
-        <span>{user.intro}</span>
+        <span>{isChat ? message : user.intro}</span>
       </UserDescriptionBox>
     </UserLayout>
   );

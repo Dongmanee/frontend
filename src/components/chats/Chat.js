@@ -1,27 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { temp_user_profile } from "../../consts/tempData";
 import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 import User from "../global/User";
-import { useNavigate } from "react-router-dom";
 
-export default function Chat({ isNewChat }) {
+export default function Chat({ user }) {
   const navigate = useNavigate();
+
   return (
-    <ChatLayout onClick={() => navigate("detail")}>
+    <ChatLayout onClick={() => navigate(`detail/${user.user.userId}`)}>
       <User
         isChat={true}
-        user={temp_user_profile}
+        user={user.user}
+        message={user.userMessage}
         imgSize={"4rem"}
         size={"1.125rem"}
         introSize={"0.875rem"}
-        introColor={isNewChat}
-        introWeight={isNewChat && "600"}
+        introColor={user.isNewChat ? "black" : "gray"}
+        introWeight={user.isNewChat && "600"}
         gap={"15px"}
       />
 
-      <ChatTime isNewChat={isNewChat}>
-        <div>오후 3: 03</div>
-        {isNewChat ? <Count>3</Count> : <Hide>.</Hide>}
+      <ChatTime isNewChat={user.isNewChat}>
+        <div>{user.chatTime}</div>
+        {user.isNewChat ? <Count>3</Count> : <Hide>.</Hide>}
       </ChatTime>
     </ChatLayout>
   );
