@@ -7,10 +7,19 @@ import { ContentCol } from "./ClubPostsEdit";
 import RegisterTextArea from "../../components/global/register/RegisterTextArea";
 import { useForm } from "react-hook-form";
 import { flexColumn } from "../../styles/global.style";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { clubScheduleSchema } from "../../utils/validationSchema";
 
 export default function ClubScheduleAdd() {
   const { onPrevPage } = usePrevPage();
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(clubScheduleSchema),
+  });
 
   const handleScheduleAdd = (data) => {
     console.log(data);
@@ -32,6 +41,7 @@ export default function ClubScheduleAdd() {
             label="일정 날짜"
             type="date"
             inputHeight={"3rem"}
+            errorMsg={errors.scheduleDate && errors.scheduleDate.message}
           />
           <RegisterInput
             name="scheduleTime"
@@ -39,6 +49,7 @@ export default function ClubScheduleAdd() {
             label="일정 시간"
             type="time"
             inputHeight={"3rem"}
+            errorMsg={errors.scheduleTime && errors.scheduleTime.message}
           />
         </RegisterRowBox>
 
@@ -48,6 +59,7 @@ export default function ClubScheduleAdd() {
             register={register}
             inputHeight={"3rem"}
             label={item.label}
+            errorMsg={errors[item.name] && errors[item.name].message}
           />
         ))}
 
@@ -55,6 +67,7 @@ export default function ClubScheduleAdd() {
           name="scheduleDetail"
           register={register}
           label="일정 내용"
+          errorMsg={errors.scheduleDetail && errors.scheduleDetail.message}
         />
       </ScheduleFormBox>
     </Layout>

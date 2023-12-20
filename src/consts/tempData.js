@@ -555,7 +555,7 @@ export const temp_club_user = [
 
 export const temp_club_schedule_add = [
   {
-    label: "일정 제목",
+    label: "일정 이름",
     name: "scheduleName",
   },
   {
