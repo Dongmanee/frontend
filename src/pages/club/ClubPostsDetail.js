@@ -17,7 +17,6 @@ import {
 
 export default function ClubPostsDetail() {
   const { onPrevPage } = usePrevPage();
-  const state = useLocation().state;
   const [comments, setComments] = useState(temp_club_post_comments);
   const [post, setPost] = useState(temp_club_post);
 

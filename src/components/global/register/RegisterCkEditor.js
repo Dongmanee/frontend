@@ -4,8 +4,9 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import RegisterLabel from "./RegisterLabel";
 import styled from "styled-components";
 import { useController } from "react-hook-form";
+import RegisterErrorMsg from "./RegisterErrorMsg";
 
-export default function RegisterCkEditor({ name, control, label }) {
+export default function RegisterCkEditor({ name, control, label, errorMsg }) {
   const { field } = useController({ name: name, control: control });
   const { onChange: handlePostBodyChange } = field;
 
@@ -23,6 +24,7 @@ export default function RegisterCkEditor({ name, control, label }) {
           handlePostBodyChange(data);
         }}
       />
+      {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
     </RegisterCkEditorLayout>
   );
 }

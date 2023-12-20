@@ -9,7 +9,7 @@ export default function ClubPost({ post, isClubHome }) {
   const navigate = useNavigate();
 
   const handlePostDetailClick = (id) => {
-    navigate(`${id}`, { state: { post } });
+    navigate(`${id}`);
   };
 
   return (

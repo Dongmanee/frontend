@@ -98,3 +98,9 @@ export const clubScheduleSchema = yup.object({
     .required("최대 참여가능한 인원 수를 입력해주세요"),
   scheduleDetail: yup.string().required("내용을 입력해주세요"),
 });
+
+export const clubPostSchema = yup.object({
+  postCategory: yup.string().required("카테고리를 선택해주세요"),
+  postTitle: yup.string().required("제목을 입력해주세요"),
+  postBody: yup.string().required("내용을 입력해주세요"),
+});
