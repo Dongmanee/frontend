@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { BsFillSendFill } from "react-icons/bs";
 import styled from "styled-components";
 import ChatReceived from "../components/chats/ChatReceived";
@@ -8,6 +9,14 @@ import { flexCenter, flexColumn } from "../styles/global.style";
 
 export default function ChatDetail() {
   const { onPrevPage } = usePrevPage();
+
+  const messageRef = useRef("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(messageRef.current.value);
+    messageRef.current.value = "";
+  };
+
   return (
     <Layout headerLeft={"prev"} onClickLeft={onPrevPage} headerCenter={"정준형"}>
       <ChatDetailLayout>
@@ -22,7 +31,9 @@ export default function ChatDetail() {
       </ChatDetailLayout>
 
       <ChatInputRow>
-        <input placeholder="" />
+        <form onSubmit={handleSubmit}>
+          <input placeholder="" ref={messageRef} />
+        </form>
         <SendIcon>
           <BsFillSendFill size={20} />
         </SendIcon>
@@ -59,12 +70,15 @@ const ChatInputRow = styled.div`
   border-radius: 20px;
   background-color: lightgray;
 
-  & > input {
+  & > form {
+    width: 90%;
+  }
+
+  & > form > input {
     background-color: inherit;
     border: none;
     height: 90%;
-    width: 70%;
-    margin-left: -20px;
+    width: 90%;
 
     &:focus {
       outline: none;
