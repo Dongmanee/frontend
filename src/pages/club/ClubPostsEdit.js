@@ -10,6 +10,8 @@ import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
 import { useForm } from "react-hook-form";
 import RegisterPostCategory from "../../components/global/register/RegisterPostCategory";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { clubPostSchema } from "../../utils/validationSchema";
 
 export default function ClubPostsEdit() {
   const location = useLocation();
@@ -22,7 +24,10 @@ export default function ClubPostsEdit() {
     handleSubmit,
     formState: { errors },
     control,
-  } = useForm();
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(clubPostSchema),
+  });
 
   const handleClubPostWrite = (data) => {
     console.log(data);
@@ -41,31 +46,25 @@ export default function ClubPostsEdit() {
           name="postCategory"
           control={control}
           label="카테고리"
+          errorMsg={errors.postCategory && errors.postCategory.message}
         />
         <RegisterInput
           name="postTitle"
           register={register}
           label="제목"
           inputHeight={"3rem"}
+          errorMsg={errors.postTitle && errors.postTitle.message}
         />
-        <RegisterCkEditor name="postBody" control={control} label="내용" />
+        <RegisterCkEditor
+          name="postBody"
+          control={control}
+          label="내용"
+          errorMsg={errors.postBody && errors.postBody.message}
+        />
       </PostFormBox>
     </Layout>
   );
 }
-
-const TagCol = styled.div`
-  box-sizing: border-box;
-  padding-top: 20px;
-
-  & > div:first-child {
-    margin-bottom: -10px;
-  }
-
-  & > span:last-child {
-    margin-top: -10px;
-  }
-`;
 
 const PostFormBox = styled.div`
   ${flexColumn}

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export default function ClubScheduleTitle({ date, left, title, isDetail }) {
-  const isLeft = left == "done" ? "일정완료" : left;
+  const isLeft = left < 0 ? "일정완료" : left;
   return (
     <ClubScheduleTitleLayout $isDetail={isDetail}>
       <div>
         <span>{date}</span>
-        <span>{isLeft}</span>
+        <span>D - {isLeft}</span>
       </div>
       <p>{title}</p>
     </ClubScheduleTitleLayout>

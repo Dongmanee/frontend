@@ -2,27 +2,58 @@ import styled from "styled-components";
 import RegisterInput from "../../components/global/register/RegisterInput";
 import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
+import { useState } from "react";
+import RegisterTextArea from "../../components/global/register/RegisterTextArea";
+import { useForm } from "react-hook-form";
+import usePrevPage from "../../hooks/usePrevPage";
+import { temp_join_questions } from "../../consts/tempData";
+import { join_default_questions } from "../../consts/consts";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { clubJoinSchema } from "../../utils/validationSchema";
 
 export default function JoinClub() {
+  const { onPrevPage } = usePrevPage();
+  const [questions, setQuestions] = useState(temp_join_questions);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(clubJoinSchema),
+  });
+
+  const handleJoinSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <Layout headerLeft="exit" headerCenter="가입하기" headerRight="check">
+    <Layout
+      headerLeft="exit"
+      headerCenter="가입하기"
+      headerRight="check"
+      onClickLeft={onPrevPage}
+      onClickRight={handleSubmit(handleJoinSubmit)}
+    >
       <JoinClubInputBox>
-        <RegisterInput label="이름" isRequired={true} id="name" />
-        <RegisterInput label="학과" isRequired={true} id="name" />
-        <RegisterInput label="학번" isRequired={true} id="name" />
-        <RegisterInput label="핸드폰 번호" isRequired={true} id="name" />
-        <RegisterInput
-          label="동아리 질문 1."
-          isRequired={true}
-          id="name"
-          inputHeight="7rem"
-        />
-        <RegisterInput
-          label="동아리 질문 2."
-          isRequired={true}
-          id="name"
-          inputHeight="7rem"
-        />
+        {join_default_questions.map((question) => (
+          <RegisterInput
+            name={question.name}
+            register={register}
+            label={question.label}
+            isRequired={true}
+            errorMsg={errors[question.name] && errors[question.name].message}
+          />
+        ))}
+        {questions.map((item) => (
+          <RegisterTextArea
+            name={item.questionId}
+            register={register}
+            label={item.question}
+            height="5rem"
+          />
+        ))}
       </JoinClubInputBox>
     </Layout>
   );

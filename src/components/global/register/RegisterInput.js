@@ -16,9 +16,13 @@ export default function RegisterInput({
 }) {
   return (
     <RegisterInputLayout>
-      <RegisterLabel id={id} label={label} isRequired={isRequired} />
+      <RegisterLabel id={name} label={label} isRequired={isRequired} />
       <RegisterInputBox>
-        <Registerinput {...register(name)} placeholder={placeholder} type={type} />
+        <Registerinput
+          {...register(name)}
+          placeholder={placeholder}
+          type={type}
+        />
         {errorMsg && <RegisterErrorMsg errorMsg={errorMsg} />}
       </RegisterInputBox>
     </RegisterInputLayout>

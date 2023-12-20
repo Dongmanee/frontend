@@ -6,7 +6,7 @@ export default function ClubJoinButton({ clubJoinAvailable }) {
   const { isAvailable } = clubJoinAvailable;
 
   const onClickButton = (page) => {
-    navigate(`/club/:clubId/${page}`);
+    navigate(`${page}`);
   };
 
   return (

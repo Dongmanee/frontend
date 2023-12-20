@@ -332,39 +332,86 @@ export const temp_club_pages = [
 
 export const temp_club_schedule_item_infos = [
   {
-    date: "11/11일 (토) 오후 5:00",
-    location: "[네이버 지도] 포쉬민 커피 대전 서구",
-    cost: "개인",
-    pop: 7,
-    totalPop: 20,
-    id: 123,
+    scheduleId: "schedule111",
+    scheduleDate: "10월 10일 (토)",
+    scheduleTime: "10시",
+    scheduleName: "토요일 정기 모임",
+    scheduleLocation: "[네이버 지도] 포쉬민 커피 대전 서구",
+    schedulePrice: "개인",
+    scheduleMaxParticipant: 20,
+    scheduleParticipantsNum: 10,
+    scheduleLeftDays: 10,
   },
   {
-    date: "11/11일 (토) 오후 5:00",
-    location: "[네이버 지도] 포쉬민 커피 대전 서구",
-    cost: "개인",
-    pop: 7,
-    totalPop: 20,
-    id: 456,
+    scheduleId: "schedule111",
+    scheduleDate: "10월 10일 (토)",
+    scheduleTime: "10시",
+    scheduleName: "토요일 정기 모임",
+    scheduleLocation: "[네이버 지도] 포쉬민 커피 대전 서구",
+    schedulePrice: "개인",
+    scheduleMaxParticipant: 20,
+    scheduleParticipantsNum: 10,
+    scheduleLeftDays: 10,
   },
   {
-    date: "11/11일 (토) 오후 5:00",
-    location: "[네이버 지도] 포쉬민 커피 대전 서구",
-    cost: "개인",
-    pop: 7,
-    totalPop: 20,
-    id: 789,
+    scheduleId: "schedule111",
+    scheduleDate: "10월 10일 (토)",
+    scheduleTime: "10시",
+    scheduleName: "토요일 정기 모임",
+    scheduleLocation: "[네이버 지도] 포쉬민 커피 대전 서구",
+    schedulePrice: "개인",
+    scheduleMaxParticipant: 20,
+    scheduleParticipantsNum: 10,
+    scheduleLeftDays: 10,
   },
 ];
 
 export const temp_club_schedule_detail_item_infos = {
-  date: "11/11일 (토) 오후 5:00",
-  location: "[네이버 지도] 포쉬민 커피 대전 서구",
-  cost: "개인",
-  detail: "커피 한잔 하면서 수다 예정",
-  pop: 7,
-  totalPop: 20,
+  scheduleId: "schedule111",
+  scheduleDate: "10월 10일 (토)",
+  scheduleTime: "10시",
+  scheduleName: "토요일 정기 모임",
+  scheduleDetail:
+    "커피 한잔 하면서 수다나 떨어요~커피 한잔 하면서 수다나 떨어요~커피 한잔 하면서 수다나 떨어요~",
+  scheduleLocation: "[네이버 지도] 포쉬민 커피 대전 서구",
+  schedulePrice: "개인",
+  scheduleMaxParticipant: 20,
+  scheduleParticipantsNum: 10,
+  scheduleLeftDays: 10,
 };
+
+export const temp_club_album = [
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post222",
+    isMany: false,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: false,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+];
 
 export const temp_club_schedule_item_names = [
   {
@@ -508,22 +555,20 @@ export const temp_club_user = [
 
 export const temp_club_schedule_add = [
   {
-    name: "날짜와 시간을 입력해주세요",
+    label: "일정 이름",
+    name: "scheduleName",
   },
   {
-    name: "일정 제목을 입력해주세요",
+    label: "일정 위치",
+    name: "scheduleLocation",
   },
   {
-    name: "일정 위치를 입력해주세요",
+    label: "비용",
+    name: "scheduleCost",
   },
   {
-    name: "일정 내용을 입력해주세요",
-  },
-  {
-    name: "비용을 입력해주세요",
-  },
-  {
-    name: "인원을 입력해주세요",
+    label: "최대 인원 수",
+    name: "scheduleMaxParticipant",
   },
 ];
 
@@ -689,5 +734,20 @@ export const temp_weeks = [
   },
   {
     name: "Sat",
+  },
+];
+
+export const temp_join_questions = [
+  {
+    questionId: "question111",
+    question: "코딩을 해보신 적이 있으신가요?",
+  },
+  {
+    questionId: "question222",
+    question: "동아리 질문1.",
+  },
+  {
+    questionId: "question333",
+    question: "동아리 질문1.",
   },
 ];

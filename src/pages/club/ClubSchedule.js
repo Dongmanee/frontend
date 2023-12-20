@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function ClubSchedule() {
   const { isCheckedPath: isClubHome } = useCheckPath("schedule");
   const navigate = useNavigate();
+
   const onAddSchedule = () => {
     navigate(`add`);
   };

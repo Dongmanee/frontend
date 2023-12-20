@@ -15,7 +15,7 @@ export default function RegisterTextArea({
 }) {
   return (
     <RegisterTextAreaLayout>
-      <RegisterLabel id={id} label={label} isRequired={isRequired} />
+      <RegisterLabel id={name} label={label} isRequired={isRequired} />
       <RegisterTextAreaBox
         {...register(name)}
         $height={height}
