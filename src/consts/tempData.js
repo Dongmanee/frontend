@@ -380,6 +380,39 @@ export const temp_club_schedule_detail_item_infos = {
   scheduleLeftDays: 10,
 };
 
+export const temp_club_album = [
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post222",
+    isMany: false,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: false,
+  },
+  {
+    albumImgSrc: sample,
+    albumPostId: "post111",
+    isMany: true,
+  },
+];
+
 export const temp_club_schedule_item_names = [
   {
     name: "일시",
