@@ -4,14 +4,23 @@ import { MessageCSS } from "./ChatReceived";
 export default function ChatSent() {
   return (
     <ChatSentLayout>
-      <div>오후 3:04</div>
-      <ChatMessage>김치찌개 먹을래?</ChatMessage>
+      <ChatMessageBox>
+        <div>오후 3:04</div>
+        <ChatMessage>김치찌개 먹을래?</ChatMessage>
+      </ChatMessageBox>
     </ChatSentLayout>
   );
 }
 
 const ChatSentLayout = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+`;
+
+const ChatMessageBox = styled.div`
+  max-width: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -27,4 +36,5 @@ const ChatSentLayout = styled.div`
 const ChatMessage = styled.div`
   ${MessageCSS};
   background-color: #3f3e3e;
+  color: white;
 `;
