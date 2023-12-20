@@ -706,3 +706,18 @@ export const temp_weeks = [
     name: "Sat",
   },
 ];
+
+export const temp_join_questions = [
+  {
+    questionId: "question111",
+    question: "코딩을 해보신 적이 있으신가요?",
+  },
+  {
+    questionId: "question222",
+    question: "동아리 질문1.",
+  },
+  {
+    questionId: "question333",
+    question: "동아리 질문1.",
+  },
+];

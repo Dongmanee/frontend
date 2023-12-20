@@ -109,3 +109,13 @@ export const clubInquirySchema = yup.object({
   clubInquiryName: yup.string().required("문의 제목을 입력해주세요"),
   clubInquiryBody: yup.string().required("문의 내용을 입력해주세요"),
 });
+
+export const clubJoinSchema = yup.object({
+  studentName: yup.string().required("이름을 입력해주세요"),
+  studentId: yup.string().required("학번을 입력해주세요"),
+  studentDepartment: yup.string().required("학과를 입력해주세요"),
+  studentPhoneNum: yup
+    .number()
+    .typeError("숫자만 입력해주세요")
+    .required("핸드폰번호를 입력해주세요"),
+});
