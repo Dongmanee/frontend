@@ -1,15 +1,16 @@
-import styled from "styled-components";
-import {
-  flexCenter,
-  flexColumn,
-  flexICenter,
-} from "../../../styles/global.style";
-import CustomButton from "../../global/CustomButton";
+import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import styled from "styled-components";
+import { flexCenter, flexColumn } from "../../../styles/global.style";
 import ClubScheduleDetailItem from "./ClubScheduleDetailItem";
 
 export default function ClubScheduleItemContent({ item, isDetail }) {
   const leftPop = item.scheduleMaxParticipant - item.scheduleParticipantsNum;
+  const [isParticipant, setIsParticipant] = useState(false);
+
+  const handleParticipantClick = () => {
+    setIsParticipant((prev) => !prev);
+  };
 
   return (
     <ClubScheduleItemContentLayout $isDetail={isDetail}>
@@ -40,20 +41,16 @@ export default function ClubScheduleItemContent({ item, isDetail }) {
           <p>{item.scheduleParticipantsNum}</p>
           <p>/</p>
           <p>{item.scheduleMaxParticipant}</p>
-          <p>({leftPop}자리 남음)</p>
-          {isDetail && (
+          <p>{leftPop > 0 ? leftPop + "자리 남음" : ""}</p>
+          {isDetail && leftPop > 0 && (
             <div>
-              <CustomButton
-                bgColor={(props) => props.theme.colors.dark.sm}
-                height={"25px"}
-                width={"60px"}
-                radius="0.35rem"
-                color="white"
-                size={(props) => props.theme.sizes.xs}
+              <ClubParticipantButton
+                $isParticipant={isParticipant}
+                onClick={handleParticipantClick}
               >
-                <FaCheck size={10} />
+                {isParticipant && <FaCheck size={10} />}
                 참석
-              </CustomButton>
+              </ClubParticipantButton>
             </div>
           )}
         </ScheduleParticipantBox>
@@ -67,6 +64,22 @@ const ClubScheduleItemContentLayout = styled.div`
   gap:  ${(props) => (props.$isDetail ? "20px" : "8px")};
   margin-top: ${(props) => props.$isDetail && "30px"};
   margin-bottom: ${(props) => props.$isDetail && "40px"};
+`;
+
+const ClubParticipantButton = styled.button`
+  ${flexCenter}
+  gap: 0.2rem;
+  background-color: ${(props) =>
+    props.$isParticipant
+      ? props.theme.colors.dark.sm
+      : props.theme.colors.gray.xxs};
+  height: 25px;
+  width: 60px;
+  border: 0;
+  border-radius: 0.35rem;
+  color: ${(props) =>
+    props.$isParticipant ? "white" : props.theme.colors.gray.md};
+  font-size: ${(props) => props.theme.sizes.xs};
 `;
 
 const ScheduleParticipantBox = styled.div`
