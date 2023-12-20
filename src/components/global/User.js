@@ -1,31 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import example from "../../images/example.png";
-import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
+import { flexColumn, flexICenter } from "../../styles/global.style";
 import SmallTagBox from "./SmallTagBox";
 
 export default function User({
   user,
   commentDate,
-  size,
-  imgSize,
-  dateColor,
-  introColor,
-  introSize,
-  introWeight,
-  layoutGap,
+  size: $size,
+  imgSize: $imgSize,
+  dateColor: $dateColor,
+  introColor: $introColor,
+  introSize: $introSize,
+  introWeight: $introWeight,
+  layoutGap: $layoutGap,
   message,
-  gap,
+  gap: $gap,
   isChat,
 }) {
   const styles = {
-    size,
-    imgSize,
-    dateColor,
-    introColor,
-    introSize,
-    introWeight,
-    gap,
+    $size,
+    $imgSize,
+    $dateColor,
+    $introColor,
+    $introSize,
+    $introWeight,
+    $gap,
   };
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ export default function User({
 
   return (
     <UserLayout
-      layoutGap={layoutGap}
+      $layoutGap={$layoutGap}
       onClick={() => !isChat && openUser(user.userId ? user.userId : user.id)}
     >
       <UserImgBox {...styles} src={user.userImage || example} />
@@ -67,35 +67,35 @@ User.defaultProps = {
 
 const UserLayout = styled.div`
   ${flexICenter};
-  gap: ${(props) => props.layoutGap};
+  gap: ${(props) => props.$layoutGap};
 `;
 
 const UserImgBox = styled.img`
-  width: ${(props) => props.imgSize};
-  height: ${(props) => props.imgSize};
+  width: ${(props) => props.$imgSize};
+  height: ${(props) => props.$imgSize};
   border-radius: 50%;
 `;
 
 const UserDescriptionBox = styled.div`
   ${flexColumn};
-  gap: ${(props) => props.gap};
+  gap: ${(props) => props.$gap};
 
   & > span {
-    font-size: ${(props) => props.size};
+    font-size: ${(props) => props.$size};
   }
 
   & > span:first-child {
     position: relative;
     & > span {
       margin-left: 10px;
-      color: ${(props) => props.dateColor};
+      color: ${(props) => props.$dateColor};
     }
   }
 
   & > span:last-child {
-    color: ${(props) => props.introColor};
-    font-size: ${(props) => props.introSize};
-    font-weight: ${(props) => props.introWeight};
+    color: ${(props) => props.$introColor};
+    font-size: ${(props) => props.$introSize};
+    font-weight: ${(props) => props.$introWeight};
   }
 `;
 

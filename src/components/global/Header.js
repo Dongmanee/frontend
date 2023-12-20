@@ -53,6 +53,7 @@ export default function Header({
 }
 
 const HeaderLayout = styled.div`
+  width: 100vw;
   height: ${(props) => props.theme.global.header.height};
   ${flexJBetween};
   background-color: white;
