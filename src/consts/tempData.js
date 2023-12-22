@@ -636,15 +636,15 @@ export const temp_club_home_info = {
   clubSns: [
     {
       snsName: "instagram",
-      snsUrl: "http://",
+      snsUrl: "https://www.instagram.com/",
     },
     {
       snsName: "naverBlog",
-      snsUrl: "http://",
+      snsUrl: "https://section.blog.naver.com/BlogHome.naver",
     },
     {
       snsName: "naverBand",
-      snsUrl: "http://",
+      snsUrl: "https://band.us/ko",
     },
   ],
   isClubJoinAvailable: {

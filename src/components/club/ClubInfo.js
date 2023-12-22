@@ -5,8 +5,15 @@ import naverBandIcon from "../../images/sns_icons/naverBandIcon.png";
 import naverBlogIcon from "../../images/sns_icons/naverBlogIcon.png";
 import { flexColumn } from "../../styles/global.style";
 import SmallTagBox from "../global/SmallTagBox";
+import { useNavigate } from "react-router-dom";
 
 export default function ClubInfo({ clubHomeInfo }) {
+  const navigate = useNavigate();
+
+  const handleSNSClick = (snsUrl) => {
+    return window.open(snsUrl);
+  };
+
   return (
     <ClubInfoLayout>
       <BackgroundImage src={clubHomeInfo.clubBackgroundImage} />
@@ -26,11 +33,26 @@ export default function ClubInfo({ clubHomeInfo }) {
         {clubHomeInfo.clubSns.map((sns, idx) => {
           switch (sns.snsName) {
             case "instagram":
-              return <img src={instagramIcon} />;
+              return (
+                <img
+                  src={instagramIcon}
+                  onClick={() => handleSNSClick(sns.snsUrl)}
+                />
+              );
             case "naverBlog":
-              return <img src={naverBlogIcon} />;
+              return (
+                <img
+                  src={naverBlogIcon}
+                  onClick={() => handleSNSClick(sns.snsUrl)}
+                />
+              );
             case "naverBand":
-              return <img src={naverBandIcon} />;
+              return (
+                <img
+                  src={naverBandIcon}
+                  onClick={() => handleSNSClick(sns.snsUrl)}
+                />
+              );
           }
         })}
       </SnsBox>
