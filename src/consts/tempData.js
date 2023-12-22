@@ -451,21 +451,25 @@ export const temp_club_posts_categories = [
     size: "14px",
     padding: "12px",
     tagName: "전체",
+    tagQuery: null,
   },
   {
     size: "14px",
     padding: "12px",
     tagName: "공지사항",
+    tagQuery: "notice",
   },
   {
     size: "14px",
     padding: "12px",
     tagName: "자유",
+    tagQuery: "free",
   },
   {
     size: "14px",
     padding: "12px",
     tagName: "문의사항",
+    tagQuery: "inquiry",
   },
 ];
 

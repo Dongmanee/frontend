@@ -1,32 +1,26 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import ClubPost from "../../components/club/posts/ClubPost";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
-import { flexColumn } from "../../styles/global.style";
-import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
 import { temp_club_posts } from "../../consts/tempData";
-import {
-  handleCategoryToEng,
-  handleCategoryToKor,
-} from "../../utils/findCategory";
+import { flexColumn } from "../../styles/global.style";
 
 export default function ClubPosts() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [postsCategory, setPostsCategory] = useState(
-    handleCategoryToKor(searchParams.get("category"))
+    searchParams.get("category")
   );
 
   const navigate = useNavigate();
 
-  const handleCategory = (tag) => {
-    setPostsCategory(tag);
-
-    const query = handleCategoryToEng(tag);
+  const handleCategory = (query) => {
     query == null
       ? searchParams.delete("category")
       : searchParams.set("category", query);
     setSearchParams(searchParams);
+    setPostsCategory(query);
   };
 
   const onAddPosts = () => {
@@ -34,7 +28,6 @@ export default function ClubPosts() {
   };
 
   useEffect(() => {
-    console.log(postsCategory);
     //Todo. 카테고리 바뀔 때마다 posts 데이터 받기
   }, [postsCategory]);
 
