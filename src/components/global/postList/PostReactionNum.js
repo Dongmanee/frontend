@@ -7,13 +7,14 @@ export default function PostReactionNum({
   isLike,
   commentNum,
   isDetail,
-  size,
+  handleLikeClick,
 }) {
-  const styles = { size };
   return (
     <PostReactionNumLayout>
       <ReactionNumBox $isDetail={isDetail}>
-        {isLike ? <FaHeart /> : <FaRegHeart />}
+        <div onClick={handleLikeClick}>
+          {isLike ? <FaHeart /> : <FaRegHeart />}
+        </div>
         <div>{likesNum}</div>
       </ReactionNumBox>
       <ReactionNumBox $isDetail={isDetail}>
