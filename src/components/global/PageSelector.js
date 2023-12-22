@@ -12,6 +12,7 @@ const PageSelector = ({ pages, top }) => {
 
   const handlePage = (src) => {
     navigate(src);
+
     setActive(src);
   };
 

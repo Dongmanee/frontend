@@ -309,7 +309,7 @@ export const temp_club_pages = [
     ClubHomeCategoryName: "공지사항",
     item: <ClubPost post={temp_club_posts[0]} isClubHome={true} />,
     isMore: true,
-    src: "posts",
+    src: "posts?category=notice",
   },
   {
     ClubHomeCategoryName: "일정",
