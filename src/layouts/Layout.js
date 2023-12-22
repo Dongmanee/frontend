@@ -12,6 +12,7 @@ export default function Layout({
   bottomButton,
   onClickLeft,
   onClickRight,
+  onClickCenter,
 }) {
   return (
     <>
@@ -22,6 +23,7 @@ export default function Layout({
         position={headerPosition}
         onClickLeft={onClickLeft}
         onClickRight={onClickRight}
+        onClickCenter={onClickCenter}
       />
       <Body>{children}</Body>
       {isNavbar && <Navbar />}

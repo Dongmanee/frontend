@@ -15,6 +15,7 @@ export default function Header({
   right,
   onClickLeft,
   onClickRight,
+  onClickCenter,
   position,
 }) {
   const renderLeft = () => {
@@ -46,7 +47,7 @@ export default function Header({
   return (
     <HeaderLayout $position={position}>
       <HeaderItem onClick={onClickLeft}>{renderLeft()}</HeaderItem>
-      <HeaderItem>{center ? center : ""}</HeaderItem>
+      <HeaderItem onClick={onClickCenter}>{center ? center : ""}</HeaderItem>
       <HeaderItem onClick={onClickRight}>{renderRight()}</HeaderItem>
     </HeaderLayout>
   );

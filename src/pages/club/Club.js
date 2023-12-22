@@ -8,8 +8,10 @@ import ClubSettingDropDown from "../../components/club/ClubSettingDropDow";
 import { modifyClubPageSelector } from "../../consts/pageData";
 
 export default function Club() {
+  const navigate = useNavigate();
   const { onPrevPage } = usePrevPage();
   const [isSettingExpanded, setIsSettingExpanded] = useState(false);
+  const [clubName, setClubName] = useState("Import");
   const { clubId } = useParams();
 
   const onClickSettingButton = () => {
@@ -18,13 +20,18 @@ export default function Club() {
 
   const clubPageSelector = modifyClubPageSelector(clubId);
 
+  const handleLogoClick = () => {
+    navigate(`/club/${clubId}`);
+  };
+
   return (
     <Layout
       headerLeft="prev"
-      headerCenter="Import"
+      headerCenter={clubName}
       headerRight="edit"
       onClickLeft={onPrevPage}
       onClickRight={onClickSettingButton}
+      onClickCenter={handleLogoClick}
     >
       {isSettingExpanded && <ClubSettingDropDown />}
       <PageSelector pages={clubPageSelector} />

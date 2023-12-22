@@ -7,7 +7,7 @@ import PostBottom from "../../components/global/postList/PostBottom";
 import Layout from "../../layouts/Layout";
 import { flexColumn } from "../../styles/global.style";
 import usePrevPage from "../../hooks/usePrevPage";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import {
   temp_club_post,
@@ -17,14 +17,22 @@ import {
 
 export default function ClubPostsDetail() {
   const { onPrevPage } = usePrevPage();
+  const navigate = useNavigate();
+  const { clubId } = useParams();
   const [comments, setComments] = useState(temp_club_post_comments);
   const [post, setPost] = useState(temp_club_post);
+  const [clubName, setClubName] = useState("Import");
+
+  const handleLogoClick = () => {
+    navigate(`/club/${clubId}`);
+  };
 
   return (
     <Layout
       headerLeft={"prev"}
-      headerCenter={"Import"}
+      headerCenter={clubName}
       onClickLeft={onPrevPage}
+      onClickCenter={handleLogoClick}
     >
       <ClubPostDetailLayout>
         <ClubPostsDetailHead writer={post.postWriter} date={post.postDate} />
