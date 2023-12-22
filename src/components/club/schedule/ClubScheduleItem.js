@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { flexColumn } from "../../../styles/global.style";
 import ClubScheduleTitle from "./ClubScheduleTitle";
 import ClubScheduleItemContent from "./ClubScheduleItemContent";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ClubScheduleItem({ item }) {
   const isDone = item.scheduleLeftDays < 0;
   const navigate = useNavigate();
+  const { clubId } = useParams();
+
   const openScheduleDetail = (id) => {
-    navigate(`${id}`);
+    navigate(`/club/${clubId}/schedule/${id}`);
   };
   return (
     <ClubScheduleItemsLayout

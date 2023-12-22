@@ -3,13 +3,14 @@ import example from "../../../images/sample.png";
 import PostBody from "../../global/postList/PostBody";
 import PostBottom from "../../global/postList/PostBottom";
 import PostHead from "../../global/postList/PostHead";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ClubPost({ post, isClubHome }) {
   const navigate = useNavigate();
+  const { clubId } = useParams();
 
   const handlePostDetailClick = (id) => {
-    navigate(`${id}`);
+    navigate(`/club/${clubId}/posts/${id}`);
   };
 
   return (

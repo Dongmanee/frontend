@@ -9,21 +9,27 @@ import {
 import useCheckPath from "../../hooks/useCheckPath";
 import { temp_club_album } from "../../consts/tempData";
 import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function ClubAlbum() {
   const { isCheckedPath } = useCheckPath("album");
   const { clubId } = useParams();
   const navigate = useNavigate();
+  const [albumItems, setAlbumItems] = useState();
 
   const handleAlbumImageClick = (postId) => {
     navigate(`/club/${clubId}/posts/${postId}`);
   };
 
+  useEffect(() => {
+    const temp_data = temp_club_album;
+    setAlbumItems(temp_data);
+  });
+
   return (
     <ClubAlbumLayout $isClubhome={isCheckedPath}>
-      {temp_club_album.map((item, idx) => {
-        if (isCheckedPath && idx > 8) return;
-        return (
+      {albumItems &&
+        albumItems.map((item, idx) => (
           <ImageBox
             key={idx}
             $isClubhome={isCheckedPath}
@@ -36,8 +42,7 @@ export default function ClubAlbum() {
               </div>
             )}
           </ImageBox>
-        );
-      })}
+        ))}
     </ClubAlbumLayout>
   );
 }
