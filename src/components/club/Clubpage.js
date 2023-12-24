@@ -4,7 +4,7 @@ import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 export default function ClubPage({
   title,
   isMore,
-  isMember,
+  isMemberNum,
   moreOnClick,
   children,
 }) {
@@ -13,7 +13,7 @@ export default function ClubPage({
       <ClubPageHeadBox>
         <Title>
           {title}
-          {isMember && <div>({isMember})</div>}
+          {isMemberNum && <div>({isMemberNum})</div>}
         </Title>
         {isMore && <Morebtn onClick={moreOnClick}>더보기</Morebtn>}
       </ClubPageHeadBox>

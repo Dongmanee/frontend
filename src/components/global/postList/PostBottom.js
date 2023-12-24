@@ -9,6 +9,7 @@ export default function PostBottom({
   isLike,
   commentNum,
   isDetail,
+  handleLikeClick,
 }) {
   return (
     <PostBottomLayout>
@@ -21,6 +22,7 @@ export default function PostBottom({
       <PostReactionNum
         likesNum={likesNum}
         isLike={isLike}
+        handleLikeClick={handleLikeClick}
         commentNum={commentNum}
         isDetail={isDetail}
       />

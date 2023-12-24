@@ -1,18 +1,26 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import ClubPost from "../../components/club/posts/ClubPost";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
-import { flexColumn } from "../../styles/global.style";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { temp_club_posts } from "../../consts/tempData";
+import { flexColumn } from "../../styles/global.style";
 
 export default function ClubPosts() {
-  const [postsCategory, setPostsCategory] = useState("전체");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [postsCategory, setPostsCategory] = useState(
+    searchParams.get("category")
+  );
+
   const navigate = useNavigate();
 
-  const handleCategory = (tag) => {
-    setPostsCategory(tag);
+  const handleCategory = (query) => {
+    query == null
+      ? searchParams.delete("category")
+      : searchParams.set("category", query);
+    setSearchParams(searchParams);
+    setPostsCategory(query);
   };
 
   const onAddPosts = () => {

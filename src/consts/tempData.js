@@ -309,7 +309,7 @@ export const temp_club_pages = [
     ClubHomeCategoryName: "공지사항",
     item: <ClubPost post={temp_club_posts[0]} isClubHome={true} />,
     isMore: true,
-    src: "posts",
+    src: "posts?category=notice",
   },
   {
     ClubHomeCategoryName: "일정",
@@ -451,21 +451,25 @@ export const temp_club_posts_categories = [
     size: "14px",
     padding: "12px",
     tagName: "전체",
+    tagQuery: null,
   },
   {
     size: "14px",
     padding: "12px",
     tagName: "공지사항",
+    tagQuery: "notice",
   },
   {
     size: "14px",
     padding: "12px",
     tagName: "자유",
+    tagQuery: "free",
   },
   {
     size: "14px",
     padding: "12px",
     tagName: "문의사항",
+    tagQuery: "inquiry",
   },
 ];
 
@@ -636,15 +640,15 @@ export const temp_club_home_info = {
   clubSns: [
     {
       snsName: "instagram",
-      snsUrl: "http://",
+      snsUrl: "https://www.instagram.com/",
     },
     {
       snsName: "naverBlog",
-      snsUrl: "http://",
+      snsUrl: "https://section.blog.naver.com/BlogHome.naver",
     },
     {
       snsName: "naverBand",
-      snsUrl: "http://",
+      snsUrl: "https://band.us/ko",
     },
   ],
   isClubJoinAvailable: {

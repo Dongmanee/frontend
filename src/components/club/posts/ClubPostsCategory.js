@@ -13,11 +13,11 @@ export default function ClubPostsCategory({
   return (
     <ClubPostsCategoryLayout {...styles}>
       {temp_club_posts_categories.map((item, idx) => {
-        const isCurrentTag = currentTag == item.tagName;
+        const isCurrentTag = currentTag == item.tagQuery;
         return (
           <SmallTagBox
             key={idx}
-            onClick={() => onHandle(item.tagName)}
+            onClick={() => onHandle(item.tagQuery)}
             bgColor={
               isCurrentTag ? (props) => props.theme.colors.dark.sm : null
             }
