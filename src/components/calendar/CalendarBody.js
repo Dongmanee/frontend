@@ -9,15 +9,20 @@ import {
   startOfWeek,
 } from "date-fns";
 import styled from "styled-components";
-import { temp_weeks } from "../../consts/tempData";
+import { temp_calender, temp_weeks } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
+import { useState } from "react";
+import { ThisMonthDay } from "./ThisMonthDay";
 
 export default function CalendarBody({ thisMonth, handleDateClick }) {
+  const [monthSchedule, setMonthSchedule] = useState(temp_calender);
+
   const monthStartDay = startOfMonth(thisMonth);
   const monthEndDay = endOfMonth(thisMonth);
   const startDay = startOfWeek(monthStartDay);
   const endDay = endOfWeek(monthEndDay);
-  const today = new Date();
+
+  const handleScheduleFind = (day) => {};
 
   const render = () => {
     let day = startDay;
@@ -28,18 +33,13 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
       for (let i = 0; i < 7; i++) {
         const formattedDay = format(day, "dd");
         if (isSameMonth(day, monthStartDay)) {
-          if (isToday(day))
-            row.push(
-              <Today onClick={() => handleDateClick(formattedDay)} key={formattedDay}>
-                {formattedDay}
-              </Today>
-            );
-          else
-            row.push(
-              <div onClick={() => handleDateClick(formattedDay)} key={formattedDay}>
-                {formattedDay}
-              </div>
-            );
+          row.push(
+            <ThisMonthDay
+              onClick={handleDateClick(formattedDay)}
+              day={formattedDay}
+              isToday={isToday(day)}
+            />
+          );
         } else
           row.push(
             <AnotherMonthDay
@@ -92,9 +92,4 @@ const WeekRowHead = styled(WeekRow)`
 
 const AnotherMonthDay = styled.div`
   color: lightgray;
-`;
-
-const Today = styled.div`
-  color: ${(props) => props.theme.colors.orange.md};
-  font-weight: ${(props) => props.theme.weights.xl};
 `;

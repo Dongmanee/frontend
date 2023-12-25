@@ -755,3 +755,10 @@ export const temp_join_questions = [
     question: "동아리 질문1.",
   },
 ];
+
+export const temp_calender = [
+  {
+    calenderDate: "2023.12.12",
+    calenderSchedule: [{ name: "Import" }],
+  },
+];

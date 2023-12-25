@@ -15,13 +15,16 @@ export default function Calendar() {
   const handleMonthPrev = () => {
     setThisMonth(subMonths(thisMonth, 1));
   };
+
   const handleMonthNext = () => {
     setThisMonth(addMonths(thisMonth, 1));
   };
+
   const handleDateClick = (day) => {
     setDetailOpen(true);
     setSelectedDate(day);
   };
+
   return (
     <Layout headerLeft={"prev"}>
       <CalendarLayout $isDetailOpen={detailOpen}>
@@ -32,7 +35,11 @@ export default function Calendar() {
           handleMonthNext={handleMonthNext}
         />
         <CalendarBody thisMonth={thisMonth} handleDateClick={handleDateClick} />
-        {detailOpen ? <CalendarDetail selectedDate={selectedDate} /> : <Navbar />}
+        {detailOpen ? (
+          <CalendarDetail selectedDate={selectedDate} />
+        ) : (
+          <Navbar />
+        )}
       </CalendarLayout>
     </Layout>
   );
