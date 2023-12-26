@@ -2,7 +2,7 @@ import { addMonths, subMonths } from "date-fns";
 import { useState } from "react";
 import styled from "styled-components";
 import CalendarBody from "../components/calendar/CalendarBody";
-import CalendarDetail from "../components/calendar/CalendarDetail";
+import CalendarBottomSheet from "../components/calendar/CalendarBottomSheet";
 import CalendarHead from "../components/calendar/CalendarHead";
 import Navbar from "../components/global/Navbar";
 import Layout from "../layouts/Layout";
@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout";
 export default function Calendar() {
   const [thisMonth, setThisMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [detailOpen, setDetailOpen] = useState(false);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
 
   const handleMonthPrev = () => {
     setThisMonth(subMonths(thisMonth, 1));
@@ -21,22 +21,25 @@ export default function Calendar() {
   };
 
   const handleDateClick = (day) => {
-    setDetailOpen(true);
+    setIsDetailOpen(true);
     setSelectedDate(day);
   };
 
   return (
     <Layout headerLeft={"prev"}>
-      <CalendarLayout $isDetailOpen={detailOpen}>
+      <CalendarLayout $isDetailOpen={isDetailOpen}>
         <CalendarHead
           thisMonth={thisMonth}
-          isDetailOpen={detailOpen}
+          isDetailOpen={isDetailOpen}
           handleMonthPrev={handleMonthPrev}
           handleMonthNext={handleMonthNext}
         />
         <CalendarBody thisMonth={thisMonth} handleDateClick={handleDateClick} />
-        {detailOpen ? (
-          <CalendarDetail selectedDate={selectedDate} />
+        {isDetailOpen ? (
+          <CalendarBottomSheet
+            isDetailOpen={isDetailOpen}
+            setIsDetailOpen={setIsDetailOpen}
+          />
         ) : (
           <Navbar />
         )}

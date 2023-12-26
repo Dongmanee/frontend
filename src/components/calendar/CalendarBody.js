@@ -35,7 +35,7 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
         if (isSameMonth(day, monthStartDay)) {
           row.push(
             <ThisMonthDay
-              onClick={handleDateClick(formattedDay)}
+              onClick={() => handleDateClick(formattedDay)}
               day={formattedDay}
               isToday={isToday(day)}
             />
