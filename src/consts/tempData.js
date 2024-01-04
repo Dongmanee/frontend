@@ -769,3 +769,34 @@ export const temp_calender = [
     calenderSchedule: [{ name: "Import", color: "orange" }],
   },
 ];
+
+export const temp_calendar_detail = [
+  {
+    clubName: "Import",
+    clubId: "club111",
+    clubColor: "yellow",
+    scheduleDate: "09:00:00",
+    scheduleName: "미니 회식",
+  },
+  {
+    clubName: "Import",
+    clubId: "club111",
+    clubColor: "yellow",
+    scheduleDate: "09:00:00",
+    scheduleName: "중간 회식",
+  },
+  {
+    clubName: "Import",
+    clubId: "club111",
+    clubColor: "yellow",
+    scheduleDate: "09:00:00",
+    scheduleName: "기말 회식",
+  },
+  {
+    clubName: "Import",
+    clubId: "club111",
+    clubColor: "yellow",
+    scheduleDate: "09:00:00",
+    scheduleName: "미니 회식",
+  },
+];

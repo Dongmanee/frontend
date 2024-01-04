@@ -2,37 +2,42 @@ import React from "react";
 import styled from "styled-components";
 import { flexColumn } from "../../styles/global.style";
 
-export default function DetailBox() {
+export default function DetailBox({ schedule }) {
   return (
     <DetailBoxLayout>
-      <DetailBoxColor />
-      <Detail>
-        <div>AM 9:00</div>
-        <div>치과 정기 검진 예약</div>
-      </Detail>
+      {schedule && (
+        <>
+          <DetailBoxColor $clubColor={schedule.clubColor} />
+          <Detail>
+            <div>{schedule.scheduleDate}</div>
+            <div>{schedule.scheduleName}</div>
+          </Detail>
+        </>
+      )}
     </DetailBoxLayout>
   );
 }
 
 const DetailBoxLayout = styled.div`
-  width: 90%;
-  height: 60px;
+  width: 100%;
+  height: 70px;
   display: flex;
   margin: 0 auto;
   border-radius: 20px;
-  box-shadow: 1px 1px 7px black;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background-color: white;
 `;
 
 const Detail = styled.div`
   ${flexColumn};
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 15px;
 
   font-size: ${(props) => props.theme.sizes.sm};
   & > div:last-child {
+    font-size: ${(props) => props.theme.sizes.md};
     font-weight: ${(props) => props.theme.weights.xl};
   }
 `;
@@ -42,5 +47,5 @@ const DetailBoxColor = styled.div`
   height: 100%;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
-  background-color: green;
+  background-color: ${(props) => props.$clubColor};
 `;

@@ -40,11 +40,10 @@ const CalendarBottomSheetLayout = styled.div`
 
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
   height: ${BOTTOM_SHEET_HEIGHT}px;
+  box-shadow: 0 -8px 8px -8px rgba(0, 0, 0, 0.25);
 
-  background: #3742b2;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: lightgray;
 
   ${(props) => {
     return (
@@ -70,6 +69,6 @@ const BottomSheetHeader = styled.div`
   width: 32px;
   height: 4px;
   border-radius: 2px;
-  background-color: #d0d0d0;
+  background-color: gray;
   margin: auto;
 `;
