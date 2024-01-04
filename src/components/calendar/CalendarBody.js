@@ -33,16 +33,15 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
 
     while (day <= endDay) {
       for (let i = 0; i < 7; i++) {
-        const formattedDay = format(day, "dd");
-        const formattedISO = format(day, "yyyy-MM-dd");
+        const formattedDate = format(day, "yyyy-MM-dd");
         const daySchedule = monthSchedule.find(
-          (item) => item.calenderDate == formattedISO
+          (item) => item.calenderDate == formattedDate
         );
 
         row.push(
           <ThisMonthDay
-            onClick={() => handleDateClick(formattedDay)}
-            day={formattedDay}
+            onClick={() => handleDateClick(formattedDate)}
+            date={formattedDate}
             isToday={isToday(day)}
             isThisMonth={isSameMonth(day, monthStartDay)}
             daySchedule={daySchedule?.calenderSchedule}
@@ -87,8 +86,4 @@ const WeekRow = styled.div`
 
 const WeekRowHead = styled(WeekRow)`
   font-weight: ${(props) => props.theme.weights.xl};
-`;
-
-const AnotherMonthDay = styled.div`
-  color: lightgray;
 `;

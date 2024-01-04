@@ -1,15 +1,26 @@
+import { format, isToday } from "date-fns";
+import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
+import { flexCenter } from "../../styles/global.style";
 
 export function ThisMonthDay({
   onClick,
-  day,
+  date,
   isToday,
   isThisMonth,
   daySchedule,
 }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedDate = searchParams.get("date");
+  const day = date.slice(-2).replace(/(^0+)/, "");
+
   return (
-    <ThisMonthDayLayout onClick={onClick} onFocus={() => console.log("아아")}>
-      <TodayBox $isToday={isToday} $isThisMonth={isThisMonth}>
+    <ThisMonthDayLayout onClick={onClick} $isClickDisabled={!isThisMonth}>
+      <TodayBox
+        $isSelected={selectedDate == date}
+        $isToday={isToday}
+        $isThisMonth={isThisMonth}
+      >
         {day}
       </TodayBox>
       {daySchedule && (
@@ -28,6 +39,8 @@ const ThisMonthDayLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  pointer-events: ${(props) => props.$isClickDisabled && "none"};
 `;
 
 const TodayBox = styled.div`
@@ -37,12 +50,19 @@ const TodayBox = styled.div`
       : props.$isThisMonth
       ? "black"
       : "lightgray"};
+  padding: 8px;
+  width: 20px;
+  height: 20px;
+  ${flexCenter}
+  border-radius: 50%;
+  background-color: ${(props) =>
+    props.$isSelected ? "lightgray" : "transparent"};
   font-weight: ${(props) => (props.$isToday ? props.theme.weights.xl : "500")};
 `;
 
 const ScheduleDotBox = styled.div`
   position: absolute;
-  top: 25px;
+  top: 40px;
   display: flex;
   gap: 4px;
   justify-content: center;

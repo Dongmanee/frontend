@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { MAX_Y, MIN_Y } from "../consts/consts";
+import { useSearchParams } from "react-router-dom";
 
 export function useBottomSheet({ isBottomSheetOpen, setIsBottomSheetOpen }) {
   const sheetRef = useRef(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const metrics = useRef({
     touchStart: {
@@ -55,6 +57,8 @@ export function useBottomSheet({ isBottomSheetOpen, setIsBottomSheetOpen }) {
       if (nextSheetY > MAX_Y) {
         nextSheetY = MAX_Y;
         setIsBottomSheetOpen(false);
+        searchParams.delete("date");
+        setSearchParams(searchParams);
       }
 
       if (sheetRef.current) {

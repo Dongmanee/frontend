@@ -6,11 +6,13 @@ import CalendarBottomSheet from "../components/calendar/CalendarBottomSheet";
 import CalendarHead from "../components/calendar/CalendarHead";
 import Navbar from "../components/global/Navbar";
 import Layout from "../layouts/Layout";
+import { useSearchParams } from "react-router-dom";
 
 export default function Calendar() {
   const [thisMonth, setThisMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [isDetailOpen, setIsDetailOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleMonthPrev = () => {
     setThisMonth(subMonths(thisMonth, 1));
@@ -23,6 +25,8 @@ export default function Calendar() {
   const handleDateClick = (day) => {
     setIsDetailOpen(true);
     setSelectedDate(day);
+    searchParams.set("date", day);
+    setSearchParams(searchParams);
   };
 
   return (
