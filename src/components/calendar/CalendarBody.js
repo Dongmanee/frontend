@@ -11,18 +11,20 @@ import {
 import styled from "styled-components";
 import { temp_calender, temp_weeks } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThisMonthDay } from "./ThisMonthDay";
 
 export default function CalendarBody({ thisMonth, handleDateClick }) {
-  const [monthSchedule, setMonthSchedule] = useState(temp_calender);
+  const [monthSchedule, setMonthSchedule] = useState();
 
   const monthStartDay = startOfMonth(thisMonth);
   const monthEndDay = endOfMonth(thisMonth);
   const startDay = startOfWeek(monthStartDay);
   const endDay = endOfWeek(monthEndDay);
 
-  const handleScheduleFind = (day) => {};
+  useEffect(() => {
+    setMonthSchedule(temp_calender);
+  });
 
   const render = () => {
     let day = startDay;
@@ -32,23 +34,20 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
     while (day <= endDay) {
       for (let i = 0; i < 7; i++) {
         const formattedDay = format(day, "dd");
-        if (isSameMonth(day, monthStartDay)) {
-          row.push(
-            <ThisMonthDay
-              onClick={() => handleDateClick(formattedDay)}
-              day={formattedDay}
-              isToday={isToday(day)}
-            />
-          );
-        } else
-          row.push(
-            <AnotherMonthDay
-              onClick={() => handleDateClick(formattedDay)}
-              key={formattedDay}
-            >
-              {formattedDay}
-            </AnotherMonthDay>
-          );
+        const formattedISO = format(day, "yyyy-MM-dd");
+        const daySchedule = monthSchedule.find(
+          (item) => item.calenderDate == formattedISO
+        );
+
+        row.push(
+          <ThisMonthDay
+            onClick={() => handleDateClick(formattedDay)}
+            day={formattedDay}
+            isToday={isToday(day)}
+            isThisMonth={isSameMonth(day, monthStartDay)}
+            daySchedule={daySchedule?.calenderSchedule}
+          />
+        );
         day = addDays(day, 1);
       }
       col.push(row);
@@ -64,10 +63,10 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
           <div key={idx}>{item.name}</div>
         ))}
       </WeekRowHead>
-
-      {render().map((col, colIdx) => (
-        <WeekRow key={colIdx}>{col.map((day) => day)}</WeekRow>
-      ))}
+      {monthSchedule &&
+        render().map((col, colIdx) => (
+          <WeekRow key={colIdx}>{col.map((day) => day)}</WeekRow>
+        ))}
     </CalendarBodyLayout>
   );
 }

@@ -758,7 +758,14 @@ export const temp_join_questions = [
 
 export const temp_calender = [
   {
-    calenderDate: "2023.12.12",
-    calenderSchedule: [{ name: "Import" }],
+    calenderDate: "2024-01-18",
+    calenderSchedule: [
+      { name: "Import", color: "red" },
+      { name: "Hearbeat", color: "pink" },
+    ],
+  },
+  {
+    calenderDate: "2024-01-10",
+    calenderSchedule: [{ name: "Import", color: "orange" }],
   },
 ];
