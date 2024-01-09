@@ -760,13 +760,13 @@ export const temp_calender = [
   {
     calenderDate: "2024-01-18",
     calenderSchedule: [
-      { name: "Import", color: "red" },
-      { name: "Hearbeat", color: "pink" },
+      { clubName: "Import", color: "red" },
+      { clubName: "Hearbeat", color: "pink" },
     ],
   },
   {
     calenderDate: "2024-01-10",
-    calenderSchedule: [{ name: "Import", color: "orange" }],
+    calenderSchedule: [{ clubName: "Import", color: "orange" }],
   },
 ];
 
@@ -775,28 +775,32 @@ export const temp_calendar_detail = [
     clubName: "Import",
     clubId: "club111",
     clubColor: "yellow",
-    scheduleDate: "09:00:00",
+    scheduleId: "123",
     scheduleName: "미니 회식",
+    scheduleTime: "09:00:00",
   },
   {
     clubName: "Import",
     clubId: "club111",
     clubColor: "yellow",
-    scheduleDate: "09:00:00",
+    scheduleId: "123",
     scheduleName: "중간 회식",
+    scheduleTime: "09:00:00",
   },
   {
     clubName: "Import",
     clubId: "club111",
     clubColor: "yellow",
-    scheduleDate: "09:00:00",
+    scheduleId: "123",
     scheduleName: "기말 회식",
+    scheduleTime: "09:00:00",
   },
   {
     clubName: "Import",
     clubId: "club111",
     clubColor: "yellow",
-    scheduleDate: "09:00:00",
+    scheduleId: "123",
     scheduleName: "미니 회식",
+    scheduleTime: "09:00:00",
   },
 ];

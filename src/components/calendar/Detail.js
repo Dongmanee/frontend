@@ -1,15 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { flexColumn } from "../../styles/global.style";
+import { useNavigate } from "react-router-dom";
 
 export default function DetailBox({ schedule }) {
+  const navigate = useNavigate();
+  const handleScheduleClick = (clubId, scheduleId) => {
+    navigate(`/club/${clubId}/schedule/${scheduleId}`);
+  };
+
   return (
-    <DetailBoxLayout>
+    <DetailBoxLayout
+      onClick={() => handleScheduleClick(schedule.clubId, schedule.scheduleId)}
+    >
       {schedule && (
         <>
           <DetailBoxColor $clubColor={schedule.clubColor} />
           <Detail>
-            <div>{schedule.scheduleDate}</div>
+            <div>{schedule.scheduleTime}</div>
             <div>{schedule.scheduleName}</div>
           </Detail>
         </>
