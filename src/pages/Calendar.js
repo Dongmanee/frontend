@@ -1,18 +1,17 @@
-import { addMonths, subMonths } from "date-fns";
+import { addMonths, format, subMonths } from "date-fns";
 import { useState } from "react";
 import styled from "styled-components";
 import CalendarBody from "../components/calendar/CalendarBody";
-import CalendarBottomSheet from "../components/calendar/CalendarBottomSheet";
+import CalendarDetail from "../components/calendar/CalendarDetail";
 import CalendarHead from "../components/calendar/CalendarHead";
 import Navbar from "../components/global/Navbar";
 import Layout from "../layouts/Layout";
-import { useSearchParams } from "react-router-dom";
 
 export default function Calendar() {
   const [thisMonth, setThisMonth] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [isDetailOpen, setIsDetailOpen] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedDate, setSelectedDate] = useState(
+    format(new Date(), "yyyy-MM-dd")
+  );
 
   const handleMonthPrev = () => {
     setThisMonth(subMonths(thisMonth, 1));
@@ -23,35 +22,25 @@ export default function Calendar() {
   };
 
   const handleDateClick = (day) => {
-    setIsDetailOpen(true);
     setSelectedDate(day);
-    searchParams.set("date", day);
-    setSearchParams(searchParams);
   };
 
   return (
-    <Layout headerLeft={"prev"}>
-      <CalendarLayout $isDetailOpen={isDetailOpen}>
-        <CalendarHead
-          thisMonth={thisMonth}
-          isDetailOpen={isDetailOpen}
-          handleMonthPrev={handleMonthPrev}
-          handleMonthNext={handleMonthNext}
-        />
-        <CalendarBody thisMonth={thisMonth} handleDateClick={handleDateClick} />
-        {isDetailOpen ? (
-          <CalendarBottomSheet
-            isDetailOpen={isDetailOpen}
-            setIsDetailOpen={setIsDetailOpen}
-          />
-        ) : (
-          <Navbar />
-        )}
-      </CalendarLayout>
+    <Layout>
+      <CalendarHead
+        thisMonth={thisMonth}
+        handleMonthPrev={handleMonthPrev}
+        handleMonthNext={handleMonthNext}
+      />
+      <CalendarBody
+        thisMonth={thisMonth}
+        selectedDate={selectedDate}
+        handleDateClick={handleDateClick}
+      />
+      <CalendarDetail selectedDate={selectedDate} />
+      <Navbar />
     </Layout>
   );
 }
 
-const CalendarLayout = styled.div`
-  margin-top: ${(props) => (props.$isDetailOpen ? "0" : "5vh")};
-`;
+const CalendarLayout = styled.div``;

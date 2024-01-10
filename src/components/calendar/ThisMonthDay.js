@@ -8,16 +8,15 @@ export function ThisMonthDay({
   date,
   isToday,
   isThisMonth,
+  isSelected,
   daySchedule,
 }) {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const selectedDate = searchParams.get("date");
   const day = date.slice(-2).replace(/(^0+)/, "");
 
   return (
     <ThisMonthDayLayout onClick={onClick} $isClickDisabled={!isThisMonth}>
       <TodayBox
-        $isSelected={selectedDate == date}
+        $isSelected={isSelected}
         $isToday={isToday}
         $isThisMonth={isThisMonth}
       >

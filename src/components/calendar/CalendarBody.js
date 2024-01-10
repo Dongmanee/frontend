@@ -14,9 +14,12 @@ import { flexColumn } from "../../styles/global.style";
 import { useState, useEffect } from "react";
 import { ThisMonthDay } from "./ThisMonthDay";
 
-export default function CalendarBody({ thisMonth, handleDateClick }) {
+export default function CalendarBody({
+  thisMonth,
+  selectedDate,
+  handleDateClick,
+}) {
   const [monthSchedule, setMonthSchedule] = useState();
-
   const monthStartDay = startOfMonth(thisMonth);
   const monthEndDay = endOfMonth(thisMonth);
   const startDay = startOfWeek(monthStartDay);
@@ -37,6 +40,7 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
         const daySchedule = monthSchedule.find(
           (item) => item.calenderDate == formattedDate
         );
+        console.log("ㅇㅇ");
 
         row.push(
           <ThisMonthDay
@@ -44,6 +48,7 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
             date={formattedDate}
             isToday={isToday(day)}
             isThisMonth={isSameMonth(day, monthStartDay)}
+            isSelected={selectedDate == formattedDate}
             daySchedule={daySchedule?.calenderSchedule}
           />
         );
@@ -73,6 +78,7 @@ export default function CalendarBody({ thisMonth, handleDateClick }) {
 const CalendarBodyLayout = styled.div`
   width: 100%;
   height: 40vh;
+  margin-bottom: 2vh;
   ${flexColumn};
 `;
 
