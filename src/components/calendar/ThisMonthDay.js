@@ -25,7 +25,7 @@ export function ThisMonthDay({
       {daySchedule && (
         <ScheduleDotBox>
           {daySchedule.map((schedule, idx) => (
-            <ScheduleDot $dotColor={schedule.color}></ScheduleDot>
+            <ScheduleDot $dotColor={schedule.clubColor}></ScheduleDot>
           ))}
         </ScheduleDotBox>
       )}

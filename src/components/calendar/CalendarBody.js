@@ -9,7 +9,7 @@ import {
   startOfWeek,
 } from "date-fns";
 import styled from "styled-components";
-import { temp_calender, temp_weeks } from "../../consts/tempData";
+import { temp_calendar_detail, temp_weeks } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
 import { useState, useEffect } from "react";
 import { ThisMonthDay } from "./ThisMonthDay";
@@ -26,7 +26,7 @@ export default function CalendarBody({
   const endDay = endOfWeek(monthEndDay);
 
   useEffect(() => {
-    setMonthSchedule(temp_calender);
+    setMonthSchedule(temp_calendar_detail);
   });
 
   const render = () => {
@@ -37,10 +37,10 @@ export default function CalendarBody({
     while (day <= endDay) {
       for (let i = 0; i < 7; i++) {
         const formattedDate = format(day, "yyyy-MM-dd");
-        const daySchedule = monthSchedule.find(
-          (item) => item.calenderDate == formattedDate
+        const daySchedule = monthSchedule.filter(
+          (item) => item.scheduleDate.slice(0, 10) == formattedDate
         );
-        console.log("ㅇㅇ");
+        console.log(daySchedule);
 
         row.push(
           <ThisMonthDay
@@ -49,7 +49,7 @@ export default function CalendarBody({
             isToday={isToday(day)}
             isThisMonth={isSameMonth(day, monthStartDay)}
             isSelected={selectedDate == formattedDate}
-            daySchedule={daySchedule?.calenderSchedule}
+            daySchedule={daySchedule}
           />
         );
         day = addDays(day, 1);
