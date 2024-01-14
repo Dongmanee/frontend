@@ -8,15 +8,14 @@ import {
   startOfMonth,
   startOfWeek,
 } from "date-fns";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { temp_calendar_detail, temp_weeks } from "../../consts/tempData";
+import { temp_weeks } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
-import { useState, useEffect } from "react";
-import { ThisMonthDay } from "./ThisMonthDay";
 import CalendarDetail from "./CalendarDetail";
+import { ThisMonthDay } from "./ThisMonthDay";
 
-export default function CalendarBody({ thisMonth }) {
-  const [monthSchedule, setMonthSchedule] = useState();
+export default function CalendarBody({ thisMonth, monthSchedule }) {
   const [selectedDate, setSelectedDate] = useState(
     format(new Date(), "yyyy-MM-dd")
   );
@@ -32,8 +31,12 @@ export default function CalendarBody({ thisMonth }) {
   };
 
   useEffect(() => {
-    setMonthSchedule(temp_calendar_detail);
-  });
+    setDaySchedule(
+      monthSchedule.filter(
+        (item) => item.scheduleDate.slice(0, 10) == selectedDate
+      )
+    );
+  }, []);
 
   const render = () => {
     let day = startDay;

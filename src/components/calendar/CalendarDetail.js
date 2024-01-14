@@ -13,7 +13,7 @@ export default function CalendarDetail({ selectedDate, daySchedule }) {
       </CalendarDetailTitle>
       {daySchedule &&
         daySchedule.map((schedule, idx) => <DetailBox schedule={schedule} />)}
-      {daySchedule.length == 0 && (
+      {daySchedule && daySchedule.length == 0 && (
         <NoScheduleBox>일정이 없습니다</NoScheduleBox>
       )}
     </CalendarDetailLayout>
