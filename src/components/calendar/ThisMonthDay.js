@@ -1,5 +1,3 @@
-import { format, isToday } from "date-fns";
-import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import { flexCenter } from "../../styles/global.style";
 

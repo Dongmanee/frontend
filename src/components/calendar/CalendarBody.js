@@ -13,17 +13,23 @@ import { temp_calendar_detail, temp_weeks } from "../../consts/tempData";
 import { flexColumn } from "../../styles/global.style";
 import { useState, useEffect } from "react";
 import { ThisMonthDay } from "./ThisMonthDay";
+import CalendarDetail from "./CalendarDetail";
 
-export default function CalendarBody({
-  thisMonth,
-  selectedDate,
-  handleDateClick,
-}) {
+export default function CalendarBody({ thisMonth }) {
   const [monthSchedule, setMonthSchedule] = useState();
+  const [selectedDate, setSelectedDate] = useState(
+    format(new Date(), "yyyy-MM-dd")
+  );
+  const [daySchedule, setDaySchedule] = useState();
   const monthStartDay = startOfMonth(thisMonth);
   const monthEndDay = endOfMonth(thisMonth);
   const startDay = startOfWeek(monthStartDay);
   const endDay = endOfWeek(monthEndDay);
+
+  const handleDateClick = (day, daySchedule) => {
+    setSelectedDate(day);
+    setDaySchedule(daySchedule);
+  };
 
   useEffect(() => {
     setMonthSchedule(temp_calendar_detail);
@@ -40,11 +46,10 @@ export default function CalendarBody({
         const daySchedule = monthSchedule.filter(
           (item) => item.scheduleDate.slice(0, 10) == formattedDate
         );
-        console.log(daySchedule);
 
         row.push(
           <ThisMonthDay
-            onClick={() => handleDateClick(formattedDate)}
+            onClick={() => handleDateClick(formattedDate, daySchedule)}
             date={formattedDate}
             isToday={isToday(day)}
             isThisMonth={isSameMonth(day, monthStartDay)}
@@ -61,24 +66,27 @@ export default function CalendarBody({
   };
 
   return (
-    <CalendarBodyLayout>
-      <WeekRowHead>
-        {temp_weeks.map((item, idx) => (
-          <div key={idx}>{item.name}</div>
-        ))}
-      </WeekRowHead>
-      {monthSchedule &&
-        render().map((col, colIdx) => (
-          <WeekRow key={colIdx}>{col.map((day) => day)}</WeekRow>
-        ))}
-    </CalendarBodyLayout>
+    <>
+      <CalendarBodyLayout>
+        <WeekRowHead>
+          {temp_weeks.map((item, idx) => (
+            <div key={idx}>{item.name}</div>
+          ))}
+        </WeekRowHead>
+        {monthSchedule &&
+          render().map((col, colIdx) => (
+            <WeekRow key={colIdx}>{col.map((day) => day)}</WeekRow>
+          ))}
+      </CalendarBodyLayout>
+      <CalendarDetail selectedDate={selectedDate} daySchedule={daySchedule} />
+    </>
   );
 }
 
 const CalendarBodyLayout = styled.div`
   width: 100%;
   height: 40vh;
-  margin-bottom: 2vh;
+  margin-bottom: 20px;
   ${flexColumn};
 `;
 

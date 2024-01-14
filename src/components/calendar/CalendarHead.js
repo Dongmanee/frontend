@@ -24,7 +24,7 @@ export default function CalendarHead({
 
 const CalendarHeadLayout = styled.div`
   width: 100%;
-  height: 100px;
+  margin-bottom: 30px;
   ${flexCenter};
   gap: 30px;
 

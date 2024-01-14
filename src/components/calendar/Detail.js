@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { flexCenter, flexColumn } from "../../styles/global.style";
-import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { flexColumn } from "../../styles/global.style";
 
 export default function DetailBox({ schedule }) {
   const navigate = useNavigate();
@@ -10,7 +10,6 @@ export default function DetailBox({ schedule }) {
     navigate(`/club/${clubId}/schedule/${scheduleId}`);
   };
   const time = format(new Date(schedule.scheduleDate), "a hh:mm");
-  console.log(time);
 
   return (
     <DetailBoxLayout

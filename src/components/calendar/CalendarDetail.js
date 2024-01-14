@@ -1,27 +1,21 @@
 import styled from "styled-components";
 import { flexColumn } from "../../styles/global.style";
-import DetailBox from "./Detail";
-import { useEffect, useState } from "react";
-import { temp_calendar_detail } from "../../consts/tempData";
 import { getDayOfWeek } from "../../utils/getDayOfWeek";
+import DetailBox from "./Detail";
 
-export default function CalendarDetail({ selectedDate }) {
-  const [schedules, setSchedules] = useState();
+export default function CalendarDetail({ selectedDate, daySchedule }) {
   const day = getDayOfWeek(selectedDate);
-
-  useEffect(() => {
-    setSchedules(temp_calendar_detail);
-  });
-
-  console.log(selectedDate);
 
   return (
     <CalendarDetailLayout>
       <CalendarDetailTitle>
         {selectedDate} ({day})
       </CalendarDetailTitle>
-      {schedules &&
-        schedules.map((schedule, idx) => <DetailBox schedule={schedule} />)}
+      {daySchedule &&
+        daySchedule.map((schedule, idx) => <DetailBox schedule={schedule} />)}
+      {daySchedule.length == 0 && (
+        <NoScheduleBox>일정이 없습니다</NoScheduleBox>
+      )}
     </CalendarDetailLayout>
   );
 }
@@ -35,4 +29,9 @@ const CalendarDetailLayout = styled.div`
 const CalendarDetailTitle = styled.div`
   font-weight: ${(props) => props.theme.weights.xl};
   font-size: ${(props) => props.theme.sizes.xxl};
+`;
+
+const NoScheduleBox = styled.div`
+  margin-top: 10px;
+  font-size: ${(props) => props.theme.sizes.xl};
 `;
