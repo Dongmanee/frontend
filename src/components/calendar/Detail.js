@@ -1,46 +1,63 @@
+import { format } from "date-fns";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { flexColumn } from "../../styles/global.style";
 
-export default function DetailBox() {
+export default function DetailBox({ schedule }) {
+  const navigate = useNavigate();
+  const handleScheduleClick = (clubId, scheduleId) => {
+    navigate(`/club/${clubId}/schedule/${scheduleId}`);
+  };
+  const time = format(new Date(schedule.scheduleDate), "a hh:mm");
+
   return (
-    <DetailBoxLayout>
-      <DetailBoxColor />
-      <Detail>
-        <div>AM 9:00</div>
-        <div>치과 정기 검진 예약</div>
-      </Detail>
+    <DetailBoxLayout
+      onClick={() => handleScheduleClick(schedule.clubId, schedule.scheduleId)}
+    >
+      {schedule && (
+        <>
+          <div>{time}</div>
+          <DetailBoxColor $clubColor={schedule.clubColor} />
+          <Detail>
+            <div>{schedule.clubName}</div>
+            <div>{schedule.scheduleName}</div>
+          </Detail>
+        </>
+      )}
     </DetailBoxLayout>
   );
 }
 
 const DetailBoxLayout = styled.div`
   width: 90%;
-  height: 60px;
-  display: flex;
+  height: 50px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
   border-radius: 20px;
-  box-shadow: 1px 1px 7px black;
+  gap: 15px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
   background-color: white;
 `;
 
 const Detail = styled.div`
-  ${flexColumn};
+  ${flexColumn}
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   box-sizing: border-box;
-  padding: 10px;
-
-  font-size: ${(props) => props.theme.sizes.sm};
+  font-size: ${(props) => props.theme.sizes.xs};
   & > div:last-child {
+    font-size: ${(props) => props.theme.sizes.md};
     font-weight: ${(props) => props.theme.weights.xl};
   }
 `;
 
 const DetailBoxColor = styled.div`
-  width: 5%;
+  width: 4px;
   height: 100%;
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-  background-color: green;
+  /* border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit; */
+  background-color: ${(props) => props.$clubColor};
 `;
