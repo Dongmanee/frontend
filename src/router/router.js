@@ -35,6 +35,7 @@ import FriendProfile from "../pages/user/FriendProfile";
 import Setting from "../pages/user/Setting";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
 import Calendar from "../pages/Calendar";
+import NonMembersInitial from "../pages/NonMembersInitial";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,7 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup />,
       },
+      { path: "/univs", element: <NonMembersInitial /> },
       {
         path: "/posts",
         element: <Posts />,
