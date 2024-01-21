@@ -8,8 +8,11 @@ import { loginSchema } from "../../../utils/validationSchema";
 import CustomButton from "../../global/CustomButton";
 import CustomInput from "../../global/CustomInputs";
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
+import { setCookie } from "../../../utils/cookies";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -20,7 +23,18 @@ export default function LoginForm() {
   });
 
   const onLogin = ({ email, password }) => {
-    login({ email, password }).then((res) => console.log(res));
+    login({ email, password }).then((res) =>  {
+      if (res.status === 200){
+        setCookie('accessToken', res.data.data.accessToken, {
+          path:'/',
+        });
+        navigate('/posts')
+      }
+      else {
+        console.log('로그인 에러')
+      }
+      
+    });
   };
 
   const login_inputs = [
