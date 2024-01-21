@@ -8,6 +8,7 @@ import {
 import styled from "styled-components";
 import logo from "../../images/logo.png";
 import { flexJBetween } from "../../styles/global.style";
+import { IoLogInOutline } from "react-icons/io5";
 
 export default function Header({
   left,
@@ -39,6 +40,8 @@ export default function Header({
         return <MdMoreHoriz size={28} />;
       case "check":
         return <MdCheck size={28} />;
+      case "login":
+        return <IoLogInOutline size={30} />;
       default:
         return;
     }
