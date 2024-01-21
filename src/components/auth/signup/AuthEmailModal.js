@@ -21,14 +21,15 @@ export default function AuthEmaillModal({
       if (res.status == "200") {
         setAuthEmailModal(false);
         setAuthenticatedCode(res.data.data.code);
-        console.log(enteredCode);
       }
     });
   };
 
   useEffect(() => {
-    const result = sendCode(email).then((res) => console.log(res));
-  }, []);
+    if(!!email){
+      sendCode(email).then(res => console.log(res)).catch(err => console.log(err))
+    }
+  },[email])
 
   return (
     <ModalLayout setModal={setAuthEmailModal}>
