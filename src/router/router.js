@@ -5,6 +5,7 @@ import UserProfileEdit from "../components/profile/Edit";
 import Friends from "../components/profile/Friends";
 import UserJoinClub from "../components/profile/JoinClub";
 import UserPosts from "../components/profile/Posts";
+import Calendar from "../pages/Calendar";
 import ChatDetail from "../pages/ChatDetail";
 import Chats from "../pages/Chats";
 import Clubs from "../pages/Clubs";
@@ -13,6 +14,7 @@ import Posts from "../pages/Posts";
 import Profile from "../pages/Profile";
 import RegisterClub from "../pages/RegisterClub";
 import Signup from "../pages/Signup";
+import Univs from "../pages/Univs";
 import Club from "../pages/club/Club";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubHome from "../pages/club/ClubHome";
@@ -34,8 +36,6 @@ import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import FriendProfile from "../pages/user/FriendProfile";
 import Setting from "../pages/user/Setting";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
-import Calendar from "../pages/Calendar";
-import NonMembersInitial from "../pages/NonMembersInitial";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +55,6 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup />,
       },
-      { path: "/univs", element: <NonMembersInitial /> },
       {
         path: "/posts",
         element: <Posts />,
@@ -72,6 +71,7 @@ const router = createBrowserRouter([
         path: "/club/:clubId/register/edit",
         element: <RegisterClub />,
       },
+      //동아리
       {
         path: "/club/:clubId",
         element: <Club />,
@@ -99,6 +99,22 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: "/club/:clubId/posts/:postId",
+        element: <ClubPostsDetail />,
+      },
+      {
+        path: "club/:clubId/posts/edit/:postId",
+        element: <ClubPostsEdit />,
+      },
+      {
+        path: "/club/:clubId/posts/add",
+        element: <ClubPostsEdit />,
+      },
+      {
+        path: "/club/:clubId/schedule/add",
+        element: <ClubScheduleAdd />,
+      },
+      {
         path: "/club/:clubId/join",
         element: <JoinClub />,
       },
@@ -106,24 +122,7 @@ const router = createBrowserRouter([
         path: "/club/:clubId/inquiry",
         element: <InquiryClub />,
       },
-      {
-        path: "/club/:clubId/schedule/add",
-        element: <ClubScheduleAdd />,
-      },
-
-      {
-        path: "/club/:clubId/posts/:postId",
-        element: <ClubPostsDetail />,
-      },
-      {
-        path: "/club/:clubId/posts/add",
-        element: <ClubPostsEdit />,
-      },
-      {
-        path: "club/:clubId/posts/edit/:postId",
-        element: <ClubPostsEdit />,
-      },
-
+      //동아리 친구 프로필
       {
         path: "/user/:userId",
         element: <FriendProfile />,
@@ -134,6 +133,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+      //동아리 설정
       {
         path: "/club/:clubId/setting",
         element: <ClubSetting />,
@@ -168,6 +168,22 @@ const router = createBrowserRouter([
         path: "/club/:clubId/setting/applications/management",
         element: <ClubSettingApplicationManagement />,
       },
+
+      //채팅
+      {
+        path: "/chats",
+        element: <Chats />,
+      },
+      {
+        path: "/chats/detail/:Id",
+        element: <ChatDetail />,
+      },
+      //캘린더
+      {
+        path: "/calendar",
+        element: <Calendar />,
+      },
+      //내 프로필
       {
         path: "profile",
         element: <Profile />,
@@ -198,17 +214,11 @@ const router = createBrowserRouter([
         path: "profile/setting",
         element: <Setting />,
       },
+      //비회원 전용
+      { path: "/univs", element: <Univs /> },
       {
-        path: "/chats",
-        element: <Chats />,
-      },
-      {
-        path: "/chats/detail/:Id",
-        element: <ChatDetail />,
-      },
-      {
-        path: "/calendar",
-        element: <Calendar />,
+        path: "/:univId/clubs",
+        element: <Clubs />,
       },
     ],
   },

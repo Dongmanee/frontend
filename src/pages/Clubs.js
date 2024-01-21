@@ -42,7 +42,11 @@ export default function Clubs() {
   };
 
   return (
-    <Layout headerLeft="prev" onClickLeft={onPrevPage}>
+    <Layout
+      headerLeft="prev"
+      onClickLeft={onPrevPage}
+      headerCenter={"부산대학교"}
+    >
       <HomeTotalClubsLayout>
         <ClubCategory setKeywordReset={handleKeywordReset} />
         <form onSubmit={handleSubmit}>

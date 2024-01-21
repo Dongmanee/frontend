@@ -6,7 +6,7 @@ import { flexColumn, flexJBetween } from "../styles/global.style";
 import { temp_univs_list } from "../consts/tempData";
 import { useNavigate } from "react-router-dom";
 
-export default function NonMembersInitial() {
+export default function Univs() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
