@@ -13,6 +13,7 @@ import { temp_club_home_info } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../layouts/Layout";
 import { registerClubSchema } from "../utils/validationSchema";
+import { getPosts, registerClub } from "../apis/club";
 
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
@@ -33,7 +34,26 @@ export default function RegisterClub() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+
+    // const formData = new FormData();
+
+    // formData.append('categoryId', 0);
+    // formData.append('name', data.clubName);
+    // formData.append('description', data.clubDescription);
+    // formData.append('clubMainImageUrl', data.clubMainImage[0]);
+    // formData.append('address', data.clubAddress);
+    
+
+    // const test = {
+    //   categoryId:0,
+    //   name:data.clubName,
+    //   description:data.clubDescription,
+    // }
+
+
+    // registerClub({data:test}).then(res =>console.log(res))
+    // .catch(err => console.log(err))
+
   };
 
   useEffect(() => {
