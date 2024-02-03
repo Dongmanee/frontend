@@ -11,6 +11,8 @@ import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { setCookie } from "../../../utils/cookies";
 import { useNavigate } from "react-router-dom";
 
+const cookie_save_time = 60; // test = 1분
+
 export default function LoginForm() {
   const navigate = useNavigate();
   const {
@@ -23,17 +25,21 @@ export default function LoginForm() {
   });
 
   const onLogin = ({ email, password }) => {
-    login({ email, password }).then((res) =>  {
-      if (res.status === 200){
-        setCookie('accessToken', res.data.data.accessToken, {
-          path:'/',
+    login({ email, password }).then((res) => {
+      if (res.status === 200) {
+        setCookie("accessToken", res.data.data.accessToken, {
+          path: "/",
+          httponly: true,
+          expires: new Date(Date.now() + cookie_save_time * 1000),
         });
-        navigate('/posts')
+        setTimeout(() => {
+          alert("쿠키 만료됨 -> 다시 로그인 해주셈");
+          window.location.reload();
+        }, cookie_save_time * 1000 + 3000);
+        // navigate("/posts");
+      } else {
+        console.log("로그인 에러");
       }
-      else {
-        console.log('로그인 에러')
-      }
-      
     });
   };
 
