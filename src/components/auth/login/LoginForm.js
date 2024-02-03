@@ -23,17 +23,16 @@ export default function LoginForm() {
   });
 
   const onLogin = ({ email, password }) => {
-    login({ email, password }).then((res) =>  {
-      if (res.status === 200){
-        setCookie('accessToken', res.data.data.accessToken, {
-          path:'/',
+    login({ email, password }).then((res) => {
+      console.log(res);
+      if (res.status === 200) {
+        setCookie("accessToken", res.data.data.accessToken, {
+          path: "/",
         });
-        navigate('/posts')
+        navigate("/posts");
+      } else {
+        console.log("로그인 에러");
       }
-      else {
-        console.log('로그인 에러')
-      }
-      
     });
   };
 
