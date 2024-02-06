@@ -5,23 +5,25 @@ import CustomInput from "../components/global/CustomInputs";
 import { flexColumn, flexJBetween } from "../styles/global.style";
 import { temp_univs_list } from "../consts/tempData";
 import { useNavigate } from "react-router-dom";
+import { getCookie } from "../utils/cookies";
 
 export default function Univs() {
   const navigate = useNavigate();
+  const isLogin = getCookie("accessToken") != undefined;
 
   const handleLoginClick = () => {
     navigate("/");
   };
 
-  const handleUnivCardClick = (univId) => {
-    navigate(`/${univId}/clubs`);
+  const handleUnivCardClick = (univId, univName) => {
+    navigate(`${univId}`, { state: univName });
   };
 
   return (
     <Layout
       headerLeft="logo"
-      headerRight="login"
-      onClickRight={handleLoginClick}
+      headerRight={isLogin ? "" : "login"}
+      onClickRight={isLogin ? undefined : handleLoginClick}
     >
       <NonMembersInitialLayout>
         <FaSchool size="60" />
@@ -35,7 +37,9 @@ export default function Univs() {
         />
         <UnivListBox>
           {temp_univs_list.map((univ) => (
-            <UnivListCard onClick={() => handleUnivCardClick(univ.univId)}>
+            <UnivListCard
+              onClick={() => handleUnivCardClick(univ.univId, univ.univName)}
+            >
               <div>{univ.univName}</div>
               <FaArrowRight />
             </UnivListCard>

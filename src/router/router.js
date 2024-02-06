@@ -214,10 +214,13 @@ const router = createBrowserRouter([
         path: "profile/setting",
         element: <Setting />,
       },
-      //비회원 전용
-      { path: "/univs", element: <Univs /> },
+      //다른 학교 조회
       {
-        path: "/:univId/clubs",
+        path: "/univs",
+        element: <Univs />,
+      },
+      {
+        path: "/univs/:univId",
         element: <Clubs />,
       },
     ],

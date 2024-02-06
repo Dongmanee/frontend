@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import CustomInput from "../components/global/CustomInputs";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
@@ -11,6 +11,7 @@ import Layout from "../layouts/Layout";
 import { flexColumn } from "../styles/global.style";
 
 export default function Clubs() {
+  const { state: otherUniv } = useLocation();
   const { onPrevPage } = usePrevPage();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -41,11 +42,15 @@ export default function Clubs() {
     e.preventDefault();
   };
 
+  useEffect(() => {
+    console.log(otherUniv);
+  });
+
   return (
     <Layout
       headerLeft="prev"
       onClickLeft={onPrevPage}
-      headerCenter={"부산대학교"}
+      headerCenter={otherUniv ? otherUniv : ""}
     >
       <HomeTotalClubsLayout>
         <ClubCategory setKeywordReset={handleKeywordReset} />
@@ -60,7 +65,7 @@ export default function Clubs() {
         </form>
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
-      <RegisterClubButton />
+      {!otherUniv && <RegisterClubButton />}
     </Layout>
   );
 }
