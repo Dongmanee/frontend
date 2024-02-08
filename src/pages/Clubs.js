@@ -11,10 +11,11 @@ import Layout from "../layouts/Layout";
 import { flexColumn } from "../styles/global.style";
 
 export default function Clubs() {
-  const { state: otherUniv } = useLocation();
+  const { state } = useLocation();
   const { onPrevPage } = usePrevPage();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [otherUnivName, setOtheUnivName] = useState();
 
   const handleSearchKeywordChange = (e) => {
     const currentCategory = searchParams.get("category");
@@ -43,14 +44,14 @@ export default function Clubs() {
   };
 
   useEffect(() => {
-    console.log(otherUniv);
-  });
+    setOtheUnivName(state);
+  }, []);
 
   return (
     <Layout
       headerLeft="prev"
       onClickLeft={onPrevPage}
-      headerCenter={otherUniv ? otherUniv : ""}
+      headerCenter={otherUnivName ? otherUnivName : ""}
     >
       <HomeTotalClubsLayout>
         <ClubCategory setKeywordReset={handleKeywordReset} />
@@ -65,7 +66,7 @@ export default function Clubs() {
         </form>
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
-      {!otherUniv && <RegisterClubButton />}
+      {!otherUnivName && <RegisterClubButton />}
     </Layout>
   );
 }
