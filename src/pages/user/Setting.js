@@ -5,12 +5,27 @@ import usePrevPage from "../../hooks/usePrevPage";
 import kakao from "../../images/kakao.png";
 import Layout from "../../layouts/Layout";
 import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
+import { FcButtingIn } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 export default function Setting() {
   const { onPrevPage } = usePrevPage();
+  const navigate = useNavigate();
+
+  const handleOtherSchoolBtn = () => {
+    navigate("/univs");
+  };
+
   return (
     <Layout headerLeft="prev" onClickLeft={onPrevPage}>
       <SettingLayout>
+        <SettingBoxItemCol>
+          <SettingBoxItem onClick={handleOtherSchoolBtn}>
+            <FcButtingIn size={25} />
+            다른 학교 탐방하기
+          </SettingBoxItem>
+        </SettingBoxItemCol>
+
         <SettingCol>
           <span>로그인 설정</span>
           <SettingBoxItemCol>
@@ -18,6 +33,7 @@ export default function Setting() {
               <img width={25} height={25} src={kakao} alt="" />
               카카오 계정 연결하기
             </SettingBoxItem>
+            <SettingBoxItem>로그아웃</SettingBoxItem>
           </SettingBoxItemCol>
         </SettingCol>
 
@@ -43,9 +59,9 @@ export default function Setting() {
 const SettingLayout = styled.div`
   ${flexColumn};
   height: 80vh;
-  margin-top: 30px;
   gap: 50px;
   position: relative;
+  padding-bottom: ${(props) => props.theme.global.height};
 `;
 
 const SettingCol = styled.div`
@@ -77,10 +93,6 @@ const SettingBoxItem = styled.div`
 
 const Withdraw = styled.div`
   ${flexCenter};
-  position: absolute;
-  bottom: 20px;
-  right: 0;
-  left: 0;
 
   text-decoration: underline;
   font-size: ${(props) => props.theme.sizes.sm};
