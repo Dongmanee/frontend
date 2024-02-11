@@ -223,6 +223,16 @@ const router = createBrowserRouter([
         path: "/univs/:univId",
         element: <Clubs />,
       },
+      {
+        path: "/univs/:univId/club/:clubId",
+        element: <Club />,
+        children: [
+          {
+            path: "",
+            element: <ClubHome />,
+          },
+        ],
+      },
     ],
   },
 ]);

@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import styled from "styled-components";
 import logo from "../../images/logo.png";
-import { flexJBetween } from "../../styles/global.style";
+import { flexICenter, flexJBetween } from "../../styles/global.style";
 import { IoLogInOutline } from "react-icons/io5";
 
 export default function Header({
@@ -27,6 +27,12 @@ export default function Header({
         return <MdOutlineArrowBackIosNew size={26} />;
       case "exit":
         return <MdOutlineClear size={30} />;
+      case "chat":
+        return <HeaderTitleBox>채팅</HeaderTitleBox>;
+      case "calendar":
+        return <HeaderTitleBox>일정</HeaderTitleBox>;
+      case "profile":
+        return <HeaderTitleBox>프로필</HeaderTitleBox>;
       default:
         return;
     }
@@ -60,6 +66,7 @@ const HeaderLayout = styled.div`
   width: 100vw;
   height: ${(props) => props.theme.global.header.height};
   ${flexJBetween};
+  align-items: center;
   background-color: white;
   box-sizing: border-box;
   padding: 13px 20px;
@@ -82,8 +89,14 @@ const HeaderLayout = styled.div`
 `;
 
 const HeaderItem = styled.div`
+  ${flexICenter}
   img {
     height: 30px;
   }
   font-size: ${(props) => props.theme.sizes.xxxl};
+`;
+
+const HeaderTitleBox = styled.div`
+  font-size: ${(props) => props.theme.sizes.xl};
+  font-weight: 600;
 `;
