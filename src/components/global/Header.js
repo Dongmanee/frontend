@@ -9,6 +9,8 @@ import styled from "styled-components";
 import logo from "../../images/logo.png";
 import { flexICenter, flexJBetween } from "../../styles/global.style";
 import { IoLogInOutline } from "react-icons/io5";
+import { PiHouseBold } from "react-icons/pi";
+import { FaRegPlusSquare } from "react-icons/fa";
 
 export default function Header({
   left,
@@ -48,6 +50,10 @@ export default function Header({
         return <MdCheck size={28} />;
       case "login":
         return <IoLogInOutline size={30} />;
+      case "home":
+        return <PiHouseBold size={28} />;
+      case "plus":
+        return <FaRegPlusSquare size={28} />;
       default:
         return;
     }

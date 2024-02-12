@@ -6,10 +6,12 @@ import { flexColumn, flexJBetween } from "../styles/global.style";
 import { temp_univs_list } from "../consts/tempData";
 import { useNavigate } from "react-router-dom";
 import { getCookie } from "../utils/cookies";
+import usePrevPage from "../hooks/usePrevPage";
 
 export default function Univs() {
   const navigate = useNavigate();
   const isLogin = getCookie("accessToken") != undefined;
+  const { onPrevPage } = usePrevPage();
 
   const handleLoginClick = () => {
     navigate("/");
@@ -19,11 +21,16 @@ export default function Univs() {
     navigate(`${univId}`, { state: univName });
   };
 
+  const handleHomeClick = () => {
+    navigate("/posts");
+  };
+
   return (
     <Layout
-      headerLeft="logo"
-      headerRight={isLogin ? "" : "login"}
-      onClickRight={isLogin ? undefined : handleLoginClick}
+      headerLeft={isLogin ? "prev" : "logo"}
+      onClickLeft={isLogin ? onPrevPage : undefined}
+      headerRight={isLogin ? "home" : "login"}
+      onClickRight={isLogin ? handleHomeClick : handleLoginClick}
     >
       <NonMembersInitialLayout>
         <FaSchool size="60" />

@@ -13,6 +13,7 @@ export default function Club() {
   const [isSettingExpanded, setIsSettingExpanded] = useState(false);
   const [clubName, setClubName] = useState("Import");
   const { clubId } = useParams();
+  const { univId: isOtherUniv } = useParams();
 
   const onClickSettingButton = () => {
     setIsSettingExpanded((prev) => !prev);
@@ -27,11 +28,11 @@ export default function Club() {
   return (
     <Layout
       headerLeft="prev"
-      headerCenter={clubName}
-      headerRight="edit"
       onClickLeft={onPrevPage}
-      onClickRight={onClickSettingButton}
+      headerCenter={clubName}
       onClickCenter={handleLogoClick}
+      headerRight={isOtherUniv ? "" : "edit"}
+      onClickRight={isOtherUniv ? undefined : onClickSettingButton}
     >
       {isSettingExpanded && <ClubSettingDropDown />}
       <PageSelector pages={clubPageSelector} />
