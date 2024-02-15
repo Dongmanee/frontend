@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ClubInfo from "../../components/club/ClubInfo";
 import ClubJoinButton from "../../components/club/ClubJoinButton";
 import ClubUserList from "../../components/club/ClubUserList";
@@ -20,7 +20,7 @@ export default function ClubHome() {
   const handlemoreClick = (src) => {
     nav(`${src}`);
   };
-
+  const { univId: isOtherUniv } = useParams();
   const [clubHomePost, setClubHomePost] = useState(temp_club_post);
   const [clubUsers, setClubUsers] = useState(temp_club_users);
 
@@ -53,7 +53,9 @@ export default function ClubHome() {
         <ClubUserList users={clubUsers} />
       </ClubPage>
 
-      <ClubJoinButton clubJoinAvailable={clubHomeInfo.isClubJoinAvailable} />
+      {!isOtherUniv && (
+        <ClubJoinButton clubJoinAvailable={clubHomeInfo.isClubJoinAvailable} />
+      )}
     </>
   );
 }
