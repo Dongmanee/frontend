@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import {persist, createJSONStorage} from 'zustand/middleware';
 
 const initData = {
     name:'',
@@ -19,7 +20,7 @@ const initData = {
 }
 
 export const useUserStore = create()(
-    (set,get) => ({
+    persist((set,get) => ({
         ...initData,
         setName:(s) => set({name:s}),
         setEmail:(s) => set({email:s}),
@@ -39,5 +40,9 @@ export const useUserStore = create()(
         getCommentList:() => get().commentList,
         getScheduleList:() => get().scheduleList,
         getChatList:() => get().chatList,
+    }),
+    {
+        name:'dongmanee',
+        storage:createJSONStorage(() => sessionStorage),
     })
-)
+);
