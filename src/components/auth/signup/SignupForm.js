@@ -1,10 +1,6 @@
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useLocation } from "react-router-dom";
-import styled from "styled-components";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { signup } from "../../../apis/signup";
-import { flexColumn } from "../../../styles/global.style";
 import {
   kakaoSignupSchema,
   signupSchema,
@@ -13,6 +9,14 @@ import CustomButton from "../../global/CustomButton";
 import RegisterInput from "../../global/register/RegisterInput";
 import RegisterEmailInput from "./RegisterEmailInput";
 import RegisterSelect from "../../global/register/RegisterSelect";
+import { flexColumn } from "../../../assets/styles/global.style";
+
+import styled from "styled-components";
+import { useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
+
+
 
 export default function SignupForm() {
   const location = useLocation();

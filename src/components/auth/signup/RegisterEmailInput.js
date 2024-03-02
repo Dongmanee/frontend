@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import { useState } from "react";
 import RegisterLabel from "../../global/register/RegisterLabel";
 import CustomInput from "../../global/CustomInputs";
-import { flexCenter, flexICenter } from "../../../styles/global.style";
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
-import { useState } from "react";
 import AuthEmaillModal from "./AuthEmailModal";
 import { emailSchema } from "../../../utils/validationSchema";
+import { flexCenter, flexICenter } from "../../../assets/styles/global.style";
+
+import styled from "styled-components";
+
 
 export default function RegisterEmailInput({
   id,

@@ -6,7 +6,7 @@ import {
   temp_club_schedule_detail_item_infos,
   temp_club_users,
 } from "../../consts/tempData";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { useState } from "react";
 
 export default function ClubScheduleDetail() {

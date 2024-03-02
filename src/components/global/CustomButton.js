@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter } from "../../styles/global.style";
+import { flexCenter } from "../../assets/styles/global.style";
 
 const CustomButton = ({
   width,

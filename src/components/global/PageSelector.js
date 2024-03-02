@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter, flexJBetween } from "../../styles/global.style";
+import { flexCenter, flexJBetween } from "../../assets/styles/global.style";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 

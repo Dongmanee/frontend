@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../components/global/Header";
-import Navbar from "../components/global/Navbar";
+import Header from "../global/Header";
+import Navbar from "../global/Navbar";
 
 export default function Layout({
   children,

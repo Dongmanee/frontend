@@ -1,8 +1,9 @@
-import { format } from "date-fns";
 import React from "react";
+import {flexColumn} from '../../assets/styles/global.style.js';
+
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
+import { format } from "date-fns";
 
 export default function DetailBox({ schedule }) {
   const navigate = useNavigate();
@@ -10,7 +11,6 @@ export default function DetailBox({ schedule }) {
     navigate(`/club/${clubId}/schedule/${scheduleId}`);
   };
   const time = format(new Date(schedule.scheduleDate), "a hh:mm");
-
   return (
     <DetailBoxLayout
       onClick={() => handleScheduleClick(schedule.clubId, schedule.scheduleId)}

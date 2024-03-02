@@ -6,8 +6,7 @@ import PageSelector from "../components/global/PageSelector";
 import UserProfile from "../components/user/Profile";
 import { profile_pageselector } from "../consts/pageData";
 import { temp_user_profile } from "../consts/tempData";
-import Layout from "../layouts/Layout";
-
+import Layout from "../components/layouts/Layout";
 export default function Profile() {
   const navigate = useNavigate();
 

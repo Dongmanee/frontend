@@ -5,7 +5,7 @@ import ClubPost from "../../components/club/posts/ClubPost";
 import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import PenIcon from "../../components/global/PenIcon";
 import { temp_club_posts } from "../../consts/tempData";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 
 export default function ClubPosts() {
   const [searchParams, setSearchParams] = useSearchParams();

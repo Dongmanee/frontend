@@ -1,10 +1,11 @@
-import { format } from "date-fns";
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
+import { flexCenter } from "../../assets/styles/global.style";
+
 import styled from "styled-components";
-import { flexCenter } from "../../styles/global.style";
+import { format } from "date-fns";
 
 export default function CalendarHead({
   thisMonth,

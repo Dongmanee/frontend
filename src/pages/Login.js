@@ -2,10 +2,9 @@ import styled from "styled-components";
 import OtherApproach from "../components/auth/OtherApproach";
 import KakaoLogin from "../components/auth/login/KakaoLogin";
 import LoginForm from "../components/auth/login/LoginForm";
-import bglogo from "../images/bglogo.png";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn } from "../styles/global.style";
-
+import bglogo from '../assets/images/bglogo.png'
+import { flexCenter, flexColumn } from "../assets/styles/global.style";
+import Layout from "../components/layouts/Layout";
 export default function Login() {
   return (
     <Layout>

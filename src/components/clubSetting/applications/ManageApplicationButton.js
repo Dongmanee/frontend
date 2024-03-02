@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { IoIosArrowForward } from "react-icons/io";
-import { flexJCenter } from "../../../styles/global.style";
+import { flexJCenter } from "../../../assets/styles/global.style";
 
 export default function ManageApplicationButton() {
   const navigate = useNavigate();

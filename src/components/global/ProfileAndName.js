@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import example from "../../images/example.png";
+import example from "../../assets/images/example.png";
 
 export default function ProfileAndName({ img, name, isIcon, onClick }) {
   return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import ClubPost from "../club/posts/ClubPost";
 
 export default function UserPosts() {

@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import RegisterInput from "../../components/global/register/RegisterInput";
-import Layout from "../../layouts/Layout";
-import { flexColumn } from "../../styles/global.style";
-import RegisterButton from "../../components/global/register/RegisterButton";
+import { flexColumn } from "../../assets/styles/global.style";
 import { useForm } from "react-hook-form";
 import RegisterTextArea from "../../components/global/register/RegisterTextArea";
 import usePrevPage from "../../hooks/usePrevPage";
 import { clubInquirySchema } from "../../utils/validationSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Layout from "../../components/layouts/Layout";
 
 export default function InquiryClub() {
   const { onPrevPage } = usePrevPage();

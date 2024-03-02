@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import img from "../../images/sample.png";
-import instagramIcon from "../../images/sns_icons/instagramIcon.png";
-import naverBandIcon from "../../images/sns_icons/naverBandIcon.png";
-import naverBlogIcon from "../../images/sns_icons/naverBlogIcon.png";
-import { flexColumn } from "../../styles/global.style";
+
+import instagramIcon from "../../assets/images/sns_icons/instagramIcon.png";
+import naverBandIcon from "../../assets/images/sns_icons/naverBandIcon.png";
+import naverBlogIcon from "../../assets/images/sns_icons/naverBlogIcon.png";
+import { flexColumn } from "../../assets/styles/global.style";
 import SmallTagBox from "../global/SmallTagBox";
-import { useNavigate } from "react-router-dom";
 
 export default function ClubInfo({ clubHomeInfo }) {
   const handleSNSClick = (snsUrl) => {

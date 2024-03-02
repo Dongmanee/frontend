@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn, flexICenter } from "../../../styles/global.style";
+import { flexColumn, flexICenter } from "../../../assets/styles/global.style";
 import ClubRoleState from "./ClubRoleState";
 import ClubRoleDropDown from "./ClubRoleDropDown";
 

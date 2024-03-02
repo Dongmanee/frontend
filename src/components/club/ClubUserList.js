@@ -1,8 +1,10 @@
+import { flexColumn, flexICenter } from "../../assets/styles/global.style";
+import User from "../global/User";
+
 import { IoMdRefresh } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { flexColumn, flexICenter } from "../../styles/global.style";
-import User from "../global/User";
+
 
 export default function ClubUserList({ users }) {
   const { scheduleId } = useParams();

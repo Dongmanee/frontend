@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import styled from "styled-components";
-import { flexCenter, flexColumn } from "../../../styles/global.style";
+import { flexCenter, flexColumn } from "../../../assets/styles/global.style";
 import ClubScheduleDetailItem from "./ClubScheduleDetailItem";
 
 export default function ClubScheduleItemContent({ item, isDetail }) {

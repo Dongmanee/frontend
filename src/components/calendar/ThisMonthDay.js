@@ -1,5 +1,6 @@
+import { flexCenter } from "../../assets/styles/global.style";
+
 import styled from "styled-components";
-import { flexCenter } from "../../styles/global.style";
 
 export function ThisMonthDay({
   onClick,

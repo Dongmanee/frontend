@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 import { CustomInputLayout } from "../CustomInputs";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import RegisterLabel from "./RegisterLabel";
-import instagramIcon from "../../../images/sns_icons/instagramIcon.png";
-import naverBandIcon from "../../../images/sns_icons/naverBandIcon.png";
-import naverBlogIcon from "../../../images/sns_icons/naverBlogIcon.png";
+import instagramIcon from "../../../assets/images/sns_icons/instagramIcon.png";
+import naverBandIcon from "../../../assets/images/sns_icons/naverBandIcon.png";
+import naverBlogIcon from "../../../assets/images/sns_icons/naverBlogIcon.png";
 import CustomInput from "../CustomInputs";
-import { flexColumn, flexICenter } from "../../../styles/global.style";
+import { flexColumn, flexICenter } from "../../../assets/styles/global.style";
 
 const club_sns_input = [
   {

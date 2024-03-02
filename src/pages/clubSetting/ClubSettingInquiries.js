@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { temp_inquiries } from "../../consts/tempData";
 import InquiryCard from "../../components/clubSetting/inquiries/InquiryCard";
 

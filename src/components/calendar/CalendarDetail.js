@@ -1,7 +1,9 @@
-import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { getDayOfWeek } from "../../utils/getDayOfWeek";
 import DetailBox from "./Detail";
+
+import styled from "styled-components";
+
 
 export default function CalendarDetail({ selectedDate, daySchedule }) {
   const day = getDayOfWeek(selectedDate);

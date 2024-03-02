@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaRegCommentDots, FaRegHeart, FaHeart } from "react-icons/fa6";
-import { flexICenter } from "../../../styles/global.style";
+import { flexICenter } from "../../../assets/styles/global.style";
 
 export default function PostReactionNum({
   likesNum,

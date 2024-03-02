@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import example from "../../../images/example.png";
-import { flexCenter, flexICenter } from "../../../styles/global.style";
+import example from "../../../assets/images/example.png";
+import { flexCenter, flexICenter } from "../../../assets/styles/global.style";
 import ApplicationCardInfo from "./ApplicationCardInfo";
 import { useNavigate } from "react-router-dom";
 

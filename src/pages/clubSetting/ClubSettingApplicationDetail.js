@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import RegisterLabel from "../../components/global/register/RegisterLabel";
 import { temp_club_setting_application_details } from "../../consts/tempData";
-import Layout from "../../layouts/Layout";
-import { flexCenter, flexColumn } from "../../styles/global.style";
+import { flexCenter, flexColumn } from "../../assets/styles/global.style";
 import usePrevPage from "../../hooks/usePrevPage";
-
+import Layout from "../../components/layouts/Layout";
 export default function ClubSettingApplicationDetail() {
   const { onPrevPage } = usePrevPage();
 

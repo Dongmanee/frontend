@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { temp_club_user } from "../../consts/tempData";
 import MemberCard from "../../components/clubSetting/members/MemberCard";
 

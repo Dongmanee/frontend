@@ -2,9 +2,9 @@ import styled from "styled-components";
 import Navbar from "../../components/global/Navbar";
 import { temp_setting_lists } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
-import kakao from "../../images/kakao.png";
-import Layout from "../../layouts/Layout";
-import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
+import kakao from "../../assets/images/kakao.png";
+import { flexCenter, flexColumn, flexICenter } from "../../assets/styles/global.style";
+import Layout from "../../components/layouts/Layout";
 
 export default function Setting() {
   const { onPrevPage } = usePrevPage();

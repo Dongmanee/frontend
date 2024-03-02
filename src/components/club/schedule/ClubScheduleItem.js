@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 import ClubScheduleTitle from "./ClubScheduleTitle";
 import ClubScheduleItemContent from "./ClubScheduleItemContent";
 import { useNavigate, useParams } from "react-router-dom";

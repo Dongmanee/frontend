@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { temp_friends } from "../../consts/tempData";
-import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
+import { flexCenter, flexColumn, flexICenter } from "../../assets/styles/global.style";
 import CustomInput from "../global/CustomInputs";
 import { BsPersonPlus } from "react-icons/bs";
 import User from "../global/User";

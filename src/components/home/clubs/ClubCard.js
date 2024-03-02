@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ClubCardHeadInfo from "./ClubCardHeadInfo";
-import example from "../../../images/example.png";
-import { flexColumn, flexICenter } from "../../../styles/global.style";
+import example from "../../../assets/images/example.png";
+import { flexColumn, flexICenter } from "../../../assets/styles/global.style";
 import { useNavigate } from "react-router-dom";
 
 export default function ClubCard({ club }) {

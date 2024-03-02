@@ -3,8 +3,7 @@ import styled from "styled-components";
 import PageSelector from "../../components/global/PageSelector";
 import { modifyClubSettingPageSelector } from "../../consts/pageData";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-
+import Layout from "../../components/layouts/Layout";
 export default function ClubSetting() {
   const { onPrevPage } = usePrevPage();
   const { clubId } = useParams();

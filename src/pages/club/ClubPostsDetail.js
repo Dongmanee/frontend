@@ -8,9 +8,8 @@ import ClubPostsDetailsCommentInput from "../../components/club/posts/ClubPostsD
 import PostBottom from "../../components/global/postList/PostBottom";
 import { temp_club_post, temp_club_post_comments } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-import { flexColumn } from "../../styles/global.style";
-
+import { flexColumn } from "../../assets/styles/global.style";
+import Layout from "../../components/layouts/Layout";
 export default function ClubPostsDetail() {
   const { onPrevPage } = usePrevPage();
   const navigate = useNavigate();

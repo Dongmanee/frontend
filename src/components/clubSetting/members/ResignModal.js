@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { IoClose, IoTrash } from "react-icons/io5";
 import {
-  flexCenter,
   flexColumn,
   flexICenter,
-} from "../../../styles/global.style";
-import { useRef } from "react";
-import ModalLayout from "../../../layouts/ModalLayout";
+} from "../../../assets/styles/global.style";
+import ModalLayout from "../../layouts/ModalLayout";
 
 export default function ResignModal({ name, setIsResignModal }) {
   return (

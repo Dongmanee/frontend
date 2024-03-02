@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ClubRoleState from "./ClubRoleState";
 import styled from "styled-components";
-import { flexColumn, flexICenter } from "../../../styles/global.style";
+import { flexColumn, flexICenter } from "../../../assets/styles/global.style";
 import { IoIosArrowDown } from "react-icons/io";
 
 const role_data = ["회장", "임원", "회원"];

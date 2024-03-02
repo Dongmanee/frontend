@@ -1,5 +1,6 @@
+import { flexCenter, flexColumn, flexICenter } from "../../assets/styles/global.style";
+
 import styled from "styled-components";
-import { flexCenter, flexColumn, flexICenter } from "../../styles/global.style";
 
 export default function ClubPage({
   title,

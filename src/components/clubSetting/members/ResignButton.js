@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter } from "../../../styles/global.style";
+import { flexCenter } from "../../../assets/styles/global.style";
 import { useState } from "react";
 import ResignModal from "./ResignModal";
 

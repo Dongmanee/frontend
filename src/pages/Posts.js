@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import HomeClubList from "../components/home/HomeClubList";
-import Layout from "../layouts/Layout";
 import { temp_total_posts } from "../consts/tempData";
 import Post from "../components/global/postList/Post";
-
+import Layout from "../components/layouts/Layout";
 export default function Posts() {
   return (
     <Layout headerLeft="logo" isNavbar={true}>

@@ -4,9 +4,9 @@ import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./index.css";
 import router from "./router/router";
-import theme from "./styles/theme";
 import { RecoilRoot } from "recoil";
 import { CookiesProvider } from "react-cookie";
+import theme from "./assets/styles/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

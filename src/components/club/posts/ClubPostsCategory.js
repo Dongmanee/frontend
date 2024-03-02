@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { temp_club_posts_categories } from "../../../consts/tempData";
-import { flexCenter } from "../../../styles/global.style";
+import { flexCenter } from "../../../assets/styles/global.style";
 import SmallTagBox from "../../global/SmallTagBox";
 
 export default function ClubPostsCategory({

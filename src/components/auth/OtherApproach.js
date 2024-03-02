@@ -1,6 +1,8 @@
-import styled from "styled-components";
-import { flexCenter } from "../../styles/global.style";
+import {flexCenter} from '../../assets/styles/global.style';
+
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
 
 export default function OtherApproach({ isLogin }) {
   const navigate = useNavigate();

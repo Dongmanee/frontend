@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PostReactionNum from "./PostReactionNum";
 import PostWriter from "./PostWriter";
-import { flexJBetween } from "../../../styles/global.style";
+import { flexJBetween } from "../../../assets/styles/global.style";
 
 export default function PostBottom({
   writer,

@@ -1,8 +1,10 @@
-import styled from "styled-components";
-import { flexCenter, flexColumn } from "../../../styles/global.style";
 import CustomButton from "../../global/CustomButton";
+import { flexCenter, flexColumn } from "../../../assets/styles/global.style";
+
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 
 export default function KakaoLogin() {
   return (

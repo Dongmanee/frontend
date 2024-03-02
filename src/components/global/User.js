@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import example from "../../images/example.png";
-import { flexColumn, flexICenter } from "../../styles/global.style";
+import example from "../../assets/images/example.png";
+import { flexColumn, flexICenter } from "../../assets/styles/global.style";
 import SmallTagBox from "./SmallTagBox";
 
 export default function User({

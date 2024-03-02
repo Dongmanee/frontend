@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import example from "../../../images/sample.png";
+import example from "../../../assets/images/sample.png";
 import PostBody from "../../global/postList/PostBody";
 import PostBottom from "../../global/postList/PostBottom";
 import PostHead from "../../global/postList/PostHead";

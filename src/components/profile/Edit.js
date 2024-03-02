@@ -1,9 +1,10 @@
 import { FaCamera } from "react-icons/fa";
 import styled from "styled-components";
-import example from "../../images/example.png";
-import Layout from "../../layouts/Layout";
-import { flexColumn } from "../../styles/global.style";
+import example from "../../assets/images/example.png";
+// import Layout from "../layouts/Layout";
+import { flexColumn } from "../../assets/styles/global.style";
 import usePrevPage from "../../hooks/usePrevPage";
+import Layout from "../layouts/Layout";
 
 export default function UserProfileEdit() {
   const { onPrevPage } = usePrevPage();

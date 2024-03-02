@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Layout from "../layouts/Layout";
 import SignupForm from "../components/auth/signup/SignupForm";
 import OtherApproach from "../components/auth/OtherApproach";
-import { flexCenter, flexColumn } from "../styles/global.style";
+import Layout from "../components/layouts/Layout";
+import { flexColumn } from "../assets/styles/global.style";
 
 export default function Signup() {
   return (

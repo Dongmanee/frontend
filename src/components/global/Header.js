@@ -6,8 +6,8 @@ import {
   MdCheck,
 } from "react-icons/md";
 import styled from "styled-components";
-import logo from "../../images/logo.png";
-import { flexJBetween } from "../../styles/global.style";
+import logo from "../../assets/images/logo.png";
+import { flexJBetween } from "../../assets/styles/global.style";
 
 export default function Header({
   left,

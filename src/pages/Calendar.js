@@ -4,8 +4,8 @@ import styled from "styled-components";
 import CalendarBody from "../components/calendar/CalendarBody";
 import CalendarHead from "../components/calendar/CalendarHead";
 import Navbar from "../components/global/Navbar";
-import Layout from "../layouts/Layout";
 import { temp_calendar_detail } from "../consts/tempData";
+import Layout from "../components/layouts/Layout";
 
 export default function Calendar() {
   const [thisMonth, setThisMonth] = useState(new Date());

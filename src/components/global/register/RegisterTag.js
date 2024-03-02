@@ -1,6 +1,6 @@
 import { useController } from "react-hook-form";
 import styled from "styled-components";
-import { flexICenter } from "../../../styles/global.style";
+import { flexICenter } from "../../../assets/styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";
 

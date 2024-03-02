@@ -2,11 +2,10 @@ import { Outlet, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import PageSelector from "../../components/global/PageSelector";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
 import { useState } from "react";
 import ClubSettingDropDown from "../../components/club/ClubSettingDropDow";
 import { modifyClubPageSelector } from "../../consts/pageData";
-
+import Layout from "../../components/layouts/Layout";
 export default function Club() {
   const navigate = useNavigate();
   const { onPrevPage } = usePrevPage();

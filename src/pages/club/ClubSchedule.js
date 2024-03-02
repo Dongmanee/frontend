@@ -3,7 +3,7 @@ import AddButton from "../../components/club/schedule/AddButton";
 import ClubScheduleItem from "../../components/club/schedule/ClubScheduleItem";
 import { temp_club_schedule_item_infos } from "../../consts/tempData";
 import useCheckPath from "../../hooks/useCheckPath";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 

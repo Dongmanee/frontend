@@ -1,6 +1,6 @@
 import { BiErrorAlt } from "react-icons/bi";
 import styled from "styled-components";
-import { flexICenter } from "../../../styles/global.style";
+import { flexICenter } from "../../../assets/styles/global.style";
 
 export default function RegisterErrorMsg({ errorMsg, margin }) {
   const styles = { margin };
