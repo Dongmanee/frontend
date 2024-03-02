@@ -14,9 +14,9 @@ import styled from "styled-components";
 
 
 
-const cookie_save_time = 60; // test = 1분
+const cookie_save_time = 60;
+ // test = 1분
 
-const cookie_save_time = 60 * 60; // test = 1분
 
 export default function LoginForm() {
   const navigate = useNavigate();
