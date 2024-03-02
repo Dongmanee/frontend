@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn, flexICenter } from "../../../styles/global.style";
+import { flexColumn, flexICenter } from "../../../assets/styles/global.style";
 
 export default function ApplicationCardInfo({ name, major, studentId }) {
   return (

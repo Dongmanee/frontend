@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import User from "../../global/User";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 
 export function ClubPostComment({ comment }) {
   return (

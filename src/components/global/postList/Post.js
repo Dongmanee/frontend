@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PostBody from "./PostBody";
 import PostHead from "./PostHead";
-import example from "../../../images/example.png";
+import example from "../../../assets/images/example.png";
 import PostBottom from "./PostBottom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

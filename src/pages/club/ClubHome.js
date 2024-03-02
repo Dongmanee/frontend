@@ -13,6 +13,7 @@ import {
 import ClubAlbum from "./ClubAlbum";
 import ClubSchedule from "./ClubSchedule";
 import { useState } from "react";
+import styled from "styled-components";
 
 export default function ClubHome() {
   const nav = useNavigate();

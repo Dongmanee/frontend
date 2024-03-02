@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { FaCamera } from "react-icons/fa6";
 import styled from "styled-components";
-import example from "../../../images/example.png";
-import { flexCenter, flexColumn } from "../../../styles/global.style";
+import example from "../../../assets/images/example.png";
+import { flexCenter, flexColumn } from "../../../assets/styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 import RegisterLabel from "./RegisterLabel";
 

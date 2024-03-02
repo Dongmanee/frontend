@@ -1,13 +1,13 @@
 import { FcAndroidOs, FcBusinessman, FcPrivacy, FcRules } from "react-icons/fc";
 import ClubUserList from "../components/club/ClubUserList";
 import ClubPost from "../components/club/posts/ClubPost";
-import angel from "../images/club-category/angel.png";
-import festival from "../images/club-category/festival.png";
-import heart from "../images/club-category/heart.png";
-import museum from "../images/club-category/museum.png";
-import sports from "../images/club-category/sports.png";
-import total from "../images/club-category/total.png";
-import sample from "../images/sample.png";
+import angel from "../assets/images/club-category/angel.png";
+import festival from "../assets/images/club-category/festival.png";
+import heart from "../assets/images/club-category/heart.png";
+import museum from "../assets/images/club-category/museum.png";
+import sports from "../assets/images/club-category/sports.png";
+import total from "../assets/images/club-category/total.png";
+import sample from "../assets/images/sample.png";
 import ClubAlbum from "../pages/club/ClubAlbum";
 import ClubSchedule from "../pages/club/ClubSchedule";
 export const university_list = [

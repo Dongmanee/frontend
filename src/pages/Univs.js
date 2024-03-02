@@ -1,12 +1,14 @@
-import styled from "styled-components";
-import Layout from "../layouts/Layout";
-import { FaSchool, FaArrowRight } from "react-icons/fa";
 import CustomInput from "../components/global/CustomInputs";
-import { flexColumn, flexJBetween } from "../styles/global.style";
 import { temp_univs_list } from "../consts/tempData";
-import { useNavigate } from "react-router-dom";
 import { getCookie } from "../utils/cookies";
 import usePrevPage from "../hooks/usePrevPage";
+import Layout from "../components/layouts/Layout";
+import { flexColumn, flexJBetween } from "../assets/styles/global.style";
+
+import { FaSchool, FaArrowRight } from "react-icons/fa";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Univs() {
   const navigate = useNavigate();

@@ -2,11 +2,10 @@ import styled from "styled-components";
 import ManagementQuestion from "../../components/clubSetting/applications/ManagementQuestion";
 import RegisterLabel from "../../components/global/register/RegisterLabel";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-import { flexCenter, flexColumn, fullSize } from "../../styles/global.style";
+import { flexCenter, flexColumn, fullSize } from "../../assets/styles/global.style";
 import { temp_club_application_management } from "../../consts/tempData";
 import { useEffect, useRef, useState } from "react";
-
+import Layout from "../../components/layouts/Layout";
 // 추후에 가능하다면 드래깅도 가능하게 수정해보자!
 export default function ClubSettingApplicationManagement() {
   const { onPrevPage } = usePrevPage();

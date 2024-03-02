@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import RegisterLabel from "./RegisterLabel";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 import RegisterErrorMsg from "./RegisterErrorMsg";
 
 export default function RegisterTextArea({

@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import img from "../../images/sample.png";
-import instagramIcon from "../../images/sns_icons/instagramIcon.png";
-import naverBandIcon from "../../images/sns_icons/naverBandIcon.png";
-import naverBlogIcon from "../../images/sns_icons/naverBlogIcon.png";
-import { flexColumn } from "../../styles/global.style";
+
+import instagramIcon from "../../assets/images/sns_icons/instagramIcon.png";
+import naverBandIcon from "../../assets/images/sns_icons/naverBandIcon.png";
+import naverBlogIcon from "../../assets/images/sns_icons/naverBlogIcon.png";
+import { flexColumn } from "../../assets/styles/global.style";
 import SmallTagBox from "../global/SmallTagBox";
-import { useNavigate } from "react-router-dom";
 
 export default function ClubInfo({ clubHomeInfo }) {
   const handleSNSClick = (snsUrl) => {
@@ -61,7 +60,8 @@ export default function ClubInfo({ clubHomeInfo }) {
 const ClubInfoLayout = styled.div`
   ${flexColumn};
   max-height: 40vh;
-  margin: 0 -23px;
+  width: 100%;
+  padding: 0 -23px;
 `;
 
 const BackgroundImage = styled.img`
@@ -98,16 +98,14 @@ const CategoryTagRow = styled.div`
 `;
 
 const Info = styled.div`
-  padding: 20px;
-
-  line-height: 170%;
+  padding: 10px 0;
 `;
 
 const SnsBox = styled.div`
   display: flex;
   gap: 0.8rem;
 
-  padding: 10px 20px;
+  padding: 10px 0;
   img {
     width: 2rem;
   }

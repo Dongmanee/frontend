@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { temp_friends } from "../../consts/tempData";
-import { flexColumn, flexJBetween, fullScreen } from "../../styles/global.style";
+import { flexColumn, flexJBetween, fullScreen } from "../../assets/styles/global.style";
 import CustomInput from "../global/CustomInputs";
 import Header from "../global/Header";
 import User from "../global/User";

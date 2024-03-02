@@ -2,14 +2,12 @@ import styled from "styled-components";
 import RegisterInput from "../../components/global/register/RegisterInput";
 import { temp_club_schedule_add } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-import { ContentCol } from "./ClubPostsEdit";
 import RegisterTextArea from "../../components/global/register/RegisterTextArea";
 import { useForm } from "react-hook-form";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { clubScheduleSchema } from "../../utils/validationSchema";
-
+import Layout from "../../components/layouts/Layout";
 export default function ClubScheduleAdd() {
   const { onPrevPage } = usePrevPage();
   const {

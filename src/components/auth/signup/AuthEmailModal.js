@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import ModalLayout from "../../../layouts/ModalLayout";
-import { flexCenter, flexColumn } from "../../../styles/global.style";
-import CustomInput from "../../global/CustomInputs";
 import { useEffect, useState } from "react";
+import CustomInput from "../../global/CustomInputs";
 import { confirmCode, sendCode } from "../../../apis/signup";
+import { flexCenter, flexColumn } from "../../../assets/styles/global.style";
+
+import styled from "styled-components";
+import ModalLayout from "../../layouts/ModalLayout";
 
 export default function AuthEmaillModal({
   email,

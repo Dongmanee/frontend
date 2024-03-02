@@ -1,5 +1,7 @@
+import sample from '../../assets/images/example.png';
+
 import styled, { css } from "styled-components";
-import sample from "../../images/example.png";
+
 
 export default function ChatReceived() {
   return (

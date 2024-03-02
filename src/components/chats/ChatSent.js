@@ -1,5 +1,7 @@
-import styled from "styled-components";
 import { MessageCSS } from "./ChatReceived";
+
+import styled from "styled-components";
+
 
 export default function ChatSent() {
   return (

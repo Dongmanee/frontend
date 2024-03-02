@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import RegisterInput from "../../components/global/register/RegisterInput";
-import Layout from "../../layouts/Layout";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { useState } from "react";
 import RegisterTextArea from "../../components/global/register/RegisterTextArea";
 import { useForm } from "react-hook-form";
@@ -10,6 +9,7 @@ import { temp_join_questions } from "../../consts/tempData";
 import { join_default_questions } from "../../consts/consts";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { clubJoinSchema } from "../../utils/validationSchema";
+import Layout from "../../components/layouts/Layout";
 
 export default function JoinClub() {
   const { onPrevPage } = usePrevPage();

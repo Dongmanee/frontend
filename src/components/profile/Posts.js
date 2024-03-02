@@ -1,24 +1,20 @@
 import styled from "styled-components";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import ClubPost from "../club/posts/ClubPost";
 
 export default function UserPosts() {
+  const testData = {
+    postTitle: "PWA란?",
+    postDate: "2023.12.16",
+    postCategoryName: "공지",
+    postBody: "내용부분",
+    postLikesNum: 15,
+    postCommentNum: 30,
+  };
+
   return (
     <UserPostsLayout>
-      <ClubPost
-        isMine={true}
-        title={"import"}
-        subTitle={"PWA란?"}
-        postCategory={"공지"}
-        date={"2023.12.16"}
-      />
-      <ClubPost
-        isMine={true}
-        title={"매치포인트"}
-        subTitle={"어제 매치포인트 첫 회식!"}
-        postCategory={"공지"}
-        date={"2023.12.08"}
-      />
+      <ClubPost post={testData} isClubHome={true} />
     </UserPostsLayout>
   );
 }

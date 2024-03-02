@@ -1,3 +1,9 @@
+import { useEffect, useState } from "react";
+import { temp_weeks } from "../../consts/tempData";
+import CalendarDetail from "./CalendarDetail";
+import { ThisMonthDay } from "./ThisMonthDay";
+import { flexColumn } from "../../assets/styles/global.style";
+
 import {
   addDays,
   endOfMonth,
@@ -8,12 +14,8 @@ import {
   startOfMonth,
   startOfWeek,
 } from "date-fns";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { temp_weeks } from "../../consts/tempData";
-import { flexColumn } from "../../styles/global.style";
-import CalendarDetail from "./CalendarDetail";
-import { ThisMonthDay } from "./ThisMonthDay";
+
 
 export default function CalendarBody({ thisMonth, monthSchedule }) {
   const [selectedDate, setSelectedDate] = useState(

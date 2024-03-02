@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IoIosArrowDown } from "react-icons/io";
-import { flexICenter } from "../../../styles/global.style";
+import { flexICenter } from "../../../assets/styles/global.style";
 
 export default function ClubRoleState({ role, isSetting }) {
   return <ClubRoleStateLayout>{role}</ClubRoleStateLayout>;

@@ -6,8 +6,8 @@ import {
   MdCheck,
 } from "react-icons/md";
 import styled from "styled-components";
-import logo from "../../images/logo.png";
-import { flexICenter, flexJBetween } from "../../styles/global.style";
+import logo from "../../assets/images/logo.png";
+import { flexJBetween,flexICenter } from "../../assets/styles/global.style";
 import { IoLogInOutline } from "react-icons/io5";
 import { PiHouseBold } from "react-icons/pi";
 import { FaRegPlusSquare } from "react-icons/fa";

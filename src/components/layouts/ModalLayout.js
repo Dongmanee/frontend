@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import styled from "styled-components";
-import { fullScreen } from "../styles/global.style";
-
+import { fullScreen } from "../../assets/styles/global.style";
 export default function ModalLayout({ children, setModal }) {
   const modalBackground = useRef();
   const closeModal = (e) => {

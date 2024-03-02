@@ -11,10 +11,9 @@ import RegisterTag from "../components/global/register/RegisterTag";
 import RegisterTextArea from "../components/global/register/RegisterTextArea";
 import { temp_club_home_info } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
-import Layout from "../layouts/Layout";
 import { registerClubSchema } from "../utils/validationSchema";
 import { getPosts, registerClub } from "../apis/club";
-
+import Layout from "../components/layouts/Layout";
 export default function RegisterClub() {
   const { onPrevPage } = usePrevPage();
   const location = useLocation();

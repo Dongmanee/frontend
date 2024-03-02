@@ -36,12 +36,13 @@ import ClubSettingMembers from "../pages/clubSetting/ClubSettingMembers";
 import FriendProfile from "../pages/user/FriendProfile";
 import Setting from "../pages/user/Setting";
 import UserJoinClubs from "../pages/user/UserJoinClubs";
+import { NotFound } from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "",
     element: <App />,
-    // errorElement: <App />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",

@@ -1,11 +1,13 @@
-import { Outlet, useNavigate, useParams } from "react-router-dom";
-import styled from "styled-components";
+import { useState } from "react";
 import PageSelector from "../../components/global/PageSelector";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-import { useState } from "react";
 import ClubSettingDropDown from "../../components/club/ClubSettingDropDow";
 import { modifyClubPageSelector } from "../../consts/pageData";
+import Layout from "../../components/layouts/Layout";
+
+import styled from "styled-components";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { scroll } from "../../assets/styles/global.style";
 
 export default function Club() {
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ export default function Club() {
 
   return (
     <Layout
+      headerPosition={"absolute"}
       headerLeft="prev"
       onClickLeft={onPrevPage}
       headerCenter={clubName}
@@ -45,5 +48,7 @@ export default function Club() {
 }
 
 const OutletBox = styled.div`
-  margin-top: ${(props) => props.theme.global.pageselector.height};
+  padding-top: ${(props) => props.theme.global.pageselector.height};
+  height: calc(100% - 6vh);
+  ${scroll};
 `;

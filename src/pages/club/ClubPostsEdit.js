@@ -1,18 +1,14 @@
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import ClubPostsCategory from "../../components/club/posts/ClubPostsCategory";
 import RegisterCkEditor from "../../components/global/register/RegisterCkEditor";
-import RegisterErrorMsg from "../../components/global/register/RegisterErrorMsg";
 import RegisterInput from "../../components/global/register/RegisterInput";
-import RegisterLabel from "../../components/global/register/RegisterLabel";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import { useForm } from "react-hook-form";
 import RegisterPostCategory from "../../components/global/register/RegisterPostCategory";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { clubPostSchema } from "../../utils/validationSchema";
-
+import Layout from "../../components/layouts/Layout";
 export default function ClubPostsEdit() {
   const location = useLocation();
   const url = location.pathname.split("posts/")[1];

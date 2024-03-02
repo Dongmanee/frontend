@@ -1,11 +1,11 @@
 import { BiSolidCopy } from "react-icons/bi";
 import styled from "styled-components";
-import sample from "../../images/example.png";
+import sample from "../../assets/images/example.png";
 import {
   flexCenter,
   fullSize,
   positionCenter,
-} from "../../styles/global.style";
+} from "../../assets/styles/global.style";
 import useCheckPath from "../../hooks/useCheckPath";
 import { temp_club_album } from "../../consts/tempData";
 import { useNavigate, useParams } from "react-router-dom";

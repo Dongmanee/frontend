@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexJBetween } from "../../../styles/global.style";
+import { flexJBetween } from "../../../assets/styles/global.style";
 import User from "../../global/User";
 
 export default function ClubPostsDetailHead({ writer, date }) {

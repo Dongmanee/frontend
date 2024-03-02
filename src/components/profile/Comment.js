@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
-import { flexColumn, flexICenter } from "../../styles/global.style";
+import { flexColumn, flexICenter } from "../../assets/styles/global.style";
 import PostHead from "../global/postList/PostHead";
 
 export default function UserComment({ clubName, date }) {

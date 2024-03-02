@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter, flexJBetween } from "../../styles/global.style";
+import { flexCenter, flexJBetween } from "../../assets/styles/global.style";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -71,7 +71,7 @@ const PageSelectorLayout = styled.div`
   background-color: white;
 
   z-index: 2;
-  position: fixed;
+  position: absolute;
   top: ${(props) =>
     props.$top ? props.$top : props.theme.global.header.height};
   left: 0;

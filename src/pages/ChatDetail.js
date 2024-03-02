@@ -4,8 +4,8 @@ import styled from "styled-components";
 import ChatReceived from "../components/chats/ChatReceived";
 import ChatSent from "../components/chats/ChatSent";
 import usePrevPage from "../hooks/usePrevPage";
-import Layout from "../layouts/Layout";
-import { flexCenter, flexColumn } from "../styles/global.style";
+import Layout from "../components/layouts/Layout";
+import { flexCenter, flexColumn } from "../assets/styles/global.style";
 
 export default function ChatDetail() {
   const { onPrevPage } = usePrevPage();

@@ -12,8 +12,8 @@ import ClubList from "../components/home/clubs/ClubList";
 import RegisterClubButton from "../components/home/clubs/RegisterClubButton";
 import { temp_clubs } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
-import Layout from "../layouts/Layout";
-import { flexColumn } from "../styles/global.style";
+import Layout from "../components/layouts/Layout";
+import { flexColumn } from "../assets/styles/global.style";
 import { getCookie } from "../utils/cookies";
 
 export default function Clubs() {

@@ -1,17 +1,19 @@
+import  { Fragment } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import React from "react";
-import { useForm } from "react-hook-form";
-import styled from "styled-components";
 import { login } from "../../../apis/login";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 import { loginSchema } from "../../../utils/validationSchema";
 import CustomButton from "../../global/CustomButton";
 import CustomInput from "../../global/CustomInputs";
 import RegisterErrorMsg from "../../global/register/RegisterErrorMsg";
 import { setCookie } from "../../../utils/cookies";
-import { useNavigate } from "react-router-dom";
 
-const cookie_save_time = 60 * 60; // test = 1분
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import styled from "styled-components";
+
+const cookie_save_time = 60 * 60;
+ // test = 60분
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ export default function LoginForm() {
     mode: "onBlur",
     resolver: yupResolver(loginSchema),
   });
-
+  
   const onLogin = ({ email, password }) => {
     login({ email, password }).then((res) => {
       if (res.status === 200) {
@@ -59,7 +61,7 @@ export default function LoginForm() {
   return (
     <LoginFormBox onSubmit={handleSubmit(onLogin)}>
       {login_inputs.map((input, idx) => (
-        <React.Fragment key={idx}>
+        <Fragment key={idx}>
           <CustomInput
             name={input.name}
             placeholder={input.placeholder}
@@ -75,7 +77,7 @@ export default function LoginForm() {
               margin="-0.625rem 0"
             />
           )}
-        </React.Fragment>
+        </Fragment>
       ))}
 
       <CustomButton

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import InquiryCardInfo from "./InquiryCardInfo";
 import ConfirmStateBox from "./ConfirmStateBox";
-import { flexICenter } from "../../../styles/global.style";
+import { flexICenter } from "../../../assets/styles/global.style";
 import { useNavigate } from "react-router-dom";
 
 export default function InquiryCard({ inquiryInfo }) {

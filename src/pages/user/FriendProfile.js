@@ -7,8 +7,7 @@ import UserProfile from "../../components/user/Profile";
 import { modifyUserPageSelector } from "../../consts/pageData";
 import { temp_user_profile } from "../../consts/tempData";
 import usePrevPage from "../../hooks/usePrevPage";
-import Layout from "../../layouts/Layout";
-
+import Layout from "../../components/layouts/Layout";
 export default function FriendProfile() {
   const { onPrevPage } = usePrevPage();
   const isAddedFriend = true;

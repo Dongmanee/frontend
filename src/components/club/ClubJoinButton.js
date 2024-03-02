@@ -33,7 +33,7 @@ const ClubJoinButtonLayout = styled.div`
     props.$isAvailable ? "0.7fr 1.3fr" : "1fr"};
   border-radius: 14px;
 
-  position: fixed;
+  position: absolute;
   bottom: 2vh;
   left: 0;
   right: 0;

@@ -1,6 +1,6 @@
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import styled from "styled-components";
-import { flexICenter } from "../../../styles/global.style";
+import { flexICenter } from "../../../assets/styles/global.style";
 import { useEffect, useState } from "react";
 
 export default function ManagementQuestion({

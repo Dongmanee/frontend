@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ClubCard from "./ClubCard";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 
 export default function ClubList({ clubs }) {
   return (

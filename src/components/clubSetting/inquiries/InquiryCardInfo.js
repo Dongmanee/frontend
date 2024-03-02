@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumn } from "../../../styles/global.style";
+import { flexColumn } from "../../../assets/styles/global.style";
 
 export default function InquiryCardInfo({ title, date }) {
   return (

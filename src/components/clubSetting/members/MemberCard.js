@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import example from "../../../images/example.png";
-import { flexICenter } from "../../../styles/global.style";
+import example from "../../../assets/images/example.png";
+import { flexICenter } from "../../../assets/styles/global.style";
 import ApplicationCardInfo from "../applications/ApplicationCardInfo";
 import ResignButton from "./ResignButton";
 import MemberCardInfo from "./MemberCardInfo";

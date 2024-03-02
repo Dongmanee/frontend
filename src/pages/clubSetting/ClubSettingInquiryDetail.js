@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import Layout from "../../layouts/Layout";
 import { useParams } from "react-router-dom";
 import ConfirmStateBox from "../../components/clubSetting/inquiries/ConfirmStateBox";
-import { flexColumn } from "../../styles/global.style";
+import { flexColumn } from "../../assets/styles/global.style";
 import InquiryDetailItem from "../../components/clubSetting/inquiries/InquiryDetailItem";
-import RegisterInput from "../../components/global/register/RegisterInput";
 import usePrevPage from "../../hooks/usePrevPage";
 import RegisterTextArea from "../../components/global/register/RegisterTextArea";
 import { useForm } from "react-hook-form";
+import Layout from "../../components/layouts/Layout";
 
 export default function ClubSettingInquiryDetail() {
   const { inquiryId } = useParams();
