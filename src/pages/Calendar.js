@@ -24,7 +24,7 @@ export default function Calendar() {
   }, [thisMonth]);
 
   return (
-    <Layout>
+    <Layout headerLeft="calendar">
       <CalendarHead
         thisMonth={thisMonth}
         handleMonthPrev={handleMonthPrev}
@@ -37,5 +37,3 @@ export default function Calendar() {
     </Layout>
   );
 }
-
-const CalendarLayout = styled.div``;

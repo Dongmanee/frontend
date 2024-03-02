@@ -2,13 +2,15 @@ import styled from "styled-components";
 import ClubCardHeadInfo from "./ClubCardHeadInfo";
 import example from "../../../assets/images/example.png";
 import { flexColumn, flexICenter } from "../../../assets/styles/global.style";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ClubCard({ club }) {
+  const { univId } = useParams();
   const navigate = useNavigate();
 
   const onClickClubCard = (clubId) => {
-    navigate(`/club/${clubId}`);
+    if (univId) navigate(`club/${clubId}`);
+    else navigate(`/club/${clubId}`);
   };
 
   return (

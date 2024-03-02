@@ -11,12 +11,7 @@ export default function Chats() {
   const [isDragging, setIsDragging] = useState(false);
 
   return (
-    <Layout
-      headerLeft={"prev"}
-      headerRight={"setting"}
-      onClickLeft={() => navigate(-1)}
-      onClickRight={() => navigate("/profile/setting")}
-    >
+    <Layout headerLeft="chat">
       <ChatsCol>
         {temp_chat_lists.map((user, idx) => (
           <Chat
@@ -34,5 +29,4 @@ export default function Chats() {
 
 const ChatsCol = styled.div`
   ${flexColumn};
-  margin-top: 20px;
 `;

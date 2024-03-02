@@ -1,5 +1,10 @@
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import styled from "styled-components";
 import CustomInput from "../components/global/CustomInputs";
 import ClubCategory from "../components/home/clubs/ClubCategoryList";
@@ -9,11 +14,17 @@ import { temp_clubs } from "../consts/tempData";
 import usePrevPage from "../hooks/usePrevPage";
 import Layout from "../components/layouts/Layout";
 import { flexColumn } from "../assets/styles/global.style";
+import { getCookie } from "../utils/cookies";
 
 export default function Clubs() {
+  const { state } = useLocation();
   const { onPrevPage } = usePrevPage();
+  const { univId: isOtherUniv } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [otherUnivName, setOtheUnivName] = useState();
+  const isLogin = getCookie("accessToken") != undefined;
+  const navigate = useNavigate();
 
   const handleSearchKeywordChange = (e) => {
     const currentCategory = searchParams.get("category");
@@ -41,8 +52,32 @@ export default function Clubs() {
     e.preventDefault();
   };
 
+  const handleRegisterBtnClick = () => {
+    navigate("register");
+  };
+
+  const handleHomeBtnClick = () => {
+    navigate("/posts");
+  };
+
+  useEffect(() => {
+    setOtheUnivName(state);
+  }, []);
+
   return (
-    <Layout headerLeft="prev" onClickLeft={onPrevPage}>
+    <Layout
+      headerLeft="prev"
+      onClickLeft={onPrevPage}
+      headerCenter={otherUnivName ? otherUnivName : ""}
+      headerRight={isLogin ? (isOtherUniv ? "home" : "plus") : ""}
+      onClickRight={
+        isLogin
+          ? isOtherUniv
+            ? handleHomeBtnClick
+            : handleRegisterBtnClick
+          : undefined
+      }
+    >
       <HomeTotalClubsLayout>
         <ClubCategory setKeywordReset={handleKeywordReset} />
         <form onSubmit={handleSubmit}>
@@ -56,7 +91,7 @@ export default function Clubs() {
         </form>
         <ClubList clubs={temp_clubs} />
       </HomeTotalClubsLayout>
-      <RegisterClubButton />
+      {/* {!isOtherUniv && <RegisterClubButton />} */}
     </Layout>
   );
 }

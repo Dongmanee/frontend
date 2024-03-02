@@ -790,3 +790,102 @@ export const temp_calendar_detail = [
     scheduleDate: "2024-01-17T17:40:00+09:00",
   },
 ];
+
+export const temp_univs_list = [
+  {
+    univId: "univ11",
+    univName: "한밭대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "경희대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "중앙대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "연세대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "경북대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "성균관대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "서울대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "부산대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "한밭대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "경희대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "중앙대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "연세대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "경북대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "성균관대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "서울대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "부산대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "한밭대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "경희대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "중앙대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "연세대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "경북대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "성균관대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "서울대학교",
+  },
+  {
+    univId: "univ11",
+    univName: "부산대학교",
+  },
+];

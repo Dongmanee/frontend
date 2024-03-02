@@ -12,9 +12,8 @@ export default function Profile() {
 
   return (
     <Layout
-      headerLeft={"prev"}
+      headerLeft={"profile"}
       headerRight={"setting"}
-      onClickLeft={() => navigate(-1)}
       onClickRight={() => navigate("setting")}
     >
       <UserProfile user={temp_user_profile} isMyProfile={true}>

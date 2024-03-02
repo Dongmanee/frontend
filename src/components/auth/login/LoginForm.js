@@ -16,6 +16,8 @@ import styled from "styled-components";
 
 const cookie_save_time = 60; // test = 1분
 
+const cookie_save_time = 60 * 60; // test = 1분
+
 export default function LoginForm() {
   const navigate = useNavigate();
   const {
@@ -38,8 +40,9 @@ export default function LoginForm() {
         setTimeout(() => {
           alert("쿠키 만료됨 -> 다시 로그인 해주셈");
           window.location.reload();
+          navigate("/");
         }, cookie_save_time * 1000 + 3000);
-        // navigate("/posts");
+        navigate("/posts");
       } else {
         console.log("로그인 에러");
       }

@@ -8,7 +8,7 @@ export default function OtherApproach({ isLogin }) {
   const navigate = useNavigate();
 
   const onClickLookingButton = () => {
-    navigate("/posts");
+    navigate("/univs");
   };
 
   const onClickSignButton = () => {
