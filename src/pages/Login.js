@@ -4,24 +4,30 @@ import KakaoLogin from "../components/auth/login/KakaoLogin";
 import LoginForm from "../components/auth/login/LoginForm";
 import bglogo from '../assets/images/bglogo.png'
 import { flexCenter, flexColumn } from "../assets/styles/global.style";
-import Layout from "../components/layouts/Layout";
+
 export default function Login() {
   return (
-    <Layout>
+    <LoginLayout>
       <LogoBox>
         <img src={bglogo} />
       </LogoBox>
+
       <LoginBox>
         <LoginForm />
         <OtherApproach isLogin={true} />
         <KakaoLogin />
       </LoginBox>
-    </Layout>
+    </LoginLayout>
   );
 }
 
+const LoginLayout = styled.div`
+  padding:0 5vw;
+`
+
 const LogoBox = styled.div`
   ${flexCenter};
+  max-height: 30vh;
 `;
 
 const LoginBox = styled.div`

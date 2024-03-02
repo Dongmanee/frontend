@@ -12,11 +12,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
-
-
-const cookie_save_time = 60;
- // test = 1분
-
+const cookie_save_time = 60 * 60;
+ // test = 60분
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -28,7 +25,7 @@ export default function LoginForm() {
     mode: "onBlur",
     resolver: yupResolver(loginSchema),
   });
-
+  
   const onLogin = ({ email, password }) => {
     login({ email, password }).then((res) => {
       if (res.status === 200) {
