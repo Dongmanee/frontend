@@ -71,7 +71,7 @@ const PageSelectorLayout = styled.div`
   background-color: white;
 
   z-index: 2;
-  position: fixed;
+  position: absolute;
   top: ${(props) =>
     props.$top ? props.$top : props.theme.global.header.height};
   left: 0;

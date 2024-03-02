@@ -7,7 +7,7 @@ import Layout from "../../components/layouts/Layout";
 
 import styled from "styled-components";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
-
+import { scroll } from "../../assets/styles/global.style";
 
 export default function Club() {
   const navigate = useNavigate();
@@ -22,15 +22,14 @@ export default function Club() {
   };
 
   const clubPageSelector = modifyClubPageSelector(clubId);
-  
+
   const handleLogoClick = () => {
     navigate(`/club/${clubId}`);
   };
 
-  
-
   return (
     <Layout
+      headerPosition={"absolute"}
       headerLeft="prev"
       onClickLeft={onPrevPage}
       headerCenter={clubName}
@@ -49,5 +48,7 @@ export default function Club() {
 }
 
 const OutletBox = styled.div`
-  margin-top: ${(props) => props.theme.global.pageselector.height};
+  padding-top: ${(props) => props.theme.global.pageselector.height};
+  height: calc(100% - 6vh);
+  ${scroll};
 `;

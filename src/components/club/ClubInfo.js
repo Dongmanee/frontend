@@ -60,7 +60,8 @@ export default function ClubInfo({ clubHomeInfo }) {
 const ClubInfoLayout = styled.div`
   ${flexColumn};
   max-height: 40vh;
-  margin: 0 -23px;
+  width: 100%;
+  padding: 0 -23px;
 `;
 
 const BackgroundImage = styled.img`
@@ -97,16 +98,14 @@ const CategoryTagRow = styled.div`
 `;
 
 const Info = styled.div`
-  padding: 20px;
-
-  line-height: 170%;
+  padding: 10px 0;
 `;
 
 const SnsBox = styled.div`
   display: flex;
   gap: 0.8rem;
 
-  padding: 10px 20px;
+  padding: 10px 0;
   img {
     width: 2rem;
   }

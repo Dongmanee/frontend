@@ -35,4 +35,5 @@ export default function Layout({
 const Body = styled.div`
   box-sizing: border-box;
   padding: ${(props) => props.theme.global.body.height} 5vw;
+  height: 100vh;
 `;
